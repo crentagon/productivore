@@ -43,7 +43,7 @@
 		)); ?><!-- breadcrumbs -->
 	<?php endif?>
 
-	<?php echo '((('.$content; ?>
+	<?php echo $content; ?>
 
 	<div class="clear"></div>
 
