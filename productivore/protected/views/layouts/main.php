@@ -43,6 +43,7 @@
 		)); ?><!-- breadcrumbs -->
 	<?php endif?>
 
+	<? echo MY_CONST.'<<<'; ?>
 	<?php echo '((('.$content; ?>
 
 	<div class="clear"></div>

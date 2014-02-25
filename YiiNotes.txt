@@ -1,0 +1,2 @@
+productivore/protected/components/Controller.php
+	public $layout='//layouts/column1';

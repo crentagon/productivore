@@ -360,6 +360,7 @@ class CHttpRequest extends CApplicationComponent
 	 */
 	public function getBaseUrl($absolute=false)
 	{
+		return 'YEAH';
 		if($this->_baseUrl===null)
 			$this->_baseUrl=rtrim(dirname($this->getScriptUrl()),'\\/');
 		return $absolute ? $this->getHostInfo() . $this->_baseUrl : $this->_baseUrl;
