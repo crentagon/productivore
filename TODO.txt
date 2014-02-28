@@ -1,0 +1,5 @@
+To-do (Layouts):
+	[x] Navbar
+	- Sliding menu on the left
+	- On scroll = navbar thing
+	- Data population (DB)
