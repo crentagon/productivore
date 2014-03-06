@@ -1,0 +1,14 @@
+#page {
+    padding-top: 60px;
+}
+
+.supercontainer{
+	max-width: 800px;
+	border: 2px solid red;
+	word-wrap:break-word;
+	margin-left: 200px;
+}
+.container *{
+	box-sizing: border-box;
+	max-width: 800px;
+}

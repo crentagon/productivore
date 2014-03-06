@@ -6,7 +6,7 @@
 	<meta name="language" content="en" />
 
 	<!--Stylesheets-->
-    <link rel="stylesheet" type="text/css" href="<? echo BASE_URL ?>/css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="<? echo BASE_URL ?>/css/baseStyles.css" />
 	
 	<!--Javascripts-->
 	<script type="text/javascript" src="<? echo BASE_URL ?>/js/jquery-2.1.0.min.js"></script>
@@ -14,11 +14,21 @@
 	
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 	<? Yii::app()->bootstrap->register(); ?>
+	
 </head>
 
 <body>
 	<br/>
+	<div class="supercontainer"> <?//For quick modification of Bootstrap's properties?>
 	<div class="container">
+		<div class="page-header">
+			RAWR!
+		</div>
+		<div class="row">
+			<div class="span12" style="border: 1px solid blue">Experiment3</div>
+			<div class="span4" style="border: 1px solid blue">Experiment1</div>
+			<div class="span3 offset2" style="border: 1px solid blue">Experiment2</div>
+		</div>
 		<div class="navbar">
 		  <div class="navbar-inner">
 			<a class="btn btn-navbar collapsed" data-toggle="collapse" data-target="#yii_bootstrap_collapse_0">
@@ -64,6 +74,7 @@
 		  </div>
 		</div>
 		<? echo $content; ?>
+	</div>
 	</div>
 </body>
 </html>
