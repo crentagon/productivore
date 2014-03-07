@@ -1,14 +1,57 @@
+/*
+All of the styles I place here are fr hi-jacking bootstrap's shit.
+*/
 #page {
     padding-top: 60px;
 }
 
-.supercontainer{
-	max-width: 800px;
+/* Width restrictions. I want  */
+.supercontainer {
+	max-width: 870px;
+	margin: auto;
+	/*
 	border: 2px solid red;
-	word-wrap:break-word;
-	margin-left: 200px;
+	display: block;
+	*/
 }
-.container *{
+
+.supercontainer *{
+	word-wrap: break-word;
+	max-width: 870px;
+	/*
+	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-	max-width: 800px;
+	*/
+}
+
+/* All divs must have their paddings inside! That way, it won't overlap the supercontainer.*/
+div{
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/* Sidebar-related things */
+
+.pVoreDimmer{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 100;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.5);
+	display: none;
+}
+
+.pVoreSidebarButton{
+	border: 2px solid red;
+	position: fixed;
+	height: 50px;
+	width: 35px;
+	top: 50%;
+	left: 0px;
+	margin-top: -20px;
+	-moz-border-radius: 0 0 6px 6px;
+	border-radius: 0 6px 6px 0;
+	cursor: pointer;
 }

@@ -1,7 +1,7 @@
 To-do (Layouts):
 	[x] Navbar
 	[x] Found a way to modify all of Bootstrap without changing the framework too, too much (I'll need to customize it sometime though, just, not right now.) //box-sizing: border-box!!!
-	- Edit the width to actually make it reasonable lol
-	- Sliding menu on the left
+	[x] Edit the width to actually make it reasonable lol
+	[ ] Sliding menu on the left
 	- On scroll = navbar thing
 	- Data population (DB)

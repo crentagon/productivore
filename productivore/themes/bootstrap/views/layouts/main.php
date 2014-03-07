@@ -19,17 +19,14 @@
 
 <body>
 	<br/>
+	<?//The sidebar?>
+	<div class="pVoreDimmer"></div>
+	<div class="pVoreSidebarButton" onclick="showSidebar();"></div>
+	<div class="pVoreSidebarMenu"></div>
+	<?//The main content?>
 	<div class="supercontainer"> <?//For quick modification of Bootstrap's properties?>
 	<div class="container">
-		<div class="page-header">
-			RAWR!
-		</div>
-		<div class="row">
-			<div class="span12" style="border: 1px solid blue">Experiment3</div>
-			<div class="span4" style="border: 1px solid blue">Experiment1</div>
-			<div class="span3 offset2" style="border: 1px solid blue">Experiment2</div>
-		</div>
-		<div class="navbar">
+		<div class="navbar"><!--navbar-->
 		  <div class="navbar-inner">
 			<a class="btn btn-navbar collapsed" data-toggle="collapse" data-target="#yii_bootstrap_collapse_0">
 				<span class="icon-bar"></span>
@@ -72,13 +69,32 @@
 				</ul>
 			</div>
 		  </div>
-		</div>
+		</div><!--navbar-->
 		<? echo $content; ?>
-	</div>
-	</div>
+	</div><!--container-->
+	</div><!--supercontainer-->
 </body>
 </html>
 
+<?/*
+		<div class="page-header">
+			RAWR!
+		</div>
+		<div class="row"><div class="span1" style="border: 1px solid blue">Ex1</div></div>
+		<div class="row"><div class="span2" style="border: 1px solid blue">Ex2</div></div>
+		<div class="row"><div class="span3" style="border: 1px solid blue">Ex3</div></div>
+		<div class="row"><div class="span4" style="border: 1px solid blue">Ex4</div></div>
+		<div class="row"><div class="span5" style="border: 1px solid blue">Ex5</div></div>
+		<div class="row"><div class="span6" style="border: 1px solid blue">Ex6</div></div>
+		<div class="row"><div class="span7" style="border: 1px solid blue">Ex7</div></div>
+		<div class="row"><div class="span8" style="border: 1px solid blue">Ex8</div></div>
+		<div class="row"><div class="span9" style="border: 1px solid blue">Ex9</div></div>
+		<div class="row"><div class="span10" style="border: 1px solid blue">Ex10</div></div>
+		<div class="row"><div class="span11" style="border: 1px solid blue">Ex11</div></div>
+		<div class="row"><div class="span12" style="border: 1px solid blue">Ex12</div></div>
+		<div class="row"><div class="span3 offset2" style="border: 1px solid blue">Ex2</div></div>
+		
+*/?>
 <?/*
 <?php $this->widget('bootstrap.widgets.TbNavbar',array(
     'items'=>array(
