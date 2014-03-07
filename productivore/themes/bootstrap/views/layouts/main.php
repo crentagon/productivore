@@ -19,10 +19,17 @@
 
 <body>
 	<br/>
+	
 	<?//The sidebar?>
-	<div class="pVoreDimmer"></div>
+	<div class="pVoreDimmer" onclick="hideSidebar();"></div>
 	<div class="pVoreSidebarButton" onclick="showSidebar();"></div>
-	<div class="pVoreSidebarMenu"></div>
+	<div class="pVoreSidebarContainer">
+		<div class="pVoreSidebarContent">
+		</div><!--.pVoreSidebarContent-->
+		<div class="pVoreMinima" onclick="hideSidebar();">
+		</div><!--.pVoreMinima-->
+	</div><!--.pVoreSidebarContainer-->
+	
 	<?//The main content?>
 	<div class="supercontainer"> <?//For quick modification of Bootstrap's properties?>
 	<div class="container">
