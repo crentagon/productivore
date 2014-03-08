@@ -5,7 +5,7 @@ To-do (Layouts):
 	[%] Sliding menu on the left
 		[x] Basic logic working
 		[x] Fixed basic logic
-		[ ] Style it
+		[x] Style it
 		[ ] Populate with dummy data
-	- On scroll = navbar thing
+	- On scroll down = show navbar on top
 	- Data population (DB)

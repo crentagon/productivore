@@ -22,66 +22,83 @@
 	<br/>
 	
 	<?//The sidebar?>
-	<div class="pVoreDimmer" onclick="hideSidebar();"></div>
-	<div class="pVoreSidebarButton" onclick="showSidebar();">
-		<span class="fa fa-chevron-right fa-2x"></span>
-	</div>
-	<div class="pVoreSidebarContainer">
-	
+	<div class="pvore-dimmer" onclick="hideSidebar();"></div>
+	<div class="pvore-minima" onclick="hideSidebar();"><span class="fa fa-chevron-left fa-lg"></span></div>
+	<div class="pvore-sidebar-button" onclick="showSidebar();"><span class="fa fa-chevron-right fa-lg"></span></div>
+	<div class="pvore-sidebar-container">
+		<div class="pvore-sidebar-content">
+			<div class="pvore-sidebar-search-container">
+				<form action=""><input type="text" class="search-query pvore-sidebar-search-input" placeholder="Search"></form>
+			</div>
+			<hr class="thick"/>
+			<div class="pvore-sidebar-app-container">
+				<?for($i=0; $i<10; $i++):?>
+					<div class="pvore-sidebar-app">
+						<div class="pvore-sidebar-app-image">
+							<span class="fa fa-chevron-right fa-2x"></span>
+						</div>
+						<div class="pvore-sidebar-app-title">
+							<b>Title of the appling.</b><br/>
+							25-character description.
+						</div>
+					</div>
+					<?if($i!=9):?>
+					<hr/>
+					<?endif;?>
+				<?endfor;?>
+			</div>
+		</div>
 	</div><!--.pVoreSidebarContainer-->
-	<div class="pVoreMinima" onclick="hideSidebar();">
-		<span class="fa fa-chevron-left fa-2x"></span>
-	</div><!--.pVoreMinima-->
 	
 	<?//The main content?>
-	<div class="supercontainer"> <?//For quick modification of Bootstrap's properties?>
-	<div class="container">
-		<div class="navbar"><!--navbar-->
-		  <div class="navbar-inner">
-			<a class="btn btn-navbar collapsed" data-toggle="collapse" data-target="#yii_bootstrap_collapse_0">
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</a>
-			<a class="brand" href="#">Title</a>
-			<div class="nav-collapse collapse" id="yii_bootstrap_collapse_0" style="height:0px">
-				<ul id="yw0" class="nav">
-					<li><a href="#">Home</a></li>
-					<li><a href="#">Link</a></li>
-					<li class="dropdown">
-						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Dropdown <span class="caret"></span></a>
-						<ul id="yw1" class="dropdown-menu">
-							<li><a tabindex="-1" href="#">Action 1</a></li>
-							<li><a tabindex="-1" href="#">Action 2</a></li>
-							<li class="divider"></li>
-							<li class="nav-header">Header</li>
-							<li><a tabindex="-1" href="#">Action 3</a></li>
-							<li><a tabindex="-1" href="#">Action 4</a></li>
-						</ul>
-					</li>
-				</ul>
-				<form class="navbar-search pull-left" action=""><input type="text" class="search-query span2" placeholder="Search"></form>
-				<ul class="pull-right nav" id="yw2">
-					<li><a href="#">Link</a></li>
-					<li class="dropdown">
-						<a class="dropdown-toggle" data-toggle="dropdown" href="#">
-							Dropdown
-							<span class="caret"></span>
-						</a>
-						<ul id="yw3" class="dropdown-menu">
-							<li><a tabindex="-1" href="#">Action</a></li>
-							<li><a tabindex="-1" href="#">Another action</a></li>
-							<li><a tabindex="-1" href="#">Something else here</a></li>
-							<li class="divider"></li>
-							<li><a tabindex="-1" href="#">Separated link</a></li>
-						</ul>
-					</li>
-				</ul>
-			</div>
-		  </div>
-		</div><!--navbar-->
-		<? echo $content; ?>
-	</div><!--container-->
+	<div class="super-container"> <?//For quick modification of Bootstrap's properties?>
+		<div class="container">
+			<div class="navbar"><!--navbar-->
+			  <div class="navbar-inner">
+				<a class="btn btn-navbar collapsed" data-toggle="collapse" data-target="#yii_bootstrap_collapse_0">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+				<a class="brand" href="#">Title</a>
+				<div class="nav-collapse collapse" id="yii_bootstrap_collapse_0" style="height:0px">
+					<ul id="yw0" class="nav">
+						<li><a href="#">Home</a></li>
+						<li><a href="#">Link</a></li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#">Dropdown <span class="caret"></span></a>
+							<ul id="yw1" class="dropdown-menu">
+								<li><a tabindex="-1" href="#">Action 1</a></li>
+								<li><a tabindex="-1" href="#">Action 2</a></li>
+								<li class="divider"></li>
+								<li class="nav-header">Header</li>
+								<li><a tabindex="-1" href="#">Action 3</a></li>
+								<li><a tabindex="-1" href="#">Action 4</a></li>
+							</ul>
+						</li>
+					</ul>
+					<form class="navbar-search pull-left" action=""><input type="text" class="search-query span2" placeholder="Search"></form>
+					<ul class="pull-right nav" id="yw2">
+						<li><a href="#">Link</a></li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+								Dropdown
+								<span class="caret"></span>
+							</a>
+							<ul id="yw3" class="dropdown-menu">
+								<li><a tabindex="-1" href="#">Action</a></li>
+								<li><a tabindex="-1" href="#">Another action</a></li>
+								<li><a tabindex="-1" href="#">Something else here</a></li>
+								<li class="divider"></li>
+								<li><a tabindex="-1" href="#">Separated link</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			  </div>
+			</div><!--navbar-->
+			<? echo $content; ?>
+		</div><!--container-->
 	</div><!--supercontainer-->
 </body>
 </html>

@@ -1,92 +1,111 @@
-/*
-All of the styles I place here are fr hi-jacking bootstrap's shit.
-*/
+/* All of the styles I place here are for hi-jacking bootstrap's shit. */
 #page {
     padding-top: 60px;
 }
 
-/* Width restrictions. I want  */
-.supercontainer {
+/* Width restrictions for the content. */
+.super-container {
 	max-width: 870px;
 	margin: auto;
-	/*
-	border: 2px solid red;
-	display: block;
-	*/
 }
 
-.supercontainer *{
+.super-container *{
 	word-wrap: break-word;
 	max-width: 870px;
-	/*
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-	*/
 }
 
-/* All divs must have their paddings inside! That way, it won't overlap the supercontainer.*/
+/* Some general changes. */
 div{
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
+	-moz-box-sizing: border-box; box-sizing: border-box;
+}
+hr.thick{
+	height: 1px; color: #AAA; background-color: #AAA;
 }
 
 /* Sidebar-related things (z-index: 10-20) */
 
-.pVoreDimmer{
+.pvore-dimmer{
 	top: 0px; left: 0px; width: 100%; height: 100%; z-index: 10; position: fixed; 
-	cursor: pointer;
 	background-color: rgba(0,0,0,0.5);
-	display: none;
-	/*
-	*/
+	cursor: pointer; display: none;
 }
 
-.pVoreSidebarButton{
+.pvore-sidebar-button{
 	top: 50%; left: 0px; width: 35px; height: 50px; z-index: 15; position: fixed;
-	padding-top: 12px; padding-bottom: 12px;
+	text-align: center; vertical-align: middle; line-height: 50px;
+	-moz-border-radius: 0 0 6px 6px; border-radius: 0 6px 6px 0;
 	background-color: #000; color: white;
-	text-align: center;
 	margin-top: -25px;
-	-moz-border-radius: 0 0 6px 6px;
-	border-radius: 0 6px 6px 0;
 	cursor: pointer;
+}
+
+
+.pvore-sidebar-button:hover{
+	border: 2px solid black;
+	background-color: white;
+	color: black;
+}
+
+
+.pvore-minima{
+	top: 50%; left: 0%; width: 35px; height: 50px; z-index: 17; position: fixed;
+	text-align: center; vertical-align: middle; line-height: 50px;
+	-moz-border-radius: 0 0 6px 6px; border-radius: 0 6px 6px 0;
+	background-color: #FFF; color: black;
+	margin-top: -25px; float: left;
+	cursor: pointer; display: none; opacity: 0;
+}
+
+.pvore-minima:hover{
 	/*
+	background-color: black;
+	color: white;
 	*/
 }
 
-.pVoreSidebarContainer{
-	top: 0px; left: 0px; width: 0px; height: 100%; z-index: 16; position: fixed;
+.pvore-sidebar-container{
+	top: 0px; left: -30%; width: 30%; height: 100%; z-index: 16; position: fixed;
+	background-color: #FFF;
+	padding-left: 1%;
+	padding-right: 1%;
+}
+
+.pvore-sidebar-content{
+	top: 0px; left: 0px; width: 100%; height: 100%; z-index: 16; position: relative;
+	padding: 5%;
 	background-color: #FFF;
 }
 
-.pVoreMinima{
-	top: 50%; left: 0%; width: 35px; height: 50px; z-index: 17; position: fixed;
-	padding-top: 12px; padding-bottom: 12px;
-	background-color: #FFF; color: black;
+.pvore-sidebar-search-container{
+	top: 0px; left: 0px; width: 100%; height: 5%; z-index: 16; position: relative;
 	text-align: center;
+
+}
+
+.pvore-sidebar-search-input{
+	width: 80%;
+}
+
+.pvore-sidebar-app-container{
+	top: 0px; left: 0px; width: 100%; height: 85%; z-index: 16; position: relative;
+	overflow-y: auto;
+	padding-right: 5%;
+}
+
+.pvore-sidebar-app{
+	height: 75px; width: 100%;
+}
+
+.pvore-sidebar-app-image{
+	text-align: center; vertical-align: middle; line-height: 85px;
+	height: 100%; width: 20%;
+	border-right: 1px solid #EEE;
 	float: left;
-	margin-top: -25px;
-	-moz-border-radius: 0 0 6px 6px;
-	border-radius: 0 6px 6px 0;
-	cursor: pointer;
-	display: none;
-	
-	/*
-	border-radius: 5px 5px 0 0;
-	background: #7b0305;
-	color: #FFF;
-	position: absolute;
-	right: 0px;
-	width: 7%;
-	top: -20px;
-	text-align: center;
-	padding-bottom: 3px;
-	padding-top: 3px;
-	cursor: pointer;
-	
-	
-	top: 0px; left: 0px; width: 10%; height: 100%; z-index: 16; position: relative;
-	border: 2px solid yellow;
-	position: relative;
-	*/
+}
+
+.pvore-sidebar-app-title{
+	height: 100%; width: 80%;
+	border-left: 1px solid #FFF;
+	padding-left: 8%;
+	float: left;
 }

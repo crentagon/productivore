@@ -1,22 +1,23 @@
 $(document).ready(function() {
+	// showSidebar();
 	// alert("Entered the basescript!");
 	// Handler for .ready() called.
 });
 
+var sidebarSpeed = 256;
+
 function showSidebar(){
-	$('.pVoreDimmer').fadeIn(256);
-	$('.pVoreMinima').show();
-	$('.pVoreMinima').animate({'left': '30%'}, 512);
-	$('.pVoreSidebarContainer').animate({'width': '30%'}, 512);
-	$('.pVoreSidebarButton').hide();
+	$('.pvore-dimmer').fadeIn(sidebarSpeed);
+	$('.pvore-minima').show().animate({'left': '30%', 'opacity': '1'}, sidebarSpeed);
+	$('.pvore-sidebar-container').show().animate({'left': '0%', 'display': 'block', 'opacity': '1'}, sidebarSpeed);
+	$('.pvore-sidebar-button').fadeOut(sidebarSpeed/4);
 }
 
 function hideSidebar(){
-	$('.pVoreDimmer').fadeOut(512);
-	$('.pVoreSidebarContainer').animate({'width': '0%'}, 256);
-	$('.pVoreMinima').animate({'left': '0%'}, 256);
-	$('.pVoreMinima').fadeOut(256);
-	$('.pVoreSidebarButton').fadeIn(256);
+	$('.pvore-dimmer').fadeOut(sidebarSpeed/2);
+	$('.pvore-sidebar-container').animate({'left': '-30%', 'opacity': '0'}, sidebarSpeed).fadeOut(sidebarSpeed/2);
+	$('.pvore-minima').animate({'left': '0%', 'opacity': '0'}, sidebarSpeed).fadeOut(sidebarSpeed/2);
+	$('.pvore-sidebar-button').fadeIn(sidebarSpeed/2);
 }
 
 // function 
