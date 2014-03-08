@@ -4,6 +4,7 @@ To-do (Layouts):
 	[x] Edit the width to actually make it reasonable lol
 	[%] Sliding menu on the left
 		[x] Basic logic working
+		[x] Fixed basic logic
 		[ ] Style it
 		[ ] Populate with dummy data
 	- On scroll = navbar thing

@@ -1,4 +1,4 @@
-<? /* @var $this Controller */ ?>
+﻿<? /* @var $this Controller */ ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
@@ -7,6 +7,7 @@
 
 	<!--Stylesheets-->
     <link rel="stylesheet" type="text/css" href="<? echo BASE_URL ?>/css/baseStyles.css" />
+    <link rel="stylesheet" type="text/css" href="<? echo BASE_URL ?>/assets/font-awesome-4.0.3/css/font-awesome.min.css" />
 	
 	<!--Javascripts-->
 	<script type="text/javascript" src="<? echo BASE_URL ?>/js/jquery-2.1.0.min.js"></script>
@@ -22,13 +23,15 @@
 	
 	<?//The sidebar?>
 	<div class="pVoreDimmer" onclick="hideSidebar();"></div>
-	<div class="pVoreSidebarButton" onclick="showSidebar();"></div>
+	<div class="pVoreSidebarButton" onclick="showSidebar();">
+		<span class="fa fa-chevron-right fa-2x"></span>
+	</div>
 	<div class="pVoreSidebarContainer">
-		<div class="pVoreSidebarContent">
-		</div><!--.pVoreSidebarContent-->
-		<div class="pVoreMinima" onclick="hideSidebar();">
-		</div><!--.pVoreMinima-->
+	
 	</div><!--.pVoreSidebarContainer-->
+	<div class="pVoreMinima" onclick="hideSidebar();">
+		<span class="fa fa-chevron-left fa-2x"></span>
+	</div><!--.pVoreMinima-->
 	
 	<?//The main content?>
 	<div class="supercontainer"> <?//For quick modification of Bootstrap's properties?>
