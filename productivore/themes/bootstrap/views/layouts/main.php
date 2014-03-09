@@ -20,7 +20,6 @@
 
 <body>
 	<br/>
-	
 	<?//The sidebar?>
 	<div class="pvore-dimmer" onclick="hideSidebar();"></div>
 	<div class="pvore-minima" onclick="hideSidebar();"><span class="fa fa-chevron-left fa-lg"></span></div>
@@ -28,24 +27,31 @@
 	<div class="pvore-sidebar-container">
 		<div class="pvore-sidebar-content">
 			<div class="pvore-sidebar-search-container">
-				<form action=""><input type="text" class="search-query pvore-sidebar-search-input" placeholder="Search"></form>
+				<form action=""><input type="text" class="search-query pvore-sidebar-search-input" placeholder="Appling Search"></form>
 			</div>
 			<hr class="thick"/>
 			<div class="pvore-sidebar-app-container">
-				<?for($i=0; $i<10; $i++):?>
+				<?$applingCount = count($this->applings); $i=0;?>
+				<?foreach($this->applings as $appling):?>
 					<div class="pvore-sidebar-app">
 						<div class="pvore-sidebar-app-image">
-							<span class="fa fa-chevron-right fa-2x"></span>
+							<span class="appling-icon fa fa-<?echo $appling['image']?> fa-2x"></span>
 						</div>
 						<div class="pvore-sidebar-app-title">
-							<b>Title of the appling.</b><br/>
-							25-character description.
+							<b><?echo $appling['name']?></b><br/>
+							<?
+								if(isset($appling['message']))
+									echo $appling['message'];
+								else
+									echo $appling['description'];
+							?>
 						</div>
 					</div>
-					<?if($i!=9):?>
-					<hr/>
+					<?if($i<$applingCount-1):?>
+						<hr/>
 					<?endif;?>
-				<?endfor;?>
+					<?$i++;?>
+				<?endforeach;?>
 			</div>
 		</div>
 	</div><!--.pVoreSidebarContainer-->

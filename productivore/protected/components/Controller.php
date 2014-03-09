@@ -20,4 +20,48 @@ class Controller extends CController
 	 * for more details on how to specify this property.
 	 */
 	public $breadcrumbs=array();
+	
+	public $applings=array();	
+	
+	public function populateApplings(){
+		$this->applings[0]['name'] = 'Task List';
+		$this->applings[0]['message'] = '3/5 tasks completed today.';
+		$this->applings[0]['description'] = 'Manage your to-do.';
+		$this->applings[0]['url'] = 'task';
+		$this->applings[0]['image'] = 'tasks';
+		$this->applings[0]['notifCount'] = 1;
+		
+		$this->applings[1]['name'] = 'Event Planner';
+		$this->applings[1]['message'] = '2/4 events for this week.';
+		$this->applings[1]['description'] = 'Organize your life.';
+		$this->applings[1]['url'] = 'event';
+		$this->applings[1]['image'] = 'calendar';
+		$this->applings[1]['notifCount'] = 0;
+		
+		$this->applings[2]['name'] = 'Budget Tracker';
+		$this->applings[2]['message'] = 'You\'ve spent $100 so far today.';
+		$this->applings[2]['description'] = 'Know how your money flows.';
+		$this->applings[2]['url'] = 'budget';
+		$this->applings[2]['notifCount'] = 3;
+		$this->applings[2]['image'] = 'money';
+		
+		$this->applings[3]['name'] = 'Game Records';
+		$this->applings[3]['description'] = 'Your virtual achievements.';
+		$this->applings[3]['url'] = 'game';
+		$this->applings[3]['image'] = 'gamepad';
+		$this->applings[3]['notifCount'] = 0;
+		
+		$this->applings[4]['name'] = 'Personal Journal';
+		$this->applings[4]['message'] = 'You haven\'t written anything today!';
+		$this->applings[4]['description'] = 'Your thoughts on life.';
+		$this->applings[4]['url'] = 'brain';
+		$this->applings[4]['image'] = 'book';
+		$this->applings[4]['notifCount'] = 2;
+		
+		$this->applings[5]['name'] = 'Sleep Manager';
+		$this->applings[5]['description'] = 'Yawn.';
+		$this->applings[5]['url'] = 'budget';
+		$this->applings[5]['notifCount'] = 3;
+		$this->applings[5]['image'] = 'cloud';
+	}
 }

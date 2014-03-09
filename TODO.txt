@@ -6,6 +6,12 @@ To-do (Layouts):
 		[x] Basic logic working
 		[x] Fixed basic logic
 		[x] Style it
-		[ ] Populate with dummy data
+		[x] Populate with dummy data
+		[ ] Notifications
+		[ ] Working search bar
 	- On scroll down = show navbar on top
 	- Data population (DB)
+	- Backtotop
+	- Optimization
+	- Color schemes
+	- Clean URLs

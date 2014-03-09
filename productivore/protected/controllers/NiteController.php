@@ -1,7 +1,12 @@
 <?php
 
 class NiteController extends Controller
-{
+{	
+	
+	public function __construct(){
+		parent::__construct('nite');
+		$this->populateApplings();
+	}
 	
 	/**
 	 * Declares class-based actions.
@@ -28,6 +33,7 @@ class NiteController extends Controller
 	 */
 	public function actionIndex()
 	{
+		$this->populateApplings();
 		// echo 'here'; die();
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
