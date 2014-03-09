@@ -51,17 +51,24 @@ class Controller extends CController
 		$this->applings[3]['image'] = 'gamepad';
 		$this->applings[3]['notifCount'] = 0;
 		
-		$this->applings[4]['name'] = 'Personal Journal';
-		$this->applings[4]['message'] = 'You haven\'t written anything today!';
-		$this->applings[4]['description'] = 'Your thoughts on life.';
-		$this->applings[4]['url'] = 'brain';
-		$this->applings[4]['image'] = 'book';
-		$this->applings[4]['notifCount'] = 2;
+		$this->applings[4]['name'] = 'Life Achievements';
+		$this->applings[4]['description'] = 'Your life achievments.';
+		$this->applings[4]['url'] = 'budget';
+		$this->applings[4]['notifCount'] = 3;
+		$this->applings[4]['image'] = 'trophy';
 		
-		$this->applings[5]['name'] = 'Sleep Manager';
-		$this->applings[5]['description'] = 'Yawn.';
-		$this->applings[5]['url'] = 'budget';
-		$this->applings[5]['notifCount'] = 3;
-		$this->applings[5]['image'] = 'cloud';
+		$this->applings[5]['name'] = 'Personal Journal';
+		$this->applings[5]['message'] = 'You haven\'t written anything today!';
+		$this->applings[5]['description'] = 'Your secrets are safe with me.';
+		$this->applings[5]['url'] = 'brain';
+		$this->applings[5]['image'] = 'book';
+		$this->applings[5]['notifCount'] = 2;
+		
+		$this->applings[6]['name'] = 'Sleep Manager';
+		$this->applings[6]['description'] = 'Yawn.';
+		$this->applings[6]['url'] = 'budget';
+		$this->applings[6]['notifCount'] = 3;
+		$this->applings[6]['image'] = 'cloud';
+		
 	}
 }

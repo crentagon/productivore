@@ -39,12 +39,14 @@
 						</div>
 						<div class="pvore-sidebar-app-title">
 							<b><?echo $appling['name']?></b><br/>
+							<em>
 							<?
 								if(isset($appling['message']))
 									echo $appling['message'];
 								else
 									echo $appling['description'];
 							?>
+							</em>
 						</div>
 					</div>
 					<?if($i<$applingCount-1):?>
