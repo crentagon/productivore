@@ -29,7 +29,7 @@ $(document).ready(function() {
 	// );
 });
 
-var sidebarSpeed = 350;
+var sidebarSpeed = 256;
 
 function showSidebar(){
 	$('.pvore-dimmer').fadeIn(sidebarSpeed);

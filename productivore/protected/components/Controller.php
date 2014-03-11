@@ -36,25 +36,25 @@ class Controller extends CController
 		$this->applings[1]['description'] = 'Organize your life.';
 		$this->applings[1]['url'] = 'event';
 		$this->applings[1]['image'] = 'calendar';
-		$this->applings[1]['notifCount'] = 5;
+		$this->applings[1]['notifCount'] = 0;
 		
 		$this->applings[2]['name'] = 'Budget Tracker';
 		$this->applings[2]['message'] = 'You\'ve spent $100 so far today.';
 		$this->applings[2]['description'] = 'Know how your money flows.';
 		$this->applings[2]['url'] = 'budget';
 		$this->applings[2]['image'] = 'money';
-		$this->applings[2]['notifCount'] = 23;
+		$this->applings[2]['notifCount'] = 0;
 		
 		$this->applings[3]['name'] = 'Game Records';
 		$this->applings[3]['description'] = 'Your virtual achievements.';
 		$this->applings[3]['url'] = 'game';
 		$this->applings[3]['image'] = 'gamepad';
-		$this->applings[3]['notifCount'] = 111;
+		$this->applings[3]['notifCount'] = 0;
 		
 		$this->applings[4]['name'] = 'Life Achievements';
 		$this->applings[4]['description'] = 'Your life achievments.';
 		$this->applings[4]['url'] = 'budget';
-		$this->applings[4]['notifCount'] = 1337;
+		$this->applings[4]['notifCount'] = 0;
 		$this->applings[4]['image'] = 'trophy';
 		
 		$this->applings[5]['name'] = 'Personal Journal';
@@ -62,12 +62,12 @@ class Controller extends CController
 		$this->applings[5]['description'] = 'Your secrets are safe with me.';
 		$this->applings[5]['url'] = 'brain';
 		$this->applings[5]['image'] = 'book';
-		$this->applings[5]['notifCount'] = 2;
+		$this->applings[5]['notifCount'] = 0;
 		
 		$this->applings[6]['name'] = 'Sleep Manager';
 		$this->applings[6]['description'] = 'Yawn.';
 		$this->applings[6]['url'] = 'budget';
-		$this->applings[6]['notifCount'] = 3;
+		$this->applings[6]['notifCount'] = 0;
 		$this->applings[6]['image'] = 'cloud';
 		
 	}
