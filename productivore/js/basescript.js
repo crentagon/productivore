@@ -1,4 +1,26 @@
 $(document).ready(function() {
+	// showSidebar();
+	$.each($('.appling-icon-notification'),
+		function (){
+			$(this).css('width', ($(this).html().length)*11);
+		}
+	);
+	$('#pvore-sidebar-search').keyup(function(){
+		var filter = $(this).val();
+		var searchParam = new RegExp(filter, "gi");
+		
+		$('.pvore-sidebar-app-title').each(function(){
+			if($(this).text().search(searchParam) < 0){
+				$(this).parent("div").hide();
+				$(this).parent("div").next().hide();
+				
+			}
+			else{
+				$(this).parent("div").show();
+				$(this).parent("div").next().show();
+			}
+		});
+	});
 	//Colors
 	// $.each($('.appling-icon'),
 		// function(){
@@ -7,7 +29,7 @@ $(document).ready(function() {
 	// );
 });
 
-var sidebarSpeed = 256;
+var sidebarSpeed = 350;
 
 function showSidebar(){
 	$('.pvore-dimmer').fadeIn(sidebarSpeed);

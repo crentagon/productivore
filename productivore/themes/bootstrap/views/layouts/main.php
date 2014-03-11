@@ -27,13 +27,16 @@
 	<div class="pvore-sidebar-container">
 		<div class="pvore-sidebar-content">
 			<div class="pvore-sidebar-search-container">
-				<form action=""><input type="text" class="search-query pvore-sidebar-search-input" placeholder="Appling Search"></form>
+				<form action=""><input type="text" class="search-query pvore-sidebar-search-input" id="pvore-sidebar-search" placeholder="Appling Search"></form>
 			</div>
 			<hr class="thick"/>
 			<div class="pvore-sidebar-app-container">
 				<?$applingCount = count($this->applings); $i=0;?>
 				<?foreach($this->applings as $appling):?>
-					<div class="pvore-sidebar-app">
+					<div class="pvore-sidebar-app" onclick="window.location='<?echo BASE_URL.'/'.$appling['url']?>'">
+						<?if($appling['notifCount'] != 0):?>
+							<div class="appling-icon-notification"><?echo $appling['notifCount']?></div>
+						<?endif;?>
 						<div class="pvore-sidebar-app-image">
 							<span class="appling-icon fa fa-<?echo $appling['image']?> fa-2x"></span>
 						</div>
