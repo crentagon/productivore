@@ -29,7 +29,27 @@
 			<div class="pvore-sidebar-search-container">
 				<form action=""><input type="text" class="search-query pvore-sidebar-search-input" id="pvore-sidebar-search" placeholder="Appling Search"></form>
 			</div>
-			<hr class="thick"/>
+			<div class="pvore-sidebar-options">
+				<span class="pvore-sidebar-dropdown" id="pvore-sidebar-frequency">
+					MOST USED ▼
+				</span><span class="pvore-sidebar-dropdown" id="pvore-sidebar-viewtype">
+					LIST VIEW ▼
+				</span>
+				<div class="pvore-sidebar-dropdown-menu">
+				</div>
+				<!--div class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Dropdown<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a tabindex="-1" href="#">Action 1</a></li>
+						<li><a tabindex="-1" href="#">Action 2</a></li>
+						<li class="divider"></li>
+						<li class="nav-header">Header</li>
+						<li><a tabindex="-1" href="#">Action 3</a></li>
+						<li><a tabindex="-1" href="#">Action 4</a></li>
+					</ul>
+				</div-->
+			</div>
+			<hr class="thick pvore-sidebar-app-hr"/>
 			<div class="pvore-sidebar-app-container">
 				<?$applingCount = count($this->applings); $i=0;?>
 				<?foreach($this->applings as $appling):?>

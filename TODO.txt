@@ -7,11 +7,13 @@ To-do (Layouts):
 		[x] Fixed basic logic
 		[x] Style it
 		[x] Populate with dummy data
-		[ ] Notifications
-		[ ] Working search bar
+		[x] Notifications
+		[x] Working search bar
+		[ ] Sort by + display (list view or grid view)
 	- On scroll down = show navbar on top
 	- Data population (DB)
 	- Backtotop
 	- Optimization
 	- Color schemes
 	- Clean URLs
+	- Zooming

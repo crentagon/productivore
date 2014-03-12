@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	// showSidebar();
+	showSidebar();
 	$.each($('.appling-icon-notification'),
 		function (){
 			$(this).css('width', ($(this).html().length)*11);

@@ -19,7 +19,7 @@ div{
 	-moz-box-sizing: border-box; box-sizing: border-box;
 }
 hr.thick{
-	height: 1px; color: #AAA; background-color: #AAA;
+	height: 1px; color: #CCC; background-color: #CCC;
 }
 
 /* Sidebar-related things (z-index: 10-20) */
@@ -72,7 +72,9 @@ hr.thick{
 
 .pvore-sidebar-content{
 	top: 0px; left: 0px; width: 100%; height: 100%; z-index: 16; position: relative;
-	padding: 5%;
+	padding-left: 5%;
+	padding-right: 5%;
+	padding-top: 5%;
 	background-color: #FFF;
 }
 
@@ -132,7 +134,49 @@ hr.thick{
 	min-width: 18px; height: auto; width: auto; 
 	padding: 0px;
 	text-align: center;
-	-moz-border-radius: 2px 2px 2px 2px; border-radius: 3px;
+	-moz-border-radius: 10px 10px 10px 10px; border-radius: 10px 10px 10px 10px;
 	background-color: #e74c3c; color: white;
 	position: absolute; left: 11%; margin-top: 45px;
+}
+
+.pvore-sidebar-app-hr {
+	margin-top: 30px;	
+	
+}
+
+.pvore-sidebar-options{
+	left: 0px;
+	position: absolute;
+	width: 100%; 
+	height: 33px;
+	padding: 3px;
+	text-align: center;
+	font-size: 65%;
+	color: #FFF;
+	font-weight: bold;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.pvore-sidebar-dropdown{
+	top: 10px;
+	background-color: #CCC;
+	padding: 4px;
+	padding-left: 7px; padding-right: 7px;
+	text-align: center;
+	-moz-border-radius: 3px; border-radius: 3px 3px 0 0;
+	cursor: pointer;
+	position: relative; 
+}
+
+#pvore-sidebar-frequency{
+	left: -5px;
+}
+
+#pvore-sidebar-viewtype{
+	left: 5px;
 }
