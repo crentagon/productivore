@@ -76,12 +76,12 @@ hr.thick{
 	padding-right: 5%;
 	padding-top: 5%;
 	background-color: #FFF;
+	padding-bottom: 3%;
 }
 
 .pvore-sidebar-search-container{
-	top: 0px; left: 0px; width: 100%; height: 5%; z-index: 16; position: relative;
+	top: 0px; left: 0px; width: 100%; height: 6.5%; z-index: 16; position: relative;
 	text-align: center;
-
 }
 
 .pvore-sidebar-search-input{
@@ -101,6 +101,22 @@ hr.thick{
 	user-select: none;
 }
 
+
+.pvore-sidebar-options{
+	top: 0%; width: 100%; height: 5%; position: relative;
+	padding: 3px;
+	text-align: center;
+	font-size: 70%;
+	color: #FFF;
+	font-weight: bold;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
 .pvore-sidebar-app{
 	-moz-border-radius: 5px 5px 5px 5px; border-radius: 5px 5px 5px 5px;
 	height: 75px; width: 100%; cursor: pointer;
@@ -108,7 +124,20 @@ hr.thick{
 	padding: 1%;
 }
 
+.pvore-sidebar-app-grid{
+	-moz-border-radius: 5px 5px 5px 5px; border-radius: 5px 5px 5px 5px;
+	text-align: center; vertical-align: middle; line-height: 10px; position: relative;
+	height: 75px; width: 30%; cursor: pointer;
+	margin-left: 3%; margin-top: 3%; padding-top: 5%;
+	border: 1px solid #FFF;
+	float: left;
+}
+
 .pvore-sidebar-app:hover{
+	border: 1px solid #BBB;
+}
+
+.pvore-sidebar-app-grid:hover{
 	border: 1px solid #BBB;
 }
 
@@ -126,8 +155,11 @@ hr.thick{
 .pvore-sidebar-app-title{
 	height: 100%; width: 80%;
 	border-left: 1px solid #FFF;
-	padding-left: 8%;
 	float: left;
+}
+
+.padding-left-8{
+	padding-left: 8%;
 }
 
 .appling-icon-notification{
@@ -140,43 +172,63 @@ hr.thick{
 }
 
 .pvore-sidebar-app-hr {
-	margin-top: 30px;	
+	margin-top: 1.5%;	
 	
 }
 
-.pvore-sidebar-options{
-	left: 0px;
-	position: absolute;
-	width: 100%; 
-	height: 33px;
-	padding: 3px;
-	text-align: center;
-	font-size: 65%;
-	color: #FFF;
-	font-weight: bold;
-	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-}
 
 .pvore-sidebar-dropdown{
-	top: 10px;
-	background-color: #CCC;
-	padding: 4px;
-	padding-left: 7px; padding-right: 7px;
-	text-align: center;
-	-moz-border-radius: 3px; border-radius: 3px 3px 0 0;
-	cursor: pointer;
-	position: relative; 
+	top: 2px; background-color: #333; padding: 5px; text-align: center;	cursor: pointer; vertical-align: middle; line-height: 20px;	position: relative; 
+	padding-left: 7px; padding-right: 7px; 
+	-moz-border-radius: 3px; border-radius: 10px 0 0 10px;
+}
+
+.pvore-sidebar-dropdown-arrow{
+	top: 2px; background-color: #333; padding: 5px; text-align: center;	cursor: pointer; vertical-align: middle; line-height: 20px;	position: relative; 
+	padding-left: 5px; padding-right: 5px;
+	-moz-border-radius: 3px; border-radius: 0 10px 10px 0;
 }
 
 #pvore-sidebar-frequency{
-	left: -5px;
+	left: -10px;
 }
 
 #pvore-sidebar-viewtype{
-	left: 5px;
+	left: 0px;
+}
+
+#pvore-sidebar-frequency-arrow{
+	left: -9px;
+}
+
+#pvore-sidebar-viewtype-arrow{
+	left: 1px;
+}
+
+.pvore-sidebar-app-hr-container{
+	height: 3%;
+}
+
+#sidebar-gridview{
+	display: block;
+}
+
+#sidebar-listview{
+	display: none;
+}
+
+.appling-name-grid{
+	font-size: 80%;
+	font-weight: bold;
+	line-height: 15px;
+	margin-top: 500px;
+}
+
+.appling-icon-notification-grid{
+	min-width: 18px; height: auto; width: auto; 
+	padding: 5px;
+	text-align: center;
+	-moz-border-radius: 10px 10px 10px 10px; border-radius: 10px 10px 10px 10px;
+	background-color: #e74c3c; color: white;
+	position: absolute; left: 15px; top:2px;
 }

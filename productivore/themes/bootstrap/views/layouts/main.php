@@ -29,31 +29,16 @@
 			<div class="pvore-sidebar-search-container">
 				<form action=""><input type="text" class="search-query pvore-sidebar-search-input" id="pvore-sidebar-search" placeholder="Appling Search"></form>
 			</div>
-			<div class="pvore-sidebar-options">
-				<span class="pvore-sidebar-dropdown" id="pvore-sidebar-frequency">
-					MOST USED ▼
-				</span><span class="pvore-sidebar-dropdown" id="pvore-sidebar-viewtype">
-					LIST VIEW ▼
-				</span>
-				<div class="pvore-sidebar-dropdown-menu">
-				</div>
-				<!--div class="dropdown">
-					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Dropdown<span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><a tabindex="-1" href="#">Action 1</a></li>
-						<li><a tabindex="-1" href="#">Action 2</a></li>
-						<li class="divider"></li>
-						<li class="nav-header">Header</li>
-						<li><a tabindex="-1" href="#">Action 3</a></li>
-						<li><a tabindex="-1" href="#">Action 4</a></li>
-					</ul>
-				</div-->
+			<div class="pvore-sidebar-app-hr-container">
+				<hr class="thick pvore-sidebar-app-hr"/>
 			</div>
-			<hr class="thick pvore-sidebar-app-hr"/>
-			<div class="pvore-sidebar-app-container">
+			<div class="pvore-sidebar-app-container" id="sidebar-listview">
 				<?$applingCount = count($this->applings); $i=0;?>
-				<?foreach($this->applings as $appling):?>
-					<div class="pvore-sidebar-app" onclick="window.location='<?echo BASE_URL.'/'.$appling['url']?>'">
+				<?foreach($this->applings as $applingid=>$appling):?>
+					<div class="pvore-sidebar-app" 
+						id="appling-<?echo $applingid?>"
+						onclick="window.location='<?echo BASE_URL.'/'.$appling['url']?>'"
+						accessCount="<?echo $appling['accessCount']?>">
 						<?if($appling['notifCount'] != 0):?>
 							<div class="appling-icon-notification"><?echo $appling['notifCount']?></div>
 						<?endif;?>
@@ -73,10 +58,68 @@
 						</div>
 					</div>
 					<?if($i<$applingCount-1):?>
-						<hr/>
+						<hr class="appling-hr"/>
 					<?endif;?>
 					<?$i++;?>
 				<?endforeach;?>
+			</div>
+			<div class="pvore-sidebar-app-container" id="sidebar-gridview" onclick="window.location='<?echo BASE_URL.'/'.$appling['url']?>'">
+				<?$applingCount = count($this->applings); $i=0;?>
+				<?foreach($this->applings as $applingid=>$appling):?>
+					<div class="pvore-sidebar-app-grid">
+						<?if($appling['notifCount'] != 0):?>
+							<div class="appling-icon-notification-grid"><?echo $appling['notifCount']?></div>
+						<?endif;?>
+						<span class="appling-icon fa fa-<?echo $appling['image']?> fa-2x"></span>
+						<br/>
+						<span class="appling-name-grid"><?echo $appling['name']?></span>
+					</div>
+				<?endforeach;?>
+					<? /*<div class="pvore-sidebar-app" 
+						id="appling-<?echo $applingid?>"
+						onclick="window.location='<?echo BASE_URL.'/'.$appling['url']?>'"
+						accessCount="<?echo $appling['accessCount']?>">
+						<?if($appling['notifCount'] != 0):?>
+							<div class="appling-icon-notification"><?echo $appling['notifCount']?></div>
+						<?endif;?>
+						<div class="pvore-sidebar-app-image">
+							<span class="appling-icon fa fa-<?echo $appling['image']?> fa-2x"></span>
+						</div>
+						<div class="pvore-sidebar-app-title">
+							<b><?echo $appling['name']?></b><br/>
+							<em>
+							<?
+								if(isset($appling['message']))
+									echo $appling['message'];
+								else
+									echo $appling['description'];
+							?>
+							</em>
+						</div>
+					</div>
+					<?if($i<$applingCount-1):?>
+						<hr class="appling-hr"/>
+					<?endif;?>
+					<?$i++;?>
+				<?endforeach;*/?>
+				
+			</div>
+			<div class="pvore-sidebar-options">
+				<span class="pvore-sidebar-dropdown" id="pvore-sidebar-frequency" onclick="showDropdownOptions('frequency')">LEAST USED</span><span class="pvore-sidebar-dropdown-arrow" id="pvore-sidebar-frequency-arrow" onclick="showDropdownOptions('frequency')">▼</span>
+				<span class="pvore-sidebar-dropdown" id="pvore-sidebar-viewtype" onclick="showDropdownOptions('viewtype')">GRID VIEW</span><span class="pvore-sidebar-dropdown-arrow" id="pvore-sidebar-viewtype-arrow" onclick="showDropdownOptions('viewtype')">▼</span>
+				<div class="pvore-sidebar-dropdown-menu">
+				</div>
+				<!--div class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Dropdown<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a tabindex="-1" href="#">Action 1</a></li>
+						<li><a tabindex="-1" href="#">Action 2</a></li>
+						<li class="divider"></li>
+						<li class="nav-header">Header</li>
+						<li><a tabindex="-1" href="#">Action 3</a></li>
+						<li><a tabindex="-1" href="#">Action 4</a></li>
+					</ul>
+				</div-->
 			</div>
 		</div>
 	</div><!--.pVoreSidebarContainer-->
