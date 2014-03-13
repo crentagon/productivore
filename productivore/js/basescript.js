@@ -1,8 +1,11 @@
-var asc = 1;
+﻿var asc = 1;
 var desc = 0;
 
 $(document).ready(function() {
 	showSidebar();
+	
+	$("#sidebar-gridview").hide(); $("#sidebar-listview").show(); $("#pvore-sidebar-viewtype").text("LIST VIEW"); //Show listview
+	// $("#sidebar-gridview").show(); $("#sidebar-listview").hide(); //Show gridview
 	
 	// sidebarOrderBy('alphabetical', asc);
 	// sidebarViewBy('grid');
@@ -141,7 +144,19 @@ function sidebarOrderBy(parameter, order){
 }
 
 function showDropdownOptions(parameter){
-	alert('showing dropdown options: '+parameter);
+	if(parameter == 'viewtype'){
+		$("#sidebar-gridview").toggle();
+		$("#sidebar-listview").toggle();
+		if($("#pvore-sidebar-viewtype").text() == 'GRID VIEW')
+			$("#pvore-sidebar-viewtype").text("LIST VIEW");
+		else
+			$("#pvore-sidebar-viewtype").text("GRID VIEW");
+		if($("#pvore-sidebar-viewtype-arrow").text() == '▲')
+			$("#pvore-sidebar-viewtype-arrow").text("▼");
+		else
+			$("#pvore-sidebar-viewtype-arrow").text("▲");
+	}
+	// alert('showing dropdown options: '+parameter);
 }
 
 function showSidebar(){
