@@ -152,16 +152,6 @@ hr.thick{
 	/*color: #8939af;*/
 }
 
-.pvore-sidebar-app-title{
-	height: 100%; width: 80%;
-	border-left: 1px solid #FFF;
-	float: left;
-}
-
-.padding-left-8{
-	padding-left: 8%;
-}
-
 .appling-icon-notification{
 	min-width: 18px; height: auto; width: auto; 
 	padding: 0px;
@@ -209,19 +199,19 @@ hr.thick{
 	height: 3%;
 }
 
-#sidebar-gridview{
-	display: block;
-}
-
-#sidebar-listview{
-	display: none;
-}
-
 .appling-name-grid{
 	font-size: 80%;
 	font-weight: bold;
 	line-height: 15px;
-	margin-top: 500px;
+	position: relative;
+	top: 3px;
+}
+
+.appling-name-list{
+	height: 100%; width: 80%;
+	border-left: 1px solid #FFF;
+	float: left;
+	padding-left: 8%;
 }
 
 .appling-icon-notification-grid{

@@ -32,22 +32,25 @@
 			<div class="pvore-sidebar-app-hr-container">
 				<hr class="thick pvore-sidebar-app-hr"/>
 			</div>
+			
 			<div class="pvore-sidebar-app-container" id="sidebar-listview">
 				<?$applingCount = count($this->applings); $i=0;?>
 				<?foreach($this->applings as $applingid=>$appling):?>
 					<div class="pvore-sidebar-app" 
-						id="appling-<?echo $applingid?>"
+						id="appling-<?echo $applingid?>-list"
 						onclick="window.location='<?echo BASE_URL.'/'.$appling['url']?>'"
-						accessCount="<?echo $appling['accessCount']?>">
+						accessCount="<?echo $appling['accessCount']?>"
+						baseId="appling-<?echo $applingid?>">
 						<?if($appling['notifCount'] != 0):?>
+						
 							<div class="appling-icon-notification"><?echo $appling['notifCount']?></div>
 						<?endif;?>
 						<div class="pvore-sidebar-app-image">
 							<span class="appling-icon fa fa-<?echo $appling['image']?> fa-2x"></span>
 						</div>
-						<div class="pvore-sidebar-app-title">
+						<div class="pvore-sidebar-app-title appling-name-list">
 							<b><?echo $appling['name']?></b><br/>
-							<em>
+							<em class="pvore-sidebar-app-description">
 							<?
 								if(isset($appling['message']))
 									echo $appling['message'];
@@ -62,51 +65,10 @@
 					<?endif;?>
 					<?$i++;?>
 				<?endforeach;?>
-			</div>
-			<div class="pvore-sidebar-app-container" id="sidebar-gridview" onclick="window.location='<?echo BASE_URL.'/'.$appling['url']?>'">
-				<?$applingCount = count($this->applings); $i=0;?>
-				<?foreach($this->applings as $applingid=>$appling):?>
-					<div class="pvore-sidebar-app-grid">
-						<?if($appling['notifCount'] != 0):?>
-							<div class="appling-icon-notification-grid"><?echo $appling['notifCount']?></div>
-						<?endif;?>
-						<span class="appling-icon fa fa-<?echo $appling['image']?> fa-2x"></span>
-						<br/>
-						<span class="appling-name-grid"><?echo $appling['name']?></span>
-					</div>
-				<?endforeach;?>
-					<? /*<div class="pvore-sidebar-app" 
-						id="appling-<?echo $applingid?>"
-						onclick="window.location='<?echo BASE_URL.'/'.$appling['url']?>'"
-						accessCount="<?echo $appling['accessCount']?>">
-						<?if($appling['notifCount'] != 0):?>
-							<div class="appling-icon-notification"><?echo $appling['notifCount']?></div>
-						<?endif;?>
-						<div class="pvore-sidebar-app-image">
-							<span class="appling-icon fa fa-<?echo $appling['image']?> fa-2x"></span>
-						</div>
-						<div class="pvore-sidebar-app-title">
-							<b><?echo $appling['name']?></b><br/>
-							<em>
-							<?
-								if(isset($appling['message']))
-									echo $appling['message'];
-								else
-									echo $appling['description'];
-							?>
-							</em>
-						</div>
-					</div>
-					<?if($i<$applingCount-1):?>
-						<hr class="appling-hr"/>
-					<?endif;?>
-					<?$i++;?>
-				<?endforeach;*/?>
-				
 			</div>
 			<div class="pvore-sidebar-options">
 				<span class="pvore-sidebar-dropdown" id="pvore-sidebar-frequency" onclick="showDropdownOptions('frequency')">LEAST USED</span><span class="pvore-sidebar-dropdown-arrow" id="pvore-sidebar-frequency-arrow" onclick="showDropdownOptions('frequency')">▼</span>
-				<span class="pvore-sidebar-dropdown" id="pvore-sidebar-viewtype" onclick="showDropdownOptions('viewtype')">GRID VIEW</span><span class="pvore-sidebar-dropdown-arrow" id="pvore-sidebar-viewtype-arrow" onclick="showDropdownOptions('viewtype')">▼</span>
+				<span class="pvore-sidebar-dropdown" id="pvore-sidebar-viewtype" onclick="showDropdownOptions('viewtype')">LIST VIEW</span><span class="pvore-sidebar-dropdown-arrow" id="pvore-sidebar-viewtype-arrow" onclick="showDropdownOptions('viewtype')">▼</span>
 				<div class="pvore-sidebar-dropdown-menu">
 				</div>
 				<!--div class="dropdown">
