@@ -67,9 +67,14 @@
 				<?endforeach;?>
 			</div>
 			<div class="pvore-sidebar-options">
-				<div class="order-by-options">
-				</div>
-				<span class="pvore-sidebar-dropdown" id="pvore-sidebar-frequency" onclick="alert('A');">LEAST USED</span><span class="pvore-sidebar-dropdown-arrow" id="pvore-sidebar-frequency-arrow" onclick="alert('A');">▼</span>
+				<span class="pvore-sidebar-dropdown" id="pvore-sidebar-frequency">
+					<span id="current-order" onclick="toggleOrderBy();">LEAST USED</span>
+					<div class="order-by-options">
+						<div class="order-by-option" id="sidebar-order-1" onclick="orderBy('sidebar-order-1');">MOST USED</div>
+						<div class="order-by-option" id="sidebar-order-2" onclick="orderBy('sidebar-order-2');">ALPHABETICAL</div>
+					</div>
+				</span>
+				<span class="pvore-sidebar-dropdown-arrow" id="pvore-sidebar-frequency-arrow" onclick="toggleOrderBy();">▼</span>
 				<span class="pvore-sidebar-dropdown" id="pvore-sidebar-viewtype" onclick="changeView()">LIST VIEW</span><span class="pvore-sidebar-dropdown-arrow" id="pvore-sidebar-viewtype-arrow" onclick="changeView()">▼</span>
 				<div class="pvore-sidebar-dropdown-menu">
 				</div>

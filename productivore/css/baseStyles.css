@@ -168,15 +168,34 @@ hr.thick{
 
 
 .pvore-sidebar-dropdown{
-	top: 2px; background-color: #333; padding: 5px; text-align: center;	cursor: pointer; vertical-align: middle; line-height: 20px;	position: relative; 
+	top: 2px; background-color: #333; padding: 5px; text-align: center;	cursor: pointer; vertical-align: middle; line-height: 20px;	position: relative; z-index: 19;
 	padding-left: 7px; padding-right: 7px; 
-	-moz-border-radius: 3px; border-radius: 10px 0 0 10px;
+	-moz-border-radius: 0 10px 10px 0; border-radius: 10px 0 0 10px;
+	border-right: 1px solid #FFF;
 }
 
 .pvore-sidebar-dropdown-arrow{
 	top: 2px; background-color: #333; padding: 5px; text-align: center;	cursor: pointer; vertical-align: middle; line-height: 20px;	position: relative; 
 	padding-left: 5px; padding-right: 5px;
-	-moz-border-radius: 3px; border-radius: 0 10px 10px 0;
+	-moz-border-radius: 0 10px 10px 0; border-radius: 0 10px 10px 0;
+	border-left: 1px solid #FFF;
+	z-index: 19;
+}
+
+.order-by-options{
+	position: absolute;
+	top: -45px; left: 1px;
+	padding-right: 11px;
+	padding-left: 12px;
+	padding-bottom: 10px;
+	padding-top: 5px;
+	background-color: #666;
+	z-index: -1;
+	-moz-border-radius: 0 10px 0 10px; border-radius: 10px 10px 0 0;
+}
+
+.order-by-option{
+	border-bottom: 1px solid #AAA;
 }
 
 #pvore-sidebar-frequency{
@@ -188,11 +207,11 @@ hr.thick{
 }
 
 #pvore-sidebar-frequency-arrow{
-	left: -9px;
+	left: -10px;
 }
 
 #pvore-sidebar-viewtype-arrow{
-	left: 1px;
+	left: 0px;
 }
 
 .pvore-sidebar-app-hr-container{

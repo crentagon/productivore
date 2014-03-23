@@ -8,28 +8,11 @@
 $(document).ready(function() {
 	showSidebar();
 	
-	// $("#sidebar-gridview").hide(); $("#sidebar-listview").show(); $("#pvore-sidebar-viewtype").text("LIST VIEW"); //Show listview
-	// $("#sidebar-gridview").show(); $("#sidebar-listview").hide(); //Show gridview
+	// toggleOrderBy();
+	// changeView(); //It's list view by default. Uncomment to switch to grid view.
+	orderBy('sidebar-order-2'); //It has a weird arrangement by default. Uncomment for alphabetical.
+	// orderBy('sidebar-order-1'); //It has a weird arrangement by default. Uncomment for "most used".
 	
-	// sidebarViewBy('grid');
-	// sidebarViewBy('list');
-	// changeView();
-	// changeView();
-	// alert($('.pvore-sidebar-app-container').attr('id'));
-	changeView();
-	// alert($('.pvore-sidebar-app-container').attr('id'));
-	// alert($('.pvore-sidebar-app-container').attr('id'));
-	changeView();
-	changeView();
-	// changeView();
-	changeView();
-	
-	// alert($('.pvore-sidebar-app-container').attr('id'));
-	
-	sidebarOrderBy(C_ALPHA, C_DESC);
-	sidebarOrderBy(C_ALPHA, C_DESC);
-	sidebarOrderBy(C_FREQ, C_ASC);
-	sidebarOrderBy(C_FREQ, C_DESC);
 	//Notification div width
 	$.each($('.appling-icon-notification'),
 		function (){
@@ -51,12 +34,14 @@ $(document).ready(function() {
 		$('.pvore-sidebar-app-title').each(function(){
 			if($(this).text().search(searchParam) < 0){
 				$(this).parent("div").hide();
-				$(this).parent("div").next().hide();
+				if($(this).attr('class') == 'pvore-sidebar-app-title appling-name-list')
+					$(this).parent("div").next().hide();
 				
 			}
 			else{
 				$(this).parent("div").show();
-				$(this).parent("div").next().show();
+				if($(this).attr('class') == 'pvore-sidebar-app-title appling-name-list')
+					$(this).parent("div").next().show();
 			}
 		});
 	});
@@ -69,6 +54,43 @@ $(document).ready(function() {
 	// );
 });
 
+function toggleOrderBy(){
+	
+	if($("#pvore-sidebar-frequency-arrow").text() == '▲'){
+		$("#pvore-sidebar-frequency-arrow").text("▼");
+		$('.order-by-options').toggle();
+		// $('.order-by-options').animate({'display': 'none'}, C_SIDEBARSPEED);
+	} else{
+		$("#pvore-sidebar-frequency-arrow").text("▲");
+		$('.order-by-options').toggle();
+		// $('.order-by-options').show().animate({'height': '100%'}, C_SIDEBARSPEED);
+		// $('.order-by-options').show("slide", { direction: "down" }, 1000);
+		
+	}
+}
+
+function orderBy(idTag){
+	// alert($('#'+idTag).text()+"<<");
+	if($('#'+idTag).text() == 'ALPHABETICAL'){
+		sidebarOrderBy(C_ALPHA, C_DESC);
+		$('#current-order').text('ALPHABETICAL');
+		$('#sidebar-order-1').text('LEAST USED');
+		$('#sidebar-order-2').text('MOST USED');
+		toggleOrderBy();
+	} else if($('#'+idTag).text() == 'LEAST USED'){
+		sidebarOrderBy(C_FREQ, C_ASC);
+		$('#current-order').text('LEAST USED');
+		$('#sidebar-order-1').text('ALPHABETICAL');
+		$('#sidebar-order-2').text('MOST USED');
+		toggleOrderBy();
+	} else if($('#'+idTag).text() == 'MOST USED'){
+		sidebarOrderBy(C_FREQ, C_DESC);
+		$('#current-order').text('MOST USED');
+		$('#sidebar-order-1').text('ALPHABETICAL');
+		$('#sidebar-order-2').text('LEAST USED');
+		toggleOrderBy();
+	}
+}
 
 function sidebarOrderBy(parameter, order){
 	var appElement = '.pvore-sidebar-app';
@@ -84,7 +106,7 @@ function sidebarOrderBy(parameter, order){
 	}
 
 	appCount = $(appElement).length;
-	// alert(appCount);
+	alert(appCount);
 	
 	var sortedApplings = new Array();
 	
