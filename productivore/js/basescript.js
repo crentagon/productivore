@@ -6,10 +6,10 @@
 	var C_SIDEBARSPEED = 256;
 
 $(document).ready(function() {
-	showSidebar();
+	// showSidebar();
 	
 	// toggleOrderBy();
-	// changeView(); //It's list view by default. Uncomment to switch to grid view.
+	changeView(); //It's list view by default. Uncomment to switch to grid view.
 	orderBy('sidebar-order-2'); //It has a weird arrangement by default. Uncomment for alphabetical.
 	// orderBy('sidebar-order-1'); //It has a weird arrangement by default. Uncomment for "most used".
 	
@@ -106,7 +106,7 @@ function sidebarOrderBy(parameter, order){
 	}
 
 	appCount = $(appElement).length;
-	alert(appCount);
+	// alert(appCount);
 	
 	var sortedApplings = new Array();
 	
