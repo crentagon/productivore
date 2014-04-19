@@ -6,11 +6,16 @@
 	var C_SIDEBARSPEED = 256;
 
 $(document).ready(function() {
+
+	//Set the orderby and the viewby
+	setOrderBy();
+	setViewBy();
+	
 	// showSidebar();
 	
 	// toggleOrderBy();
-	changeView(); //It's list view by default. Uncomment to switch to grid view.
-	orderBy('sidebar-order-2'); //It has a weird arrangement by default. Uncomment for alphabetical.
+	// changeView(); //It's list view by default. Uncomment to switch to grid view.
+	// orderBy('sidebar-order-2'); //It has a weird arrangement by default. Uncomment for alphabetical.
 	// orderBy('sidebar-order-1'); //It has a weird arrangement by default. Uncomment for "most used".
 	
 	//Notification div width
@@ -53,6 +58,27 @@ $(document).ready(function() {
 		// }
 	// );
 });
+
+function setOrderBy(){
+	if($('#orderBySettings').val() == 1){
+		orderBy('sidebar-order-2');
+	}
+	else if($('#orderBySettings').val() == 2){
+		orderBy('sidebar-order-1');
+	}
+	else if($('#orderBySettings').val() == 3){
+		toggleOrderBy();
+	}
+	toggleOrderBy();
+}
+
+function setViewBy(){
+	// alert($('#viewBySettings').val());
+	if($('#viewBySettings').val() == 5){
+		changeView();
+	}
+	$("#pvore-sidebar-viewtype-arrow").text("▼");
+}
 
 function toggleOrderBy(){
 	

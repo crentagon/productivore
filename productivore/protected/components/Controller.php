@@ -23,59 +23,26 @@ class Controller extends CController
 	
 	public $applings=array();	
 	
-	public function populateApplings(){
-		$this->applings[0]['name'] = 'Task List';
-		$this->applings[0]['message'] = '3/5 tasks completed today.';
-		$this->applings[0]['description'] = 'Manage your to-do.';
-		$this->applings[0]['url'] = 'task';
-		$this->applings[0]['image'] = 'tasks';
-		$this->applings[0]['notifCount'] = 0;
-		$this->applings[0]['accessCount'] = 0;
-		
-		$this->applings[1]['name'] = 'Event Planner';
-		$this->applings[1]['message'] = '2/4 events for this week.';
-		$this->applings[1]['description'] = 'Organize your life.';
-		$this->applings[1]['url'] = 'event';
-		$this->applings[1]['image'] = 'calendar';
-		$this->applings[1]['notifCount'] = 0;
-		$this->applings[1]['accessCount'] = 5;
-		
-		$this->applings[2]['name'] = 'Budget Tracker';
-		$this->applings[2]['message'] = 'You\'ve spent $100 so far today.';
-		$this->applings[2]['description'] = 'Know how your money flows.';
-		$this->applings[2]['url'] = 'budget';
-		$this->applings[2]['image'] = 'money';
-		$this->applings[2]['notifCount'] = 0;
-		$this->applings[2]['accessCount'] = 4;
-		
-		$this->applings[3]['name'] = 'Game Records';
-		$this->applings[3]['description'] = 'Your virtual achievements.';
-		$this->applings[3]['url'] = 'game';
-		$this->applings[3]['image'] = 'gamepad';
-		$this->applings[3]['notifCount'] = 0;
-		$this->applings[3]['accessCount'] = 3;
+	public $sidebarInfo=array();
 	
-		$this->applings[4]['name'] = 'Life Achievements';
-		$this->applings[4]['description'] = 'Your life achievments.';
-		$this->applings[4]['url'] = 'budget';
-		$this->applings[4]['notifCount'] = 0;
-		$this->applings[4]['image'] = 'trophy';
-		$this->applings[4]['accessCount'] = 2;
+	public function populateApplings(){	
+		$c_orderByFieldId = 1;
+		$c_viewTypeFieldId = 2;
+		$userId = 1;
+		$applingId = 1;
 		
-		$this->applings[5]['name'] = 'Personal Journal';
-		$this->applings[5]['message'] = 'You haven\'t written anything today!';
-		$this->applings[5]['description'] = 'Your secrets are safe with me.';
-		$this->applings[5]['url'] = 'brain';
-		$this->applings[5]['image'] = 'book';
-		$this->applings[5]['notifCount'] = 0;
-		$this->applings[5]['accessCount'] = 1;
+		$userApplings = new SidebarHelper;
 		
-		$this->applings[6]['name'] = 'Sleep Manager';
-		$this->applings[6]['description'] = 'Yawn.';
-		$this->applings[6]['url'] = 'budget';
-		$this->applings[6]['notifCount'] = 0;
-		$this->applings[6]['image'] = 'cloud';
-		$this->applings[6]['accessCount'] = 0;
+		$this->applings = $userApplings->readApplings_byUserId($userId);	
 		
+		$this->sidebarInfo['orderby'] = $userApplings->read_settingValues_byFieldId($c_orderByFieldId);
+		$this->sidebarInfo['viewtypes'] = $userApplings->read_settingValues_byFieldId($c_viewTypeFieldId);
+		$this->sidebarInfo['settings'] = $userApplings->readSidebarSettings_byUserId($userId);
+		
+		// echo '<pre>';
+		// print_r($this->sidebarInfo);
+		// die();
+		
+		// $userApplings->update_settingValues_byUserId($userId, $applingId, $this->sidebarInfo['settings']);
 	}
 }

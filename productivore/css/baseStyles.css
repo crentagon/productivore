@@ -191,11 +191,13 @@ hr.thick{
 	padding-top: 5px;
 	background-color: #666;
 	z-index: -1;
+	display: none;
 	-moz-border-radius: 0 10px 0 10px; border-radius: 10px 10px 0 0;
 }
 
 .order-by-option{
 	border-bottom: 1px solid #AAA;
+	display: block;
 }
 
 #pvore-sidebar-frequency{

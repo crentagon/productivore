@@ -42,7 +42,6 @@
 						accessCount="<?echo $appling['accessCount']?>"
 						baseId="appling-<?echo $applingid?>">
 						<?if($appling['notifCount'] != 0):?>
-						
 							<div class="appling-icon-notification"><?echo $appling['notifCount']?></div>
 						<?endif;?>
 						<div class="pvore-sidebar-app-image">
@@ -68,11 +67,15 @@
 			</div>
 			<div class="pvore-sidebar-options">
 				<span class="pvore-sidebar-dropdown" id="pvore-sidebar-frequency">
+				
+					<?//Note that the following hidden inputs are displaying the field_value_map_id.?>
+					<input type="hidden" value="<?echo $this->sidebarInfo['settings'][1]?>" id="orderBySettings"/>
+					<input type="hidden" value="<?echo $this->sidebarInfo['settings'][2]?>" id="viewBySettings"/>				
 					<span id="current-order" onclick="toggleOrderBy();">LEAST USED</span>
-					<div class="order-by-options">
+					<span class="order-by-options">
 						<div class="order-by-option" id="sidebar-order-1" onclick="orderBy('sidebar-order-1');">MOST USED</div>
 						<div class="order-by-option" id="sidebar-order-2" onclick="orderBy('sidebar-order-2');">ALPHABETICAL</div>
-					</div>
+					</span>
 				</span>
 				<span class="pvore-sidebar-dropdown-arrow" id="pvore-sidebar-frequency-arrow" onclick="toggleOrderBy();">▼</span>
 				<span class="pvore-sidebar-dropdown" id="pvore-sidebar-viewtype" onclick="changeView()">LIST VIEW</span><span class="pvore-sidebar-dropdown-arrow" id="pvore-sidebar-viewtype-arrow" onclick="changeView()">▼</span>
