@@ -266,3 +266,13 @@ hr.thick{
 	background-image: -o-linear-gradient(top, #ffffff, #f2f2f2);
 	background-image: linear-gradient(to bottom, #102386, #12193D);
 }
+
+.breadcrumbs-container a:hover{
+	color: #EAEAEA;
+	text-decoration: none;
+}
+
+.breadcrumbs-container a{
+	color: #0888FF;
+	text-decoration: none;
+}
