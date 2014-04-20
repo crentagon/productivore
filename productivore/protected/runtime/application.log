@@ -861,3 +861,35 @@ Stack trace:
 #5 {main}
 REQUEST_URI=/productivore/productivore/site/yeah
 ---
+2014/04/20 08:35:03 [error] [php] Undefined offset: 0 (K:\Sites\productivore\productivore\protected\models\helpers\MainHelper.php:50)
+Stack trace:
+#0 unknown(0): SiteController->actionUpdate_sidebarFields()
+#1 K:\Sites\productivore\Yii-1_1_14\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#2 K:\Sites\productivore\Yii-1_1_14\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#3 K:\Sites\productivore\Yii-1_1_14\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 K:\Sites\productivore\Yii-1_1_14\framework\web\CController.php(286): SiteController->runAction()
+#5 K:\Sites\productivore\Yii-1_1_14\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#6 K:\Sites\productivore\Yii-1_1_14\framework\web\CWebApplication.php(282): SiteController->run()
+#7 K:\Sites\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 K:\Sites\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 K:\Sites\productivore\productivore\index.php(25): CWebApplication->run()
+REQUEST_URI=/productivore/productivore/site/update_sidebarfields?fieldid=2&valueid=3
+in K:\Sites\productivore\productivore\protected\models\helpers\MainHelper.php (50)
+in K:\Sites\productivore\productivore\protected\models\helpers\SidebarHelper.php (57)
+in K:\Sites\productivore\productivore\protected\controllers\SiteController.php (30)
+2014/04/20 22:30:38 [error] [php] Use of undefined constant Home - assumed 'Home' (K:\Sites\productivore\productivore\themes\bootstrap\views\layouts\main.php:112)
+Stack trace:
+#0 K:\Sites\productivore\Yii-1_1_14\framework\web\CController.php(784): SiteController->renderFile()
+#1 K:\Sites\productivore\productivore\protected\controllers\SiteController.php(19): SiteController->render()
+#2 K:\Sites\productivore\Yii-1_1_14\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#3 K:\Sites\productivore\Yii-1_1_14\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 K:\Sites\productivore\Yii-1_1_14\framework\web\CController.php(286): SiteController->runAction()
+#5 K:\Sites\productivore\Yii-1_1_14\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#6 K:\Sites\productivore\Yii-1_1_14\framework\web\CWebApplication.php(282): SiteController->run()
+#7 K:\Sites\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 K:\Sites\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 K:\Sites\productivore\productivore\index.php(25): CWebApplication->run()
+REQUEST_URI=/productivore/productivore/
+in K:\Sites\productivore\productivore\themes\bootstrap\views\layouts\main.php (112)
+in K:\Sites\productivore\productivore\protected\controllers\SiteController.php (19)
+in K:\Sites\productivore\productivore\index.php (25)

@@ -1,4 +1,5 @@
 ﻿<? /* @var $this Controller */ ?>
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
@@ -19,6 +20,8 @@
 </head>
 
 <body>
+	<input type="hidden" id="BASE_URL" value="<?echo BASE_URL?>"/>
+
 	<br/>
 	<?//The sidebar?>
 	<div class="pvore-dimmer" onclick="hideSidebar();"></div>
@@ -73,12 +76,12 @@
 					<input type="hidden" value="<?echo $this->sidebarInfo['settings'][2]?>" id="viewBySettings"/>				
 					<span id="current-order" onclick="toggleOrderBy();">LEAST USED</span>
 					<span class="order-by-options">
-						<div class="order-by-option" id="sidebar-order-1" onclick="orderBy('sidebar-order-1');">MOST USED</div>
-						<div class="order-by-option" id="sidebar-order-2" onclick="orderBy('sidebar-order-2');">ALPHABETICAL</div>
+						<div class="order-by-option" id="sidebar-order-1" onclick="orderBy('sidebar-order-1', true);">MOST USED</div>
+						<div class="order-by-option" id="sidebar-order-2" onclick="orderBy('sidebar-order-2', true);">ALPHABETICAL</div>
 					</span>
 				</span>
 				<span class="pvore-sidebar-dropdown-arrow" id="pvore-sidebar-frequency-arrow" onclick="toggleOrderBy();">▼</span>
-				<span class="pvore-sidebar-dropdown" id="pvore-sidebar-viewtype" onclick="changeView()">LIST VIEW</span><span class="pvore-sidebar-dropdown-arrow" id="pvore-sidebar-viewtype-arrow" onclick="changeView()">▼</span>
+				<span class="pvore-sidebar-dropdown" id="pvore-sidebar-viewtype" onclick="changeView(true)">LIST VIEW</span><span class="pvore-sidebar-dropdown-arrow" id="pvore-sidebar-viewtype-arrow" onclick="changeView(true)">▼</span>
 				<div class="pvore-sidebar-dropdown-menu">
 				</div>
 				<!--div class="dropdown">
@@ -99,15 +102,27 @@
 	<?//The main content?>
 	<div class="super-container"> <?//For quick modification of Bootstrap's properties?>
 		<div class="container">
-			<div class="navbar"><!--navbar-->
-			  <div class="navbar-inner">
+			<div class="breadcrumbs-container">
+			<?
+			if(!empty($this->breadcrumbs)){
+				$this->widget('zii.widgets.CBreadcrumbs', array(
+					'links'=>$this->breadcrumbs,
+				));
+			}
+			else{
+				echo '<a href="'.BASE_URL.'">Productivore</a>';
+			}
+			?>
+			</div>
+			<div class="navbar navbar-inverse"><!--navbar-->
+			  <div class="navbar-inner navbar-inverse">
 				<a class="btn btn-navbar collapsed" data-toggle="collapse" data-target="#yii_bootstrap_collapse_0">
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
 				<a class="brand" href="#">Title</a>
-				<div class="nav-collapse collapse" id="yii_bootstrap_collapse_0" style="height:0px">
+				<div class="nav-collapse collapse navbar-inverse" id="yii_bootstrap_collapse_0" style="height:0px">
 					<ul id="yw0" class="nav">
 						<li><a href="#">Home</a></li>
 						<li><a href="#">Link</a></li>
@@ -123,7 +138,7 @@
 							</ul>
 						</li>
 					</ul>
-					<form class="navbar-search pull-left" action=""><input type="text" class="search-query span2" placeholder="Search"></form>
+					<form class="navbar-search navbar-inverse pull-left" action=""><input type="text" class="search-query span2" placeholder="Search"></form>
 					<ul class="pull-right nav" id="yw2">
 						<li><a href="#">Link</a></li>
 						<li class="dropdown">

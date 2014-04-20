@@ -4,13 +4,19 @@
 	var C_ALPHA = 0;
 	var C_FREQ = 1;
 	var C_SIDEBARSPEED = 256;
-
+	// var C_WINDOWLOCATION = window.location;
+	// var C_BASEURL = C_WINDOWLOCATION.protocol + "//" + C_WINDOWLOCATION.host + "/" + C_WINDOWLOCATION.pathname.split('/')[1]+"/";
+	var C_BASEURL = '';
+	
 $(document).ready(function() {
+	C_BASEURL = $('#BASE_URL').val();
 
 	//Set the orderby and the viewby
 	setOrderBy();
 	setViewBy();
 	
+	//Tests:
+	// updateSidebarSettings(1, 3);
 	// showSidebar();
 	
 	// toggleOrderBy();
@@ -61,10 +67,10 @@ $(document).ready(function() {
 
 function setOrderBy(){
 	if($('#orderBySettings').val() == 1){
-		orderBy('sidebar-order-2');
+		orderBy('sidebar-order-2', false);
 	}
 	else if($('#orderBySettings').val() == 2){
-		orderBy('sidebar-order-1');
+		orderBy('sidebar-order-1', false);
 	}
 	else if($('#orderBySettings').val() == 3){
 		toggleOrderBy();
@@ -72,10 +78,33 @@ function setOrderBy(){
 	toggleOrderBy();
 }
 
+function updateSidebarSettings(fieldid, valueid){
+	var xmlhttp;
+	
+	if (window.XMLHttpRequest)
+		xmlhttp=new XMLHttpRequest();
+	else
+		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	
+	// xmlhttp.onreadystatechange=function(){
+		// if (xmlhttp.readyState==4 && xmlhttp.status==200){
+			// $('#calendar_invisible').html(xmlhttp.responseText);
+			// get_firstday_bymonthyear(document.getElementById("table_year").innerHTML, document.getElementById("hidden_tablemonth").innerHTML, 0, 1);
+			// alert("Updated!");
+		// }
+		// else{
+			// alert("Updating...: "+fieldid+">>>"+valueid);
+		// }
+	// }
+	
+	xmlhttp.open("GET", C_BASEURL+"/site/update_sidebarfields?fieldid="+fieldid+"&valueid="+valueid,true);
+	xmlhttp.send();
+}
+
 function setViewBy(){
 	// alert($('#viewBySettings').val());
 	if($('#viewBySettings').val() == 5){
-		changeView();
+		changeView(false);
 	}
 	$("#pvore-sidebar-viewtype-arrow").text("▼");
 }
@@ -95,27 +124,35 @@ function toggleOrderBy(){
 	}
 }
 
-function orderBy(idTag){
+function orderBy(idTag, willUpdate){
 	// alert($('#'+idTag).text()+"<<");
+	var fieldid = 0;
+	var valueid = 0;
 	if($('#'+idTag).text() == 'ALPHABETICAL'){
+		fieldid = 1; valueid = 1; //In the setting_field_value_maps table, orderby = 1 and alphabetical = 1
 		sidebarOrderBy(C_ALPHA, C_DESC);
 		$('#current-order').text('ALPHABETICAL');
 		$('#sidebar-order-1').text('LEAST USED');
 		$('#sidebar-order-2').text('MOST USED');
 		toggleOrderBy();
 	} else if($('#'+idTag).text() == 'LEAST USED'){
+		fieldid = 1; valueid = 3; //In the setting_field_value_maps table, orderby = 1 and least used = 3
 		sidebarOrderBy(C_FREQ, C_ASC);
 		$('#current-order').text('LEAST USED');
 		$('#sidebar-order-1').text('ALPHABETICAL');
 		$('#sidebar-order-2').text('MOST USED');
 		toggleOrderBy();
 	} else if($('#'+idTag).text() == 'MOST USED'){
+		fieldid = 1; valueid = 2; //In the setting_field_value_maps table, orderby = 1 and most used = 2
 		sidebarOrderBy(C_FREQ, C_DESC);
 		$('#current-order').text('MOST USED');
 		$('#sidebar-order-1').text('ALPHABETICAL');
 		$('#sidebar-order-2').text('LEAST USED');
 		toggleOrderBy();
 	}
+	
+	if(willUpdate && fieldid != 0 && valueid != 0)
+		updateSidebarSettings(fieldid, valueid);
 }
 
 function sidebarOrderBy(parameter, order){
@@ -206,9 +243,10 @@ function sidebarOrderBy(parameter, order){
 	
 }
 
-function changeView(){
+function changeView(willUpdate){
 	if($("#pvore-sidebar-viewtype").text() == 'GRID VIEW'){
-		
+		if(willUpdate)
+			updateSidebarSettings(2,4); //In the setting_field_value_maps table, viewtype = 2 and listview = 4
 		$.each($('.pvore-sidebar-app-grid'),
 			function (){
 				var baseId = $(this).attr('baseId');
@@ -227,7 +265,8 @@ function changeView(){
 		$('.appling-hr').show();
 	}
 	else{
-		
+		if(willUpdate)
+			updateSidebarSettings(2,5); //In the setting_field_value_maps table, viewtype = 2 and grid = 5
 		$.each($('.pvore-sidebar-app'),
 			function (){
 				var baseId = $(this).attr('baseId');

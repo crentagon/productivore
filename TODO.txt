@@ -20,7 +20,8 @@ To-do (Layouts):
 	
 	[x] Sliding menu options must come from the DB.
 	[x] Back-end for saving options on click
-	- Front-end AJAX shit of options on click
+	[x] Front-end AJAX shit of options on click
+	- Bread crumbs
 	- Main page layouting and all them front-end shit.
 	- Optimization (see YSlow)
 	[x] Plan the screens of each module

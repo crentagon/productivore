@@ -34,7 +34,7 @@ hr.thick{
 	top: 50%; left: 0px; width: 35px; height: 50px; z-index: 15; position: fixed;
 	text-align: center; vertical-align: middle; line-height: 50px;
 	-moz-border-radius: 0 0 6px 6px; border-radius: 0 6px 6px 0;
-	background-color: #000; color: white;
+	background-color: #000; color: #EFEFEF;
 	margin-top: -25px;
 	cursor: pointer;
 }
@@ -42,7 +42,7 @@ hr.thick{
 
 .pvore-sidebar-button:hover{
 	border: 2px solid black;
-	background-color: white;
+	background-color: #EFEFEF;
 	color: black;
 }
 
@@ -51,7 +51,7 @@ hr.thick{
 	top: 50%; left: 0%; width: 35px; height: 50px; z-index: 17; position: fixed;
 	text-align: center; vertical-align: middle; line-height: 50px;
 	-moz-border-radius: 0 0 6px 6px; border-radius: 0 6px 6px 0;
-	background-color: #FFF; color: black;
+	background-color: #FEFEFE; color: black;
 	margin-top: -25px; float: left;
 	cursor: pointer; display: none; 
 }
@@ -59,13 +59,13 @@ hr.thick{
 .pvore-minima:hover{
 	/*
 	background-color: black;
-	color: white;
+	color: #EFEFEF;
 	*/
 }
 
 .pvore-sidebar-container{
 	top: 0px; left: -30%; width: 30%; height: 100%; z-index: 16; position: fixed;
-	background-color: #FFF;
+	background-color: #FEFEFE;
 	padding-left: 1%;
 	padding-right: 1%;
 }
@@ -75,7 +75,7 @@ hr.thick{
 	padding-left: 5%;
 	padding-right: 5%;
 	padding-top: 5%;
-	background-color: #FFF;
+	background-color: #FEFEFE;
 	padding-bottom: 3%;
 }
 
@@ -107,7 +107,7 @@ hr.thick{
 	padding: 3px;
 	text-align: center;
 	font-size: 70%;
-	color: #FFF;
+	color: #FEFEFE;
 	font-weight: bold;
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
@@ -120,7 +120,7 @@ hr.thick{
 .pvore-sidebar-app{
 	-moz-border-radius: 5px 5px 5px 5px; border-radius: 5px 5px 5px 5px;
 	height: 75px; width: 100%; cursor: pointer;
-	border: 1px solid #FFF;
+	border: 1px solid #FEFEFE;
 	padding: 1%;
 }
 
@@ -129,7 +129,7 @@ hr.thick{
 	text-align: center; vertical-align: middle; line-height: 10px; position: relative;
 	height: 75px; width: 30%; cursor: pointer;
 	margin-left: 3%; margin-top: 3%; padding-top: 5%;
-	border: 1px solid #FFF;
+	border: 1px solid #FEFEFE;
 	float: left;
 }
 
@@ -157,7 +157,7 @@ hr.thick{
 	padding: 0px;
 	text-align: center;
 	-moz-border-radius: 10px 10px 10px 10px; border-radius: 10px 10px 10px 10px;
-	background-color: #e74c3c; color: white;
+	background-color: #e74c3c; color: #EFEFEF;
 	position: absolute; left: 11%; margin-top: 45px;
 }
 
@@ -171,14 +171,14 @@ hr.thick{
 	top: 2px; background-color: #333; padding: 5px; text-align: center;	cursor: pointer; vertical-align: middle; line-height: 20px;	position: relative; z-index: 19;
 	padding-left: 7px; padding-right: 7px; 
 	-moz-border-radius: 0 10px 10px 0; border-radius: 10px 0 0 10px;
-	border-right: 1px solid #FFF;
+	border-right: 1px solid #FEFEFE;
 }
 
 .pvore-sidebar-dropdown-arrow{
 	top: 2px; background-color: #333; padding: 5px; text-align: center;	cursor: pointer; vertical-align: middle; line-height: 20px;	position: relative; 
 	padding-left: 5px; padding-right: 5px;
 	-moz-border-radius: 0 10px 10px 0; border-radius: 0 10px 10px 0;
-	border-left: 1px solid #FFF;
+	border-left: 1px solid #FEFEFE;
 	z-index: 19;
 }
 
@@ -230,7 +230,7 @@ hr.thick{
 
 .appling-name-list{
 	height: 100%; width: 80%;
-	border-left: 1px solid #FFF;
+	border-left: 1px solid #FEFEFE;
 	float: left;
 	padding-left: 8%;
 }
@@ -240,6 +240,29 @@ hr.thick{
 	padding: 5px;
 	text-align: center;
 	-moz-border-radius: 10px 10px 10px 10px; border-radius: 10px 10px 10px 10px;
-	background-color: #e74c3c; color: white;
+	background-color: #e74c3c; color: #EFEFEF;
 	position: absolute; left: 15px; top:2px;
+}
+
+/*Navbar*/
+
+.breadcrumbs-container{
+	-moz-border-radius: 8px 8px 0 0;
+	border-radius: 8px 8px 0 0;
+	-webkit-border-radius: 8px 8px 0 0;
+	border-bottom: 1px solid #AFAFAF;
+	padding: 5px;
+	padding-left: 20px;
+	padding-right: 20px;
+	height: 30px;
+	background-color: #1E254E;
+	color: #EFEFEF;
+	font-weight: bold;
+	
+	background-color: #fafafa;
+	background-image: -moz-linear-gradient(top, #ffffff, #f2f2f2);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#f2f2f2));
+	background-image: -webkit-linear-gradient(top, #ffffff, #f2f2f2);
+	background-image: -o-linear-gradient(top, #ffffff, #f2f2f2);
+	background-image: linear-gradient(to bottom, #102386, #12193D);
 }
