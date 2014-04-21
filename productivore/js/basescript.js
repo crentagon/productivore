@@ -308,9 +308,9 @@ function changeView(willUpdate){
 
 function showSidebar(){
 	
-	$('.pvore-dimmer').fadeIn(C_SIDEBARSPEED/2);
 	$('.pvore-sidebar-button').fadeOut(C_SIDEBARSPEED/4);
 	$('.pvore-minima').fadeIn(C_SIDEBARSPEED);
+	$('.pvore-dimmer').fadeIn(C_SIDEBARSPEED/4);
 	// $('.pvore-sidebar-container').fadeIn(C_SIDEBARSPEED);
 	// $('.pvore-minima').show().animate({'left': '30%', 'opacity': '1'}, C_SIDEBARSPEED);
 	// $('.pvore-minima').show().animate({'opacity': '1'}, C_SIDEBARSPEED);
