@@ -3,7 +3,7 @@
 	var C_DESC = 0;
 	var C_ALPHA = 0;
 	var C_FREQ = 1;
-	var C_SIDEBARSPEED = 256;
+	var C_SIDEBARSPEED = 386;
 	// var C_WINDOWLOCATION = window.location;
 	// var C_BASEURL = C_WINDOWLOCATION.protocol + "//" + C_WINDOWLOCATION.host + "/" + C_WINDOWLOCATION.pathname.split('/')[1]+"/";
 	var C_BASEURL = '';
@@ -308,7 +308,7 @@ function changeView(willUpdate){
 
 function showSidebar(){
 	
-	$('.pvore-dimmer').fadeIn(C_SIDEBARSPEED);
+	$('.pvore-dimmer').fadeIn(C_SIDEBARSPEED/2);
 	$('.pvore-sidebar-button').fadeOut(C_SIDEBARSPEED/4);
 	$('.pvore-minima').fadeIn(C_SIDEBARSPEED);
 	// $('.pvore-sidebar-container').fadeIn(C_SIDEBARSPEED);
@@ -323,7 +323,7 @@ function hideSidebar(){
 	$('.pvore-dimmer').fadeOut(C_SIDEBARSPEED/2);
 	$('.pvore-sidebar-button').fadeIn(C_SIDEBARSPEED/2);
 	$('.pvore-minima').fadeOut(C_SIDEBARSPEED);
-	$('.pvore-sidebar-container').animate({'left': '-100%'}, C_SIDEBARSPEED).fadeOut(C_SIDEBARSPEED/2);
+	$('.pvore-sidebar-container').animate({'left': '-100%'}, C_SIDEBARSPEED).fadeOut(C_SIDEBARSPEED);
 	// $('.pvore-sidebar-container').fadeOut(C_SIDEBARSPEED);
 	/*
 	// $('.pvore-sidebar-container').animate({'left': '-30%'}, C_SIDEBARSPEED).fadeOut(C_SIDEBARSPEED/2);
