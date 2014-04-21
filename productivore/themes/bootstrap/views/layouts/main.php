@@ -9,6 +9,7 @@
 	<!--Stylesheets-->
     <link rel="stylesheet" type="text/css" href="<? echo BASE_URL ?>/css/baseStyles.css" />
     <link rel="stylesheet" type="text/css" href="<? echo BASE_URL ?>/assets/font-awesome-4.0.3/css/font-awesome.min.css" />
+	<?/*<link rel="stylesheet" type="text/css" media="screen and (max-device-width: 480px)" href="<? echo BASE_URL ?>/css/baseStyles.css" />*/?>
 	
 	<!--Javascripts-->
 	<script type="text/javascript" src="<? echo BASE_URL ?>/js/jquery-2.1.0.min.js"></script>
@@ -25,9 +26,9 @@
 	<br/>
 	<?//The sidebar?>
 	<div class="pvore-dimmer" onclick="hideSidebar();"></div>
-	<div class="pvore-minima" onclick="hideSidebar();"><span class="fa fa-chevron-left fa-lg"></span></div>
 	<div class="pvore-sidebar-button" onclick="showSidebar();"><span class="fa fa-chevron-right fa-lg"></span></div>
 	<div class="pvore-sidebar-container">
+		<div class="pvore-minima" onclick="hideSidebar();"><span class="fa fa-chevron-left fa-lg"></span></div>
 		<div class="pvore-sidebar-content">
 			<div class="pvore-sidebar-search-container">
 				<form action=""><input type="text" class="search-query pvore-sidebar-search-input" id="pvore-sidebar-search" placeholder="Appling Search"></form>
@@ -116,6 +117,7 @@
 			</div>
 			<div class="navbar navbar-inverse"><!--navbar-->
 			  <div class="navbar-inner navbar-inverse">
+			  
 				<a class="btn btn-navbar collapsed" data-toggle="collapse" data-target="#yii_bootstrap_collapse_0">
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
@@ -156,6 +158,7 @@
 						</li>
 					</ul>
 				</div>
+			  
 			  </div>
 			</div><!--navbar-->
 			<? echo $content; ?>

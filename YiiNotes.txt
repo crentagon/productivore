@@ -17,7 +17,7 @@ Application Configuration
 		Specified in the main.php
 			array(
 				......
-				'components'=>array(
+				'components'=>array
 					......
 					'cache'=>array(
 						'class'=>'CMemCache',

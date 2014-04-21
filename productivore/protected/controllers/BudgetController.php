@@ -15,5 +15,5 @@ class BudgetController extends Controller
 		);
 		$this->render('index');
 	}
-
+	
 }

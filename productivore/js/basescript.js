@@ -307,17 +307,28 @@ function changeView(willUpdate){
 }
 
 function showSidebar(){
+	
 	$('.pvore-dimmer').fadeIn(C_SIDEBARSPEED);
-	$('.pvore-minima').show().animate({'left': '30%', 'opacity': '1'}, C_SIDEBARSPEED);
-	$('.pvore-sidebar-container').show().animate({'left': '0%', 'display': 'block'}, C_SIDEBARSPEED);
 	$('.pvore-sidebar-button').fadeOut(C_SIDEBARSPEED/4);
+	$('.pvore-minima').fadeIn(C_SIDEBARSPEED);
+	// $('.pvore-sidebar-container').fadeIn(C_SIDEBARSPEED);
+	// $('.pvore-minima').show().animate({'left': '30%', 'opacity': '1'}, C_SIDEBARSPEED);
+	// $('.pvore-minima').show().animate({'opacity': '1'}, C_SIDEBARSPEED);
+	$('.pvore-sidebar-container').show().animate({'left': '0%', 'display': 'block'}, C_SIDEBARSPEED);
+	/*
+	*/
 }
 
 function hideSidebar(){
 	$('.pvore-dimmer').fadeOut(C_SIDEBARSPEED/2);
-	$('.pvore-sidebar-container').animate({'left': '-30%'}, C_SIDEBARSPEED).fadeOut(C_SIDEBARSPEED/2);
-	$('.pvore-minima').animate({'left': '0%', 'opacity': '0'}, C_SIDEBARSPEED).fadeOut(C_SIDEBARSPEED/2);
 	$('.pvore-sidebar-button').fadeIn(C_SIDEBARSPEED/2);
+	$('.pvore-minima').fadeOut(C_SIDEBARSPEED);
+	$('.pvore-sidebar-container').animate({'left': '-100%'}, C_SIDEBARSPEED).fadeOut(C_SIDEBARSPEED/2);
+	// $('.pvore-sidebar-container').fadeOut(C_SIDEBARSPEED);
+	/*
+	// $('.pvore-sidebar-container').animate({'left': '-30%'}, C_SIDEBARSPEED).fadeOut(C_SIDEBARSPEED/2);
+	$('.pvore-minima').animate({'left': '0%', 'opacity': '0'}, C_SIDEBARSPEED).fadeOut(C_SIDEBARSPEED/2);
+	*/
 }
 
 // function 

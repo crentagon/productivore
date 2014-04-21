@@ -893,3 +893,13 @@ REQUEST_URI=/productivore/productivore/
 in K:\Sites\productivore\productivore\themes\bootstrap\views\layouts\main.php (112)
 in K:\Sites\productivore\productivore\protected\controllers\SiteController.php (19)
 in K:\Sites\productivore\productivore\index.php (25)
+2014/04/21 13:11:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "hey".' in K:\Sites\productivore\Yii-1_1_14\framework\web\CController.php:483
+Stack trace:
+#0 K:\Sites\productivore\Yii-1_1_14\framework\web\CController.php(270): CController->missingAction('hey')
+#1 K:\Sites\productivore\Yii-1_1_14\framework\web\CWebApplication.php(282): CController->run('hey')
+#2 K:\Sites\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController('budget/hey')
+#3 K:\Sites\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 K:\Sites\productivore\productivore\index.php(25): CApplication->run()
+#5 {main}
+REQUEST_URI=/productivore/productivore/budget/hey
+---

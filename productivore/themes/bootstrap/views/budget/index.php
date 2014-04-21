@@ -1,1 +1,1 @@
-Welcome to the Budgets Appling!
+Welcome to the Budgeting Appling!
