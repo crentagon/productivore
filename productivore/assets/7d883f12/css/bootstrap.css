@@ -8,6 +8,13 @@
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
  */
 
+ @font-face {
+    font-family: 'Roboto';
+	font-style: normal;
+    src: url('../fonts/Roboto.woff');
+    font-weight: 400;
+}
+ 
 .clearfix {
   *zoom: 1;
 }
@@ -223,7 +230,10 @@ textarea {
 
 body {
   margin: 0;
+  font-family: 'Roboto', Georgia, Times, serif;
+  /*	
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  */
   font-size: 14px;
   line-height: 20px;
   color: #333333;
@@ -1066,7 +1076,10 @@ input,
 button,
 select,
 textarea {
+  font-family: 'Roboto', Georgia, Times, serif;
+  /*
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  */
 }
 
 label {
@@ -4518,14 +4531,19 @@ input[type="submit"].btn.btn-mini {
   float: left;
   margin-top: 5px;
   margin-bottom: 0;
+  font-family: 'Roboto', Georgia, Times, serif;
+  font-size: 13px;
 }
 
 .navbar-search .search-query {
   padding: 4px 14px;
   margin-bottom: 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 13px;
   font-weight: normal;
+  */
+  font-family: 'Roboto', Georgia, Times, serif;
+  font-size: 13px;
   line-height: 1;
   -webkit-border-radius: 15px;
      -moz-border-radius: 15px;

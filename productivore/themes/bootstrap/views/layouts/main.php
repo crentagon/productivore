@@ -52,7 +52,7 @@
 							<span class="appling-icon fa fa-<?echo $appling['image']?> fa-2x"></span>
 						</div>
 						<div class="pvore-sidebar-app-title appling-name-list">
-							<b><?echo $appling['name']?></b><br/>
+							<?echo $appling['name']?><br/>
 							<em class="pvore-sidebar-app-description">
 							<?
 								if(isset($appling['message']))

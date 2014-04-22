@@ -903,3 +903,38 @@ Stack trace:
 #5 {main}
 REQUEST_URI=/productivore/productivore/budget/hey
 ---
+2014/04/22 11:06:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "fonts".' in K:\Sites\productivore\Yii-1_1_14\framework\web\CWebApplication.php:286
+Stack trace:
+#0 K:\Sites\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController('fonts')
+#1 K:\Sites\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 K:\Sites\productivore\productivore\index.php(25): CApplication->run()
+#3 {main}
+REQUEST_URI=/productivore/productivore/fonts/
+---
+2014/04/22 12:18:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/7d883f12/fonts/Roboto.woff".' in K:\Sites\productivore\Yii-1_1_14\framework\web\CWebApplication.php:286
+Stack trace:
+#0 K:\Sites\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/7d883f12...')
+#1 K:\Sites\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 K:\Sites\productivore\productivore\index.php(25): CApplication->run()
+#3 {main}
+REQUEST_URI=/productivore/productivore/assets/7d883f12/fonts/Roboto.woff
+HTTP_REFERER=http://localhost/productivore/productivore/
+---
+2014/04/22 12:19:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/7d883f12/fonts/Roboto.woff".' in K:\Sites\productivore\Yii-1_1_14\framework\web\CWebApplication.php:286
+Stack trace:
+#0 K:\Sites\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/7d883f12...')
+#1 K:\Sites\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 K:\Sites\productivore\productivore\index.php(25): CApplication->run()
+#3 {main}
+REQUEST_URI=/productivore/productivore/assets/7d883f12/fonts/Roboto.woff
+HTTP_REFERER=http://localhost/productivore/productivore/
+---
+2014/04/22 12:19:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/7d883f12/fonts/Roboto.woff".' in K:\Sites\productivore\Yii-1_1_14\framework\web\CWebApplication.php:286
+Stack trace:
+#0 K:\Sites\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/7d883f12...')
+#1 K:\Sites\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 K:\Sites\productivore\productivore\index.php(25): CApplication->run()
+#3 {main}
+REQUEST_URI=/productivore/productivore/assets/7d883f12/fonts/Roboto.woff
+HTTP_REFERER=http://localhost/productivore/productivore/
+---
