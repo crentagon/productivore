@@ -69,7 +69,7 @@ hr.thick{
 .pvore-sidebar-button{
 	top: 50%; left: 0px; width: 35px; height: 50px; z-index: 15; position: fixed;
 	text-align: center; vertical-align: middle; line-height: 50px;
-	-moz-border-radius: 0 0 6px 6px; border-radius: 0 6px 6px 0;
+	-moz-border-radius: 0 6px 6px 0; border-radius: 0 6px 6px 0; -webkit-border-radius: 0 6px 6px 0;
 	background-color: #000; color: #EFEFEF;
 	margin-top: -25px;
 	cursor: pointer;
@@ -86,7 +86,7 @@ hr.thick{
 .pvore-minima{
 	top: 50%; left: 100%; width: 35px; height: 50px; z-index: 17; position: absolute;
 	text-align: center; vertical-align: middle; line-height: 50px;
-	-moz-border-radius: 0 0 6px 6px; border-radius: 0 6px 6px 0;
+	-moz-border-radius: 0 6px 6px 0; border-radius: 0 6px 6px 0; -webkit-border-radius: 0 6px 6px 0;
 	background-color: #FEFEFE; color: black;
 	margin-top: -25px; float: left;
 	cursor: pointer; display: none; 
@@ -117,7 +117,7 @@ hr.thick{
 	.pvore-minima{
 		top: 50%; left: 100%; width: 35px; height: 50px; z-index: 17; position: absolute;
 		text-align: center; vertical-align: middle; line-height: 50px;
-		-moz-border-radius: 0 0 6px 6px; border-radius: 0 6px 6px 0;
+		-moz-border-radius: 0 6px 6px 0; border-radius: 0 6px 6px 0; -webkit-border-radius: 0 6px 6px 0;
 		background-color: #FEFEFE; color: black;
 		margin-top: -25px; float: left;
 		cursor: pointer; display: none; 
@@ -134,7 +134,7 @@ hr.thick{
 	.pvore-minima{
 		top: 50%; left: 100%; width: 35px; height: 50px; z-index: 17; position: absolute;
 		text-align: center; vertical-align: middle; line-height: 50px;
-		-moz-border-radius: 0 0 6px 6px; border-radius: 0 6px 6px 0;
+		-moz-border-radius: 0 6px 6px 0; border-radius: 0 6px 6px 0; -webkit-border-radius: 0 6px 6px 0;
 		background-color: #FEFEFE; color: black;
 		margin-top: -25px; float: left;
 		cursor: pointer; display: none; 
@@ -187,9 +187,8 @@ hr.thick{
 	top: 0%; width: 100%; height: 5%; position: relative;
 	padding: 3px;
 	text-align: center;
-	font-size: 70%;
+	font-size: 80%;
 	color: #FEFEFE;
-	font-weight: bold;
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
 	-khtml-user-select: none;
@@ -199,14 +198,14 @@ hr.thick{
 }
 
 .pvore-sidebar-app{
-	-moz-border-radius: 5px 5px 5px 5px; border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px; border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px;
 	height: 75px; width: 100%; cursor: pointer;
 	border: 1px solid #FEFEFE;
 	padding: 1%;
 }
 
 .pvore-sidebar-app-grid{
-	-moz-border-radius: 5px 5px 5px 5px; border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px; border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px;
 	text-align: center; vertical-align: middle; line-height: 10px; position: relative;
 	height: 75px; width: 30%; cursor: pointer;
 	margin-left: 3%; margin-top: 3%; padding-top: 5%;
@@ -237,7 +236,7 @@ hr.thick{
 	min-width: 18px; height: auto; width: auto; 
 	padding: 0px;
 	text-align: center;
-	-moz-border-radius: 10px 10px 10px 10px; border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px; border-radius: 10px 10px 10px 10px; -webkit-border-radius: 10px;
 	background-color: #e74c3c; color: #EFEFEF;
 	position: absolute; left: 11%; margin-top: 45px;
 }
@@ -251,7 +250,7 @@ hr.thick{
 .pvore-sidebar-dropdown{
 	top: 2px; background-color: #333; padding: 5px; text-align: center;	cursor: pointer; vertical-align: middle; line-height: 20px;	position: relative; z-index: 19;
 	padding-left: 7px; padding-right: 7px; 
-	-moz-border-radius: 0 10px 10px 0; border-radius: 10px 0 0 10px;
+	-moz-border-radius: 10px 0 0 10px; border-radius: 10px 0 0 10px; -webkit-border-radius: 10px 0 0 10px;
 	border-right: 1px solid #FEFEFE;
 }
 
@@ -273,7 +272,7 @@ hr.thick{
 	background-color: #666;
 	z-index: -1;
 	display: none;
-	-moz-border-radius: 0 10px 0 10px; border-radius: 10px 10px 0 0;
+	-moz-border-radius: 10px 10px 0 0; border-radius: 10px 10px 0 0; -webkit-border-radius: 10px 10px 0 0;
 }
 
 .order-by-option{
@@ -302,8 +301,7 @@ hr.thick{
 }
 
 .appling-name-grid{
-	font-size: 80%;
-	font-weight: bold;
+	font-size: 90%;
 	line-height: 15px;
 	position: relative;
 	top: 3px;
