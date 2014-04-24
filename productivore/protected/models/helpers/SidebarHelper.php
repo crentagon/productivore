@@ -49,11 +49,11 @@ class SidebarHelper extends MainHelper
 		return $newArray;
 	}
 	
-	public function read_settingValues_byFieldId($fieldId){
+	public function read_settingValues_byFieldId($fieldId = 1){
 		return parent::read_settingValues_byFieldId($fieldId);
 	}
 	
-	public function update_settingValues_byUserId($userId, $applingId, $valueArray = array()){
+	public function update_settingValues_byUserId($userId = 1, $applingId = 1, $valueArray = array()){
 		return parent::update_settingValues_byUserId($userId, $applingId, $valueArray);
 	}
 }

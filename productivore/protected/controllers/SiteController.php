@@ -2,9 +2,8 @@
 
 class SiteController extends Controller
 {
-
 	public function __construct(){
-		parent::__construct('site');
+		parent::__construct('events');
 		$this->populateApplings();
 	}
 
