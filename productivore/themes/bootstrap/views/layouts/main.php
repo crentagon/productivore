@@ -117,14 +117,39 @@
 			</div>
 			<div class="navbar navbar-inverse"><!--navbar-->
 			  <div class="navbar-inner navbar-inverse">
-			  
+				<!--The maximize icon on collapse-->
 				<a class="btn btn-navbar collapsed" data-toggle="collapse" data-target="#yii_bootstrap_collapse_0">
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="#">Title</a>
+				
+				<?/*a class="brand" href="#">Title</a*/?>
 				<div class="nav-collapse collapse navbar-inverse" id="yii_bootstrap_collapse_0" style="height:0px">
+					<ul class="nav">
+						<?foreach($this->navbar as $titleParent=>$urlParent):?>
+							<?if(is_array($urlParent)):?>
+								<li class="dropdown">
+									<a class="dropdown-toggle" data-toggle="dropdown" href="#"><?echo $titleParent?> <span class="caret"></span></a>
+									<ul class="dropdown-menu">
+										<?foreach($urlParent as $titleChild=>$urlChild):?>
+											<li><a href="<?echo BASE_URL.$urlChild?>"><?echo $titleChild?></a></li>
+										<?endforeach;?>
+									</ul>
+								</li>
+							<?else:?>
+								<li><a href="<?echo BASE_URL.$urlParent?>"><?echo $titleParent?></a></li>
+							<?endif;?>
+						<?endforeach;?>
+					</ul>
+					
+					<div class="pull-right nav" id="yw2">
+						<form class="navbar-search navbar-inverse pull-left" action="">
+							<input type="text" class="search-query span2" placeholder="Search">
+						</form>
+					</div>
+					<?/*
+					//Left-most bits
 					<ul id="yw0" class="nav">
 						<li><a href="#">Home</a></li>
 						<li><a href="#">Link</a></li>
@@ -140,7 +165,13 @@
 							</ul>
 						</li>
 					</ul>
+					*/?>
+					<?/*
+					//Search bar
 					<form class="navbar-search navbar-inverse pull-left" action=""><input type="text" class="search-query span2" placeholder="Search"></form>
+					*/?>
+					<?/*
+					//Right-most bits
 					<ul class="pull-right nav" id="yw2">
 						<li><a href="#">Link</a></li>
 						<li class="dropdown">
@@ -157,6 +188,7 @@
 							</ul>
 						</li>
 					</ul>
+					*/?>
 				</div>
 			  
 			  </div>

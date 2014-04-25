@@ -1,6 +1,1 @@
-<?php
-/* @var $this SiteController */
-
-$this->pageTitle=Yii::app()->name;
-?>
-
+Welcome to the Index Page!
