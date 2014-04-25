@@ -4,7 +4,8 @@ class YouController extends Controller
 {	
 	
 	public function __construct(){
-		parent::__construct('you');
+		$this->applingurl = 'you';
+		parent::__construct($this->applingurl);
 		$this->populateApplings();
 	}
 	

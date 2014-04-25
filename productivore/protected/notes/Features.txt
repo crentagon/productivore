@@ -3,9 +3,8 @@ Features:
 		Logout option must be available everywhere
 	Main Page		
 		Notifications - home, displays all the notifications and applings
-		Favorite Applings - displays all your favorite applings
+		Appling Manager - displays all applings, including access counts, notif counts, revoke myself access to the appling, is favorite, 
 		Control Panel - change e-mail, change password, change default frontpage
-		Appling List - mark an appling as favorite, revoke myself access to the appling (because I don't use it)
 	You
 		Achievements - kinda like your bucket list
 		Anticipate - what are you looking forward to?

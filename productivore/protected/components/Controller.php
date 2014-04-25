@@ -5,6 +5,14 @@
  */
 class Controller extends CController
 {
+	public function __construct(){
+		$mainHelper = new MainHelper;
+		$this->applingUrl = $mainHelper->get_applingUrl_byApplingId($this->applingId);
+		parent::__construct($this->applingUrl[0]['appling_url']);
+		$this->populateApplings();
+		$this->populateNavbar();
+	}
+	
 	/**
 	 * @var string the default layout for the controller view. Defaults to '//layouts/column1',
 	 * meaning using a single column layout. See 'protected/views/layouts/column1.php'.
@@ -27,6 +35,10 @@ class Controller extends CController
 	
 	public $navbar=array();
 	
+	public $applingUrl='';
+	
+	public $applingId = 0;
+	
 	public function populateApplings(){	
 		$c_orderByFieldId = 1;
 		$c_viewTypeFieldId = 2;
@@ -35,18 +47,55 @@ class Controller extends CController
 		
 		$userApplings = new SidebarHelper;
 		
-		$this->applings = $userApplings->getApplings_byUserId($userId);	
+		$this->applings = $userApplings->get_applings_byUserId($userId);	
 		
 		$this->sidebarInfo['orderby'] = $userApplings->get_settingValues_byFieldId($c_orderByFieldId);
 		$this->sidebarInfo['viewtypes'] = $userApplings->get_settingValues_byFieldId($c_viewTypeFieldId);
-		$this->sidebarInfo['settings'] = $userApplings->getSidebarSettings_byUserId($userId);
+		$this->sidebarInfo['settings'] = $userApplings->get_sidebarSettings_byUserId($userId);
 		
-		// echo '<pre>'; print_r($this->applings); die();
+		// $this->debugPrint($this->applings);
 	}
 	
 	public function populateNavbar(){
 		$returnArray = array();
 		
+		$mainHelper = new MainHelper;
+		$tempArray = $mainHelper->get_menuByApplingId($this->applingId);
+		
+		
+		foreach($tempArray as $menu){
+			if(!$menu['parent_menu_id']){
+				// echo 'got here!';
+				// $this->debugPrint($menu);
+				$returnArray[$menu['menu_name']] = $this->applingUrl[0]['appling_url'].'/'.$menu['menu_url'];
+			}
+			else{
+				//Get menu_name given the parent_menu_id
+				$parentName = '';
+				foreach($tempArray as $submenu){
+					if($submenu['menu_id'] == $menu['menu_id']){
+						$parentName = $submenu['menu_name'];
+						break;
+					}				
+				}
+				echo $parentName;
+				$this->debugPrint($returnArray);
+				if(!is_array($returnArray[$parentName])){
+					$returnArray[$parentName] = 
+						array($menu['menu_name'] => $this->applingUrl.'/'.$menu['menu_url']);
+				}
+				else{
+					array_push(
+						$returnArray[$parentName],
+						array($menu['menu_name']=>$this->applingUrl.'/'.$menu['menu_url'])
+					);
+				}
+			}
+		}
+		
+		$this->debugPrint($returnArray);
+		
+		/*
 		$returnArray['Item A'] = '/site/itema';
 		$returnArray['Item B'] = '/site/itemb';
 		$returnArray['Item C'] = '/site/itemc';
@@ -57,7 +106,14 @@ class Controller extends CController
 			'Item Z' => '/site/itemz'
 		);
 		$returnArray['Item E'] = '/site/iteme';
+		*/
 		
 		$this->navbar = $returnArray;
+	}
+	
+	public function debugPrint($params = array()){
+		echo '<pre>';
+		print_r($params);
+		die();
 	}
 }

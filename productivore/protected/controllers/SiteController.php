@@ -3,9 +3,8 @@
 class SiteController extends Controller
 {
 	public function __construct(){
-		parent::__construct('site');
-		$this->populateApplings();
-		$this->populateNavbar();
+		$this->applingId = 0;
+		parent::__construct();
 	}
 
 	public function actionIndex()

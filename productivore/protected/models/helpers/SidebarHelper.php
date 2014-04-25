@@ -2,7 +2,7 @@
 class SidebarHelper extends MainHelper
 {
 
-	public function getApplings_byUserId($userid = 1){
+	public function get_applings_byUserId($userid = 1){
 		$query =
 			'SELECT
 				appling_name as name,
@@ -24,7 +24,7 @@ class SidebarHelper extends MainHelper
 		return $this->sql_query($query, $params);
 	}
 	
-	public function getSidebarSettings_byUserId($userId = 1){
+	public function get_sidebarSettings_byUserId($userId = 1){
 		$query =
 			'SELECT
 				setting_fields.setting_field_id,

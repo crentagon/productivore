@@ -4,7 +4,8 @@ class NiteController extends Controller
 {	
 	
 	public function __construct(){
-		parent::__construct('nite');
+		$this->applingurl = 'nite';
+		parent::__construct($this->applingurl);
 		$this->populateApplings();
 	}
 	

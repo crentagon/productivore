@@ -4,7 +4,8 @@ class EventsController extends Controller
 {	
 	
 	public function __construct(){
-		parent::__construct('events');
+		$this->applingurl = 'events';
+		parent::__construct($this->applingurl);
 		$this->populateApplings();
 	}
 	

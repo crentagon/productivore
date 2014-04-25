@@ -67,6 +67,28 @@ class MainHelper
 		}
 	}
 	
+	public function get_applingUrl_byApplingId($applingId = 0){
+		$query = '
+			SELECT appling_url
+			FROM applings
+			WHERE appling_id = :applingId';
+			
+		$params = array('applingId'=>$applingId);
+		
+		return $this->sql_query($query, $params);
+	}
+	
+	public function get_menuByApplingId($applingId = 0){
+		$query = '
+			SELECT menu_id, menu_name, menu_url, parent_menu_id
+			FROM menus
+			WHERE appling_id = :applingId';
+			
+		$params = array('applingId'=>$applingId);
+		
+		return $this->sql_query($query, $params);
+	}
+	
 	public function debugPrint($params = array()){
 		echo '<pre>';
 		print_r($params);
