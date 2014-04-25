@@ -3,12 +3,14 @@
 class SiteController extends Controller
 {
 	public function __construct(){
-		parent::__construct('events');
+		parent::__construct('site');
 		$this->populateApplings();
+		$this->populateNavbar();
 	}
 
 	public function actionIndex()
 	{
+		// echo 'AAA'; die();
 		// $test = 'TEST';
 		// print_r($applings); die();
 		// echo 'here'; die();
@@ -30,5 +32,15 @@ class SiteController extends Controller
 		$userApplings->update_settingValues_byUserId($userId, $applingId, $update);
 		die();
 	}
+	
+	public function actionItema(){ echo 'Entered Item A'; die(); }
+	public function actionItemb(){ echo 'Entered Item B'; die(); }
+	public function actionItemc(){ echo 'Entered Item C'; die(); }
+	public function actionItemd(){ echo 'Entered Item D'; die(); }
+	public function actionIteme(){ echo 'Entered Item E'; die(); }
+	public function actionItemw(){ echo 'Entered Item W'; die(); }
+	public function actionItemx(){ echo 'Entered Item X'; die(); }
+	public function actionItemy(){ echo 'Entered Item Y'; die(); }
+	public function actionItemz(){ echo 'Entered Item Z'; die(); }
 	
 }

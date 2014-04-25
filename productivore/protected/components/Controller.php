@@ -25,6 +25,8 @@ class Controller extends CController
 	
 	public $sidebarInfo=array();
 	
+	public $navbar=array();
+	
 	public function populateApplings(){	
 		$c_orderByFieldId = 1;
 		$c_viewTypeFieldId = 2;
@@ -39,10 +41,23 @@ class Controller extends CController
 		$this->sidebarInfo['viewtypes'] = $userApplings->read_settingValues_byFieldId($c_viewTypeFieldId);
 		$this->sidebarInfo['settings'] = $userApplings->readSidebarSettings_byUserId($userId);
 		
-		// echo '<pre>';
-		// print_r($this->sidebarInfo);
-		// die();
+		// echo '<pre>'; print_r($this->sidebarInfo); die();
+	}
+	
+	public function populateNavbar(){
+		$returnArray = array();
 		
-		// $userApplings->update_settingValues_byUserId($userId, $applingId, $this->sidebarInfo['settings']);
+		$returnArray['Item A'] = '/site/itema';
+		$returnArray['Item B'] = '/site/itemb';
+		$returnArray['Item C'] = '/site/itemc';
+		$returnArray['Item D'] = array(
+			'Item W' => '/site/itemw',
+			'Item X' => '/site/itemx',
+			'Item Y' => '/site/itemy',
+			'Item Z' => '/site/itemz'
+		);
+		$returnArray['Item E'] = '/site/iteme';
+		
+		$this->navbar = $returnArray;
 	}
 }

@@ -1,11 +1,5 @@
 /* All of the styles I place here are for hi-jacking bootstrap's stuff, and adding my own styles. */
-/*@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Roboto Regular'), local('Roboto-Regular'), url(http://themes.googleusercontent.com/static/fonts/roboto/v11/2UX7WLTfW3W8TclTUvlFyQ.woff) format('woff');
-}*/
-/*
+
 @font-face {
     font-family: 'Roboto';
 	font-style: normal;
@@ -14,17 +8,8 @@
 }
 
 body{
-	font-family: 'Roboto';
+	background: #EFEFEF !important;
 }
-*/
-
-@font-face {
-    font-family: 'Roboto';
-	font-style: normal;
-    src: url('../fonts/Roboto.woff');
-    font-weight: 400;
-}
-
 
 #page {
     padding-top: 60px;
