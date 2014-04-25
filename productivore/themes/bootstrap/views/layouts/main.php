@@ -43,12 +43,16 @@
 					<div class="pvore-sidebar-app" 
 						id="appling-<?echo $applingid?>-list"
 						onclick="window.location='<?echo BASE_URL.'/'.$appling['url']?>'"
+						isFavorite="<?echo $appling['isFavorite']?>"
 						accessCount="<?echo $appling['accessCount']?>"
 						baseId="appling-<?echo $applingid?>">
 						<?if($appling['notifCount'] != 0):?>
 							<div class="appling-icon-notification"><?echo $appling['notifCount']?></div>
 						<?endif;?>
 						<div class="pvore-sidebar-app-image">
+							<?if($appling['isFavorite'] == 1):?>
+								<span class="favorite-appling-icon fa fa-star fa-1"></span>
+							<?endif;?>
 							<span class="appling-icon fa fa-<?echo $appling['image']?> fa-2x"></span>
 						</div>
 						<div class="pvore-sidebar-app-title appling-name-list">
@@ -71,14 +75,14 @@
 			</div>
 			<div class="pvore-sidebar-options">
 				<span class="pvore-sidebar-dropdown" id="pvore-sidebar-frequency">
-				
-					<?//Note that the following hidden inputs are displaying the field_value_map_id.?>
+					<?//Note that the following hidden inputs are displaying the field_value_map_id, to determine what the user's setting are.?>
 					<input type="hidden" value="<?echo $this->sidebarInfo['settings'][1]?>" id="orderBySettings"/>
 					<input type="hidden" value="<?echo $this->sidebarInfo['settings'][2]?>" id="viewBySettings"/>				
 					<span id="current-order" onclick="toggleOrderBy();">LEAST USED</span>
 					<span class="order-by-options">
 						<div class="order-by-option" id="sidebar-order-1" onclick="orderBy('sidebar-order-1', true);">MOST USED</div>
 						<div class="order-by-option" id="sidebar-order-2" onclick="orderBy('sidebar-order-2', true);">ALPHABETICAL</div>
+						<div class="order-by-option order-by-final-item" id="sidebar-order-3" onclick="orderBy('sidebar-order-3', true);">FAVORITES</div>
 					</span>
 				</span>
 				<span class="pvore-sidebar-dropdown-arrow" id="pvore-sidebar-frequency-arrow" onclick="toggleOrderBy();">▼</span>

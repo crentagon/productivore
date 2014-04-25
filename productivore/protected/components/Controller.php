@@ -31,17 +31,17 @@ class Controller extends CController
 		$c_orderByFieldId = 1;
 		$c_viewTypeFieldId = 2;
 		$userId = 1;
-		$applingId = 1;
+		$applingId = 0;
 		
 		$userApplings = new SidebarHelper;
 		
-		$this->applings = $userApplings->readApplings_byUserId($userId);	
+		$this->applings = $userApplings->getApplings_byUserId($userId);	
 		
-		$this->sidebarInfo['orderby'] = $userApplings->read_settingValues_byFieldId($c_orderByFieldId);
-		$this->sidebarInfo['viewtypes'] = $userApplings->read_settingValues_byFieldId($c_viewTypeFieldId);
-		$this->sidebarInfo['settings'] = $userApplings->readSidebarSettings_byUserId($userId);
+		$this->sidebarInfo['orderby'] = $userApplings->get_settingValues_byFieldId($c_orderByFieldId);
+		$this->sidebarInfo['viewtypes'] = $userApplings->get_settingValues_byFieldId($c_viewTypeFieldId);
+		$this->sidebarInfo['settings'] = $userApplings->getSidebarSettings_byUserId($userId);
 		
-		// echo '<pre>'; print_r($this->sidebarInfo); die();
+		// echo '<pre>'; print_r($this->applings); die();
 	}
 	
 	public function populateNavbar(){

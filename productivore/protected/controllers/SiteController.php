@@ -26,7 +26,7 @@ class SiteController extends Controller
 		// echo $fieldid.'>>>'.$valueid; die();
 		$update = array($fieldid=>$valueid); //setting_field_id, field_value_map_id
 		$userId = 1;
-		$applingId = 1;
+		$applingId = 0;
 		
 		$userApplings = new SidebarHelper;
 		$userApplings->update_settingValues_byUserId($userId, $applingId, $update);

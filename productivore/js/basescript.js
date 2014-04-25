@@ -3,6 +3,7 @@
 	var C_DESC = 0;
 	var C_ALPHA = 0;
 	var C_FREQ = 1;
+	var C_FAVE = 2;
 	var C_SIDEBARSPEED = 386;
 	// var C_WINDOWLOCATION = window.location;
 	// var C_BASEURL = C_WINDOWLOCATION.protocol + "//" + C_WINDOWLOCATION.host + "/" + C_WINDOWLOCATION.pathname.split('/')[1]+"/";
@@ -72,6 +73,9 @@ function setOrderBy(){
 	else if($('#orderBySettings').val() == 2){
 		orderBy('sidebar-order-1', false);
 	}
+	else if($('#orderBySettings').val() == 6){
+		orderBy('sidebar-order-3', false);
+	}
 	else if($('#orderBySettings').val() == 3){
 		toggleOrderBy();
 	}
@@ -134,6 +138,7 @@ function orderBy(idTag, willUpdate){
 		$('#current-order').text('ALPHABETICAL');
 		$('#sidebar-order-1').text('LEAST USED');
 		$('#sidebar-order-2').text('MOST USED');
+		$('#sidebar-order-3').text('FAVORITES');
 		toggleOrderBy();
 	} else if($('#'+idTag).text() == 'LEAST USED'){
 		fieldid = 1; valueid = 3; //In the setting_field_value_maps table, orderby = 1 and least used = 3
@@ -141,6 +146,7 @@ function orderBy(idTag, willUpdate){
 		$('#current-order').text('LEAST USED');
 		$('#sidebar-order-1').text('ALPHABETICAL');
 		$('#sidebar-order-2').text('MOST USED');
+		$('#sidebar-order-3').text('FAVORITES');
 		toggleOrderBy();
 	} else if($('#'+idTag).text() == 'MOST USED'){
 		fieldid = 1; valueid = 2; //In the setting_field_value_maps table, orderby = 1 and most used = 2
@@ -148,6 +154,15 @@ function orderBy(idTag, willUpdate){
 		$('#current-order').text('MOST USED');
 		$('#sidebar-order-1').text('ALPHABETICAL');
 		$('#sidebar-order-2').text('LEAST USED');
+		$('#sidebar-order-3').text('FAVORITES');
+		toggleOrderBy();
+	} else if($('#'+idTag).text() == 'FAVORITES'){
+		fieldid = 1; valueid = 6; //In the setting_field_value_maps table, orderby = 1 and favorites = 6
+		sidebarOrderBy(C_FAVE, C_DESC);
+		$('#current-order').text('FAVORITES');
+		$('#sidebar-order-1').text('ALPHABETICAL');
+		$('#sidebar-order-2').text('LEAST USED');
+		$('#sidebar-order-3').text('MOST USED');
 		toggleOrderBy();
 	}
 	
@@ -199,7 +214,7 @@ function sidebarOrderBy(parameter, order){
 			else{
 				highest = 0;
 				chosenId = '';
-				//pick the div with the lowest access count
+				//pick the div with the highest access count
 				$.each($(appElement),
 					function (){
 						if(highest <= $(this).attr('accessCount')){
@@ -228,6 +243,41 @@ function sidebarOrderBy(parameter, order){
 				}
 			);
 			// alert('#'+chosenId);
+			sortedApplings[i] = $('#'+chosenId).remove();
+		}
+	}
+	
+	else if(parameter == C_FAVE){
+		for(i=0; i<appCount; i++){
+			highest = 0;
+			chosenId = '';
+			//pick the div with the highest access count
+			$.each($(appElement),
+				function (){
+					if(highest <= $(this).attr('isFavorite')){
+						chosenId = $(this).attr('id');
+						highest = $(this).attr('isFavorite');
+					}
+				}
+			);
+			/*chosenId = '';
+			$.each($(appElement),
+				function (){
+					if($(this).attr('isFavorite') == 0){
+						chosenId = $(this).attr('id');
+					}
+				}
+			);			
+			alert('#'+chosenId+">>>"+i);
+			sortedApplings[i] = $('#'+chosenId).remove();
+		}
+		for(i; i<appCount; i++){
+			$.each($(appElement),
+				function (){
+					chosenId = $(this).attr('id');
+				}
+			);
+			alert('#'+chosenId+">>>"+i);*/
 			sortedApplings[i] = $('#'+chosenId).remove();
 		}
 	}

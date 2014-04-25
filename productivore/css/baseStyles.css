@@ -184,7 +184,7 @@ hr.thick{
 
 .pvore-sidebar-app{
 	-moz-border-radius: 5px 5px 5px 5px; border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px;
-	height: 75px; width: 100%; cursor: pointer;
+	height: 75px; width: 100%; cursor: pointer; position: relative;
 	border: 1px solid #FEFEFE;
 	padding: 1%;
 }
@@ -247,17 +247,21 @@ hr.thick{
 	z-index: 19;
 }
 
+.order-by-final-item{
+	border-bottom: 0px !important;
+}
+
 .order-by-options{
 	position: absolute;
-	top: -45px; left: 1px;
+	top: -75px; left: 1px;
 	padding-right: 11px;
 	padding-left: 12px;
-	padding-bottom: 10px;
+	padding-bottom: 5px;
 	padding-top: 5px;
 	background-color: #666;
 	z-index: -1;
 	display: none;
-	-moz-border-radius: 10px 10px 0 0; border-radius: 10px 10px 0 0; -webkit-border-radius: 10px 10px 0 0;
+	-moz-border-radius: 10px; border-radius: 10px; -webkit-border-radius: 10px;
 }
 
 .order-by-option{
@@ -267,6 +271,7 @@ hr.thick{
 
 #pvore-sidebar-frequency{
 	left: -10px;
+	min-width: 100px;
 }
 
 #pvore-sidebar-viewtype{
@@ -306,6 +311,13 @@ hr.thick{
 	-moz-border-radius: 10px 10px 10px 10px; border-radius: 10px 10px 10px 10px;
 	background-color: #e74c3c; color: #EFEFEF;
 	position: absolute; left: 15px; top:2px;
+}
+
+.favorite-appling-icon{
+	color: #222;
+	position: absolute;
+	left: 0%;
+	top: 0%;
 }
 
 /*Navbar*/

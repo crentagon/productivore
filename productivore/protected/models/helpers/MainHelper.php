@@ -10,7 +10,7 @@ class MainHelper
 		return Yii::app()->db->createCommand($query)->bindValues($params)->execute();
 	}
 	
-	public function read_settingValues_byFieldId($fieldId = 1){
+	public function get_settingValues_byFieldId($fieldId = 1){
 		$query =
 			'SELECT 
 				setting_value_id,

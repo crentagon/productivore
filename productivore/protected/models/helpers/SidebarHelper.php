@@ -2,7 +2,7 @@
 class SidebarHelper extends MainHelper
 {
 
-	public function readApplings_byUserId($userid = 1){
+	public function getApplings_byUserId($userid = 1){
 		$query =
 			'SELECT
 				appling_name as name,
@@ -10,7 +10,8 @@ class SidebarHelper extends MainHelper
 				appling_url as url,
 				appling_image as image,
 				notification_count as notifCount,
-				access_count as accessCount
+				access_count as accessCount,
+				is_favorite as isFavorite
 			FROM
 				applings
 				JOIN user_appling_maps
@@ -23,7 +24,7 @@ class SidebarHelper extends MainHelper
 		return $this->sql_query($query, $params);
 	}
 	
-	public function readSidebarSettings_byUserId($userId = 1){
+	public function getSidebarSettings_byUserId($userId = 1){
 		$query =
 			'SELECT
 				setting_fields.setting_field_id,
@@ -36,7 +37,7 @@ class SidebarHelper extends MainHelper
 				JOIN setting_values USING (setting_value_id)
 				JOIN user_appling_maps USING (user_appling_map_id)
 			WHERE user_id = :userId
-				AND user_appling_maps.appling_id = 1';
+				AND user_appling_maps.appling_id = 0';
 
 		$params = array('userId'=>$userId);
 		$rawArray = $this->sql_query($query, $params);
@@ -49,8 +50,8 @@ class SidebarHelper extends MainHelper
 		return $newArray;
 	}
 	
-	public function read_settingValues_byFieldId($fieldId = 1){
-		return parent::read_settingValues_byFieldId($fieldId);
+	public function get_settingValues_byFieldId($fieldId = 1){
+		return parent::get_settingValues_byFieldId($fieldId);
 	}
 	
 	public function update_settingValues_byUserId($userId = 1, $applingId = 1, $valueArray = array()){
