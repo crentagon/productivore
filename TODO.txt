@@ -25,10 +25,10 @@ To-do (Layouts):
 	[x] Sliding menu must be responsive
 	[x] Plan the screens of each module
 	
-	- A speshul font for ye (lolhelvetica????)
-	- Menu bar
+	[LOLNO] Color Schemes must be Dragonite color schemes. c:
+	[x] A speshul font for ye (lolhelvetica????)
+	[x] Menu bar
 	- Main page layouting and all the other front-end shit.
-	- Color Schemes must be Dragonite color schemes. c:
 	- Optimization (see YSlow)
 	
 	- Backtotop
