@@ -173,7 +173,7 @@ hr.thick{
 	padding: 3px;
 	text-align: center;
 	font-size: 80%;
-	color: #FEFEFE;
+	color: #999999;
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
 	-khtml-user-select: none;
@@ -237,6 +237,12 @@ hr.thick{
 	padding-left: 7px; padding-right: 7px; 
 	-moz-border-radius: 10px 0 0 10px; border-radius: 10px 0 0 10px; -webkit-border-radius: 10px 0 0 10px;
 	border-right: 1px solid #FEFEFE;
+	
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#222222), to(#111111));
+	background-image: -webkit-linear-gradient(top, #222222, #111111);
+	background-image: -o-linear-gradient(top, #222222, #111111);
+	background-image: linear-gradient(to bottom, #222222, #111111);
+	background-repeat: repeat-x;
 }
 
 .pvore-sidebar-dropdown-arrow{
@@ -245,28 +251,71 @@ hr.thick{
 	-moz-border-radius: 0 10px 10px 0; border-radius: 0 10px 10px 0;
 	border-left: 1px solid #FEFEFE;
 	z-index: 19;
+	
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#222222), to(#111111));
+	background-image: -webkit-linear-gradient(top, #222222, #111111);
+	background-image: -o-linear-gradient(top, #222222, #111111);
+	background-image: linear-gradient(to bottom, #222222, #111111);
+	background-repeat: repeat-x;
 }
 
 .order-by-final-item{
 	border-bottom: 0px !important;
 }
 
+.order-by-options:before{
+	position: absolute; top: 99%; left: 9px;
+	display: inline-block;
+	content: '';
+	border-right: 7px solid transparent;
+		border-right-width: 7px;
+		border-right-style: solid;
+		border-right-color: transparent;
+	border-top: 7px solid #ccc;
+		border-top-width: 7px;
+		border-top-style: solid;
+		border-top-color: #111;
+	border-left: 7px solid transparent;
+		border-left-width: 7px;
+		border-left-style: solid;
+		border-left-color: transparent;
+	border-top-color: #111;
+}
+
 .order-by-options{
 	position: absolute;
-	top: -75px; left: 1px;
+	top: -78px; left: 1px;
 	padding-right: 11px;
 	padding-left: 12px;
 	padding-bottom: 5px;
 	padding-top: 5px;
-	background-color: #666;
+	background-color: #000;
+	border: 1px solid rgba(0, 0, 0, 0.2);
 	z-index: -1;
 	display: none;
 	-moz-border-radius: 10px; border-radius: 10px; -webkit-border-radius: 10px;
+	color: #999999;
+	
+	-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	-webkit-background-clip: padding-box;
+	-moz-background-clip: padding;
+	background-clip: padding-box;
+	
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#222222), to(#111111));
+	background-image: -webkit-linear-gradient(top, #222222, #111111);
+	background-image: -o-linear-gradient(top, #222222, #111111);
+	background-image: linear-gradient(to bottom, #222222, #111111);
+	background-repeat: repeat-x;
 }
 
 .order-by-option{
-	border-bottom: 1px solid #AAA;
 	display: block;
+}
+
+.order-by-option:hover{
+	color: #FFF;
 }
 
 #pvore-sidebar-frequency{
@@ -278,12 +327,28 @@ hr.thick{
 	left: 0px;
 }
 
+#pvore-sidebar-viewtype:hover{
+	color: #FFFFFF;
+}
+
 #pvore-sidebar-frequency-arrow{
 	left: -10px;
 }
 
 #pvore-sidebar-viewtype-arrow{
 	left: 0px;
+}
+
+#pvore-sidebar-frequency-arrow:hover{
+	color: #FFFFFF;
+}
+
+#pvore-sidebar-viewtype-arrow:hover{
+	color: #FFFFFF;
+}
+
+#current-order:hover{
+	color: #FFFFFF;
 }
 
 .pvore-sidebar-app-hr-container{

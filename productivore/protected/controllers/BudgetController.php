@@ -4,9 +4,8 @@ class BudgetController extends Controller
 {	
 	
 	public function __construct(){
-		$this->applingurl = 'budget';
-		parent::__construct($this->applingurl);
-		$this->populateApplings();
+		$this->applingId = 3;
+		parent::__construct();
 	}
 	
 	public function actionIndex()

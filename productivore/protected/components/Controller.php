@@ -73,27 +73,23 @@ class Controller extends CController
 				//Get menu_name given the parent_menu_id
 				$parentName = '';
 				foreach($tempArray as $submenu){
-					if($submenu['menu_id'] == $menu['menu_id']){
+					if($submenu['menu_id'] == $menu['parent_menu_id']){
 						$parentName = $submenu['menu_name'];
 						break;
 					}				
 				}
-				echo $parentName;
-				$this->debugPrint($returnArray);
+				// $this->debugPrint($returnArray);
 				if(!is_array($returnArray[$parentName])){
 					$returnArray[$parentName] = 
-						array($menu['menu_name'] => $this->applingUrl.'/'.$menu['menu_url']);
+						array($menu['menu_name'] => $this->applingUrl[0]['appling_url'].'/'.$menu['menu_url']);
 				}
 				else{
-					array_push(
-						$returnArray[$parentName],
-						array($menu['menu_name']=>$this->applingUrl.'/'.$menu['menu_url'])
-					);
+					$returnArray[$parentName][$menu['menu_name']] = $this->applingUrl[0]['appling_url'].'/'.$menu['menu_url'];
 				}
 			}
 		}
 		
-		$this->debugPrint($returnArray);
+		// $this->debugPrint($returnArray);
 		
 		/*
 		$returnArray['Item A'] = '/site/itema';

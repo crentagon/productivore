@@ -1279,3 +1279,15 @@ REQUEST_URI=/productivore/productivore/index.php
 in C:\wamp\www\productivore\productivore\protected\components\Controller.php (82)
 in C:\wamp\www\productivore\productivore\protected\components\Controller.php (13)
 in C:\wamp\www\productivore\productivore\protected\controllers\SiteController.php (7)
+2014/04/26 01:37:14 [error] [exception.CException] exception 'CException' with message 'Property "BudgetController.applingurl" is not defined.' in K:\Sites\productivore\Yii-1_1_14\framework\base\CComponent.php:173
+Stack trace:
+#0 K:\Sites\productivore\productivore\protected\controllers\BudgetController.php(7): CComponent->__set('applingurl', 'budget')
+#1 K:\Sites\productivore\Yii-1_1_14\framework\web\CWebApplication.php(359): BudgetController->__construct('budget', NULL)
+#2 K:\Sites\productivore\Yii-1_1_14\framework\web\CWebApplication.php(276): CWebApplication->createController('budget')
+#3 K:\Sites\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController('budget')
+#4 K:\Sites\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 K:\Sites\productivore\productivore\index.php(25): CApplication->run()
+#6 {main}
+REQUEST_URI=/productivore/productivore/budget
+HTTP_REFERER=http://localhost/productivore/productivore/
+---

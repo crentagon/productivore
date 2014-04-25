@@ -4,9 +4,8 @@ class TasksController extends Controller
 {	
 	
 	public function __construct(){
-		$this->applingurl = 'tasks';
-		parent::__construct($this->applingurl);
-		$this->populateApplings();
+		$this->applingId = 1;
+		parent::__construct();
 	}
 	
 	public function actionIndex()
