@@ -9,13 +9,6 @@ class SiteController extends Controller
 
 	public function actionIndex()
 	{
-		// echo 'AAA'; die();
-		// $test = 'TEST';
-		// print_r($applings); die();
-		// echo 'here'; die();
-		// renders the view file 'protected/views/site/index.php'
-		// using the default layout 'protected/views/layouts/main.php'
-		// $this->render('index', compact('test'));
 		$this->render('index');
 	}
 	
