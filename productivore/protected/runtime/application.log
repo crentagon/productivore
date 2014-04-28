@@ -1291,3 +1291,177 @@ Stack trace:
 REQUEST_URI=/productivore/productivore/budget
 HTTP_REFERER=http://localhost/productivore/productivore/
 ---
+2014/04/28 10:51:39 [error] [php] Undefined variable: model (C:\wamp\www\productivore\productivore\protected\controllers\SiteController.php:47)
+Stack trace:
+#0 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(286): SiteController->runAction()
+#1 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#2 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(282): SiteController->run()
+#3 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\wamp\www\productivore\productivore\index.php(25): CWebApplication->run()
+REQUEST_URI=/productivore/productivore/site/login
+in C:\wamp\www\productivore\productivore\protected\controllers\SiteController.php (47)
+in C:\wamp\www\productivore\productivore\index.php (25)
+2014/04/28 10:55:59 [error] [exception.CException] exception 'CException' with message 'Users and its behaviors do not have a method or closure named "fetch_users".' in C:\wamp\www\productivore\Yii-1_1_14\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\wamp\www\productivore\Yii-1_1_14\framework\db\ar\CActiveRecord.php(227): CComponent->__call('fetch_users', Array)
+#1 C:\wamp\www\productivore\productivore\protected\components\UserIdentity.php(21): CActiveRecord->__call('fetch_users', Array)
+#2 C:\wamp\www\productivore\productivore\protected\components\UserIdentity.php(21): Users->fetch_users()
+#3 C:\wamp\www\productivore\productivore\protected\models\forms\LoginForm.php(52): UserIdentity->authenticate()
+#4 C:\wamp\www\productivore\Yii-1_1_14\framework\validators\CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#5 C:\wamp\www\productivore\Yii-1_1_14\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#6 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#7 C:\wamp\www\productivore\productivore\protected\controllers\SiteController.php(43): CModel->validate()
+#8 C:\wamp\www\productivore\Yii-1_1_14\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#9 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(282): CController->run('login')
+#13 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#14 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\wamp\www\productivore\productivore\index.php(25): CApplication->run()
+#16 {main}
+REQUEST_URI=/productivore/productivore/site/login
+HTTP_REFERER=http://localhost/productivore/productivore/site/login
+---
+2014/04/28 10:58:49 [error] [php] Undefined variable: condition (C:\wamp\www\productivore\productivore\protected\models\tables\Users.php:108)
+Stack trace:
+#0 C:\wamp\www\productivore\Yii-1_1_14\framework\validators\CInlineValidator.php(42): LoginForm->authenticate()
+#1 C:\wamp\www\productivore\Yii-1_1_14\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute()
+#2 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CModel.php(159): CInlineValidator->validate()
+#3 C:\wamp\www\productivore\productivore\protected\controllers\SiteController.php(43): LoginForm->validate()
+#4 C:\wamp\www\productivore\Yii-1_1_14\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#5 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(286): SiteController->runAction()
+#7 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#8 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(282): SiteController->run()
+#9 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\wamp\www\productivore\productivore\index.php(25): CWebApplication->run()
+REQUEST_URI=/productivore/productivore/site/login
+in C:\wamp\www\productivore\productivore\protected\models\tables\Users.php (108)
+in C:\wamp\www\productivore\productivore\protected\components\UserIdentity.php (21)
+in C:\wamp\www\productivore\productivore\protected\models\forms\LoginForm.php (52)
+2014/04/28 10:59:41 [error] [php] Trying to get property of non-object (C:\wamp\www\productivore\productivore\protected\models\tables\Users.php:109)
+Stack trace:
+#0 C:\wamp\www\productivore\Yii-1_1_14\framework\validators\CInlineValidator.php(42): LoginForm->authenticate()
+#1 C:\wamp\www\productivore\Yii-1_1_14\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute()
+#2 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CModel.php(159): CInlineValidator->validate()
+#3 C:\wamp\www\productivore\productivore\protected\controllers\SiteController.php(43): LoginForm->validate()
+#4 C:\wamp\www\productivore\Yii-1_1_14\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#5 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(286): SiteController->runAction()
+#7 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#8 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(282): SiteController->run()
+#9 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\wamp\www\productivore\productivore\index.php(25): CWebApplication->run()
+REQUEST_URI=/productivore/productivore/site/login
+in C:\wamp\www\productivore\productivore\protected\models\tables\Users.php (109)
+in C:\wamp\www\productivore\productivore\protected\components\UserIdentity.php (21)
+in C:\wamp\www\productivore\productivore\protected\models\forms\LoginForm.php (52)
+2014/04/28 11:56:09 [error] [php] Undefined variable: users (C:\wamp\www\productivore\productivore\protected\models\tables\Users.php:110)
+Stack trace:
+#0 C:\wamp\www\productivore\Yii-1_1_14\framework\validators\CInlineValidator.php(42): LoginForm->authenticate()
+#1 C:\wamp\www\productivore\Yii-1_1_14\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute()
+#2 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CModel.php(159): CInlineValidator->validate()
+#3 C:\wamp\www\productivore\productivore\protected\controllers\SiteController.php(43): LoginForm->validate()
+#4 C:\wamp\www\productivore\Yii-1_1_14\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#5 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(286): SiteController->runAction()
+#7 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#8 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(282): SiteController->run()
+#9 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\wamp\www\productivore\productivore\index.php(25): CWebApplication->run()
+REQUEST_URI=/productivore/productivore/site/login
+in C:\wamp\www\productivore\productivore\protected\models\tables\Users.php (110)
+in C:\wamp\www\productivore\productivore\protected\components\UserIdentity.php (21)
+in C:\wamp\www\productivore\productivore\protected\models\forms\LoginForm.php (52)
+2014/04/28 11:56:30 [error] [exception.CException] exception 'CException' with message 'Property "Users._attributes:CActiveRecord:private" is not defined.' in C:\wamp\www\productivore\Yii-1_1_14\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\wamp\www\productivore\Yii-1_1_14\framework\db\ar\CActiveRecord.php(145): CComponent->__get('_attributes:CAc...')
+#1 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CModel.php(596): CActiveRecord->__get('_attributes:CAc...')
+#2 C:\wamp\www\productivore\productivore\protected\models\tables\Users.php(111): CModel->offsetGet('_attributes:CAc...')
+#3 C:\wamp\www\productivore\productivore\protected\components\UserIdentity.php(21): Users->fetch_users()
+#4 C:\wamp\www\productivore\productivore\protected\models\forms\LoginForm.php(52): UserIdentity->authenticate()
+#5 C:\wamp\www\productivore\Yii-1_1_14\framework\validators\CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#6 C:\wamp\www\productivore\Yii-1_1_14\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#7 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#8 C:\wamp\www\productivore\productivore\protected\controllers\SiteController.php(43): CModel->validate()
+#9 C:\wamp\www\productivore\Yii-1_1_14\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#10 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(282): CController->run('login')
+#14 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#15 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 C:\wamp\www\productivore\productivore\index.php(25): CApplication->run()
+#17 {main}
+REQUEST_URI=/productivore/productivore/site/login
+HTTP_REFERER=http://localhost/productivore/productivore/site/login
+---
+2014/04/28 12:00:05 [error] [exception.CException] exception 'CException' with message 'Property "Users.password" is not defined.' in C:\wamp\www\productivore\Yii-1_1_14\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\wamp\www\productivore\Yii-1_1_14\framework\db\ar\CActiveRecord.php(145): CComponent->__get('password')
+#1 C:\wamp\www\productivore\productivore\protected\models\tables\Users.php(112): CActiveRecord->__get('password')
+#2 C:\wamp\www\productivore\productivore\protected\components\UserIdentity.php(21): Users->fetch_users()
+#3 C:\wamp\www\productivore\productivore\protected\models\forms\LoginForm.php(52): UserIdentity->authenticate()
+#4 C:\wamp\www\productivore\Yii-1_1_14\framework\validators\CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#5 C:\wamp\www\productivore\Yii-1_1_14\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#6 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#7 C:\wamp\www\productivore\productivore\protected\controllers\SiteController.php(43): CModel->validate()
+#8 C:\wamp\www\productivore\Yii-1_1_14\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#9 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(282): CController->run('login')
+#13 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#14 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\wamp\www\productivore\productivore\index.php(25): CApplication->run()
+#16 {main}
+REQUEST_URI=/productivore/productivore/site/login
+HTTP_REFERER=http://localhost/productivore/productivore/site/login
+---
+2014/04/28 12:12:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "signup".' in C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(270): CController->missingAction('signup')
+#1 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(282): CController->run('signup')
+#2 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController('site/signup')
+#3 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\productivore\productivore\index.php(25): CApplication->run()
+#5 {main}
+REQUEST_URI=/productivore/productivore/site/signup
+HTTP_REFERER=http://localhost/productivore/productivore/index.php
+---
+2014/04/28 12:33:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "signup".' in C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(270): CController->missingAction('signup')
+#1 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(282): CController->run('signup')
+#2 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController('site/signup')
+#3 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\productivore\productivore\index.php(25): CApplication->run()
+#5 {main}
+REQUEST_URI=/productivore/productivore/site/signup
+HTTP_REFERER=http://localhost/productivore/productivore/index.php
+---
+2014/04/28 12:34:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "signup".' in C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(270): CController->missingAction('signup')
+#1 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(282): CController->run('signup')
+#2 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController('site/signup')
+#3 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\productivore\productivore\index.php(25): CApplication->run()
+#5 {main}
+REQUEST_URI=/productivore/productivore/site/signup
+---
+2014/04/28 12:36:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "signup".' in C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(270): CController->missingAction('signup')
+#1 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(282): CController->run('signup')
+#2 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController('site/signup')
+#3 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\productivore\productivore\index.php(25): CApplication->run()
+#5 {main}
+REQUEST_URI=/productivore/productivore/site/signup
+---

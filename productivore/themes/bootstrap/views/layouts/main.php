@@ -21,10 +21,19 @@
 </head>
 
 <body>
+	<?
+		//Is the user logged in?
+		$isLoggedIn = false;
+		if(!Yii::app()->user->isGuest){
+			$isLoggedIn = true;
+		}
+	?>
+	
 	<input type="hidden" id="BASE_URL" value="<?echo BASE_URL?>"/>
 
 	<br/>
-	<?//The sidebar?>
+	<?if($isLoggedIn):?>
+	<?//The sidebar?>	
 	<div class="pvore-dimmer" onclick="hideSidebar();"></div>
 	<div class="pvore-sidebar-button" onclick="showSidebar();"><span class="fa fa-chevron-right fa-lg"></span></div>
 	<div class="pvore-sidebar-container">
@@ -92,6 +101,7 @@
 			</div>
 		</div>
 	</div><!--.pVoreSidebarContainer-->
+	<?endif;?>
 	
 	<?//The main content?>
 	<div class="super-container"> <?//For quick modification of Bootstrap's properties?>
@@ -120,31 +130,53 @@
 				<?/*a class="brand" href="#">Title</a*/?>
 				<div class="nav-collapse collapse navbar-inverse" id="yii_bootstrap_collapse_0" style="height:0px">
 					<ul class="nav">
-						<?foreach($this->navbar as $titleParent=>$urlParent):?>
-							<?if(is_array($urlParent)):?>
-								<li class="dropdown">
-									<a class="dropdown-toggle" data-toggle="dropdown" href="#"><?echo $titleParent?> <span class="caret"></span></a>
-									<ul class="dropdown-menu">
-										<?foreach($urlParent as $titleChild=>$urlChild):?>
-											<li><a href="<?echo BASE_URL.$urlChild?>"><?echo $titleChild?></a></li>
-										<?endforeach;?>
-									</ul>
-								</li>
-							<?else:?>
-								<li><a href="<?echo BASE_URL.$urlParent?>"><?echo $titleParent?></a></li>
-							<?endif;?>
-						<?endforeach;?>
+						<?if(!$isLoggedIn):?>
+							<li><a href="<?echo BASE_URL?>/site/login">Login</a></li>
+							<li><a href="<?echo BASE_URL?>/site/signup">Sign up</a></li>
+						<?else:?>
+							<?foreach($this->navbar as $titleParent=>$urlParent):?>
+								<?if(is_array($urlParent)):?>
+									<li class="dropdown">
+										<a class="dropdown-toggle" data-toggle="dropdown" href="#"><?echo $titleParent?> <span class="caret"></span></a>
+										<ul class="dropdown-menu">
+											<?foreach($urlParent as $titleChild=>$urlChild):?>
+												<li><a href="<?echo BASE_URL.'/'.$urlChild?>"><?echo $titleChild?></a></li>
+											<?endforeach;?>
+										</ul>
+									</li>
+								<?else:?>
+									<li><a href="<?echo BASE_URL.'/'.$urlParent?>"><?echo $titleParent?></a></li>
+								<?endif;?>
+							<?endforeach;?>
+						<?endif;?>
 					</ul>
 					
+					<?if($isLoggedIn):?>
 					<div class="pull-right nav" id="yw2">
 						<form class="navbar-search navbar-inverse pull-left" action="">
 							<input type="text" class="search-query span2" placeholder="Search">
 						</form>
 					</div>
+					<?endif;?>
 				</div>
 			  
 			  </div>
 			</div><!--navbar-->
+			<?/*
+				if(Yii::app()->user->isGuest) {
+					print("Not logged in.<br/>");
+					echo '---<a href="'.BASE_URL.'/site/login">Log in</a>---';
+				} else {
+					echo 'Logged in.<br/><pre>';
+					print_r(Yii::app()->user);
+					print("Welcome ".Yii::app()->user->name);
+					print("Your id is ".Yii::app()->user->id);
+					echo '</pre>';
+					echo '---<a href="'.BASE_URL.'/site/logout">Log out</a>---';
+				}
+			?>
+			<br/>
+			<br/>*/?>
 			<? echo $content; ?>
 		</div><!--container-->
 	</div><!--supercontainer-->

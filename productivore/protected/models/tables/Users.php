@@ -102,4 +102,16 @@ class Users extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+	
+	public function fetch_users()
+	{
+		$users = $this->findAll();
+		$userArray = array();
+		
+		foreach($users as $user){
+			$userArray[$user->user_name] = $user->user_password;
+		}
+		
+		return $userArray;
+	}
 }
