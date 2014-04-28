@@ -420,3 +420,29 @@ hr.thick{
 	color: #78c1ff;
 	text-decoration: none;
 }
+
+.form{
+	width: 404px;
+	left: 50%;
+	margin-left: -202px;
+	position: relative;
+}
+
+.pvore-content-container{
+	background-color: rgba(255, 255, 255, 0.6);
+	padding: 20px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	-webkit-border-radius: 8px;
+}
+
+.form-actions{
+	margin-bottom: 0px !important;
+	margin-top: 0px !important;
+	padding-bottom: 0px !important;
+	background-color: rgba(0,0,0,0) !important;
+}
+
+.text-align-center{
+	text-align: center;
+}

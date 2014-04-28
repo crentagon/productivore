@@ -36,6 +36,28 @@ To-do:
 	[x] Showing that an appling is a favorite: how?
 	- Optimization (see YSlow)
 	
+	[x] Control Panel > Settings, Logout option must be available everywhere
+		- User must be able to signup
+			- Login/Signup information on the navbar
+			- Signup page
+			- Passing the information to the controller
+			- Sessions
+		- User must be able to login
+			[x] Verify the login/signup information on the header
+			[x] Login page
+			[x] Sessions
+			- "You have successfully logged in"
+			- "Error: Incorrect username/password"
+		- User must be able to logout
+			[x] Destroy the session
+			[x] Logout'd page
+			- "You have successfully logged out."
+	
+	[x] Custom color palletes
+		[x] For buttons
+		- For flash messages
+	- Custom 404 page
+		
 	- Notifications - home, displays all the notifications and applings
 	- Favorite Applings - displays all your favorite applings
 	- Control Panel - change e-mail, change password, change default frontpage

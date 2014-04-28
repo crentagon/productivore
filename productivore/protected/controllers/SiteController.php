@@ -26,6 +26,10 @@ class SiteController extends Controller
 	}
 	
 	public function actionLogin(){
+		$this->breadcrumbs = array(
+			'Login' => BASE_URL.'/site/login'
+		);
+	
 		$model=new LoginForm;
 
 		// if it is ajax validation request

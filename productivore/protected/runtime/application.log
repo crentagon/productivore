@@ -1465,3 +1465,14 @@ Stack trace:
 #5 {main}
 REQUEST_URI=/productivore/productivore/site/signup
 ---
+2014/04/28 21:24:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "signup".' in K:\Sites\productivore\Yii-1_1_14\framework\web\CController.php:483
+Stack trace:
+#0 K:\Sites\productivore\Yii-1_1_14\framework\web\CController.php(270): CController->missingAction('signup')
+#1 K:\Sites\productivore\Yii-1_1_14\framework\web\CWebApplication.php(282): CController->run('signup')
+#2 K:\Sites\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController('site/signup')
+#3 K:\Sites\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 K:\Sites\productivore\productivore\index.php(25): CApplication->run()
+#5 {main}
+REQUEST_URI=/productivore/productivore/site/signup
+HTTP_REFERER=http://localhost/productivore/productivore/site/login
+---

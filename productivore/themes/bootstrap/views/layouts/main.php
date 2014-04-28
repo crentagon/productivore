@@ -177,7 +177,9 @@
 			?>
 			<br/>
 			<br/>*/?>
-			<? echo $content; ?>
+			<div class="pvore-content-container">
+				<? echo $content; ?>
+			</div>
 		</div><!--container-->
 	</div><!--supercontainer-->
 </body>
