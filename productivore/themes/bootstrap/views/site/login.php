@@ -9,7 +9,7 @@
 	),
 )); ?>
 
-	<p class="text-align-center">Please fill out the following form with your login credentials:</p>
+	<?/*<p class="text-align-center">Please fill out the following form with your login credentials:</p>*/?>
 	<br/>
 	<div class="control-group">
 		<div class="controls">

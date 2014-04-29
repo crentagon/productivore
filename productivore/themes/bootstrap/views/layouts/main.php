@@ -162,21 +162,30 @@
 			  
 			  </div>
 			</div><!--navbar-->
-			<?/*
-				if(Yii::app()->user->isGuest) {
-					print("Not logged in.<br/>");
-					echo '---<a href="'.BASE_URL.'/site/login">Log in</a>---';
-				} else {
-					echo 'Logged in.<br/><pre>';
-					print_r(Yii::app()->user);
-					print("Welcome ".Yii::app()->user->name);
-					print("Your id is ".Yii::app()->user->id);
-					echo '</pre>';
-					echo '---<a href="'.BASE_URL.'/site/logout">Log out</a>---';
+			<?
+				//Flash messages
+				$faIcon = '';
+				foreach(Yii::app()->user->getFlashes() as $key => $message) {
+					if($key == 'success')
+						$faIcon = 'check-circle';
+					else if($key == 'warning')
+						$faIcon = 'exclamation-triangle';
+					else if($key == 'error')
+						$faIcon = 'times-circle';
+					else 
+						$faIcon = 'question-circle';
+					
+					echo 
+						'<div class="flash-msg flash-' . $key . '">'.
+							'<div class="flash-icon-container">'.
+								'<span class="flash-icon fa fa-'.$faIcon.' fa-2x"></span>'.
+							'</div>'.
+							$message.
+							'<span class="flash-msg-exit fa fa-times"></span>'.
+						'</div>';
 				}
 			?>
-			<br/>
-			<br/>*/?>
+			<div class="cushion-20"></div>
 			<div class="pvore-content-container">
 				<? echo $content; ?>
 			</div>

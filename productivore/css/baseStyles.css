@@ -1,5 +1,12 @@
 /* All of the styles I place here are for hi-jacking bootstrap's stuff, and adding my own styles. */
 
+::selection {
+	background: #121212; /* Safari */
+	}
+::-moz-selection {
+	background: #121212; /* Firefox */
+}
+
 @font-face {
     font-family: 'Roboto';
 	font-style: normal;
@@ -434,6 +441,7 @@ hr.thick{
 	-moz-border-radius: 8px;
 	border-radius: 8px;
 	-webkit-border-radius: 8px;
+	position: relative;
 }
 
 .form-actions{
@@ -445,4 +453,83 @@ hr.thick{
 
 .text-align-center{
 	text-align: center;
+}
+
+.flash-msg{
+	position: relative;
+	display: inline-block;
+	*display: inline;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	margin: 0;
+	*margin-left: .3em;
+	font-size: 14px;
+	line-height: 20px;
+	color: #333333;
+	*border: 0;
+	-webkit-border-radius: 8px;
+	 -moz-border-radius: 8px;
+		  border-radius: 8px;
+	*zoom: 1;
+	width: 100%;
+	color: #FFF;
+	margin-top: 20px;
+	padding-left: 55px;
+	padding-right: 30px;
+}
+
+.flash-icon{
+	position: absolute;
+	top: 50%;
+	margin-top: -13px;
+}
+
+.flash-icon:hover{
+	color: #000000;
+}
+
+.flash-msg-exit{
+	position: absolute;
+	top: 5px;
+	left: 100%;
+	margin-left: -20px;
+	cursor: pointer;
+}
+
+.flash-msg-exit:hover{
+	color: #000;
+}
+
+.flash-icon-container{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 42px;
+	height: 100%;
+	-webkit-border-radius: 8px 0 0 8px;
+	 -moz-border-radius: 8px 0 0 8px;
+		  border-radius: 8px 0 0 8px;
+	padding-left: 8px;
+	background-color: rgba(0,0,0,0.2);
+	cursor: pointer;
+}
+
+.flash-success{
+	background-color: #15BD4B;
+}
+
+.flash-warning{
+	background-color: #F5AB35;
+}
+
+.flash-error{
+	background-color: #E74C3C;
+}
+
+.flash-info{
+	background-color: #035FD5;
+}
+
+.cushion-20{
+	height: 20px;
 }

@@ -55,8 +55,12 @@ To-do:
 	
 	[x] Custom color palletes
 		[x] For buttons
-		- For flash messages
-	- Custom 404 page
+		[x] Border of buttons: border: 0px in bootstrap's .btn
+		[x] For flash messages
+		[x] Do not allow access to applings (URL manipulation whut) if user is not logged in
+	[NOPE] Custom 404 page
+	[x] Forms: error --> why only password going red?
+	[x] Separate the navbar css and make it only accessible on login
 		
 	- Notifications - home, displays all the notifications and applings
 	- Favorite Applings - displays all your favorite applings

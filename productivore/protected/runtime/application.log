@@ -1476,3 +1476,203 @@ Stack trace:
 REQUEST_URI=/productivore/productivore/site/signup
 HTTP_REFERER=http://localhost/productivore/productivore/site/login
 ---
+2014/04/29 11:38:03 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+' in C:\wamp\www\productivore\Yii-1_1_14\framework\db\CDbConnection.php:382
+Stack trace:
+#0 C:\wamp\www\productivore\Yii-1_1_14\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 C:\wamp\www\productivore\Yii-1_1_14\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
+#2 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CModule.php(387): CDbConnection->init()
+#3 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CModule.php(103): CModule->getComponent('db')
+#4 C:\wamp\www\productivore\productivore\protected\models\helpers\MainHelper.php(6): CModule->__get('db')
+#5 C:\wamp\www\productivore\productivore\protected\models\helpers\MainHelper.php(78): MainHelper->sql_query('?????SELECT app...', Array)
+#6 C:\wamp\www\productivore\productivore\protected\components\Controller.php(10): MainHelper->get_applingUrl_byApplingId(0)
+#7 C:\wamp\www\productivore\productivore\protected\controllers\SiteController.php(7): Controller->__construct()
+#8 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(359): SiteController->__construct('site', NULL)
+#9 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(276): CWebApplication->createController('')
+#10 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#11 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 C:\wamp\www\productivore\productivore\index.php(25): CApplication->run()
+#13 {main}
+REQUEST_URI=/productivore/productivore/
+---
+2014/04/29 11:40:55 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+' in C:\wamp\www\productivore\Yii-1_1_14\framework\db\CDbConnection.php:382
+Stack trace:
+#0 C:\wamp\www\productivore\Yii-1_1_14\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 C:\wamp\www\productivore\Yii-1_1_14\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
+#2 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CModule.php(387): CDbConnection->init()
+#3 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CModule.php(103): CModule->getComponent('db')
+#4 C:\wamp\www\productivore\productivore\protected\models\helpers\MainHelper.php(6): CModule->__get('db')
+#5 C:\wamp\www\productivore\productivore\protected\models\helpers\MainHelper.php(78): MainHelper->sql_query('?????SELECT app...', Array)
+#6 C:\wamp\www\productivore\productivore\protected\components\Controller.php(10): MainHelper->get_applingUrl_byApplingId(0)
+#7 C:\wamp\www\productivore\productivore\protected\controllers\SiteController.php(7): Controller->__construct()
+#8 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(359): SiteController->__construct('site', NULL)
+#9 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(276): CWebApplication->createController('')
+#10 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#11 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 C:\wamp\www\productivore\productivore\index.php(25): CApplication->run()
+#13 {main}
+REQUEST_URI=/productivore/productivore/
+---
+2014/04/29 17:10:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "asfsdf".' in C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController('asfsdf')
+#1 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\wamp\www\productivore\productivore\index.php(25): CApplication->run()
+#3 {main}
+REQUEST_URI=/productivore/productivore/asfsdf
+---
+2014/04/29 17:11:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The page could not be found.' in C:\wamp\www\productivore\productivore\protected\components\Controller.php:14
+Stack trace:
+#0 C:\wamp\www\productivore\productivore\protected\controllers\BudgetController.php(8): Controller->__construct()
+#1 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(359): BudgetController->__construct('budget', NULL)
+#2 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(276): CWebApplication->createController('budget')
+#3 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController('budget')
+#4 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\wamp\www\productivore\productivore\index.php(25): CApplication->run()
+#6 {main}
+REQUEST_URI=/productivore/productivore/budget
+---
+2014/04/29 17:17:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "asfsfasd".' in C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController('asfsfasd')
+#1 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\wamp\www\productivore\productivore\index.php(25): CApplication->run()
+#3 {main}
+REQUEST_URI=/productivore/productivore/asfsfasd
+---
+2014/04/29 17:17:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "asfsfasd".' in C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController('asfsfasd')
+#1 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\wamp\www\productivore\productivore\index.php(25): CApplication->run()
+#3 {main}
+REQUEST_URI=/productivore/productivore/asfsfasd
+---
+2014/04/29 17:17:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "asfsfasd".' in C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController('asfsfasd')
+#1 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\wamp\www\productivore\productivore\index.php(25): CApplication->run()
+#3 {main}
+REQUEST_URI=/productivore/productivore/asfsfasd
+---
+2014/04/29 17:17:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "asfsfasd".' in C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController('asfsfasd')
+#1 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\wamp\www\productivore\productivore\index.php(25): CApplication->run()
+#3 {main}
+REQUEST_URI=/productivore/productivore/asfsfasd
+---
+2014/04/29 17:17:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "asfsfasd".' in C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController('asfsfasd')
+#1 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\wamp\www\productivore\productivore\index.php(25): CApplication->run()
+#3 {main}
+REQUEST_URI=/productivore/productivore/asfsfasd
+---
+2014/04/29 17:19:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "asfsfasd".' in C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController('asfsfasd')
+#1 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\wamp\www\productivore\productivore\index.php(25): CApplication->run()
+#3 {main}
+REQUEST_URI=/productivore/productivore/asfsfasd
+---
+2014/04/29 17:19:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "asfsfasd".' in C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController('asfsfasd')
+#1 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\wamp\www\productivore\productivore\index.php(25): CApplication->run()
+#3 {main}
+REQUEST_URI=/productivore/productivore/asfsfasd
+---
+2014/04/29 17:19:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "asfsfasd".' in C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController('asfsfasd')
+#1 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\wamp\www\productivore\productivore\index.php(25): CApplication->run()
+#3 {main}
+REQUEST_URI=/productivore/productivore/asfsfasd
+---
+2014/04/29 17:21:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "asfsfasd".' in C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController('asfsfasd')
+#1 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\wamp\www\productivore\productivore\index.php(25): CApplication->run()
+#3 {main}
+REQUEST_URI=/productivore/productivore/asfsfasd
+---
+2014/04/29 17:21:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "asfsfasd".' in C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController('asfsfasd')
+#1 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\wamp\www\productivore\productivore\index.php(25): CApplication->run()
+#3 {main}
+REQUEST_URI=/productivore/productivore/asfsfasd
+---
+2014/04/29 17:21:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "asdsf".' in C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController('asdsf')
+#1 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\wamp\www\productivore\productivore\index.php(25): CApplication->run()
+#3 {main}
+REQUEST_URI=/productivore/productivore/asdsf
+---
+2014/04/29 17:21:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The page could not be found.' in C:\wamp\www\productivore\productivore\protected\components\Controller.php:14
+Stack trace:
+#0 C:\wamp\www\productivore\productivore\protected\controllers\BudgetController.php(8): Controller->__construct()
+#1 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(359): BudgetController->__construct('budget', NULL)
+#2 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(276): CWebApplication->createController('budget')
+#3 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController('budget')
+#4 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\wamp\www\productivore\productivore\index.php(25): CApplication->run()
+#6 {main}
+REQUEST_URI=/productivore/productivore/budget
+---
+2014/04/29 17:24:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The page could not be found.' in C:\wamp\www\productivore\productivore\protected\components\Controller.php:14
+Stack trace:
+#0 C:\wamp\www\productivore\productivore\protected\controllers\BudgetController.php(8): Controller->__construct()
+#1 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(359): BudgetController->__construct('budget', NULL)
+#2 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(276): CWebApplication->createController('budget')
+#3 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController('budget')
+#4 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\wamp\www\productivore\productivore\index.php(25): CApplication->run()
+#6 {main}
+REQUEST_URI=/productivore/productivore/budget
+---
+2014/04/29 17:25:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The page could not be found.' in C:\wamp\www\productivore\productivore\protected\components\Controller.php:14
+Stack trace:
+#0 C:\wamp\www\productivore\productivore\protected\controllers\BudgetController.php(8): Controller->__construct()
+#1 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(359): BudgetController->__construct('budget', NULL)
+#2 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(276): CWebApplication->createController('budget')
+#3 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController('budget')
+#4 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\wamp\www\productivore\productivore\index.php(25): CApplication->run()
+#6 {main}
+REQUEST_URI=/productivore/productivore/budget
+---
+2014/04/29 17:28:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The page could not be found.' in C:\wamp\www\productivore\productivore\protected\components\Controller.php:14
+Stack trace:
+#0 C:\wamp\www\productivore\productivore\protected\controllers\BudgetController.php(8): Controller->__construct()
+#1 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(359): BudgetController->__construct('budget', NULL)
+#2 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(276): CWebApplication->createController('budget')
+#3 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController('budget')
+#4 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\wamp\www\productivore\productivore\index.php(25): CApplication->run()
+#6 {main}
+REQUEST_URI=/productivore/productivore/budget
+---
+2014/04/29 17:32:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "signup".' in C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(270): CController->missingAction('signup')
+#1 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(282): CController->run('signup')
+#2 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController('site/signup')
+#3 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\productivore\productivore\index.php(25): CApplication->run()
+#5 {main}
+REQUEST_URI=/productivore/productivore/site/signup
+HTTP_REFERER=http://localhost/productivore/productivore/budget
+---

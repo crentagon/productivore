@@ -25,6 +25,15 @@ $(document).ready(function() {
 	// orderBy('sidebar-order-2'); //It has a weird arrangement by default. Uncomment for alphabetical.
 	// orderBy('sidebar-order-1'); //It has a weird arrangement by default. Uncomment for "most used".
 	
+	//Flash messages exit button
+	$('.flash-msg-exit').click(function(){
+		$(this).parent("div").fadeOut(C_SIDEBARSPEED);
+	});
+	
+	$('.flash-icon-container').click(function(){
+		$(this).parent("div").fadeOut(C_SIDEBARSPEED);
+	});
+	
 	//Notification div width
 	$.each($('.appling-icon-notification'),
 		function (){

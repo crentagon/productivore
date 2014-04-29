@@ -10,8 +10,7 @@ class SiteController extends Controller
 	public function actionIndex()
 	{
 		$this->render('index');
-	}
-	
+	}	
 	
 	//Accessing: http://localhost/productivore/productivore/site/update_sidebarfields
 	public function actionUpdate_sidebarFields($fieldid = 1, $valueid = 1){
@@ -26,6 +25,13 @@ class SiteController extends Controller
 	}
 	
 	public function actionLogin(){
+		// Yii::app()->user->setFlash('success','much success');
+		// Yii::app()->user->setFlash('success','so much success');
+		// Yii::app()->user->setFlash('warning','such warning<br/>must kiotsukete');
+		// Yii::app()->user->setFlash('error','very error<br/>ohnoesdame<br/>nununununu');
+		// Yii::app()->user->setFlash('error','another error');
+		// Yii::app()->user->setFlash('info','info<br/>larningisfun<br/>learn<br/>fyeah');
+	
 		$this->breadcrumbs = array(
 			'Login' => BASE_URL.'/site/login'
 		);
@@ -44,8 +50,10 @@ class SiteController extends Controller
 		{
 			$model->attributes=$_POST['LoginForm'];
 			// validate user input and redirect to the previous page if valid
-			if($model->validate() && $model->login())
+			if($model->validate() && $model->login()){
+				Yii::app()->user->setFlash('success','You have successfully logged in. <br/> Welcome back, '.Yii::app()->user->id.'!');
 				$this->redirect(Yii::app()->user->returnUrl);
+			}
 		}
 		// display the login form
 		$this->render('login', array('model'=>$model));

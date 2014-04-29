@@ -9,8 +9,14 @@ class Controller extends CController
 		$mainHelper = new MainHelper;
 		$this->applingUrl = $mainHelper->get_applingUrl_byApplingId($this->applingId);
 		parent::__construct($this->applingUrl[0]['appling_url']);
-		$this->populateApplings();
-		$this->populateNavbar();
+		
+		if(Yii::app()->user->isGuest && $this->applingId != 0){
+			throw new CHttpException(404,'The page could not be found.');
+		}
+		else{
+			$this->populateApplings();
+			$this->populateNavbar();
+		}
 	}
 	
 	/**
