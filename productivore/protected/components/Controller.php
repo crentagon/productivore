@@ -35,20 +35,25 @@ class Controller extends CController
 	 */
 	public $breadcrumbs=array();
 	
+	//Sidebar things
 	public $applings=array();	
-	
 	public $sidebarInfo=array();
 	
+	//Other constants
 	public $navbar=array();
-	
 	public $applingUrl='';
-	
 	public $applingId = 0;
+	public $isLoggingOut = false;
 	
+	//Styles and scripts
+	public $styles = array();
+	public $scripts = array();
+	
+	//Populates the sidebar's applings
 	public function populateApplings(){	
 		$c_orderByFieldId = 1;
 		$c_viewTypeFieldId = 2;
-		$userId = 1;
+		$userId = 1; //TO-DO: MULTIUSER
 		$applingId = 0;
 		
 		$userApplings = new SidebarHelper;
@@ -58,25 +63,20 @@ class Controller extends CController
 		$this->sidebarInfo['orderby'] = $userApplings->get_settingValues_byFieldId($c_orderByFieldId);
 		$this->sidebarInfo['viewtypes'] = $userApplings->get_settingValues_byFieldId($c_viewTypeFieldId);
 		$this->sidebarInfo['settings'] = $userApplings->get_sidebarSettings_byUserId($userId);
-		
-		// $this->debugPrint($this->applings);
 	}
 	
+	//Populates the navbar with the current appling's menu options
 	public function populateNavbar(){
 		$returnArray = array();
 		
 		$mainHelper = new MainHelper;
 		$tempArray = $mainHelper->get_menuByApplingId($this->applingId);
 		
-		
 		foreach($tempArray as $menu){
 			if(!$menu['parent_menu_id']){
-				// echo 'got here!';
-				// $this->debugPrint($menu);
 				$returnArray[$menu['menu_name']] = $this->applingUrl[0]['appling_url'].'/'.$menu['menu_url'];
 			}
 			else{
-				//Get menu_name given the parent_menu_id
 				$parentName = '';
 				foreach($tempArray as $submenu){
 					if($submenu['menu_id'] == $menu['parent_menu_id']){
@@ -84,7 +84,6 @@ class Controller extends CController
 						break;
 					}				
 				}
-				// $this->debugPrint($returnArray);
 				if(!is_array($returnArray[$parentName])){
 					$returnArray[$parentName] = 
 						array($menu['menu_name'] => $this->applingUrl[0]['appling_url'].'/'.$menu['menu_url']);
@@ -100,21 +99,6 @@ class Controller extends CController
 			'Log out' => 'site/logout'
 		);
 		
-		// $this->debugPrint($returnArray);
-		
-		/*
-		$returnArray['Item A'] = '/site/itema';
-		$returnArray['Item B'] = '/site/itemb';
-		$returnArray['Item C'] = '/site/itemc';
-		$returnArray['Item D'] = array(
-			'Item W' => '/site/itemw',
-			'Item X' => '/site/itemx',
-			'Item Y' => '/site/itemy',
-			'Item Z' => '/site/itemz'
-		);
-		$returnArray['Item E'] = '/site/iteme';
-		*/
-		
 		$this->navbar = $returnArray;
 	}
 	
@@ -122,5 +106,21 @@ class Controller extends CController
 		echo '<pre>';
 		print_r($params);
 		die();
+	}
+	
+	//Load the appling's scripts
+	public function loadScripts($params = array()){
+		$this->scripts = $params;
+	}
+	
+	//Load the appling's styles
+	public function loadStyles($params = array()){
+		$this->styles = $params;
+	}
+	
+	//Set the page up
+	public function setupPage($pageTitle, $breadcrumbs = array()){
+		$this->pageTitle = $pageTitle;
+		$this->breadcrumbs = $breadcrumbs;
 	}
 }

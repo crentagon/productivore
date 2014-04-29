@@ -480,8 +480,9 @@ class CController extends CBaseController
 	 */
 	public function missingAction($actionID)
 	{
-		throw new CHttpException(404,Yii::t('yii','The system is unable to find the requested action "{action}".',
-			array('{action}'=>$actionID==''?$this->defaultAction:$actionID)));
+		throw new CHttpException(404,'The page could not be found.');
+		// throw new CHttpException(404,Yii::t('yii','The system is unable to find the requested action "{action}".',
+			// array('{action}'=>$actionID==''?$this->defaultAction:$actionID)));
 	}
 
 	/**

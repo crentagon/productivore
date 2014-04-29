@@ -1,10 +1,15 @@
 /* All of the styles I place here are for hi-jacking bootstrap's stuff, and adding my own styles. */
 
 ::selection {
-	background: #121212; /* Safari */
+	background: #121212;
+	color: #FFFFFF;
 	}
 ::-moz-selection {
-	background: #121212; /* Firefox */
+	background: #121212;
+	color: #FFFFFF;
+}
+.text-align-center{
+	text-align: center;
 }
 
 @font-face {
@@ -428,12 +433,6 @@ hr.thick{
 	text-decoration: none;
 }
 
-.form{
-	width: 404px;
-	left: 50%;
-	margin-left: -202px;
-	position: relative;
-}
 
 .pvore-content-container{
 	background-color: rgba(255, 255, 255, 0.6);
@@ -444,16 +443,23 @@ hr.thick{
 	position: relative;
 }
 
+/*Login/Signup Forms*/
+/*
+.form{
+	width: 404px;
+	left: 50%;
+	margin-left: -202px;
+	position: relative;
+}
 .form-actions{
 	margin-bottom: 0px !important;
 	margin-top: 0px !important;
 	padding-bottom: 0px !important;
 	background-color: rgba(0,0,0,0) !important;
 }
+*/
 
-.text-align-center{
-	text-align: center;
-}
+/*Flash messages*/
 
 .flash-msg{
 	position: relative;

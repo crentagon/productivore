@@ -10,9 +10,9 @@ class TasksController extends Controller
 	
 	public function actionIndex()
 	{
-		$this->breadcrumbs = array(
+		$this->setupPage('Task List - Productivore', array(
 			'Task List' => BASE_URL.'/tasks'
-		);
+		));
 		$this->render('index');
 	}
 

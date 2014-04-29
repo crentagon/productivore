@@ -7,13 +7,38 @@
 	<meta name="language" content="en" />
 
 	<!--Stylesheets-->
-    <link rel="stylesheet" type="text/css" href="<? echo BASE_URL ?>/css/baseStyles.css" />
-    <link rel="stylesheet" type="text/css" href="<? echo BASE_URL ?>/assets/font-awesome-4.0.3/css/font-awesome.min.css" />
+	<?if(!Yii::app()->user->isGuest):?>
+		<link rel="stylesheet" type="text/css" href="<? echo BASE_URL ?>/css/baseStyles.css" />
+    <?else:?>
+		<link rel="stylesheet" type="text/css" href="<? echo BASE_URL ?>/css/guest.css" />
+	<?endif;?>
+	<link rel="stylesheet" type="text/css" href="<? echo BASE_URL ?>/assets/font-awesome-4.0.3/css/font-awesome.min.css" />
+	<?foreach($this->styles as $style):?>
+		<link rel="stylesheet" type="text/css" href="<? echo BASE_URL ?>/css/<?echo $style?>" />
+	<?endforeach;?>
 	<?/*<link rel="stylesheet" type="text/css" media="screen and (max-device-width: 480px)" href="<? echo BASE_URL ?>/css/baseStyles.css" />*/?>
 	
 	<!--Javascripts-->
 	<script type="text/javascript" src="<? echo BASE_URL ?>/js/jquery-2.1.0.min.js"></script>
-	<script type="text/javascript" src="<? echo BASE_URL ?>/js/basescript.js"></script>
+	<?if(!Yii::app()->user->isGuest):?>
+		<script type="text/javascript" src="<? echo BASE_URL ?>/js/basescript.js"></script>
+	<?else:?>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				var C_SIDEBARSPEED = 386;
+				$('.flash-msg-exit').click(function(){
+					$(this).parent("div").fadeOut(C_SIDEBARSPEED);
+				});
+				
+				$('.flash-icon-container').click(function(){
+					$(this).parent("div").fadeOut(C_SIDEBARSPEED);
+				});
+			});
+		</script>
+	<?endif;?>
+	<?foreach($this->scripts as $script):?>
+		<link rel="stylesheet" type="text/css" href="<? echo BASE_URL ?>/css/<?echo $script?>" />
+	<?endforeach;?>
 	
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 	<? Yii::app()->bootstrap->register(); ?>
@@ -30,7 +55,7 @@
 	?>
 	
 	<input type="hidden" id="BASE_URL" value="<?echo BASE_URL?>"/>
-
+	
 	<br/>
 	<?if($isLoggedIn):?>
 	<?//The sidebar?>	
@@ -185,6 +210,16 @@
 						'</div>';
 				}
 			?>
+					
+			<?if($this->isLoggingOut):?>
+				<div class="flash-msg flash-success">
+					<div class="flash-icon-container">
+						<span class="flash-icon fa fa-check-circle fa-2x"></span>
+					</div>
+					You have successfully logged out.
+					<span class="flash-msg-exit fa fa-times"></span>
+				</div>
+			<?endif;?>
 			<div class="cushion-20"></div>
 			<div class="pvore-content-container">
 				<? echo $content; ?>

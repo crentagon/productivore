@@ -371,8 +371,9 @@ class CUrlManager extends CApplicationComponent
 					return isset($_GET[$this->routeVar]) ? $_GET[$this->routeVar] : $r;
 			}
 			if($this->useStrictParsing)
-				throw new CHttpException(404,Yii::t('yii','Unable to resolve the request "{route}".',
-					array('{route}'=>$pathInfo)));
+				throw new CHttpException(404,'The page could not be found.');
+				// throw new CHttpException(404,Yii::t('yii','Unable to resolve the request "{route}".',
+					// array('{route}'=>$pathInfo)));
 			else
 				return $pathInfo;
 		}

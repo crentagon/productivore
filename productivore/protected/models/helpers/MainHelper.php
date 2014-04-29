@@ -35,7 +35,12 @@ class MainHelper
 		$params = array('userId'=>$userId, 'applingId'=>$applingId);
 		
 		$userApplingId = $this->sql_query($query, $params);
-		$userApplingId = $userApplingId[0]['user_appling_map_id'];
+		if(isset($userApplingId[0]['user_appling_map_id']))
+			$userApplingId = $userApplingId[0]['user_appling_map_id'];
+		else{
+			throw new CHttpException(404,'The page could not be found.');
+			return false;
+		}
 		
 		foreach($valueArray as $key=>$value){
 			//Get the map_id that corresponds to the field and valueid
@@ -47,8 +52,12 @@ class MainHelper
 				
 			$params = array('settingFieldId'=>$key, 'settingValueId'=>$value);
 			$settingFieldSettingValueMapId = $this->sql_query($query, $params);
-			$settingFieldSettingValueMapId = $settingFieldSettingValueMapId[0]['setting_field_setting_value_map_id'];	
-			
+			if(isset($settingFieldSettingValueMapId[0]['setting_field_setting_value_map_id']))
+				$settingFieldSettingValueMapId = $settingFieldSettingValueMapId[0]['setting_field_setting_value_map_id'];	
+			else{
+				throw new CHttpException(404,'The page could not be found.');
+				return false;
+			}
 			//Use the userid, applingid and the fieldid to set the mapid to the retrieved mapid
 			$query = '
 				UPDATE settings

@@ -10,9 +10,9 @@ class YouController extends Controller
 	
 	public function actionIndex()
 	{
-		$this->breadcrumbs = array(
+		$this->setupPage('You - Productivore', array(
 			'You' => BASE_URL.'/you'
-		);
+		));
 		$this->render('index');
 	}
 

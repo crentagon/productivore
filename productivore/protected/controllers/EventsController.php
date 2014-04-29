@@ -10,9 +10,9 @@ class EventsController extends Controller
 	
 	public function actionIndex()
 	{
-		$this->breadcrumbs = array(
+		$this->setupPage('Event Planner - Productivore', array(
 			'Event Planner' => BASE_URL.'/events'
-		);
+		));
 		$this->render('index');
 	}
 

@@ -42,16 +42,16 @@ To-do:
 			- Signup page
 			- Passing the information to the controller
 			- Sessions
-		- User must be able to login
+		[x] User must be able to login
 			[x] Verify the login/signup information on the header
 			[x] Login page
 			[x] Sessions
-			- "You have successfully logged in"
-			- "Error: Incorrect username/password"
-		- User must be able to logout
+			[x] "You have successfully logged in"
+			[x] "Error: Incorrect username/password"
+		[x] User must be able to logout
 			[x] Destroy the session
 			[x] Logout'd page
-			- "You have successfully logged out."
+			[x] "You have successfully logged out."
 	
 	[x] Custom color palletes
 		[x] For buttons
@@ -61,7 +61,13 @@ To-do:
 	[NOPE] Custom 404 page
 	[x] Forms: error --> why only password going red?
 	[x] Separate the navbar css and make it only accessible on login
-		
+	[x] Page titles for each controller
+	[x] LoadStyle, LoadScript implementation
+	[x] Bug: site/logout while logged out 
+	[x] Bug: site/login while logged in
+	[x] Bug: accessibility of Ajax function in the SiteController
+	[x] CSS/JS separation
+	
 	- Notifications - home, displays all the notifications and applings
 	- Favorite Applings - displays all your favorite applings
 	- Control Panel - change e-mail, change password, change default frontpage

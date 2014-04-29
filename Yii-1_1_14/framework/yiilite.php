@@ -1747,8 +1747,9 @@ class CWebApplication extends CApplication
 			$this->_controller=$oldController;
 		}
 		else
-			throw new CHttpException(404,Yii::t('yii','Unable to resolve the request "{route}".',
-				array('{route}'=>$route===''?$this->defaultController:$route)));
+			throw new CHttpException(404,'The page could not be found.');
+			// throw new CHttpException(404,Yii::t('yii','Unable to resolve the request "{route}".',
+				// array('{route}'=>$route===''?$this->defaultController:$route)));
 	}
 	public function createController($route,$owner=null)
 	{
@@ -3109,8 +3110,9 @@ class CUrlManager extends CApplicationComponent
 					return isset($_GET[$this->routeVar]) ? $_GET[$this->routeVar] : $r;
 			}
 			if($this->useStrictParsing)
-				throw new CHttpException(404,Yii::t('yii','Unable to resolve the request "{route}".',
-					array('{route}'=>$pathInfo)));
+				throw new CHttpException(404,'The page could not be found.');
+				// throw new CHttpException(404,Yii::t('yii','Unable to resolve the request "{route}".',
+					// array('{route}'=>$pathInfo)));
 			else
 				return $pathInfo;
 		}
@@ -3665,7 +3667,8 @@ class CController extends CBaseController
 	}
 	public function missingAction($actionID)
 	{
-		throw new CHttpException(404,Yii::t('yii','The system is unable to find the requested action "{action}".',
+		throw new CHttpException(404,'The page could not be found.');
+		// throw new CHttpException(404,Yii::t('yii','The system is unable to find the requested action "{action}".',
 			array('{action}'=>$actionID==''?$this->defaultAction:$actionID)));
 	}
 	public function getAction()
