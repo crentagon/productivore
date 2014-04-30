@@ -108,10 +108,11 @@ div{
 	position: absolute;
 	top: 50%;
 	margin-top: -13px;
+	color: rgba(255, 255, 255, 0.7);
 }
 
 .flash-icon:hover{
-	color: #000000;
+	color: #FFFFFF;
 }
 
 .flash-msg-exit{
@@ -120,10 +121,11 @@ div{
 	left: 100%;
 	margin-left: -20px;
 	cursor: pointer;
+	color: rgba(255, 255, 255, 0.7);
 }
 
 .flash-msg-exit:hover{
-	color: #000;
+	color: #FFFFFF;
 }
 
 .flash-icon-container{

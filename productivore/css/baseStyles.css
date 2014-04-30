@@ -488,10 +488,11 @@ hr.thick{
 	position: absolute;
 	top: 50%;
 	margin-top: -13px;
+	color: rgba(255, 255, 255, 0.7);
 }
 
 .flash-icon:hover{
-	color: #BBBBBB;
+	color: #FFFFFF;
 }
 
 .flash-msg-exit{
@@ -500,10 +501,11 @@ hr.thick{
 	left: 100%;
 	margin-left: -20px;
 	cursor: pointer;
+	color: rgba(255, 255, 255, 0.7);
 }
 
 .flash-msg-exit:hover{
-	color: #BBBBBB;
+	color: #FFFFFF;
 }
 
 .flash-icon-container{

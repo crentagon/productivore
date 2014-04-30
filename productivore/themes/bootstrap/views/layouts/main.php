@@ -198,7 +198,7 @@
 					else if($key == 'error')
 						$faIcon = 'times-circle';
 					else 
-						$faIcon = 'question-circle';
+						$faIcon = 'info-circle';
 					
 					echo 
 						'<div class="flash-msg flash-' . $key . '">'.

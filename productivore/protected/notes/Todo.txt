@@ -68,6 +68,13 @@ To-do:
 	[x] Bug: accessibility of Ajax function in the SiteController
 	[x] CSS/JS separation
 	
+	- Triggers for
+		- ON INSERT USER? Insert to user applings (and settings)
+		- ON DELETE USER? Delete user applings (and settings)
+	- default_setting_value_id in the setting_fields table
+	- storing the userid of the person logged in
+	- /using/ the userid of the person logged in for the appling sidebar
+	
 	- Notifications - home, displays all the notifications and applings
 	- Favorite Applings - displays all your favorite applings
 	- Control Panel - change e-mail, change password, change default frontpage
