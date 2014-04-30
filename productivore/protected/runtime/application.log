@@ -2157,3 +2157,30 @@ Stack trace:
 #12 {main}
 REQUEST_URI=/productivore/productivore/site/update_sidebarfields?fieldid=2&valueid=3
 ---
+2014/04/30 09:55:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The page could not be found.' in C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController('ksjd')
+#1 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\wamp\www\productivore\productivore\index.php(25): CApplication->run()
+#3 {main}
+REQUEST_URI=/productivore/productivore/ksjd
+---
+2014/04/30 10:01:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The page could not be found.' in C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(270): CController->missingAction('settings')
+#1 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(282): CController->run('settings')
+#2 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController('site/settings')
+#3 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\productivore\productivore\index.php(25): CApplication->run()
+#5 {main}
+REQUEST_URI=/productivore/productivore/site/settings
+HTTP_REFERER=http://localhost/productivore/productivore/site/test
+---
+2014/04/30 10:01:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The page could not be found.' in C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController('fh')
+#1 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\wamp\www\productivore\productivore\index.php(25): CApplication->run()
+#3 {main}
+REQUEST_URI=/productivore/productivore/fh
+---

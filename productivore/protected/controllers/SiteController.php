@@ -73,7 +73,7 @@ class SiteController extends Controller
 			$this->isLoggingOut = true;
 		}
 		else{
-			Yii::app()->user->setFlash('warning','You have already logged out.');
+			Yii::app()->user->setFlash('warning','You are not logged in.');
 		}
 		$this->render('index');
 		// $this->redirect(Yii::app()->homeUrl);

@@ -491,7 +491,7 @@ hr.thick{
 }
 
 .flash-icon:hover{
-	color: #000000;
+	color: #BBBBBB;
 }
 
 .flash-msg-exit{
@@ -503,7 +503,7 @@ hr.thick{
 }
 
 .flash-msg-exit:hover{
-	color: #000;
+	color: #BBBBBB;
 }
 
 .flash-icon-container{
