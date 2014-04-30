@@ -103,4 +103,38 @@ class SiteController extends Controller
 				$this->render('error', $error);
 		}
 	}
+	
+	public function actionSignup(){
+		$this->setupPage('Signup - Productivore', array(
+			'Signup' => BASE_URL.'/site/signup'
+		));
+		
+		if (!Yii::app()->user->isGuest) {
+			Yii::app()->user->setFlash('warning','You are already logged in, '.Yii::app()->user->id.'.');
+			$this->redirect(Yii::app()->user->returnUrl);
+		}
+		
+		$model = new SignupForm;
+
+		if(isset($_POST['ajax']) && $_POST['ajax']==='signup-form')
+		{
+			echo CActiveForm::validate($model);
+			Yii::app()->end();
+		}
+
+		if(isset($_POST['SignupForm']))
+		{
+			$model->attributes=$_POST['SignupForm'];
+			if($model->validate() && $model->signup()){
+				// $this->appendFlashMessage('success', 'Sign up successful.<br/>You may now login with your credentials.');
+				Yii::app()->user->setFlash('success','Sign up successful.<br/>You may now login with your credentials.');
+				$this->redirect(Yii::app()->user->returnUrl);
+			}
+			// Yii::app()->user->setFlash('error','Sign up failed.<br/>Please check the input fields and try again.');
+		}
+
+		$this->render('signup', array('model'=>$model));
+		
+		
+	}
 }

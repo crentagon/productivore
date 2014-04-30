@@ -37,11 +37,11 @@ To-do:
 	- Optimization (see YSlow)
 	
 	[x] Control Panel > Settings, Logout option must be available everywhere
-		- User must be able to signup
-			- Login/Signup information on the navbar
-			- Signup page
-			- Passing the information to the controller
-			- Sessions
+		[x] User must be able to signup
+			[x] Login/Signup information on the navbar
+			[x] Signup page
+			[x] Passing the information to the controller
+			[x] Sessions
 		[x] User must be able to login
 			[x] Verify the login/signup information on the header
 			[x] Login page
@@ -58,7 +58,7 @@ To-do:
 		[x] Border of buttons: border: 0px in bootstrap's .btn
 		[x] For flash messages
 		[x] Do not allow access to applings (URL manipulation whut) if user is not logged in
-	[NOPE] Custom 404 page
+	[x] Custom 404 page
 	[x] Forms: error --> why only password going red?
 	[x] Separate the navbar css and make it only accessible on login
 	[x] Page titles for each controller
@@ -71,7 +71,8 @@ To-do:
 	- Notifications - home, displays all the notifications and applings
 	- Favorite Applings - displays all your favorite applings
 	- Control Panel - change e-mail, change password, change default frontpage
-	- Appling List - mark an appling as favorite, revoke myself access to the appling (because I don't use it)
+	- Appling Manager - mark an appling as favorite, revoke myself access to the appling (because I don't use it)
+		- "Appling Manager" at the bottom of the sidebar
 	
 	- Backtotop
 	- Multiple Color schemes

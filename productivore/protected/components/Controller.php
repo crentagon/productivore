@@ -123,4 +123,5 @@ class Controller extends CController
 		$this->pageTitle = $pageTitle;
 		$this->breadcrumbs = $breadcrumbs;
 	}
+	
 }

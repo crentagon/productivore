@@ -157,7 +157,7 @@
 					<ul class="nav">
 						<?if(!$isLoggedIn):?>
 							<li><a href="<?echo BASE_URL?>/site/login">Login</a></li>
-							<li><a href="<?echo BASE_URL?>/site/signup">Sign up</a></li>
+							<li><a href="<?echo BASE_URL?>/site/signup">Sign Up</a></li>
 						<?else:?>
 							<?foreach($this->navbar as $titleParent=>$urlParent):?>
 								<?if(is_array($urlParent)):?>
@@ -210,7 +210,7 @@
 						'</div>';
 				}
 			?>
-					
+			
 			<?if($this->isLoggingOut):?>
 				<div class="flash-msg flash-success">
 					<div class="flash-icon-container">

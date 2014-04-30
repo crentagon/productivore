@@ -18,11 +18,12 @@ class UserIdentity extends CUserIdentity
 	public function authenticate()
 	{
 		$model = new Users;
+		$security = new PasswordSecurity;
 		$users = $model->fetch_users();
 		
 		if(!isset($users[$this->username]))
 			$this->errorCode=self::ERROR_USERNAME_INVALID;
-		else if($users[$this->username]!==md5($this->password))
+		else if(!$security->validate_password($this->password, $users[$this->username]))
 			$this->errorCode=self::ERROR_PASSWORD_INVALID;
 		else
 			$this->errorCode=self::ERROR_NONE;
