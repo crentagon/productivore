@@ -53,7 +53,8 @@ class Controller extends CController
 	public function populateApplings(){	
 		$c_orderByFieldId = 1;
 		$c_viewTypeFieldId = 2;
-		$userId = 1; //TO-DO: MULTIUSER
+		$userId = Yii::app()->user->getId();
+		// $userId = 1;
 		$applingId = 0;
 		
 		$userApplings = new SidebarHelper;

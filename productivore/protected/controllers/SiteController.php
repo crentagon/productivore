@@ -18,7 +18,8 @@ class SiteController extends Controller
 		// echo $fieldid.'>>>'.$valueid; die();
 		if(!Yii::app()->user->isGuest){
 			$update = array($fieldid=>$valueid); //setting_field_id, field_value_map_id
-			$userId = 1; //TO-DO: MULTIUSER
+			$userId = Yii::app()->user->getId(); 
+			// $userId = 1; 
 			$applingId = 0;
 			
 			$userApplings = new SidebarHelper;
@@ -52,7 +53,7 @@ class SiteController extends Controller
 				$model->attributes=$_POST['LoginForm'];
 				// validate user input and redirect to the previous page if valid
 				if($model->validate() && $model->login()){
-					Yii::app()->user->setFlash('success','You have successfully logged in. <br/> Welcome back, '.Yii::app()->user->id.'!');
+					Yii::app()->user->setFlash('success','You have successfully logged in. <br/> Welcome back, '.Yii::app()->user->getName().'!');
 					$this->redirect(Yii::app()->user->returnUrl);
 				}
 			}
@@ -60,7 +61,7 @@ class SiteController extends Controller
 			$this->render('login', array('model'=>$model));
 		}
 		else{
-			Yii::app()->user->setFlash('warning','You are already logged in, '.Yii::app()->user->id.'.');		
+			Yii::app()->user->setFlash('warning','You are already logged in, '.Yii::app()->user->getName().'.');		
 			$this->render('index');
 		}
 	}
@@ -81,6 +82,10 @@ class SiteController extends Controller
 	
 	public function actionTest(){
 		$this->setupPage('Test Page');
+		// echo Yii::app()->user->getId();
+		// echo '>>>';
+		// echo Yii::app()->user->getName();
+		// echo '<pre>'; print_r(Yii::app()->user); echo '</pre>';
 		// Yii::app()->user->setFlash('success','much success');
 		// Yii::app()->user->setFlash('error','another error');
 		Yii::app()->user->setFlash('success','so much success');

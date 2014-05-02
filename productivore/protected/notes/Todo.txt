@@ -68,18 +68,22 @@ To-do:
 	[x] Bug: accessibility of Ajax function in the SiteController
 	[x] CSS/JS separation
 	
-	- Triggers for
-		- ON INSERT USER? Insert to user applings (and settings)
-		- ON DELETE USER? Delete user applings (and settings)
-	- default_setting_value_id in the setting_fields table
-	- storing the userid of the person logged in
-	- /using/ the userid of the person logged in for the appling sidebar
+	[x] On insert user triggers:
+		[x] Insert into user_applings
+		[x] Insert into settings
+	[x] is_default column in the setting_field_setting_value_maps
+	[x] storing the userid of the person logged in
+	[x] /using/ the userid of the person logged in for the appling sidebar
 	
 	- Notifications - home, displays all the notifications and applings
 	- Favorite Applings - displays all your favorite applings
 	- Control Panel - change e-mail, change password, change default frontpage
 	- Appling Manager - mark an appling as favorite, revoke myself access to the appling (because I don't use it)
 		- "Appling Manager" at the bottom of the sidebar
+		
+	- Additional triggers (This is the compliment of "On insert user triggers"):
+		- Adding a new appling? Insert into user applings, for each user as well.
+		- Adding a new entry on setting_field_setting_value_maps? Gotta add 'em on the settings table as well, for each user.
 	
 	- Backtotop
 	- Multiple Color schemes
