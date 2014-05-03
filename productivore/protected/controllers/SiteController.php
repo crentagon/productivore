@@ -9,6 +9,10 @@ class SiteController extends Controller
 
 	public function actionIndex()
 	{
+		if(Yii::app()->user->isGuest){
+			$this->setupPage('Preview - Productivore');	
+			$this->render('preview');
+		}
 		$this->setupPage('Productivore');
 		$this->render('index');
 	}	

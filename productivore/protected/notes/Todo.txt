@@ -76,10 +76,10 @@ To-do:
 	[x] /using/ the userid of the person logged in for the appling sidebar
 	
 	- Notifications - home, displays all the notifications and applings
-	- Favorite Applings - displays all your favorite applings
 	- Control Panel - change e-mail, change password, change default frontpage
 	- Appling Manager - mark an appling as favorite, revoke myself access to the appling (because I don't use it)
-		- "Appling Manager" at the bottom of the sidebar
+		- Favorite Applings - displays all your favorite applings
+		- "Appling Manager" as an icon
 		
 	- Additional triggers (This is the compliment of "On insert user triggers"):
 		- Adding a new appling? Insert into user applings, for each user as well.
