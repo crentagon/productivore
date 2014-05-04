@@ -17,10 +17,19 @@
 	<hr/>
 	<?php echo $form->textFieldRow($model,'username', array('disabled'=>true)); ?>
 	<?php echo $form->textFieldRow($model,'currentEmail', array('disabled'=>true)); ?>
+	<div class="control-group">
+		<div class="controls">
+			<div class="btn btn-inverse" onclick="settingsHide('.settings-new-email'); $(this).hide();">Change my E-Mail</div>
+		</div>
+	</div>
 	
-	<div class="btn btn-inverse btn-change-email" onclick="$('.settings-new-email').fadeIn(256); $(this).hide();">Change my E-Mail</div>
 	<div class="settings-new-email"><?php echo $form->textFieldRow($model,'newEmail'); ?></div>
-	<div class="btn btn-inverse btn-change-password" onclick="$('.settings-new-password').fadeIn(256); $(this).hide();">Change my Password</div>
+	
+	<div class="control-group">
+		<div class="controls">
+			<div class="btn btn-inverse" onclick="settingsHide('.settings-new-password'); $(this).hide();">Change my Password</div>
+		</div>
+	</div>
 	<div class="settings-new-password">
 		<?php echo $form->passwordFieldRow($model,'newPassword'); ?>
 		<?php echo $form->passwordFieldRow($model,'newPasswordRepeat'); ?>

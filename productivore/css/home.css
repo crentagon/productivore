@@ -73,16 +73,15 @@
 }
 
 .notifications-greyed{
-	color: #BBBBBB;
-}
-
-.btn-change-email, .btn-change-password{
-	border: 2px solid red;
+	color: #777777;
 }
 
 .settings-new-password, .settings-new-email{
 	display: none;
-	border: 2px solid red;
+}
+
+.fa{
+	font-family: FontAwesome !important;
 }
 /*
 .notifications-greyed:hover{

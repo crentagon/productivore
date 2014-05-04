@@ -25,6 +25,7 @@ class SignupxForm extends CFormModel
 	{
 		return array(
 			array('username, currentEmail, newEmail, newPassword, newPasswordRepeat', 'safe'),
+			array('newEmail', 'email'),
 			array('currentPassword', 'required'),
 			array('newPasswordRepeat', 'compare', 'compareAttribute'=>'newPassword'),
 		);
@@ -45,16 +46,24 @@ class SignupxForm extends CFormModel
 	public function update()
 	{
 		//Password is incorrect: throw a flash error, return false.
+		$security = new PasswordSecurity;
+		$userId = Yii::app()->user->getId();
+		$user = Users::model()->findByPk($userId);
+		
+		if(!$security->validate_password($this->currentPassword, $user->user_password)){
+			Yii::app()->user->setFlash('error','Incorrect password.');
+			return false;
+		}
 		
 		//Password is correct: update all fields, return true.
-		$userId = Yii::app()->user->getId();
 		
-		$user = Users::model()->findByPk($userId);
 		$user->user_email = empty($this->newEmail) ? $this->currentEmail : $this->newEmail;
-		$user->user_password = empty($this->newPassword) ? $currentPassword : $this->newPassword;
+		$user->user_password = empty($this->newPassword) ? $user->user_password : $security->create_hash($this->newPassword);
+		
 		if($user->save())
 			return true;
 		
+		Yii::app()->user->setFlash('warning','No changes detected.');
 		return false;
 		
 		/*
