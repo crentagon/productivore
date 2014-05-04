@@ -13,9 +13,14 @@
 		<link rel="stylesheet" type="text/css" href="<? echo BASE_URL ?>/css/guest.css" />
 	<?endif;?>
 	<link rel="stylesheet" type="text/css" href="<? echo BASE_URL ?>/assets/font-awesome-4.0.3/css/font-awesome.min.css" />
-	<?foreach($this->styles as $style):?>
-		<link rel="stylesheet" type="text/css" href="<? echo BASE_URL ?>/css/<?echo $style?>" />
-	<?endforeach;?>
+	<?if(is_array($this->styles)):?>
+		<?foreach($this->styles as $style):?>
+			<link rel="stylesheet" type="text/css" href="<? echo BASE_URL ?>/css/<?echo $style?>" />
+		<?endforeach;?>
+	<?else:?>
+		<link rel="stylesheet" type="text/css" href="<? echo BASE_URL ?>/css/<?echo $this->styles?>" />
+	<?endif;?>
+	
 	<?/*<link rel="stylesheet" type="text/css" media="screen and (max-device-width: 480px)" href="<? echo BASE_URL ?>/css/baseStyles.css" />*/?>
 	
 	<!--Javascripts-->
@@ -36,9 +41,13 @@
 			});
 		</script>
 	<?endif;?>
-	<?foreach($this->scripts as $script):?>
-		<link rel="stylesheet" type="text/css" href="<? echo BASE_URL ?>/css/<?echo $script?>" />
-	<?endforeach;?>
+	<?if(is_array($this->scripts)):?>
+		<?foreach($this->scripts as $script):?>
+			<script type="text/javascript" src="<? echo BASE_URL ?>/js/<?echo $script?>"></script>
+		<?endforeach;?>
+	<?else:?>
+		<script type="text/javascript" src="<? echo BASE_URL ?>/js/<?echo $this->scripts?>"></script>
+	<?endif;?>
 	
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 	<? Yii::app()->bootstrap->register(); ?>

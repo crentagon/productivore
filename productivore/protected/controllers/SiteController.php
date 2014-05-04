@@ -3,6 +3,8 @@
 class SiteController extends Controller
 {
 	public function __construct(){
+		$this->loadStyles('home.css');
+		$this->loadScripts('home.js');
 		$this->applingId = 0;
 		parent::__construct();
 	}
@@ -13,8 +15,12 @@ class SiteController extends Controller
 			$this->setupPage('Preview - Productivore');	
 			$this->render('preview');
 		}
-		$this->setupPage('Productivore');
-		$this->render('index');
+		else{
+			$helper = new HomeHelper;
+			$allApplings = $helper->get_applings_byUserId(Yii::app()->user->getId());
+			$this->setupPage('Productivore');
+			$this->render('index', compact('allApplings'));
+		}
 	}	
 	
 	//Accessing: http://localhost/productivore/productivore/site/update_sidebarfields
@@ -80,7 +86,7 @@ class SiteController extends Controller
 		else{
 			Yii::app()->user->setFlash('warning','You are not logged in.');
 		}
-		$this->render('index');
+		$this->actionIndex();
 		// $this->redirect(Yii::app()->homeUrl);
 	}
 	
@@ -96,7 +102,7 @@ class SiteController extends Controller
 		Yii::app()->user->setFlash('warning','such warning<br/>must kiotsukete');
 		Yii::app()->user->setFlash('error','very error<br/>ohnoesdame<br/>nununununu');
 		Yii::app()->user->setFlash('info','info<br/>larningisfun<br/>learn<br/>fyeah');
-		$this->render('index');
+		$this->render('preview');
 	}
 	
 	public function actionError()
@@ -119,7 +125,7 @@ class SiteController extends Controller
 		));
 		
 		if (!Yii::app()->user->isGuest) {
-			Yii::app()->user->setFlash('warning','You are already logged in, '.Yii::app()->user->id.'.');
+			Yii::app()->user->setFlash('warning','You are already logged in, '.Yii::app()->user->getName().'.');
 			$this->redirect(Yii::app()->user->returnUrl);
 		}
 		
@@ -144,6 +150,48 @@ class SiteController extends Controller
 
 		$this->render('signup', array('model'=>$model));
 		
+		
+	}
+	
+	public function actionSettings(){
+		$this->setupPage('Settings - Productivore', array(
+			'Settings' => BASE_URL.'/site/settings'
+		));
+		$this->loadStyles(array('guest.css', 'home.css'));
+		
+		if (Yii::app()->user->isGuest) {
+			throw new CHttpException(404,'The page could not be found.');
+		}
+		
+		$model = new SignupxForm;
+
+		if(isset($_POST['ajax']) && $_POST['ajax']==='signup-x-form')
+		{
+			echo CActiveForm::validate($model);
+			Yii::app()->end();
+		}
+
+		if(isset($_POST['SignupxForm']))
+		{
+			$model->attributes=$_POST['SignupxForm'];
+			if($model->validate() && $model->update()){
+				// $this->appendFlashMessage('success', 'Sign up successful.<br/>You may now login with your credentials.');
+				Yii::app()->user->setFlash('success','You have successfully edited your credentials.');
+				$this->redirect(Yii::app()->user->returnUrl);
+			}
+			// Yii::app()->user->setFlash('error','Sign up failed.<br/>Please check the input fields and try again.');
+		}
+		
+		//Get the e-mail and the username of the current user
+		$userCredentials = Users::model()->find('user_id =:user_id', array(':user_id'=>Yii::app()->user->getId()));
+		$model->username = $userCredentials->user_name;
+		$model->currentEmail = $userCredentials->user_email;
+		
+		// echo '<pre>';
+		// print_r($userCredentials);
+		// die();
+
+		$this->render('settings', array('model'=>$model));
 		
 	}
 }

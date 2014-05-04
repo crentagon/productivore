@@ -97,7 +97,7 @@ class Controller extends CController
 		
 		$returnArray['Control Panel'] = array(
 			'Settings' => $this->applingUrl[0]['appling_url'].'/settings',
-			'Log out' => 'site/logout'
+			'Log out ('.Yii::app()->user->getName().')' => 'site/logout'
 		);
 		
 		$this->navbar = $returnArray;
