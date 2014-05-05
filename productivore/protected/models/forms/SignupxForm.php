@@ -57,15 +57,19 @@ class SignupxForm extends CFormModel
 		
 		//Password is correct: update all fields, return true.
 		
-		$user->user_email = empty($this->newEmail) ? $this->currentEmail : $this->newEmail;
-		$user->user_password = empty($this->newPassword) ? $user->user_password : $security->create_hash($this->newPassword);
+		if(!empty($this->newEmail))
+			$user->user_email = $this->newEmail;
+		
+		if(!empty($this->newPassword))
+			$user->user_password = $security->create_hash($this->newPassword);
 		
 		if($user->save())
 			return true;
 		
-		Yii::app()->user->setFlash('warning','No changes detected.');
-		return false;
-		
+		if(empty($this->newEmail) && empty($this->newPassword)){
+			Yii::app()->user->setFlash('warning','No changes detected.');
+			return false;
+		}
 		/*
 		$user = new Users;
 		$security = new PasswordSecurity;
