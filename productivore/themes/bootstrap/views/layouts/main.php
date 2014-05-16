@@ -89,9 +89,11 @@
 						isFavorite="<?echo $appling['isFavorite']?>"
 						accessCount="<?echo $appling['accessCount']?>"
 						baseId="appling-<?echo $applingid?>">
-						<?if($appling['notifCount'] != 0):?>
+						<?
+						/*if($appling['notifCount'] != 0):?>
 							<div class="appling-icon-notification"><?echo $appling['notifCount']?></div>
-						<?endif;?>
+						<?endif;
+						*/?>
 						<div class="pvore-sidebar-app-image">
 							<?if($appling['isFavorite'] == 1):?>
 								<span class="favorite-appling-icon fa fa-star fa-1"></span>
@@ -196,6 +198,12 @@
 			  
 			  </div>
 			</div><!--navbar-->
+			<?if($isLoggedIn):?>
+			<div class="display-if-480 cushion-20"></div>
+			<div class="pvore-sidebar-button-main btn-inverse" onclick="showSidebar();">
+				Display Sidebar
+			</div>
+			<?endif;?>
 			<?
 				//Flash messages
 				$faIcon = '';

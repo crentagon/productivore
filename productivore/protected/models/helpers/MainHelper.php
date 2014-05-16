@@ -77,14 +77,26 @@ class MainHelper
 	}
 	
 	public function get_applingUrl_byApplingId($applingId = 0){
+		
+		
+		// Applings::model()->findByAttributes(array('appling_id'=>$applingId));
+		
+		 // Yii::app()->db->createCommand()
+				// ->select('appling_url')
+				// ->from('applings')
+				// ->where('appling_id=:appling_id', array(':appling_id'=>$applingId))
+				// ->queryAll();
+				
 		$query = '
 			SELECT appling_url
 			FROM applings
 			WHERE appling_id = :applingId';
 			
 		$params = array('applingId'=>$applingId);
-		
 		return $this->sql_query($query, $params);
+		// echo 'here'; die();
+		
+		// return 1;
 	}
 	
 	public function get_menuByApplingId($applingId = 0){

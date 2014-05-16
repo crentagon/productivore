@@ -83,6 +83,20 @@
 .fa{
 	font-family: FontAwesome !important;
 }
+
+.pvore-applings-app{
+	border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px;
+	height: 95px;
+	width: 100%;
+	cursor: pointer;
+	position: relative;
+	border: 1px solid #f8f8f8;
+	padding: 2%;
+}
+.pvore-applings-app:hover{
+	border: 1px solid #BBB;
+}
 /*
 .notifications-greyed:hover{
 	color: #555555;

@@ -366,8 +366,9 @@ function changeView(willUpdate){
 }
 
 function showSidebar(){
-	
-	$('.pvore-sidebar-button').fadeOut(C_SIDEBARSPEED/4);
+	// alert();
+	if($(document).width() > 480)
+		$('.pvore-sidebar-button').fadeOut(C_SIDEBARSPEED/4);
 	$('.pvore-minima').fadeIn(C_SIDEBARSPEED);
 	$('.pvore-dimmer').fadeIn(C_SIDEBARSPEED/4);
 	// $('.pvore-sidebar-container').fadeIn(C_SIDEBARSPEED);
@@ -379,8 +380,9 @@ function showSidebar(){
 }
 
 function hideSidebar(){
+	if($(document).width() > 480)
+		$('.pvore-sidebar-button').fadeIn(C_SIDEBARSPEED/2);
 	$('.pvore-dimmer').fadeOut(C_SIDEBARSPEED/2);
-	$('.pvore-sidebar-button').fadeIn(C_SIDEBARSPEED/2);
 	$('.pvore-minima').fadeOut(C_SIDEBARSPEED);
 	$('.pvore-sidebar-container').animate({'left': '-100%'}, C_SIDEBARSPEED).fadeOut(C_SIDEBARSPEED);
 	// $('.pvore-sidebar-container').fadeOut(C_SIDEBARSPEED);

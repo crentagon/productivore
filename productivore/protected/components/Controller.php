@@ -6,6 +6,7 @@
 class Controller extends CController
 {
 	public function __construct(){
+		
 		$mainHelper = new MainHelper;
 		$this->applingUrl = $mainHelper->get_applingUrl_byApplingId($this->applingId);
 		parent::__construct($this->applingUrl[0]['appling_url']);

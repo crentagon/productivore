@@ -2,7 +2,12 @@
 class HomeHelper extends MainHelper
 {
 
-	public function get_applings_byUserId($userid = 1){
+	public function get_applings_byUserId($userid = 1, $isAlphabetical = false){
+		if($isAlphabetical)
+			$order = 'ORDER BY name ASC';
+		else
+			$order = 'ORDER BY notifCount DESC, name ASC';
+			
 		$query =
 			'SELECT
 				appling_name as name,
@@ -19,8 +24,7 @@ class HomeHelper extends MainHelper
 				USING (appling_id)
 			WHERE
 				user_id = :userid
-			AND appling_id > 0
-			ORDER BY notifCount DESC, name ASC';
+			AND appling_id > 0 '.$order;
 		$params = array('userid'=>$userid);
 		return $this->sql_query($query, $params);
 	}

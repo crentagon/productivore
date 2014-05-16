@@ -153,6 +153,18 @@ class SiteController extends Controller
 		
 	}
 	
+	public function actionApplings(){
+		if(Yii::app()->user->isGuest){
+			throw new CHttpException(404,'The page could not be found.');
+		}
+		else{
+			$helper = new HomeHelper;
+			$allApplings = $helper->get_applings_byUserId(Yii::app()->user->getId(), true);
+			$this->setupPage('Productivore');
+			$this->render('applings', compact('allApplings'));
+		}
+	}
+	
 	public function actionSettings(){
 		$this->setupPage('Settings - Productivore', array(
 			'Settings' => BASE_URL.'/site/settings'

@@ -23,6 +23,12 @@ body{
 	background: #EFEFEF !important;
 }
 
+@media (max-width: 480px){
+	body{
+		padding: 0px !important;
+	}
+}
+
 #page {
     padding-top: 60px;
 }
@@ -57,6 +63,10 @@ hr.thick{
 
 /* Sidebar-related things (z-index: 10-20) */
 
+.pvore-sidebar-button-main{
+	display: none;
+}
+
 .pvore-dimmer{
 	top: 0px; left: 0px; width: 100%; height: 100%; z-index: 10; position: fixed; 
 	background-color: rgba(0,0,0,0.5);
@@ -89,13 +99,6 @@ hr.thick{
 	cursor: pointer; display: none; 
 }
 
-.pvore-minima:hover{
-	/*
-	background-color: black;
-	color: #EFEFEF;
-	*/
-}
-
 .pvore-sidebar-container{
 	top: 0px; left: -100%; width: 30%; height: 100%; z-index: 16; position: fixed; display: none;
 	background-color: #FEFEFE;
@@ -120,8 +123,24 @@ hr.thick{
 		cursor: pointer; display: none; 
 	}
 }
+.display-if-480{
+	display: none;
+}
+
+@media (min-width: 481px){
+	.pvore-sidebar-button{
+		display: block;
+	}
+}
 
 @media (max-width: 480px){
+	.display-if-480{
+		display: block;
+	}
+
+	.super-container {
+		width: 100%;
+	}
 	.pvore-sidebar-container{
 		top: 0px; left: -100%; width: 90%; height: 100%; z-index: 16; position: fixed; display: none;
 		background-color: #FEFEFE;
@@ -135,6 +154,17 @@ hr.thick{
 		background-color: #FEFEFE; color: black;
 		margin-top: -25px; float: left;
 		cursor: pointer; display: none; 
+	}
+	.pvore-sidebar-button{
+		display: none;
+	}
+	.pvore-sidebar-button-main{
+		display: block;
+		height: 35px;
+		text-align: center; vertical-align: middle; line-height: 35px;
+		-moz-border-radius: 8px 8px 8px 8px; border-radius: 8px 8px 8px 8px; -webkit-border-radius: 8px 8px 8px 8px;
+		background-color: #000000; color: #EFEFEF;
+		cursor: pointer;
 	}
 }
 
@@ -414,13 +444,6 @@ hr.thick{
 	font-family: 'Roboto', Georgia, Times, serif;
 	font-weight: 400;
 	font-size: 16px;
-	
-	/*background-color: #fafafa;
-	background-image: -moz-linear-gradient(top, #ffffff, #f2f2f2);
-	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#f2f2f2));
-	background-image: -webkit-linear-gradient(top, #ffffff, #f2f2f2);
-	background-image: -o-linear-gradient(top, #ffffff, #f2f2f2);
-	background-image: linear-gradient(to bottom, #102386, #12193D);*/
 }
 
 .breadcrumbs-container a:hover{
@@ -442,22 +465,6 @@ hr.thick{
 	-webkit-border-radius: 8px;
 	position: relative;
 }
-
-/*Login/Signup Forms*/
-/*
-.form{
-	width: 404px;
-	left: 50%;
-	margin-left: -202px;
-	position: relative;
-}
-.form-actions{
-	margin-bottom: 0px !important;
-	margin-top: 0px !important;
-	padding-bottom: 0px !important;
-	background-color: rgba(0,0,0,0) !important;
-}
-*/
 
 /*Flash messages*/
 
