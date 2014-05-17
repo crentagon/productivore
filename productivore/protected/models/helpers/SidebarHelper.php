@@ -22,7 +22,15 @@ class SidebarHelper extends MainHelper
 			AND appling_id > 0
 			ORDER BY accessCount ASC';
 		$params = array('userid'=>$userid);
-		return $this->sql_query($query, $params);
+		$applings = $this->sql_query($query, $params);
+		
+		foreach($applings as &$appling){
+			$query = 'SELECT menu_name, menu_url FROM menus WHERE appling_id = :applingId';
+			$params = array('applingId'=>$appling['appling_id']);
+			$appling['menu_items'] = $this->sql_query($query, $params);
+		}
+		
+		return $applings;
 	}
 	
 	public function get_sidebarSettings_byUserId($userId = 1){

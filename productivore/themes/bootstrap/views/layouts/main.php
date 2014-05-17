@@ -102,14 +102,17 @@
 						</div>
 						<div class="pvore-sidebar-app-title appling-name-list">
 							<?echo $appling['name']?><br/>
-							<em class="pvore-sidebar-app-description">
+							<div class="pvore-sidebar-app-description">
 							<?
-								if(isset($appling['message']))
+								/*if(isset($appling['message']))
 									echo $appling['message'];
 								else
-									echo $appling['description'];
+									echo $appling['description'];*/
 							?>
-							</em>
+							<?foreach($appling['menu_items'] as $menuItem):?>
+								<a href="<?echo BASE_URL.'/'.$appling['url']?>/<?echo $menuItem['menu_url']?>"><?echo $menuItem['menu_name']?></a><br/>
+							<?endforeach;?>
+							</div>
 						</div>
 					</div>
 					<?if($i<$applingCount-1):?>

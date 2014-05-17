@@ -4124,3 +4124,64 @@ REQUEST_URI=/productivore/productivore/site/applings
 in C:\wamp\www\productivore\productivore\themes\bootstrap\views\layouts\main.php (87)
 in C:\wamp\www\productivore\productivore\protected\controllers\SiteController.php (187)
 in C:\wamp\www\productivore\productivore\index.php (25)
+2014/05/18 00:41:49 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'menu_items' in 'field list'. The SQL statement executed was: SELECT menu_items FROM menus WHERE appling_id = :applingId.
+in C:\wamp\www\productivore\productivore\protected\models\helpers\MainHelper.php (6)
+in C:\wamp\www\productivore\productivore\protected\models\helpers\SidebarHelper.php (30)
+in C:\wamp\www\productivore\productivore\protected\components\Controller.php (63)
+2014/05/18 00:41:49 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'menu_items' in 'field list'. The SQL statement executed was: SELECT menu_items FROM menus WHERE appling_id = :applingId' in C:\wamp\www\productivore\Yii-1_1_14\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\wamp\www\productivore\Yii-1_1_14\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\wamp\www\productivore\productivore\protected\models\helpers\MainHelper.php(6): CDbCommand->queryAll()
+#2 C:\wamp\www\productivore\productivore\protected\models\helpers\SidebarHelper.php(30): MainHelper->sql_query('SELECT menu_ite...', Array)
+#3 C:\wamp\www\productivore\productivore\protected\components\Controller.php(63): SidebarHelper->get_applings_byUserId('1')
+#4 C:\wamp\www\productivore\productivore\protected\components\Controller.php(18): Controller->populateApplings()
+#5 C:\wamp\www\productivore\productivore\protected\controllers\SiteController.php(9): Controller->__construct()
+#6 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(360): SiteController->__construct('site', NULL)
+#7 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(276): CWebApplication->createController('site/applings')
+#8 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController('site/applings')
+#9 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\wamp\www\productivore\productivore\index.php(25): CApplication->run()
+#11 {main}
+REQUEST_URI=/productivore/productivore/site/applings
+---
+2014/05/18 00:42:08 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'menu_items' in 'field list'. The SQL statement executed was: SELECT menu_items FROM menus WHERE appling_id = :applingId.
+in C:\wamp\www\productivore\productivore\protected\models\helpers\MainHelper.php (6)
+in C:\wamp\www\productivore\productivore\protected\models\helpers\SidebarHelper.php (31)
+in C:\wamp\www\productivore\productivore\protected\components\Controller.php (63)
+2014/05/18 00:42:08 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'menu_items' in 'field list'. The SQL statement executed was: SELECT menu_items FROM menus WHERE appling_id = :applingId' in C:\wamp\www\productivore\Yii-1_1_14\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\wamp\www\productivore\Yii-1_1_14\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\wamp\www\productivore\productivore\protected\models\helpers\MainHelper.php(6): CDbCommand->queryAll()
+#2 C:\wamp\www\productivore\productivore\protected\models\helpers\SidebarHelper.php(31): MainHelper->sql_query('SELECT menu_ite...', Array)
+#3 C:\wamp\www\productivore\productivore\protected\components\Controller.php(63): SidebarHelper->get_applings_byUserId('1')
+#4 C:\wamp\www\productivore\productivore\protected\components\Controller.php(18): Controller->populateApplings()
+#5 C:\wamp\www\productivore\productivore\protected\controllers\SiteController.php(9): Controller->__construct()
+#6 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(360): SiteController->__construct('site', NULL)
+#7 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(276): CWebApplication->createController('site/applings')
+#8 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController('site/applings')
+#9 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\wamp\www\productivore\productivore\index.php(25): CApplication->run()
+#11 {main}
+REQUEST_URI=/productivore/productivore/site/applings
+---
+2014/05/18 00:52:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The page could not be found.' in C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(270): CController->missingAction('achievements')
+#1 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(282): CController->run('achievements')
+#2 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController('you/achievement...')
+#3 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\productivore\productivore\index.php(25): CApplication->run()
+#5 {main}
+REQUEST_URI=/productivore/productivore/you/achievements
+HTTP_REFERER=http://localhost/productivore/productivore/site/index
+---
+2014/05/18 00:52:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The page could not be found.' in C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(270): CController->missingAction('achievements')
+#1 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(282): CController->run('achievements')
+#2 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController('you/achievement...')
+#3 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\productivore\productivore\index.php(25): CApplication->run()
+#5 {main}
+REQUEST_URI=/productivore/productivore/you/achievements
+---
