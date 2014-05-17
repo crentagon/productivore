@@ -24,9 +24,12 @@ class SiteController extends Controller
 	}	
 	
 	//Accessing: http://localhost/productivore/productivore/site/update_sidebarfields
-	public function actionUpdate_sidebarFields($fieldid = 1, $valueid = 1){
-		// echo $fieldid.'>>>'.$valueid; die();
+	public function actionUpdate_sidebarFields($fieldid = null, $valueid = null){
 		if(!Yii::app()->user->isGuest){
+			if($fieldid == null || $valueid == null){
+				Yii::app()->user->setFlash('error','Something\'s definitely not right here. You\'re not trying to hack the system, are you?');		
+				$this->render('preview');
+			}
 			$update = array($fieldid=>$valueid); //setting_field_id, field_value_map_id
 			$userId = Yii::app()->user->getId(); 
 			// $userId = 1; 
@@ -34,7 +37,27 @@ class SiteController extends Controller
 			
 			$userApplings = new SidebarHelper;
 			$userApplings->update_settingValues_byUserId($userId, $applingId, $update);
-			die();
+			Yii::app()->end();
+		}
+		else{
+			throw new CHttpException(404,'The page could not be found.');
+			$this->render('index');
+		}
+	}
+	
+	//Accessing: http://localhost/productivore/productivore/site/update_favorites?applingId=1&isFavorite=0
+	public function actionUpdate_favorites($applingId = null, $isFavorite = null){
+		if(!Yii::app()->user->isGuest){
+			if($applingId == null || $isFavorite == null){
+				Yii::app()->user->setFlash('error','Something\'s definitely not right here. You\'re not trying to hack the system, are you?');		
+				$this->render('preview');
+			}
+			// $update = array($applingId=>$isFavorite); //setting_field_id, field_value_map_id
+			$userId = Yii::app()->user->getId(); 
+			
+			$userFavorites = new HomeHelper;
+			$userFavorites->update_favoriteApplings_byUserId($userId, $applingId, $isFavorite);
+			Yii::app()->end();
 		}
 		else{
 			throw new CHttpException(404,'The page could not be found.');

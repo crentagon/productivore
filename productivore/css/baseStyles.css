@@ -162,7 +162,7 @@ hr.thick{
 		display: block;
 		height: 35px;
 		text-align: center; vertical-align: middle; line-height: 35px;
-		-moz-border-radius: 8px 8px 8px 8px; border-radius: 8px 8px 8px 8px; -webkit-border-radius: 8px 8px 8px 8px;
+		-moz-border-radius: 40px 40px 40px 40px; border-radius: 40px 40px 40px 40px; -webkit-border-radius: 40px 40px 40px 40px;
 		background-color: #000000; color: #EFEFEF;
 		cursor: pointer;
 	}
@@ -530,7 +530,7 @@ hr.thick{
 }
 
 .flash-success{
-	background-color: #15BD4B;
+	background-color: #42B842;
 }
 
 .flash-warning{
@@ -542,7 +542,7 @@ hr.thick{
 }
 
 .flash-info{
-	background-color: #035FD5;
+	background-color: #0A85CA;
 }
 
 .cushion-20{
@@ -550,4 +550,7 @@ hr.thick{
 }
 .cushion-15{
 	height: 15px;
+}
+.cushion-5{
+	height: 5px;
 }

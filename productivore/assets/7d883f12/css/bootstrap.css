@@ -1549,7 +1549,7 @@ input[type="checkbox"][readonly] {
 .control-group.success .control-label,
 .control-group.success .help-block,
 .control-group.success .help-inline {
-  color: #15BD4B;
+  color: #42B842;
 }
 
 .control-group.success .checkbox,
@@ -1563,7 +1563,7 @@ input[type="checkbox"][readonly] {
 .control-group.success input,
 .control-group.success select,
 .control-group.success textarea {
-  border-color: #15BD4B;
+  border-color: #42B842;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
      -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
           box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
@@ -1572,7 +1572,7 @@ input[type="checkbox"][readonly] {
 .control-group.success input:focus,
 .control-group.success select:focus,
 .control-group.success textarea:focus {
-  border-color: #15BD4B;
+  border-color: #42B842;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #7aba7b;
      -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #7aba7b;
           box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #7aba7b;
@@ -1580,9 +1580,9 @@ input[type="checkbox"][readonly] {
 
 .control-group.success .input-prepend .add-on,
 .control-group.success .input-append .add-on {
-  color: #15BD4B;
+  color: #42B842;
   background-color: #dff0d8;
-  border-color: #15BD4B;
+  border-color: #42B842;
 }
 
 .control-group.info .control-label,
@@ -3365,13 +3365,14 @@ input[type="button"].btn-block {
 .btn-danger.active,
 .btn-success.active,
 .btn-info.active,
-.btn-inverse.active {
+.btn-inverse.active,
+.btn-grey.active {
   color: rgba(255, 255, 255, 0.75);
 }
 
 .btn-primary {
 	color: #FFFFFF;
-	background-color: #035FD5;
+	background-color: #0A85CA;
 	
 /*
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
@@ -3392,6 +3393,7 @@ input[type="button"].btn-block {
  */
 }
 
+
 .btn-primary:hover,
 .btn-primary:focus,
 .btn-primary:active,
@@ -3409,6 +3411,30 @@ input[type="button"].btn-block {
 .btn-primary:active,
 .btn-primary.active {
   background-color: #3186F3 \9;
+  /*
+  background-color: #003399 \9;
+  */
+}
+
+
+.btn-grey {
+	color: #FFFFFF;
+	background-color: #999999;
+}
+
+.btn-grey:hover,
+.btn-grey:focus,
+.btn-grey:active,
+.btn-grey.active,
+.btn-grey.disabled,
+.btn-grey[disabled] {
+  background-color: #666666;
+  color: #ffffff;
+}
+
+.btn-grey:active,
+.btn-grey.active {
+  background-color: #999999 \9;
   /*
   background-color: #003399 \9;
   */
@@ -3498,7 +3524,7 @@ input[type="button"].btn-block {
 
 .btn-success {
   color: #ffffff;
-  background-color: #15BD4B;
+  background-color: #42B842;
  /*
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   *background-color: #51a351;
@@ -3654,7 +3680,7 @@ input[type="submit"].btn.btn-mini {
 }
 
 .btn-link {
-  color: #035FD5;
+  color: #0A85CA;
   /*color: #0088cc;*/
   cursor: pointer;
   border-color: transparent;

@@ -10,6 +10,7 @@ class HomeHelper extends MainHelper
 			
 		$query =
 			'SELECT
+				appling_id,
 				appling_name as name,
 				description,
 				appling_url as url,
@@ -27,6 +28,32 @@ class HomeHelper extends MainHelper
 			AND appling_id > 0 '.$order;
 		$params = array('userid'=>$userid);
 		return $this->sql_query($query, $params);
+	}
+	
+	public function update_favoriteApplings_byUserId($userId, $applingId, $isFavorite){
+			
+		$query = '
+			UPDATE user_appling_maps
+			SET is_favorite = :isFavorite
+			WHERE user_id = :userId
+			AND appling_id = :applingId
+		';
+		
+		$params = array(
+			'userId'=>$userId,
+			'applingId'=>$applingId,
+			'isFavorite'=>$isFavorite
+		);
+		
+		echo "
+			UPDATE user_appling_maps
+			SET is_favorite = $isFavorite
+			WHERE user_id = $userId
+			AND appling_id = $applingId
+		>>> "; 
+		echo $this->sql_execute($query, $params);
+		die(); 
+		die();
 	}
 	
 }

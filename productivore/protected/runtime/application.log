@@ -3714,3 +3714,413 @@ Stack trace:
 REQUEST_URI=/productivore/productivore/
 HTTP_REFERER=http://localhost/productivore/
 ---
+2014/05/17 23:52:05 [error] [php] Undefined variable: applingId (C:\wamp\www\productivore\productivore\themes\bootstrap\views\site\applings.php:37)
+Stack trace:
+#0 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(870): SiteController->renderFile()
+#1 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(783): SiteController->renderPartial()
+#2 C:\wamp\www\productivore\productivore\protected\controllers\SiteController.php(186): SiteController->render()
+#3 C:\wamp\www\productivore\Yii-1_1_14\framework\web\actions\CInlineAction.php(49): SiteController->actionApplings()
+#4 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(286): SiteController->runAction()
+#6 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(282): SiteController->run()
+#8 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\wamp\www\productivore\productivore\index.php(25): CWebApplication->run()
+REQUEST_URI=/productivore/productivore/site/applings
+in C:\wamp\www\productivore\productivore\themes\bootstrap\views\site\applings.php (37)
+in C:\wamp\www\productivore\productivore\protected\controllers\SiteController.php (186)
+in C:\wamp\www\productivore\productivore\index.php (25)
+2014/05/17 23:52:29 [error] [php] Undefined variable: allApplings (C:\wamp\www\productivore\productivore\themes\bootstrap\views\site\index.php:9)
+Stack trace:
+#0 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(870): SiteController->renderFile()
+#1 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(783): SiteController->renderPartial()
+#2 C:\wamp\www\productivore\productivore\protected\controllers\SiteController.php(52): SiteController->render()
+#3 unknown(0): SiteController->actionUpdate_favorites()
+#4 C:\wamp\www\productivore\Yii-1_1_14\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#5 C:\wamp\www\productivore\Yii-1_1_14\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(286): SiteController->runAction()
+#8 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#9 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(282): SiteController->run()
+#10 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 C:\wamp\www\productivore\productivore\index.php(25): CWebApplication->run()
+REQUEST_URI=/productivore/productivore/site/update_favorites?applingId=2&isFavorite=0
+in C:\wamp\www\productivore\productivore\themes\bootstrap\views\site\index.php (9)
+in C:\wamp\www\productivore\productivore\protected\controllers\SiteController.php (52)
+in C:\wamp\www\productivore\productivore\index.php (25)
+2014/05/17 23:53:48 [error] [php] Undefined variable: allApplings (C:\wamp\www\productivore\productivore\themes\bootstrap\views\site\index.php:9)
+Stack trace:
+#0 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(870): SiteController->renderFile()
+#1 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(783): SiteController->renderPartial()
+#2 C:\wamp\www\productivore\productivore\protected\controllers\SiteController.php(52): SiteController->render()
+#3 unknown(0): SiteController->actionUpdate_favorites()
+#4 C:\wamp\www\productivore\Yii-1_1_14\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#5 C:\wamp\www\productivore\Yii-1_1_14\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(286): SiteController->runAction()
+#8 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#9 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(282): SiteController->run()
+#10 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 C:\wamp\www\productivore\productivore\index.php(25): CWebApplication->run()
+REQUEST_URI=/productivore/productivore/site/update_favorites?applingId=2&isFavorite=0
+in C:\wamp\www\productivore\productivore\themes\bootstrap\views\site\index.php (9)
+in C:\wamp\www\productivore\productivore\protected\controllers\SiteController.php (52)
+in C:\wamp\www\productivore\productivore\index.php (25)
+2014/05/17 23:54:03 [error] [php] Undefined variable: allApplings (C:\wamp\www\productivore\productivore\themes\bootstrap\views\site\index.php:9)
+Stack trace:
+#0 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(870): SiteController->renderFile()
+#1 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(783): SiteController->renderPartial()
+#2 C:\wamp\www\productivore\productivore\protected\controllers\SiteController.php(52): SiteController->render()
+#3 unknown(0): SiteController->actionUpdate_favorites()
+#4 C:\wamp\www\productivore\Yii-1_1_14\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#5 C:\wamp\www\productivore\Yii-1_1_14\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(286): SiteController->runAction()
+#8 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#9 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(282): SiteController->run()
+#10 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 C:\wamp\www\productivore\productivore\index.php(25): CWebApplication->run()
+REQUEST_URI=/productivore/productivore/site/update_favorites?applingId=2&isFavorite=0
+in C:\wamp\www\productivore\productivore\themes\bootstrap\views\site\index.php (9)
+in C:\wamp\www\productivore\productivore\protected\controllers\SiteController.php (52)
+in C:\wamp\www\productivore\productivore\index.php (25)
+2014/05/17 23:55:12 [error] [php] Undefined variable: userApplings (C:\wamp\www\productivore\productivore\protected\controllers\SiteController.php:58)
+Stack trace:
+#0 C:\wamp\www\productivore\Yii-1_1_14\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(286): SiteController->runAction()
+#3 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#4 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(282): SiteController->run()
+#5 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 C:\wamp\www\productivore\productivore\index.php(25): CWebApplication->run()
+REQUEST_URI=/productivore/productivore/site/update_favorites?applingId=2&isFavorite=0
+in C:\wamp\www\productivore\productivore\protected\controllers\SiteController.php (58)
+in C:\wamp\www\productivore\productivore\index.php (25)
+2014/05/17 23:55:26 [error] [php] Undefined variable: userid (C:\wamp\www\productivore\productivore\protected\models\helpers\HomeHelper.php:38)
+Stack trace:
+#0 C:\wamp\www\productivore\Yii-1_1_14\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#1 C:\wamp\www\productivore\Yii-1_1_14\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(286): SiteController->runAction()
+#4 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#5 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(282): SiteController->run()
+#6 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 C:\wamp\www\productivore\productivore\index.php(25): CWebApplication->run()
+REQUEST_URI=/productivore/productivore/site/update_favorites?applingId=2&isFavorite=0
+in C:\wamp\www\productivore\productivore\protected\models\helpers\HomeHelper.php (38)
+in C:\wamp\www\productivore\productivore\protected\controllers\SiteController.php (58)
+in C:\wamp\www\productivore\productivore\index.php (25)
+2014/05/17 23:55:43 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens. The SQL statement executed was: UPDATE user_appling_maps
+			SET is_favorite = :isFavorite
+			WHERE user_id = :userId
+			AND appling_id =: applingId.
+in C:\wamp\www\productivore\productivore\protected\models\helpers\MainHelper.php (6)
+in C:\wamp\www\productivore\productivore\protected\models\helpers\HomeHelper.php (39)
+in C:\wamp\www\productivore\productivore\protected\controllers\SiteController.php (58)
+2014/05/17 23:55:43 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens. The SQL statement executed was: UPDATE user_appling_maps
+			SET is_favorite = :isFavorite
+			WHERE user_id = :userId
+			AND appling_id =: applingId' in C:\wamp\www\productivore\Yii-1_1_14\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\wamp\www\productivore\Yii-1_1_14\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\wamp\www\productivore\productivore\protected\models\helpers\MainHelper.php(6): CDbCommand->queryAll()
+#2 C:\wamp\www\productivore\productivore\protected\models\helpers\HomeHelper.php(39): MainHelper->sql_query('UPDATE user_app...', Array)
+#3 C:\wamp\www\productivore\productivore\protected\controllers\SiteController.php(58): HomeHelper->update_favoriteApplings_byUserId('1', '2', '0')
+#4 [internal function]: SiteController->actionUpdate_favorites('2', '0')
+#5 C:\wamp\www\productivore\Yii-1_1_14\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(SiteController), Array)
+#6 C:\wamp\www\productivore\Yii-1_1_14\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(SiteController), Object(ReflectionMethod), Array)
+#7 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(282): CController->run('update_favorite...')
+#11 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController('site/update_fav...')
+#12 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\wamp\www\productivore\productivore\index.php(25): CApplication->run()
+#14 {main}
+REQUEST_URI=/productivore/productivore/site/update_favorites?applingId=2&isFavorite=0
+---
+2014/05/17 23:56:30 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined. The SQL statement executed was: UPDATE user_appling_maps
+			SET is_favorite = :isFavorite
+			WHERE user_id = :userId
+			AND appling_id = :applingId.
+in C:\wamp\www\productivore\productivore\protected\models\helpers\MainHelper.php (6)
+in C:\wamp\www\productivore\productivore\protected\models\helpers\HomeHelper.php (46)
+in C:\wamp\www\productivore\productivore\protected\controllers\SiteController.php (58)
+2014/05/17 23:56:30 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined. The SQL statement executed was: UPDATE user_appling_maps
+			SET is_favorite = :isFavorite
+			WHERE user_id = :userId
+			AND appling_id = :applingId' in C:\wamp\www\productivore\Yii-1_1_14\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\wamp\www\productivore\Yii-1_1_14\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\wamp\www\productivore\productivore\protected\models\helpers\MainHelper.php(6): CDbCommand->queryAll()
+#2 C:\wamp\www\productivore\productivore\protected\models\helpers\HomeHelper.php(46): MainHelper->sql_query('UPDATE user_app...', Array)
+#3 C:\wamp\www\productivore\productivore\protected\controllers\SiteController.php(58): HomeHelper->update_favoriteApplings_byUserId('1', '2', '0')
+#4 [internal function]: SiteController->actionUpdate_favorites('2', '0')
+#5 C:\wamp\www\productivore\Yii-1_1_14\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(SiteController), Array)
+#6 C:\wamp\www\productivore\Yii-1_1_14\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(SiteController), Object(ReflectionMethod), Array)
+#7 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(282): CController->run('update_favorite...')
+#11 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController('site/update_fav...')
+#12 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\wamp\www\productivore\productivore\index.php(25): CApplication->run()
+#14 {main}
+REQUEST_URI=/productivore/productivore/site/update_favorites?applingId=2&isFavorite=0
+---
+2014/05/18 00:01:23 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined. The SQL statement executed was: UPDATE user_appling_maps
+			SET is_favorite = :isFavorite
+			WHERE user_id = :userId
+			AND appling_id = :applingId.
+in C:\wamp\www\productivore\productivore\protected\models\helpers\MainHelper.php (6)
+in C:\wamp\www\productivore\productivore\protected\models\helpers\HomeHelper.php (46)
+in C:\wamp\www\productivore\productivore\protected\controllers\SiteController.php (58)
+2014/05/18 00:01:23 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined. The SQL statement executed was: UPDATE user_appling_maps
+			SET is_favorite = :isFavorite
+			WHERE user_id = :userId
+			AND appling_id = :applingId' in C:\wamp\www\productivore\Yii-1_1_14\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\wamp\www\productivore\Yii-1_1_14\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\wamp\www\productivore\productivore\protected\models\helpers\MainHelper.php(6): CDbCommand->queryAll()
+#2 C:\wamp\www\productivore\productivore\protected\models\helpers\HomeHelper.php(46): MainHelper->sql_query('UPDATE user_app...', Array)
+#3 C:\wamp\www\productivore\productivore\protected\controllers\SiteController.php(58): HomeHelper->update_favoriteApplings_byUserId('1', '1', '0')
+#4 [internal function]: SiteController->actionUpdate_favorites('1', '0')
+#5 C:\wamp\www\productivore\Yii-1_1_14\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(SiteController), Array)
+#6 C:\wamp\www\productivore\Yii-1_1_14\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(SiteController), Object(ReflectionMethod), Array)
+#7 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(282): CController->run('update_favorite...')
+#11 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController('site/update_fav...')
+#12 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\wamp\www\productivore\productivore\index.php(25): CApplication->run()
+#14 {main}
+REQUEST_URI=/productivore/productivore/site/update_favorites?applingId=1&isFavorite=0
+---
+2014/05/18 00:01:40 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[HY000]: General error. The SQL statement executed was: UPDATE user_appling_maps
+			SET is_favorite = :isFavorite
+			WHERE user_id = :userId
+			AND appling_id = :applingId.
+in C:\wamp\www\productivore\productivore\protected\models\helpers\MainHelper.php (6)
+in C:\wamp\www\productivore\productivore\protected\models\helpers\HomeHelper.php (46)
+in C:\wamp\www\productivore\productivore\protected\controllers\SiteController.php (58)
+2014/05/18 00:01:40 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY000]: General error. The SQL statement executed was: UPDATE user_appling_maps
+			SET is_favorite = :isFavorite
+			WHERE user_id = :userId
+			AND appling_id = :applingId' in C:\wamp\www\productivore\Yii-1_1_14\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\wamp\www\productivore\Yii-1_1_14\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\wamp\www\productivore\productivore\protected\models\helpers\MainHelper.php(6): CDbCommand->queryAll()
+#2 C:\wamp\www\productivore\productivore\protected\models\helpers\HomeHelper.php(46): MainHelper->sql_query('UPDATE user_app...', Array)
+#3 C:\wamp\www\productivore\productivore\protected\controllers\SiteController.php(58): HomeHelper->update_favoriteApplings_byUserId('1', '1', '0')
+#4 [internal function]: SiteController->actionUpdate_favorites('1', '0')
+#5 C:\wamp\www\productivore\Yii-1_1_14\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(SiteController), Array)
+#6 C:\wamp\www\productivore\Yii-1_1_14\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(SiteController), Object(ReflectionMethod), Array)
+#7 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(282): CController->run('update_favorite...')
+#11 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController('site/update_fav...')
+#12 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\wamp\www\productivore\productivore\index.php(25): CApplication->run()
+#14 {main}
+REQUEST_URI=/productivore/productivore/site/update_favorites?applingId=1&isFavorite=0
+---
+2014/05/18 00:01:48 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[HY000]: General error. The SQL statement executed was: UPDATE user_appling_maps
+			SET is_favorite = :isFavorite
+			WHERE user_id = :userId
+			AND appling_id = :applingId.
+in C:\wamp\www\productivore\productivore\protected\models\helpers\MainHelper.php (6)
+in C:\wamp\www\productivore\productivore\protected\models\helpers\HomeHelper.php (46)
+in C:\wamp\www\productivore\productivore\protected\controllers\SiteController.php (58)
+2014/05/18 00:01:48 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY000]: General error. The SQL statement executed was: UPDATE user_appling_maps
+			SET is_favorite = :isFavorite
+			WHERE user_id = :userId
+			AND appling_id = :applingId' in C:\wamp\www\productivore\Yii-1_1_14\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\wamp\www\productivore\Yii-1_1_14\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\wamp\www\productivore\productivore\protected\models\helpers\MainHelper.php(6): CDbCommand->queryAll()
+#2 C:\wamp\www\productivore\productivore\protected\models\helpers\HomeHelper.php(46): MainHelper->sql_query('UPDATE user_app...', Array)
+#3 C:\wamp\www\productivore\productivore\protected\controllers\SiteController.php(58): HomeHelper->update_favoriteApplings_byUserId('1', '1', '0')
+#4 [internal function]: SiteController->actionUpdate_favorites('1', '0')
+#5 C:\wamp\www\productivore\Yii-1_1_14\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(SiteController), Array)
+#6 C:\wamp\www\productivore\Yii-1_1_14\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(SiteController), Object(ReflectionMethod), Array)
+#7 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(282): CController->run('update_favorite...')
+#11 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController('site/update_fav...')
+#12 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\wamp\www\productivore\productivore\index.php(25): CApplication->run()
+#14 {main}
+REQUEST_URI=/productivore/productivore/site/update_favorites?applingId=1&isFavorite=0
+---
+2014/05/18 00:05:38 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[HY000]: General error. The SQL statement executed was: UPDATE user_appling_maps
+			SET is_favorite = :isFavorite
+			WHERE user_id = :userId
+			AND appling_id = :applingId.
+in C:\wamp\www\productivore\productivore\protected\models\helpers\MainHelper.php (6)
+in C:\wamp\www\productivore\productivore\protected\models\helpers\HomeHelper.php (46)
+in C:\wamp\www\productivore\productivore\protected\controllers\SiteController.php (59)
+2014/05/18 00:05:38 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY000]: General error. The SQL statement executed was: UPDATE user_appling_maps
+			SET is_favorite = :isFavorite
+			WHERE user_id = :userId
+			AND appling_id = :applingId' in C:\wamp\www\productivore\Yii-1_1_14\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\wamp\www\productivore\Yii-1_1_14\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\wamp\www\productivore\productivore\protected\models\helpers\MainHelper.php(6): CDbCommand->queryAll()
+#2 C:\wamp\www\productivore\productivore\protected\models\helpers\HomeHelper.php(46): MainHelper->sql_query('UPDATE user_app...', Array)
+#3 C:\wamp\www\productivore\productivore\protected\controllers\SiteController.php(59): HomeHelper->update_favoriteApplings_byUserId('1', '1', '0')
+#4 [internal function]: SiteController->actionUpdate_favorites('1', '0')
+#5 C:\wamp\www\productivore\Yii-1_1_14\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(SiteController), Array)
+#6 C:\wamp\www\productivore\Yii-1_1_14\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(SiteController), Object(ReflectionMethod), Array)
+#7 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(282): CController->run('update_favorite...')
+#11 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController('site/update_fav...')
+#12 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\wamp\www\productivore\productivore\index.php(25): CApplication->run()
+#14 {main}
+REQUEST_URI=/productivore/productivore/site/update_favorites?applingId=1&isFavorite=0
+---
+2014/05/18 00:06:50 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[HY000]: General error. The SQL statement executed was: UPDATE user_appling_maps
+			SET is_favorite = :isFavorite
+			WHERE user_id = :userId
+			AND appling_id = :applingId.
+in C:\wamp\www\productivore\productivore\protected\models\helpers\MainHelper.php (6)
+in C:\wamp\www\productivore\productivore\protected\models\helpers\HomeHelper.php (46)
+in C:\wamp\www\productivore\productivore\protected\controllers\SiteController.php (59)
+2014/05/18 00:06:50 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY000]: General error. The SQL statement executed was: UPDATE user_appling_maps
+			SET is_favorite = :isFavorite
+			WHERE user_id = :userId
+			AND appling_id = :applingId' in C:\wamp\www\productivore\Yii-1_1_14\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\wamp\www\productivore\Yii-1_1_14\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\wamp\www\productivore\productivore\protected\models\helpers\MainHelper.php(6): CDbCommand->queryAll()
+#2 C:\wamp\www\productivore\productivore\protected\models\helpers\HomeHelper.php(46): MainHelper->sql_query('UPDATE user_app...', Array)
+#3 C:\wamp\www\productivore\productivore\protected\controllers\SiteController.php(59): HomeHelper->update_favoriteApplings_byUserId('1', '1', '0')
+#4 [internal function]: SiteController->actionUpdate_favorites('1', '0')
+#5 C:\wamp\www\productivore\Yii-1_1_14\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(SiteController), Array)
+#6 C:\wamp\www\productivore\Yii-1_1_14\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(SiteController), Object(ReflectionMethod), Array)
+#7 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(282): CController->run('update_favorite...')
+#11 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController('site/update_fav...')
+#12 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\wamp\www\productivore\productivore\index.php(25): CApplication->run()
+#14 {main}
+REQUEST_URI=/productivore/productivore/site/update_favorites?applingId=1&isFavorite=0
+HTTP_REFERER=http://localhost/productivore/productivore/site/applings
+---
+2014/05/18 00:07:08 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[HY000]: General error. The SQL statement executed was: UPDATE user_appling_maps
+			SET is_favorite = :isFavorite
+			WHERE user_id = :userId
+			AND appling_id = :applingId.
+in C:\wamp\www\productivore\productivore\protected\models\helpers\MainHelper.php (6)
+in C:\wamp\www\productivore\productivore\protected\models\helpers\HomeHelper.php (46)
+in C:\wamp\www\productivore\productivore\protected\controllers\SiteController.php (59)
+2014/05/18 00:07:08 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY000]: General error. The SQL statement executed was: UPDATE user_appling_maps
+			SET is_favorite = :isFavorite
+			WHERE user_id = :userId
+			AND appling_id = :applingId' in C:\wamp\www\productivore\Yii-1_1_14\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\wamp\www\productivore\Yii-1_1_14\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\wamp\www\productivore\productivore\protected\models\helpers\MainHelper.php(6): CDbCommand->queryAll()
+#2 C:\wamp\www\productivore\productivore\protected\models\helpers\HomeHelper.php(46): MainHelper->sql_query('UPDATE user_app...', Array)
+#3 C:\wamp\www\productivore\productivore\protected\controllers\SiteController.php(59): HomeHelper->update_favoriteApplings_byUserId('1', '1', '0')
+#4 [internal function]: SiteController->actionUpdate_favorites('1', '0')
+#5 C:\wamp\www\productivore\Yii-1_1_14\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(SiteController), Array)
+#6 C:\wamp\www\productivore\Yii-1_1_14\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(SiteController), Object(ReflectionMethod), Array)
+#7 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(282): CController->run('update_favorite...')
+#11 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController('site/update_fav...')
+#12 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\wamp\www\productivore\productivore\index.php(25): CApplication->run()
+#14 {main}
+REQUEST_URI=/productivore/productivore/site/update_favorites?applingId=1&isFavorite=0
+---
+2014/05/18 00:22:28 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'as name,
+				description,
+				appling_url as url,
+				appling_image as image,' at line 3. The SQL statement executed was: SELECT
+				appling_id
+				appling_name as name,
+				description,
+				appling_url as url,
+				appling_image as image,
+				notification_count as notifCount,
+				access_count as accessCount,
+				is_favorite as isFavorite,
+				appling_message as message
+			FROM
+				applings
+				JOIN user_appling_maps
+				USING (appling_id)
+			WHERE
+				user_id = :userid
+			AND appling_id > 0 ORDER BY name ASC.
+in C:\wamp\www\productivore\productivore\protected\models\helpers\MainHelper.php (6)
+in C:\wamp\www\productivore\productivore\protected\models\helpers\HomeHelper.php (30)
+in C:\wamp\www\productivore\productivore\protected\controllers\SiteController.php (185)
+2014/05/18 00:22:28 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'as name,
+				description,
+				appling_url as url,
+				appling_image as image,' at line 3. The SQL statement executed was: SELECT
+				appling_id
+				appling_name as name,
+				description,
+				appling_url as url,
+				appling_image as image,
+				notification_count as notifCount,
+				access_count as accessCount,
+				is_favorite as isFavorite,
+				appling_message as message
+			FROM
+				applings
+				JOIN user_appling_maps
+				USING (appling_id)
+			WHERE
+				user_id = :userid
+			AND appling_id > 0 ORDER BY name ASC' in C:\wamp\www\productivore\Yii-1_1_14\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\wamp\www\productivore\Yii-1_1_14\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\wamp\www\productivore\productivore\protected\models\helpers\MainHelper.php(6): CDbCommand->queryAll()
+#2 C:\wamp\www\productivore\productivore\protected\models\helpers\HomeHelper.php(30): MainHelper->sql_query('SELECT??????app...', Array)
+#3 C:\wamp\www\productivore\productivore\protected\controllers\SiteController.php(185): HomeHelper->get_applings_byUserId('1', true)
+#4 C:\wamp\www\productivore\Yii-1_1_14\framework\web\actions\CInlineAction.php(49): SiteController->actionApplings()
+#5 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(282): CController->run('applings')
+#9 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController('site/applings')
+#10 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\wamp\www\productivore\productivore\index.php(25): CApplication->run()
+#12 {main}
+REQUEST_URI=/productivore/productivore/site/applings
+---
+2014/05/18 00:25:19 [error] [php] Undefined index: appling_id (C:\wamp\www\productivore\productivore\themes\bootstrap\views\layouts\main.php:87)
+Stack trace:
+#0 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(785): SiteController->renderFile()
+#1 C:\wamp\www\productivore\productivore\protected\controllers\SiteController.php(187): SiteController->render()
+#2 C:\wamp\www\productivore\Yii-1_1_14\framework\web\actions\CInlineAction.php(49): SiteController->actionApplings()
+#3 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(286): SiteController->runAction()
+#5 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#6 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(282): SiteController->run()
+#7 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\wamp\www\productivore\productivore\index.php(25): CWebApplication->run()
+REQUEST_URI=/productivore/productivore/site/applings
+in C:\wamp\www\productivore\productivore\themes\bootstrap\views\layouts\main.php (87)
+in C:\wamp\www\productivore\productivore\protected\controllers\SiteController.php (187)
+in C:\wamp\www\productivore\productivore\index.php (25)

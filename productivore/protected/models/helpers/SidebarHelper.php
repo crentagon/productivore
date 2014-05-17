@@ -5,6 +5,7 @@ class SidebarHelper extends MainHelper
 	public function get_applings_byUserId($userid = 1){
 		$query =
 			'SELECT
+				appling_id,
 				appling_name as name,
 				description,
 				appling_url as url,

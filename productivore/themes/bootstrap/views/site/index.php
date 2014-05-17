@@ -26,11 +26,11 @@
 	?>
 
 	<div class="pvore-notifications-app <? //echo $greyedOut?>" 
-		id="appling-<?echo $applingid?>-list"
+		id="appling-<?echo $appling['appling_id']?>-list"
 		onclick="window.location='<?echo BASE_URL.'/'.$appling['url']?>'"
 		isFavorite="<?echo $appling['isFavorite']?>"
 		accessCount="<?echo $appling['accessCount']?>"
-		baseId="appling-<?echo $applingid?>">
+		baseId="appling-<?echo $appling['appling_id']?>">
 		<?/*
 		if($appling['notifCount'] != 0):?>
 			<div class="appling-icon-notification"><?echo $appling['notifCount']?></div>
