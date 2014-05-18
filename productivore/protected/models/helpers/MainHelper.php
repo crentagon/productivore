@@ -76,7 +76,7 @@ class MainHelper
 		}
 	}
 	
-	public function get_applingUrl_byApplingId($applingId = 0){
+	public function get_applingInfo_byApplingId($applingId = 0){
 		
 		
 		// Applings::model()->findByAttributes(array('appling_id'=>$applingId));
@@ -88,7 +88,7 @@ class MainHelper
 				// ->queryAll();
 				
 		$query = '
-			SELECT appling_url
+			SELECT appling_url, appling_name
 			FROM applings
 			WHERE appling_id = :applingId';
 			

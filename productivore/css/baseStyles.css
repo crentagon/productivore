@@ -192,8 +192,17 @@ hr.thick{
 	width: 80%;
 }
 
-.pvore-sidebar-app-description{
+/*.pvore-sidebar-app-description{
+	color: #656565;
+}*/
+
+.pvore-sidebar-app-description a{
+	margin-left: 10px;
 	color: #8A8A8A;
+}
+.pvore-sidebar-app-description a:hover{
+	color: #333333;
+	text-decoration: none;
 }
 
 .pvore-sidebar-app-container{
@@ -226,9 +235,11 @@ hr.thick{
 
 .pvore-sidebar-app{
 	-moz-border-radius: 5px 5px 5px 5px; border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px;
-	height: 75px; width: 100%; cursor: pointer; position: relative;
+	height: auto; min-height: 75px; width: 100%; cursor: pointer; position: relative;
 	border: 1px solid #FEFEFE;
+	/*border: 1px solid red;*/ display: inline-block;
 	padding: 1%;
+	margin-top: 10px;
 }
 
 .pvore-sidebar-app-grid{
@@ -248,10 +259,10 @@ hr.thick{
 	border: 1px solid #BBB;
 }
 
+
 .pvore-sidebar-app-image{
 	text-align: center; vertical-align: middle; line-height: 75px;
 	height: 100%; width: 20%;
-	border-right: 1px solid #CCC;
 	float: left;
 }
 
@@ -404,9 +415,9 @@ hr.thick{
 	top: 3px;
 }
 
+
 .appling-name-list{
-	height: 100%; width: 80%;
-	border-left: 1px solid #FEFEFE;
+	height: auto; min-height: 75px; width: 80%;
 	float: left;
 	padding-left: 8%;
 }
@@ -554,3 +565,25 @@ hr.thick{
 .cushion-5{
 	height: 5px;
 }
+/*
+.dropdown-inverse{
+	margin-top: 10px;
+	background-color: #000;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	color: #999999;
+	-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	-webkit-background-clip: padding-box;
+	-moz-background-clip: padding;
+	background-clip: padding-box;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#222222), to(#111111));
+	background-image: -webkit-linear-gradient(top, #222222, #111111);
+	background-image: -o-linear-gradient(top, #222222, #111111);
+	background-image: linear-gradient(to bottom, #222222, #111111);
+	background-repeat: repeat-x;
+}
+*/

@@ -19,7 +19,7 @@
 	<?php echo $form->textFieldRow($model,'currentEmail', array('disabled'=>true)); ?>
 	<div class="control-group">
 		<div class="controls">
-			<div class="btn btn-inverse" onclick="settingsHide('.settings-new-email'); $(this).hide();">Change my E-Mail</div>
+			<div class="btn btn-grey" onclick="settingsHide('.settings-new-email'); $(this).hide();">Change my E-Mail</div>
 		</div>
 	</div>
 	
@@ -27,7 +27,7 @@
 	
 	<div class="control-group">
 		<div class="controls">
-			<div class="btn btn-inverse" onclick="settingsHide('.settings-new-password'); $(this).hide();">Change my Password</div>
+			<div class="btn btn-grey" onclick="settingsHide('.settings-new-password'); $(this).hide();">Change my Password</div>
 		</div>
 	</div>
 	<div class="settings-new-password">

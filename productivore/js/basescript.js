@@ -182,14 +182,15 @@ function orderBy(idTag, willUpdate){
 function sidebarOrderBy(parameter, order){
 	var appElement = '.pvore-sidebar-app';
 	var appContainer = '#sidebar-listview';
-	var hrElement = '<hr class="appling-hr" style="display:block"/>';
-	var appTitle = '.appling-name-list';
+	//var hrElement = '<hr class="appling-hr" style="display:block"/>';
+	var appTitle = '.appling-name';
+	// var appTitle = '.appling-name-list';
 	
 	if($("#pvore-sidebar-viewtype").text() == 'GRID VIEW'){
 		appElement = '.pvore-sidebar-app-grid';
 		appContainer = '#sidebar-gridview';
-		hrElement = '<hr class="appling-hr" style="display:none"/>';
-		appTitle = '.appling-name-grid';
+		//hrElement = '<hr class="appling-hr" style="display:none"/>';
+		// appTitle = '.appling-name-grid';
 	}
 
 	appCount = $(appElement).length;
@@ -198,11 +199,11 @@ function sidebarOrderBy(parameter, order){
 	var sortedApplings = new Array();
 	
 	// if($("#pvore-sidebar-viewtype").text() == 'LIST VIEW'){
-	$.each($('.appling-hr'),
-		function (index){
-			$(this).remove();
-		}
-	);
+	// $.each($('.appling-hr'),
+		// function (index){
+			// $(this).remove();
+		// }
+	// );
 	// }
 	if(parameter == C_FREQ){	
 		//do the following while there are still elements in the thing
@@ -246,12 +247,11 @@ function sidebarOrderBy(parameter, order){
 			$.each($(appTitle),
 				function (){
 					if(lowest >= $(this).text().toLowerCase()){
-						chosenId = $(this).parent().attr('id');
+						chosenId = $(this).parent().parent().attr('id');
 						lowest = $(this).text().toLowerCase();
 					}
 				}
 			);
-			// alert('#'+chosenId);
 			sortedApplings[i] = $('#'+chosenId).remove();
 		}
 	}
@@ -293,11 +293,11 @@ function sidebarOrderBy(parameter, order){
 	
 	//add the div in the thing
 	for(i=0; i<appCount; i++){
-		if(i<appCount-1){
-			$(appContainer).append(sortedApplings[i]).append(hrElement);
-		} else {
+		// if(i<appCount-1){
+			//$(appContainer).append(sortedApplings[i]).append(hrElement);
+		// } else {
 			$(appContainer).append(sortedApplings[i]);
-		}
+		// }
 	}
 	
 }
@@ -321,7 +321,7 @@ function changeView(willUpdate){
 		$('.pvore-nostyle').attr('class', 'pvore-sidebar-app-image');
 		$('#appling-x-grid').attr('id', 'appling-x-list');
 		$('.pvore-sidebar-app-description').show();
-		$('.appling-hr').show();
+		//$('.appling-hr').show();
 	}
 	else{
 		if(willUpdate)
@@ -340,7 +340,7 @@ function changeView(willUpdate){
 		$('.appling-name-list').attr('class', 'pvore-sidebar-app-title appling-name-grid');
 		$('.pvore-sidebar-app-image').attr('class', 'pvore-nostyle');
 		$('.pvore-sidebar-app-description').hide();
-		$('.appling-hr').hide();
+		//$('.appling-hr').hide();
 		
 	}
 	

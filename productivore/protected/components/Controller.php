@@ -8,8 +8,10 @@ class Controller extends CController
 	public function __construct(){
 		
 		$mainHelper = new MainHelper;
-		$this->applingUrl = $mainHelper->get_applingUrl_byApplingId($this->applingId);
-		parent::__construct($this->applingUrl[0]['appling_url']);
+		$this->applingInfo = $mainHelper->get_applingInfo_byApplingId($this->applingId);
+		$this->applingName = $this->applingInfo[0]['appling_name'];
+		$this->applingUrl = $this->applingInfo[0]['appling_url'];
+		parent::__construct($this->applingUrl);
 		
 		if(Yii::app()->user->isGuest && $this->applingId != 0){
 			throw new CHttpException(404,'The page could not be found.');
@@ -42,7 +44,9 @@ class Controller extends CController
 	
 	//Other constants
 	public $navbar=array();
-	public $applingUrl='';
+	public $applingInfo=array();
+	public $applingUrl = '';
+	public $applingName = '';
 	public $applingId = 0;
 	public $isLoggingOut = false;
 	
@@ -76,7 +80,7 @@ class Controller extends CController
 		
 		foreach($tempArray as $menu){
 			if(!$menu['parent_menu_id']){
-				$returnArray[$menu['menu_name']] = $this->applingUrl[0]['appling_url'].'/'.$menu['menu_url'];
+				$returnArray[$menu['menu_name']] = $this->applingUrl.'/'.$menu['menu_url'];
 			}
 			else{
 				$parentName = '';
@@ -88,16 +92,16 @@ class Controller extends CController
 				}
 				if(!is_array($returnArray[$parentName])){
 					$returnArray[$parentName] = 
-						array($menu['menu_name'] => $this->applingUrl[0]['appling_url'].'/'.$menu['menu_url']);
+						array($menu['menu_name'] => $this->applingUrl.'/'.$menu['menu_url']);
 				}
 				else{
-					$returnArray[$parentName][$menu['menu_name']] = $this->applingUrl[0]['appling_url'].'/'.$menu['menu_url'];
+					$returnArray[$parentName][$menu['menu_name']] = $this->applingUrl.'/'.$menu['menu_url'];
 				}
 			}
 		}
 		
 		$returnArray['Control Panel'] = array(
-			'Settings' => $this->applingUrl[0]['appling_url'].'/settings',
+			$this->applingName.' Settings' => $this->applingUrl.'/settings',
 			'Log out ('.Yii::app()->user->getName().')' => 'site/logout'
 		);
 		

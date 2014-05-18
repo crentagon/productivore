@@ -81,7 +81,35 @@
 			</div>
 			
 			<div class="pvore-sidebar-app-container" id="sidebar-listview">
-				<?$applingCount = count($this->applings); $i=0;?>
+			<? //$applingCount = count($this->applings); $i=0;?>
+				<div class="pvore-sidebar-app" 
+					id="appling-0-list"
+					onclick="window.location='<?echo BASE_URL?>'"
+					isFavorite="0"
+					accessCount="0"
+					baseId="appling-0">
+					<?
+					/*if($appling['notifCount'] != 0):?>
+						<div class="appling-icon-notification"><?echo $appling['notifCount']?></div>
+					<?endif;
+					*/?>
+					<div class="pvore-sidebar-app-image">
+						<span class="appling-icon fa fa-home fa-2x"></span>
+					</div>
+					<div class="pvore-sidebar-app-title appling-name-list">
+						<span class="appling-name">Home</span><br/>
+						<div class="pvore-sidebar-app-description">
+						<?
+							/* if(isset($appling['message']))
+								echo $appling['message'];
+							else */
+						?>
+						<? /* echo $appling['description'];?><br/> */?>
+						- <a href="<?echo BASE_URL?>/site/applings">Appling Settings</a><br/>
+						- <a href="<?echo BASE_URL?>/site/settings">Control Panel</a><br/>
+						</div>
+					</div>
+				</div>
 				<?foreach($this->applings as $applingid=>$appling):?>
 					<div class="pvore-sidebar-app" 
 						id="appling-<?echo $appling['appling_id']?>-list"
@@ -101,24 +129,24 @@
 							<span class="appling-icon fa fa-<?echo $appling['image']?> fa-2x"></span>
 						</div>
 						<div class="pvore-sidebar-app-title appling-name-list">
-							<?echo $appling['name']?><br/>
+							<span class="appling-name"><?echo $appling['name']?></span><br/>
 							<div class="pvore-sidebar-app-description">
 							<?
-								/*if(isset($appling['message']))
+								/* if(isset($appling['message']))
 									echo $appling['message'];
-								else
-									echo $appling['description'];*/
+								else */
 							?>
+							<? /* echo $appling['description'];?><br/> */?>
 							<?foreach($appling['menu_items'] as $menuItem):?>
-								<a href="<?echo BASE_URL.'/'.$appling['url']?>/<?echo $menuItem['menu_url']?>"><?echo $menuItem['menu_name']?></a><br/>
+								- <a href="<?echo BASE_URL.'/'.$appling['url']?>/<?echo $menuItem['menu_url']?>"><?echo $menuItem['menu_name']?></a><br/>
 							<?endforeach;?>
 							</div>
 						</div>
 					</div>
-					<?if($i<$applingCount-1):?>
+					<? /*if($i<$applingCount-1):?>
 						<hr class="appling-hr"/>
 					<?endif;?>
-					<?$i++;?>
+					<?$i++; */?>
 				<?endforeach;?>
 			</div>
 			<div class="pvore-sidebar-options">
@@ -177,7 +205,7 @@
 								<?if(is_array($urlParent)):?>
 									<li class="dropdown">
 										<a class="dropdown-toggle" data-toggle="dropdown" href="#"><?echo $titleParent?> <span class="caret"></span></a>
-										<ul class="dropdown-menu">
+										<ul class="dropdown-menu dropdown-inverse">
 											<?foreach($urlParent as $titleChild=>$urlChild):?>
 												<li><a href="<?echo BASE_URL.'/'.$urlChild?>"><?echo $titleChild?></a></li>
 											<?endforeach;?>
