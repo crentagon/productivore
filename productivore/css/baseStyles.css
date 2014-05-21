@@ -60,6 +60,33 @@ hr.thick{
 .search-query{
 	font-family: 'Roboto', Georgia, Times, serif;
 }
+.input-group{
+	position: relative;
+	display: table;
+	border-collapse: separate;
+}
+.input-group-addon{
+	border-radius: 4px;
+	border-bottom-right-radius: 0;
+	border-top-right-radius: 0;
+	color: #555;
+	text-align: center;
+	background-color: #eee;
+	border: 1px solid #ccc;
+	padding: 5px 12px;
+	border-right: 0;
+	top: -3px;
+	position: relative;
+	line-height: 1;
+	font-weight: 400;
+	white-space: nowrap;
+	height: 20px;
+}
+.form-control{
+	border-bottom-left-radius: 0 !important;
+	border-top-left-radius: 0 !important;
+}
+
 
 /* Sidebar-related things (z-index: 10-20) */
 

@@ -15,5 +15,12 @@ class YouController extends Controller
 		));
 		$this->render('index');
 	}
+	
+	public function actionAchievements($mode = 'index'){
+		// $params = 'complete';
+		// echo Yii::app()->request->getParam('params'); die();
+		$model = new AchievementsForm;
+		$this->render('achievements', compact('mode', 'model'));
+	}
 
 }
