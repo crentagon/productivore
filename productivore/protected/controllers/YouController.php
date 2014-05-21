@@ -10,6 +10,7 @@ class YouController extends Controller
 	
 	public function actionIndex()
 	{
+		// echo 'here'; die();
 		$this->setupPage('You - Productivore', array(
 			'You' => BASE_URL.'/you'
 		));
@@ -17,6 +18,7 @@ class YouController extends Controller
 	}
 	
 	public function actionAchievements($mode = 'index'){
+		// echo 'here'; die();
 		// $params = 'complete';
 		// echo Yii::app()->request->getParam('params'); die();
 		$model = new AchievementsForm;

@@ -4,6 +4,22 @@
   <input type="text" class="form-control" placeholder="Username">
 </div>
 */?>
+<? echo BASE_URL ?>/assets/dragdealer-master/src/dragdealer.css
+
+<link rel="stylesheet" type="text/css" href="<? echo BASE_URL ?>/assets/dragdealer-master/src/dragdealer.css" />
+<script type="text/javascript" src="<? echo BASE_URL ?>/assets/dragdealer-master/src/dragdealer.js"></script>
+
+<div id="just-a-slider" class="dragdealer">
+  <div class="handle red-bar value">drag me</div>
+</div>
+
+<script>
+	new Dragdealer('just-a-slider', {
+	  animationCallback: function(x, y) {
+		$('#just-a-slider .value').text(Math.round(x * 100));
+	  }
+	});
+</script>
 
 <?
 	$unlockableClass = 'class = "active"';
@@ -23,12 +39,10 @@
 
 <style>
 	.add-achievement-name-container{
-		background-color: #444;
-		height: 39px;
-		margin: auto;
-		line-height: 43px;
-		padding-left: 7px;
-		border-radius: 5px 5px 0px 0px;
+		border: 0px;
+		height: 29px;
+		width: 100%;
+		padding: 0px;
 	}
 	.add-achievement-condition-container{
 		border: 0px;
@@ -37,7 +51,7 @@
 		padding: 0px;
 	}
 	.add-achievement-reward-container{
-		background-color: #444;
+		background-color: #EDEDED;
 		width: 100%;
 		display: inline-block;
 		margin: auto;
@@ -56,10 +70,10 @@
 		margin-left: 0px;
 	}
 	textarea{
-		border-left: 5px solid #444;
-		border-right: 5px solid #444;
-		border-top: 2px solid #444;
-		border-bottom: 2px solid #444;
+		border-left: 1px solid #EDEDED;
+		border-right: 1px solid #EDEDED;
+		border-top: 1px solid #EDEDED;
+		border-bottom: 1px solid #EDEDED;
 		resize: none;
 		border-radius: 0px;
 		width: 100%;
@@ -68,11 +82,15 @@
 		box-sizing: border-box;
 	}
 	.add-achievement-name-container input{
-		position: relative;
-		left: -2px; top: -2px;
-		width: 70%;
-		vertical-align: center;
+		border: 1px solid #EDEDED;
+		border-bottom: 0px solid #EDEDED;
+		resize: none;
 		border-radius: 5px 5px 0px 0px;
+		width: 100%;
+		height: 100%;
+		position: relative;
+		box-sizing: border-box;
+		font-weight: 600;
 	}
 	.add-achievement-reward-container input{
 		position: relative;
@@ -85,6 +103,41 @@
 	}
 	.add-achievement-reward-container p, .add-achievement-reward-container > .control-group{
 		margin: 0px;
+	}
+	.unlockable-achievement{
+		width: 100%;
+		min-height: 75px;
+		height: auto;
+		display: inline-block;
+		border-radius: 5px;
+	}
+	.ua-actions{
+		border: 1px solid #EDEDED;
+		background-color: #EDEDED;
+		width: 5%;
+		min-height: 75px;
+		height: 100%;
+		border-radius: 5px 0px 0px 5px;
+		float: left;
+	}
+	.ua-body{
+		border-top: 1px solid #EDEDED;
+		border-bottom: 1px solid #EDEDED;
+		background-color: rgba(255,255,255,0.8);
+		width: 80%;
+		min-height: 75px;
+		height: 100%;
+		float: left;
+	}
+	.ua-rewards{
+		border: 1px solid #EDEDED;
+		border-left: 0px;
+		border-radius: 0px 5px 5px 0px;
+		background-color: rgba(255,255,255,0.8);
+		width: 15%;
+		min-height: 75px;
+		height: 100%;
+		float: left;
 	}
 </style>
 
@@ -116,5 +169,29 @@
 		</div>
 		
 		<?php $this->endWidget(); ?>
+		
+		<div class="unlockable-achievement">
+			<div class="ua-actions">
+				
+			</div>
+			<div class="ua-body">
+			
+			</div>
+			<div class="ua-rewards">
+				500
+			</div>
+		</div>
+		<div class="cushion-5"></div>
+		<div class="unlockable-achievement">
+			<div class="ua-actions">
+				
+			</div>
+			<div class="ua-body">
+			
+			</div>
+			<div class="ua-rewards">
+			
+			</div>
+		</div>
 	</div>
 <?endif;?>

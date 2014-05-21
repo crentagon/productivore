@@ -46,12 +46,12 @@ return array(
 		
 		'urlManager'=>array(
 			'urlFormat'=>'path',
-			 'rules'=>array(
-                '<controller:\w+>'=>'<controller>/list',
-                '<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
-                '<controller:\w+>/<id:\d+>/<title>'=>'<controller>/view',
-                '<controller:\w+>/<id:\d+>'=>'<controller>/view',
-            ),
+			 // 'rules'=>array(
+                // '<controller:\w+>'=>'<controller>/list',
+                // '<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
+                // '<controller:\w+>/<id:\d+>/<title>'=>'<controller>/view',
+                // '<controller:\w+>/<id:\d+>'=>'<controller>/view',
+            // ),
 		),
 		
 		// 'db'=>array(

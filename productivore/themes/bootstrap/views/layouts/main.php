@@ -12,7 +12,6 @@
     <?else:?>
 		<link rel="stylesheet" type="text/css" href="<? echo BASE_URL ?>/css/guest.css" />
 	<?endif;?>
-	<link rel="stylesheet" type="text/css" href="<? echo BASE_URL ?>/assets/font-awesome-4.0.3/css/font-awesome.min.css" />
 	<?if(is_array($this->styles)):?>
 		<?foreach($this->styles as $style):?>
 			<link rel="stylesheet" type="text/css" href="<? echo BASE_URL ?>/css/<?echo $style?>" />

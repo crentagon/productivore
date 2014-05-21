@@ -4388,3 +4388,34 @@ Stack trace:
 REQUEST_URI=/productivore/productivore/you/achievements
 HTTP_REFERER=http://localhost/productivore/productivore/you
 ---
+2014/05/21 21:27:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The page could not be found.' in C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(270): CController->missingAction('list')
+#1 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(282): CController->run('list')
+#2 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController('you/list')
+#3 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\productivore\productivore\index.php(25): CApplication->run()
+#5 {main}
+REQUEST_URI=/productivore/productivore/you
+HTTP_REFERER=http://localhost/productivore/productivore/
+---
+2014/05/21 22:03:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The page could not be found.' in C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(270): CController->missingAction('list')
+#1 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(282): CController->run('list')
+#2 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController('you/list')
+#3 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\productivore\productivore\index.php(25): CApplication->run()
+#5 {main}
+REQUEST_URI=/productivore/productivore/you/
+---
+2014/05/21 22:03:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The page could not be found.' in C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(270): CController->missingAction('list')
+#1 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(282): CController->run('list')
+#2 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController('you/list')
+#3 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\productivore\productivore\index.php(25): CApplication->run()
+#5 {main}
+REQUEST_URI=/productivore/productivore/you/
+---
