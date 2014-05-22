@@ -4,23 +4,24 @@
   <input type="text" class="form-control" placeholder="Username">
 </div>
 */?>
-<? echo BASE_URL ?>/assets/dragdealer-master/src/dragdealer.css
+<?/* echo BASE_URL ?>/assets/dragdealer-master/src/dragdealer.css
+
+
+*/?>
 
 <link rel="stylesheet" type="text/css" href="<? echo BASE_URL ?>/assets/dragdealer-master/src/dragdealer.css" />
 <script type="text/javascript" src="<? echo BASE_URL ?>/assets/dragdealer-master/src/dragdealer.js"></script>
 
-<div id="just-a-slider" class="dragdealer">
-  <div class="handle red-bar value">drag me</div>
-</div>
-
 <script>
-	new Dragdealer('just-a-slider', {
-	  animationCallback: function(x, y) {
-		$('#just-a-slider .value').text(Math.round(x * 100));
-	  }
+	$(document).ready(function(){
+		new Dragdealer('just-a-slider', {
+		  animationCallback: function(x, y) {
+			$('#just-a-slider .value').text(Math.round((x*900)+100));
+			// $('#just-a-slider .value').text(((x*900)+100).toFixed(2));
+		  }
+		});
 	});
 </script>
-
 <?
 	$unlockableClass = 'class = "active"';
 	$completedClass = '';
@@ -51,12 +52,15 @@
 		padding: 0px;
 	}
 	.add-achievement-reward-container{
-		background-color: #EDEDED;
+		background-color: #CACACA;
 		width: 100%;
 		display: inline-block;
 		margin: auto;
+		height: auto;
+		min-height: 60px;
 		line-height: 45px;
 		padding-left: 10px;
+		padding-right: 10px;	 
 		border-radius: 0px 0px 5px 5px;
 		color: #FFF;
 	}
@@ -70,10 +74,10 @@
 		margin-left: 0px;
 	}
 	textarea{
-		border-left: 1px solid #EDEDED;
-		border-right: 1px solid #EDEDED;
-		border-top: 1px solid #EDEDED;
-		border-bottom: 1px solid #EDEDED;
+		border-left: 1px solid #CACACA;
+		border-right: 1px solid #CACACA;
+		border-top: 1px solid #CACACA;
+		border-bottom: 1px solid #CACACA;
 		resize: none;
 		border-radius: 0px;
 		width: 100%;
@@ -82,8 +86,8 @@
 		box-sizing: border-box;
 	}
 	.add-achievement-name-container input{
-		border: 1px solid #EDEDED;
-		border-bottom: 0px solid #EDEDED;
+		border: 1px solid #CACACA;
+		border-bottom: 0px solid #CACACA;
 		resize: none;
 		border-radius: 5px 5px 0px 0px;
 		width: 100%;
@@ -112,8 +116,8 @@
 		border-radius: 5px;
 	}
 	.ua-actions{
-		border: 1px solid #EDEDED;
-		background-color: #EDEDED;
+		border: 1px solid #CACACA;
+		background-color: #CACACA;
 		width: 5%;
 		min-height: 75px;
 		height: 100%;
@@ -121,8 +125,8 @@
 		float: left;
 	}
 	.ua-body{
-		border-top: 1px solid #EDEDED;
-		border-bottom: 1px solid #EDEDED;
+		border-top: 1px solid #CACACA;
+		border-bottom: 1px solid #CACACA;
 		background-color: rgba(255,255,255,0.8);
 		width: 80%;
 		min-height: 75px;
@@ -130,7 +134,7 @@
 		float: left;
 	}
 	.ua-rewards{
-		border: 1px solid #EDEDED;
+		border: 1px solid #CACACA;
 		border-left: 0px;
 		border-radius: 0px 5px 5px 0px;
 		background-color: rgba(255,255,255,0.8);
@@ -138,6 +142,13 @@
 		min-height: 75px;
 		height: 100%;
 		float: left;
+	}
+	.add-achievement-reward-container > .dragger{
+		width: 100%;
+	}
+	.dragger > .slider{
+		background-color: #555;
+		width: 70px;
 	}
 </style>
 
@@ -165,7 +176,9 @@
 			<?php echo $form->textArea($model,'achievement_condition', array('class'=>'input-achievement-condition', 'placeholder'=>'Achievement Condition (e.g.: "Fapped ten times in the span of twenty-four hours.")')); ?>
 		</div>
 		<div class="add-achievement-reward-container">
-			<p>You will gain </p> <?php echo $form->textFieldRow($model,'reward_points', array('value'=>500)); ?> <p>points from unlocking this achievment.</p>
+			<div id="just-a-slider" class="dragdealer dragger">
+			  <div class="handle red-bar value slider">drag me</div>
+			</div>
 		</div>
 		
 		<?php $this->endWidget(); ?>
