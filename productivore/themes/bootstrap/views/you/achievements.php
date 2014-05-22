@@ -176,6 +176,7 @@
 			<?php echo $form->textArea($model,'achievement_condition', array('class'=>'input-achievement-condition', 'placeholder'=>'Achievement Condition (e.g.: "Fapped ten times in the span of twenty-four hours.")')); ?>
 		</div>
 		<div class="add-achievement-reward-container">
+			<p>The amount of points</p>
 			<div id="just-a-slider" class="dragdealer dragger">
 			  <div class="handle red-bar value slider">drag me</div>
 			</div>
