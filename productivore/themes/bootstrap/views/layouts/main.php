@@ -7,6 +7,7 @@
 	<meta name="language" content="en" />
 
 	<!--Stylesheets-->
+	<link rel="stylesheet" type="text/css" href="<? echo BASE_URL ?>/assets/font-awesome-4.0.3/css/font-awesome.css" />
 	<?if(!Yii::app()->user->isGuest):?>
 		<link rel="stylesheet" type="text/css" href="<? echo BASE_URL ?>/css/baseStyles.css" />
     <?else:?>
