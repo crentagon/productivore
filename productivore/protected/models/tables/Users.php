@@ -10,6 +10,7 @@
  * @property string $user_password
  *
  * The followings are the available model relations:
+ * @property Achievements[] $achievements
  * @property UserApplingMaps[] $userApplingMaps
  */
 class Users extends CActiveRecord
@@ -31,8 +32,9 @@ class Users extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('user_name, user_email, user_password', 'required'),
-			array('user_name, user_password', 'length', 'max'=>77),
+			array('user_name', 'length', 'max'=>32),
 			array('user_email', 'length', 'max'=>64),
+			array('user_password', 'length', 'max'=>77),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('user_id, user_name, user_email, user_password', 'safe', 'on'=>'search'),
@@ -47,6 +49,7 @@ class Users extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'achievements' => array(self::HAS_MANY, 'Achievements', 'user_id'),
 			'userApplingMaps' => array(self::HAS_MANY, 'UserApplingMaps', 'user_id'),
 		);
 	}

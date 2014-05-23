@@ -9,6 +9,7 @@
  *
  * The followings are the available model relations:
  * @property SettingFieldSettingValueMaps[] $settingFieldSettingValueMaps
+ * @property Settings[] $settings
  */
 class SettingFields extends CActiveRecord
 {
@@ -45,6 +46,7 @@ class SettingFields extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'settingFieldSettingValueMaps' => array(self::HAS_MANY, 'SettingFieldSettingValueMaps', 'setting_field_id'),
+			'settings' => array(self::HAS_MANY, 'Settings', 'setting_field_id'),
 		);
 	}
 

@@ -8,6 +8,7 @@
  * @property integer $appling_id
  * @property integer $setting_field_id
  * @property integer $setting_value_id
+ * @property integer $is_default
  *
  * The followings are the available model relations:
  * @property Applings $appling
@@ -33,10 +34,10 @@ class SettingFieldSettingValueMaps extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('appling_id, setting_field_id, setting_value_id', 'numerical', 'integerOnly'=>true),
+			array('appling_id, setting_field_id, setting_value_id, is_default', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('setting_field_setting_value_map_id, appling_id, setting_field_id, setting_value_id', 'safe', 'on'=>'search'),
+			array('setting_field_setting_value_map_id, appling_id, setting_field_id, setting_value_id, is_default', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -51,7 +52,7 @@ class SettingFieldSettingValueMaps extends CActiveRecord
 			'appling' => array(self::BELONGS_TO, 'Applings', 'appling_id'),
 			'settingField' => array(self::BELONGS_TO, 'SettingFields', 'setting_field_id'),
 			'settingValue' => array(self::BELONGS_TO, 'SettingValues', 'setting_value_id'),
-			'settings' => array(self::HAS_MANY, 'Settings', 'setting_field_setting_value_id'),
+			'settings' => array(self::HAS_MANY, 'Settings', 'setting_field_setting_value_map_id'),
 		);
 	}
 
@@ -65,6 +66,7 @@ class SettingFieldSettingValueMaps extends CActiveRecord
 			'appling_id' => 'Appling',
 			'setting_field_id' => 'Setting Field',
 			'setting_value_id' => 'Setting Value',
+			'is_default' => 'Is Default',
 		);
 	}
 
@@ -90,6 +92,7 @@ class SettingFieldSettingValueMaps extends CActiveRecord
 		$criteria->compare('appling_id',$this->appling_id);
 		$criteria->compare('setting_field_id',$this->setting_field_id);
 		$criteria->compare('setting_value_id',$this->setting_value_id);
+		$criteria->compare('is_default',$this->is_default);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

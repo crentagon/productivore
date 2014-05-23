@@ -9,7 +9,7 @@ class AchievementsForm extends CFormModel
 {
 	public $achievement_name;
 	public $achievement_condition;
-	public $reward_points;
+	public $achievement_rewards;
 
 	private $_identity;
 
@@ -21,23 +21,53 @@ class AchievementsForm extends CFormModel
 	public function rules()
 	{
 		return array(
-			array('achievement_condition, reward_points', 'required'),
+			array('achievement_condition, achievement_rewards', 'required'),
 			array('achievement_name', 'safe'),
-			array('reward_points', 'numerical', 'min'=>100, 'max'=>1000),
+			array('achievement_rewards', 'numerical', 'min'=>100, 'max'=>1000),
+			array('achievement_rewards, achievement_condition', 'validateForm'),
 		);
 	}
-
-	/**
-	 * Declares attribute labels.
-	 */
-	public function attributeLabels()
+	
+	public function validateForm()
 	{
+		$fields = array();
+		if(trim($this->achievement_condition) == ''){
+			$fields[] = 'Achievement Condition';
+		}
+		if(trim($this->achievement_rewards) == ''){
+			$fields[] = 'Achievement Rewards';
+		}
+		
+		if(count($fields) > 0){
+			$temp = '<ul>';
+			foreach($fields as $field){
+				$temp.='<li>'.$field.'</li>';
+			}
+			$temp.= '</ul>';
+			
+			Yii::app()->user->setFlash('error','The following fields need to be filled: '.$temp);
+		}
+		
 	}
-
-	/**
-	 * Logs in the user using the given username and password in the model.
-	 * @return boolean whether login is successful
-	 */
+	
+	public function addAchievement(){
+		$achievements = new Achievements;
+		
+		$achievements->achievement_name = $this->achievement_name;
+		$achievements->achievement_condition = $this->achievement_condition;
+		$achievements->achievement_rewards = $this->achievement_rewards;
+		$achievements->user_id = Yii::app()->user->getId();		
+		$achievements->inserted_on = date('Y-m-d H:i:s');		
+		
+		if($achievements->save()){
+			return true;
+		}
+		return false;
+	
+		// echo $this->achievement_name.'>>>'.$this->achievement_condition.'>>>'.$this->achievement_rewards; die();
+	}
+	 
+	 
 	// public function signup()
 	// {
 		// $user = new Users;

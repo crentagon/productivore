@@ -55,8 +55,6 @@ class SignupForm extends CFormModel
 		$user->user_password = $security->create_hash($this->user_password);
 		$user->user_email = $this->user_email;
 		
-		echo $this->user_password; die();
-		
 		if($user->save()){
 			return true;
 		}

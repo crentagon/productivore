@@ -6,11 +6,14 @@
  * The followings are the available columns in table 'settings':
  * @property integer $setting_id
  * @property integer $user_appling_map_id
- * @property integer $setting_field_setting_value_id
+ * @property integer $setting_field_setting_value_map_id
+ * @property integer $setting_field_id
  *
  * The followings are the available model relations:
- * @property SettingFieldSettingValueMaps $settingFieldSettingValue
+ * @property SettingFields $settingField
+ * @property SettingFieldSettingValueMaps $settingFieldSettingValueMap
  * @property UserApplingMaps $userApplingMap
+ * @property Test[] $tests
  */
 class Settings extends CActiveRecord
 {
@@ -30,10 +33,10 @@ class Settings extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('user_appling_map_id, setting_field_setting_value_id', 'numerical', 'integerOnly'=>true),
+			array('user_appling_map_id, setting_field_setting_value_map_id, setting_field_id', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('setting_id, user_appling_map_id, setting_field_setting_value_id', 'safe', 'on'=>'search'),
+			array('setting_id, user_appling_map_id, setting_field_setting_value_map_id, setting_field_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -45,8 +48,10 @@ class Settings extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'settingFieldSettingValue' => array(self::BELONGS_TO, 'SettingFieldSettingValueMaps', 'setting_field_setting_value_id'),
+			'settingField' => array(self::BELONGS_TO, 'SettingFields', 'setting_field_id'),
+			'settingFieldSettingValueMap' => array(self::BELONGS_TO, 'SettingFieldSettingValueMaps', 'setting_field_setting_value_map_id'),
 			'userApplingMap' => array(self::BELONGS_TO, 'UserApplingMaps', 'user_appling_map_id'),
+			'tests' => array(self::HAS_MANY, 'Test', 'setting_id'),
 		);
 	}
 
@@ -58,7 +63,8 @@ class Settings extends CActiveRecord
 		return array(
 			'setting_id' => 'Setting',
 			'user_appling_map_id' => 'User Appling Map',
-			'setting_field_setting_value_id' => 'Setting Field Setting Value',
+			'setting_field_setting_value_map_id' => 'Setting Field Setting Value Map',
+			'setting_field_id' => 'Setting Field',
 		);
 	}
 
@@ -82,7 +88,8 @@ class Settings extends CActiveRecord
 
 		$criteria->compare('setting_id',$this->setting_id);
 		$criteria->compare('user_appling_map_id',$this->user_appling_map_id);
-		$criteria->compare('setting_field_setting_value_id',$this->setting_field_setting_value_id);
+		$criteria->compare('setting_field_setting_value_map_id',$this->setting_field_setting_value_map_id);
+		$criteria->compare('setting_field_id',$this->setting_field_id);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

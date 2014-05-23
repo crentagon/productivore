@@ -130,7 +130,7 @@ class SiteController extends Controller
 	
 	public function actionError()
 	{
-		$this->loadStyles(array('error.css'));
+		$this->loadStyles('error.css');
 		$this->setupPage('Error - Productivore');
 		
 		if($error=Yii::app()->errorHandler->error)
@@ -192,7 +192,8 @@ class SiteController extends Controller
 		$this->setupPage('Settings - Productivore', array(
 			'Settings' => BASE_URL.'/site/settings'
 		));
-		$this->loadStyles(array('guest.css', 'home.css'));
+		$this->loadStyles('guest.css');
+		$this->loadStyles('home.css');
 		
 		if (Yii::app()->user->isGuest) {
 			throw new CHttpException(404,'The page could not be found.');

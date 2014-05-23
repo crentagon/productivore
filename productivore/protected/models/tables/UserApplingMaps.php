@@ -9,6 +9,7 @@
  * @property integer $appling_id
  * @property string $notification_count
  * @property string $access_count
+ * @property integer $is_favorite
  *
  * The followings are the available model relations:
  * @property Settings[] $settings
@@ -33,11 +34,11 @@ class UserApplingMaps extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('user_id, appling_id', 'numerical', 'integerOnly'=>true),
+			array('user_id, appling_id, is_favorite', 'numerical', 'integerOnly'=>true),
 			array('notification_count, access_count', 'length', 'max'=>10),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('user_appling_map_id, user_id, appling_id, notification_count, access_count', 'safe', 'on'=>'search'),
+			array('user_appling_map_id, user_id, appling_id, notification_count, access_count, is_favorite', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -66,6 +67,7 @@ class UserApplingMaps extends CActiveRecord
 			'appling_id' => 'Appling',
 			'notification_count' => 'Notification Count',
 			'access_count' => 'Access Count',
+			'is_favorite' => 'Is Favorite',
 		);
 	}
 
@@ -92,6 +94,7 @@ class UserApplingMaps extends CActiveRecord
 		$criteria->compare('appling_id',$this->appling_id);
 		$criteria->compare('notification_count',$this->notification_count,true);
 		$criteria->compare('access_count',$this->access_count,true);
+		$criteria->compare('is_favorite',$this->is_favorite);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -108,5 +111,4 @@ class UserApplingMaps extends CActiveRecord
 	{
 		return parent::model($className);
 	}
-	
 }

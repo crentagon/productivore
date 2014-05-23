@@ -1,3 +1,4 @@
+
 <div class="flash-msg flash-error">
 	<div class="flash-icon-container" onclick="window.location = '<?echo BASE_URL?>'">
 		<span class="flash-icon fa fa-times-circle fa-2x"></span>

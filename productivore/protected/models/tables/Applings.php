@@ -13,6 +13,7 @@
  * @property string $createdon
  *
  * The followings are the available model relations:
+ * @property Menus[] $menuses
  * @property SettingFieldSettingValueMaps[] $settingFieldSettingValueMaps
  * @property UserApplingMaps[] $userApplingMaps
  */
@@ -52,6 +53,7 @@ class Applings extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'menuses' => array(self::HAS_MANY, 'Menus', 'appling_id'),
 			'settingFieldSettingValueMaps' => array(self::HAS_MANY, 'SettingFieldSettingValueMaps', 'appling_id'),
 			'userApplingMaps' => array(self::HAS_MANY, 'UserApplingMaps', 'appling_id'),
 		);

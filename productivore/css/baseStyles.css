@@ -45,6 +45,10 @@ body{
 	max-width: 870px;
 }
 
+.super-container .fa{
+	font-family: FontAwesome;
+}
+
 /* Some general changes. */
 div{	
 	-moz-box-sizing: border-box; box-sizing: border-box;
@@ -589,8 +593,17 @@ hr.thick{
 .cushion-15{
 	height: 15px;
 }
+.cushion-10{
+	height: 10px;
+}
 .cushion-5{
 	height: 5px;
+}
+
+.major-title{
+	padding-top: 10px;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #CACACA;
 }
 /*
 .dropdown-inverse{
@@ -614,3 +627,7 @@ hr.thick{
 	background-repeat: repeat-x;
 }
 */
+
+.flash-msg > ul{
+	margin-bottom: 0px;
+}

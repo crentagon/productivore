@@ -115,13 +115,13 @@ class Controller extends CController
 	}
 	
 	//Load the appling's scripts
-	public function loadScripts($params = array()){
-		$this->scripts = $params;
+	public function loadScripts($params = 'baseScript.js'){
+		$this->scripts[] = $params;
 	}
 	
 	//Load the appling's styles
-	public function loadStyles($params = array()){
-		$this->styles = $params;
+	public function loadStyles($params = 'baseStyles.css'){
+		$this->styles[] = $params;
 	}
 	
 	//Set the page up
