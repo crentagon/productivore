@@ -39,5 +39,6 @@ $(document).ready(function(){
 		}
 	);
 	
+	
 	$('.input-achievement-condition').attr('class', 'input-achievement-condition');
 });

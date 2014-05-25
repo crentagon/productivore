@@ -42,6 +42,7 @@ class MainHelper
 			return false;
 		}
 		
+		
 		foreach($valueArray as $key=>$value){
 			//Get the map_id that corresponds to the field and valueid
 			$query = '
@@ -52,6 +53,7 @@ class MainHelper
 				
 			$params = array('settingFieldId'=>$key, 'settingValueId'=>$value);
 			$settingFieldSettingValueMapId = $this->sql_query($query, $params);
+			
 			if(isset($settingFieldSettingValueMapId[0]['setting_field_setting_value_map_id']))
 				$settingFieldSettingValueMapId = $settingFieldSettingValueMapId[0]['setting_field_setting_value_map_id'];	
 			else{
@@ -77,16 +79,6 @@ class MainHelper
 	}
 	
 	public function get_applingInfo_byApplingId($applingId = 0){
-		
-		
-		// Applings::model()->findByAttributes(array('appling_id'=>$applingId));
-		
-		 // Yii::app()->db->createCommand()
-				// ->select('appling_url')
-				// ->from('applings')
-				// ->where('appling_id=:appling_id', array(':appling_id'=>$applingId))
-				// ->queryAll();
-				
 		$query = '
 			SELECT appling_url, appling_name
 			FROM applings

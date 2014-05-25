@@ -38,5 +38,54 @@ class YouController extends Controller
 		
 		$this->render('achievements', compact('mode', 'model', 'achievements'));
 	}
+	
+	//http://localhost/productivore/productivore/you/editachievementfieldajax/field/achievement_name/achievementId/7/value/asdfgh
+	public function actionEditAchievementFieldAjax($field, $achievementId, $value){
+		if($field != null && $achievementId != null && $value != null){
+			$achievements = Achievements::model()->findByPk($achievementId);
+			$achievements->$field = $value;
+			$achievements->save();
+		}
+	}
+	
+	//http://localhost/productivore/productivore/you/deleteachievementajax/achievementId/8
+	public function actionDeleteAchievementAjax($achievementId){
+		if($achievementId != null){
+			$achievements = Achievements::model()->deleteByPk($achievementId);
+		}
+	}
+	
+	//http://localhost/productivore/productivore/you/markascompleteajax/achievementId/9
+	public function actionMarkAsCompleteAjax($achievementId){
+		if($achievementId != null){
+			$achievements = Achievements::model()->findByPk($achievementId);
+			$achievements->is_completed = 1;
+			$achievements->save();
+		}
+	}
+	
+	//http://localhost/productivore/productivore/you/updateachievementsettings/valueId/7
+	public function actionUpdateAchievementSettings($valueId = null){
+		if(!Yii::app()->user->isGuest){
+			if($valueId == null){
+				Yii::app()->user->setFlash('error','Something\'s definitely not right here. You\'re not trying to hack the system, are you?');		
+				$this->render('preview');
+			}
+			$fieldId = 3;
+			$update = array($fieldId=>$valueId); //setting_field_id, field_value_map_id
+			$userId = Yii::app()->user->getId(); 
+			
+			$userApplings = new SidebarHelper;
+			$userApplings->update_settingValues_byUserId($userId, $this->applingId, $update);
+			Yii::app()->end();
+		}
+		else{
+			throw new CHttpException(404,'The page could not be found.');
+			$this->render('index');
+		}
+	}
+	
+	
+	
 
 }

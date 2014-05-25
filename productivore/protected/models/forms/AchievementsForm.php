@@ -31,6 +31,7 @@ class AchievementsForm extends CFormModel
 	public function validateForm()
 	{
 		$fields = array();
+		$error_message = '';
 		if(trim($this->achievement_condition) == ''){
 			$fields[] = 'Achievement Condition';
 		}
@@ -45,16 +46,37 @@ class AchievementsForm extends CFormModel
 			}
 			$temp.= '</ul>';
 			
-			Yii::app()->user->setFlash('error','The following fields need to be filled: '.$temp);
+			$error_message = 'The following fields need to be filled: '.$temp;
+			
 		}
 		
+		$fields = array();
+		if(strlen($this->achievement_condition) > 256){
+			$fields[] = 'Achievement Condition (256 characters maximum)';
+		}
+		if(strlen($this->achievement_name) > 64){
+			$fields[] = 'Achievement Name (64 characters maximum)';
+		}
+		
+		if(count($fields) > 0){
+			$temp = '<ul>';
+			foreach($fields as $field){
+				$temp.='<li>'.$field.'</li>';
+			}
+			$temp.= '</ul>';
+			
+			$error_message .= 'The character counts of the following fields exceeded their limits: '.$temp;
+		}
+		
+		if($error_message != '')
+			Yii::app()->user->setFlash('error',$error_message);
 	}
 	
 	public function addAchievement(){
 		$achievements = new Achievements;
 		
 		$achievements->achievement_name = $this->achievement_name;
-		$achievements->achievement_condition = $this->achievement_condition;
+		$achievements->achievement_condition = nl2br($this->achievement_condition);
 		$achievements->achievement_rewards = $this->achievement_rewards;
 		$achievements->user_id = Yii::app()->user->getId();		
 		$achievements->inserted_on = date('Y-m-d H:i:s');		

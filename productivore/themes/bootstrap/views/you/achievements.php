@@ -54,14 +54,14 @@
 			),
 		)); ?>
 		<div class="add-achievement-name-container">
-			<?php echo $form->textFieldRow($model,'achievement_name', array('class'=>'input-achievement-name', 'placeholder'=>'Achievement Title (e.g.: "Decifapper")', 'autocomplete'=>'off')); ?>
+			<?php echo $form->textFieldRow($model,'achievement_name', array('class'=>'input-achievement-name', 'placeholder'=>'Achievement Title (e.g.: "Power Sprinter")', 'autocomplete'=>'off', 'maxlength'=>64)); ?>
 			<input type="text" value="550" name="AchievementsForm[achievement_rewards]" id="achievement-form-reward-points" placeholder="Reward" autocomplete="off"/>
 			<div id="label-points">
 			points
 			</div>
 		</div>
 		<div class="add-achievement-condition-container">
-			<?php echo $form->textArea($model,'achievement_condition', array('class'=>'input-achievement-condition', 'placeholder'=>'Achievement Condition (e.g.: "Fapped ten times in the span of twenty-four hours.")')); ?>
+			<?php echo $form->textArea($model,'achievement_condition', array('class'=>'input-achievement-condition', 'placeholder'=>'Achievement Condition (e.g.: "Clocked in at less than 12 seconds in a 100-meter sprint.")', 'maxlength'=>256)); ?>
 		</div>
 		<div id="just-a-slider" class="dragdealer dragger">
 			<div class="hp-bar-container">
