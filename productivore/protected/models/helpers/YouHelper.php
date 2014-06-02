@@ -9,6 +9,7 @@ class YouHelper extends MainHelper
 	
 		$query =
 			'SELECT
+				achievement_id,
 				achievement_name,
 				achievement_condition,
 				achievement_rewards,

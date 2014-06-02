@@ -89,13 +89,24 @@
 	<div class="major-title">Achievement List</div>
 	<div class="cushion-20"></div>
 	<?foreach($achievements as $achievement):?>
-		<div class="unlockable-achievement">
+		<input type="hidden" id="achievementId-<?echo $achievement['achievement_id']?>" value="<?echo $achievement['achievement_id']?>"/>
+		<div class="unlockable-achievement completed">
 			<div class="ua-actions">
-				
+				<input type="checkbox" onclick="completeAchievement(<?echo $achievement['achievement_id']?>)"/>
 			</div>
 			<div class="ua-body">
-				<div class="achievement-name"><?echo $achievement['achievement_name']?></div>
-				<div class="achievement-condition"><?echo $achievement['achievement_condition']?></div>
+				<div class="achievement-name">
+					<?if($achievement['achievement_name'] != ''):?>
+						<span class="editable-text">
+						<?echo $achievement['achievement_name']?>
+						</span>
+					<?endif;?>
+				</div>
+				<div class="achievement-condition">
+					<span class="editable-text">
+					<?echo $achievement['achievement_condition']?>
+					</span>
+				</div>
 			</div>
 			<div class="ua-rewards">
 				<div class="points-container">

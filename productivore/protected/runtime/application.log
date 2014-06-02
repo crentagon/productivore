@@ -4870,3 +4870,52 @@ Stack trace:
 REQUEST_URI=/productivore/productivore/you/updateachievementsettings/valueId/7
 in C:\wamp\www\productivore\productivore\protected\controllers\YouController.php (74)
 in C:\wamp\www\productivore\productivore\index.php (25)
+2014/05/25 22:19:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The page could not be found.' in C:\wamp\www\productivore\productivore\protected\components\Controller.php:17
+Stack trace:
+#0 C:\wamp\www\productivore\productivore\protected\controllers\YouController.php(8): Controller->__construct()
+#1 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(360): YouController->__construct('you', NULL)
+#2 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(276): CWebApplication->createController('you/achievement...')
+#3 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController('you/achievement...')
+#4 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\wamp\www\productivore\productivore\index.php(25): CApplication->run()
+#6 {main}
+REQUEST_URI=/productivore/productivore/you/achievements
+---
+2014/05/25 22:22:00 [error] [php] Undefined variable: achievement_name (C:\wamp\www\productivore\productivore\themes\bootstrap\views\you\achievements.php:98)
+Stack trace:
+#0 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(870): YouController->renderFile()
+#1 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(783): YouController->renderPartial()
+#2 C:\wamp\www\productivore\productivore\protected\controllers\YouController.php(39): YouController->render()
+#3 unknown(0): YouController->actionAchievements()
+#4 C:\wamp\www\productivore\Yii-1_1_14\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#5 C:\wamp\www\productivore\Yii-1_1_14\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(286): YouController->runAction()
+#8 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(265): YouController->runActionWithFilters()
+#9 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(282): YouController->run()
+#10 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 C:\wamp\www\productivore\productivore\index.php(25): CWebApplication->run()
+REQUEST_URI=/productivore/productivore/you/achievements
+in C:\wamp\www\productivore\productivore\themes\bootstrap\views\you\achievements.php (98)
+in C:\wamp\www\productivore\productivore\protected\controllers\YouController.php (39)
+in C:\wamp\www\productivore\productivore\index.php (25)
+2014/05/25 22:27:05 [error] [php] Undefined index: achievement_id (C:\wamp\www\productivore\productivore\themes\bootstrap\views\you\achievements.php:92)
+Stack trace:
+#0 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(870): YouController->renderFile()
+#1 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(783): YouController->renderPartial()
+#2 C:\wamp\www\productivore\productivore\protected\controllers\YouController.php(39): YouController->render()
+#3 unknown(0): YouController->actionAchievements()
+#4 C:\wamp\www\productivore\Yii-1_1_14\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#5 C:\wamp\www\productivore\Yii-1_1_14\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(286): YouController->runAction()
+#8 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CController.php(265): YouController->runActionWithFilters()
+#9 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(282): YouController->run()
+#10 C:\wamp\www\productivore\Yii-1_1_14\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\wamp\www\productivore\Yii-1_1_14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 C:\wamp\www\productivore\productivore\index.php(25): CWebApplication->run()
+REQUEST_URI=/productivore/productivore/you/achievements
+in C:\wamp\www\productivore\productivore\themes\bootstrap\views\you\achievements.php (92)
+in C:\wamp\www\productivore\productivore\protected\controllers\YouController.php (39)
+in C:\wamp\www\productivore\productivore\index.php (25)

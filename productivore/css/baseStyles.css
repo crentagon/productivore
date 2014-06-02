@@ -481,7 +481,7 @@ hr.thick{
 	padding-right: 20px;
 	height: 35px;
 	line-height: 17px;
-	background-color: #112463;
+	background-color: #0353A3;
 	color: #EFEFEF;
 	font-family: 'Roboto', Georgia, Times, serif;
 	font-weight: 400;
@@ -630,4 +630,15 @@ hr.thick{
 
 .flash-msg > ul{
 	margin-bottom: 0px;
+}
+
+.editable-text{
+	border: 1px solid rgba(0,0,0,0);
+	display: inline-block;
+	max-width: 100%;
+	padding: 2px;
+	border-radius: 3px;
+}
+.editable-text:hover{
+	border: 1px solid #ADADAD;
 }
