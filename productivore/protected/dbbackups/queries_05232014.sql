@@ -24,3 +24,42 @@ ADD CONSTRAINT `setting_fields_appling_id_fk`
   REFERENCES `productivore_db`.`applings` (`appling_id`)
   ON DELETE NO ACTION
   ON UPDATE NO ACTION;
+
+/*
+	Inserting a new settingmap? Insert into settings, too.
+*/
+
+-- Trigger DDL Statements
+DELIMITER $$
+
+USE `productivore_db`$$
+
+CREATE
+DEFINER=`crentaroot`@`localhost`
+TRIGGER `productivore_db`.`applings_AINS`
+AFTER INSERT ON `productivore_db`.`applings`
+FOR EACH ROW
+BEGIN
+	-- New user must have applings.
+	INSERT INTO user_appling_maps (user_id, appling_id)
+	SELECT user_id, NEW.appling_id FROM users;
+END$$
+
+
+DELIMITER $$
+
+USE `productivore_db`$$
+
+CREATE
+DEFINER=`crentaroot`@`localhost`
+TRIGGER `productivore_db`.`applings_AINS`
+AFTER INSERT ON `productivore_db`.`setting_field_setting_value_maps`
+FOR EACH ROW
+BEGIN
+	IF NEW.is_default == 1 THEN
+		INSERT INTO settings (user_appling_map_id, setting_field_setting_value_map_id, setting_field_id)
+		SELECT user_appling_map_id, NEW.setting_field_setting_value_map_id, NEW.setting_field_id
+		FROM user_appling_maps
+		WHERE appling_id = NEW.appling_id
+	END IF;
+END$$
