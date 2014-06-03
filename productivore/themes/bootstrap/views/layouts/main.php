@@ -235,6 +235,10 @@
 				Display Sidebar
 			</div>
 			<?endif;?>
+			<div class="flash-messages-fixed">
+			
+			</div>
+			<div class="flash-messages">
 			<?
 				//Flash messages
 				$faIcon = '';
@@ -258,6 +262,7 @@
 						'</div>';
 				}
 			?>
+			</div>
 			
 			<?if($this->isLoggingOut):?>
 				<div class="flash-msg flash-success">

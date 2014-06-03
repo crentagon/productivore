@@ -43,7 +43,7 @@ $(document).ready(function(){
 	);
 	
 	$('.unlockable-achievement').on('mouseover', function(){
-		$(this).attr('class', 'unlockable-achievement completed')
+		// $(this).attr('class', 'unlockable-achievement completed')
 		$(this).children('.ua-actions').children('input').show();
 	}).on('mouseout', function(){
 		$(this).children('.ua-actions').children('input').hide();
@@ -52,16 +52,30 @@ $(document).ready(function(){
 	$('.input-achievement-condition').attr('class', 'input-achievement-condition');
 });
 
-function completeAchievement(achievementId){
-	
+function completeAchievement(achievementId, element){
+	$(element).parent().parent().attr('class', 'unlockable-achievement completed');
+	$(element).parent().html('<div class="completed-check"><span class="fa fa-check"></span></div>');
 
-	var xmlhttp;
+	var achievementTitle = 'TEST';
+	var achievementBody = 'TEST';
+	var achievementPoints = '9001 pts';
 	
-	if (window.XMLHttpRequest)
-		xmlhttp=new XMLHttpRequest();
-	else
-		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	$('.flash-messages-fixed').append(''+
+		'<div class="flash-msg flash-success">'+
+			'<div class="flash-icon-container">'+
+				'<span class="flash-icon fa fa-check-circle fa-2x"></span>'+
+			'</div>'+
+			'<b>Achievement Unlocked: '+achievementTitle+ ' ('+achievementPoints+')</b><br/>'+achievementBody+
+			'<span class="flash-msg-exit fa fa-times"></span>'+
+		'</div>'+
+	'');
+	// var xmlhttp;
 	
-	xmlhttp.open("GET", C_BASEURL+"/you/markascompleteajax/achievementId/"+achievementId,true);
-	xmlhttp.send();
+	// if (window.XMLHttpRequest)
+		// xmlhttp=new XMLHttpRequest();
+	// else
+		// xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	
+	// xmlhttp.open("GET", C_BASEURL+"/you/markascompleteajax/achievementId/"+achievementId,true);
+	// xmlhttp.send();
 }

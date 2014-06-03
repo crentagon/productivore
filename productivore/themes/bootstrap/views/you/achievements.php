@@ -90,9 +90,9 @@
 	<div class="cushion-20"></div>
 	<?foreach($achievements as $achievement):?>
 		<input type="hidden" id="achievementId-<?echo $achievement['achievement_id']?>" value="<?echo $achievement['achievement_id']?>"/>
-		<div class="unlockable-achievement completed">
+		<div class="unlockable-achievement">
 			<div class="ua-actions">
-				<input type="checkbox" onclick="completeAchievement(<?echo $achievement['achievement_id']?>)"/>
+				<input type="checkbox" onclick="completeAchievement(<?echo $achievement['achievement_id']?>, this)"/>
 			</div>
 			<div class="ua-body">
 				<div class="achievement-name">
