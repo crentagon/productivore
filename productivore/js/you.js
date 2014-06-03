@@ -1,4 +1,7 @@
+var C_BASEURL = '';
+
 $(document).ready(function(){
+	C_BASEURL = $('#BASE_URL').val();
 	// alert($('#achievement-mode').val());
 
 	if($('#achievement-mode').val() == 'index'){
@@ -39,6 +42,26 @@ $(document).ready(function(){
 		}
 	);
 	
+	$('.unlockable-achievement').on('mouseover', function(){
+		$(this).attr('class', 'unlockable-achievement completed')
+		$(this).children('.ua-actions').children('input').show();
+	}).on('mouseout', function(){
+		$(this).children('.ua-actions').children('input').hide();
+	});
 	
 	$('.input-achievement-condition').attr('class', 'input-achievement-condition');
 });
+
+function completeAchievement(achievementId){
+	
+
+	var xmlhttp;
+	
+	if (window.XMLHttpRequest)
+		xmlhttp=new XMLHttpRequest();
+	else
+		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	
+	xmlhttp.open("GET", C_BASEURL+"/you/markascompleteajax/achievementId/"+achievementId,true);
+	xmlhttp.send();
+}

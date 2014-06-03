@@ -127,6 +127,7 @@ transition: border linear 0.2s, box-shadow linear 0.2s;
 	height: 100%;
 	border-radius: 5px 0px 0px 5px;
 	float: left;
+	padding: 10px;
 }
 .ua-body{
 	width: 80%;
@@ -134,6 +135,9 @@ transition: border linear 0.2s, box-shadow linear 0.2s;
 	height: 100%;
 	float: left;
 	padding: 10px;
+}
+.ua-actions input{
+	display: none;
 }
 .ua-rewards{
 	border-radius: 0px 5px 5px 0px;
@@ -226,4 +230,9 @@ transition: border linear 0.2s, box-shadow linear 0.2s;
 
 .achievement-name{
 	font-weight: 600;
+}
+
+.completed{
+	border: 1px solid rgba(77, 184, 66, 0.4);
+	background-color: rgba(77, 184, 66, 0.1);
 }
