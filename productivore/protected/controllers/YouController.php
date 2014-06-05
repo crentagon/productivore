@@ -17,6 +17,11 @@ class YouController extends Controller
 	}
 	
 	public function actionAchievements($mode = 'index'){
+		$this->setupPage('You - Productivore', array(
+			'You' => BASE_URL.'/you',
+			'Achievements' => BASE_URL.'/you/achievements'
+		));
+		
 		$this->loadScripts('you.js');
 		$this->loadStyles('you-achievements.css');
 		
