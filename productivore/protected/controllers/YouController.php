@@ -26,7 +26,7 @@ class YouController extends Controller
 			$model->attributes=$_POST['AchievementsForm'];
 			
 			if($model->validate() && $model->addAchievement()){
-				Yii::app()->user->setFlash('success','Congratulations! You have added a new item to your bucket list.');
+				Yii::app()->user->setFlash('success','Congratulations! You have added a new item to your achievement list.');
 				$model->achievement_name = '';
 				$model->achievement_condition = '';
 				$model->achievement_rewards = 550;

@@ -20,7 +20,15 @@
 }
 
 body{
-	background: #EFEFEF !important;
+	/* background: #DEDEDE !important;*/
+	background: repeating-linear-gradient(
+	  45deg,
+	  #DEDEDE,
+	  #DEDEDE 15px,
+	  #E6E6E6 15px,
+	  #E6E6E6 30px
+	);
+	padding-bottom: 20px;
 }
 
 @media (max-width: 480px){
@@ -31,6 +39,11 @@ body{
 
 #page {
     padding-top: 60px;
+}
+
+.center {
+	margin: auto;
+	text-align: center;
 }
 
 /* Width restrictions for the content. */
@@ -500,7 +513,7 @@ hr.thick{
 
 
 .pvore-content-container{
-	background-color: rgba(255, 255, 255, 0.6);
+	background-color: rgba(255, 255, 255, 0.75);
 	padding: 20px;
 	-moz-border-radius: 8px;
 	border-radius: 8px;
@@ -641,4 +654,15 @@ hr.thick{
 }
 .editable-text:hover{
 	border: 1px solid #ADADAD;
+}
+
+
+.flash-messages-fixed{
+	display: none;
+	position: fixed;
+	width: 50%;
+	top: 45px;
+	left: 25%;
+	margin: auto;
+	z-index: 2;
 }

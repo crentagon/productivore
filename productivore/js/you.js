@@ -45,22 +45,40 @@ $(document).ready(function(){
 	$('.unlockable-achievement').on('mouseover', function(){
 		// $(this).attr('class', 'unlockable-achievement completed')
 		$(this).children('.ua-actions').children('input').show();
+		$(this).children('.ua-actions').children('.fa').show();
 	}).on('mouseout', function(){
 		$(this).children('.ua-actions').children('input').hide();
+		$(this).children('.ua-actions').children('.fa').hide();
 	});
 	
 	$('.input-achievement-condition').attr('class', 'input-achievement-condition');
 });
 
+function deleteAchievement(achievementId, element){
+	$(element).parent().parent().fadeOut(512);
+	
+	var xmlhttp;
+	
+	if (window.XMLHttpRequest)
+		xmlhttp=new XMLHttpRequest();
+	else
+		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	
+	xmlhttp.open("GET", C_BASEURL+"/you/deleteachievementajax/achievementId/"+achievementId,true);
+	xmlhttp.send();
+}
+
 function completeAchievement(achievementId, element){
+	var achievementTitle = 
+		$(element).parent().parent().children('.ua-body').children('.achievement-name').children('.editable-text').html().trim();
+	var achievementBody =
+		$(element).parent().parent().children('.ua-body').children('.achievement-condition').children('.editable-text').html().trim();
+	var achievementPoints =
+		$(element).parent().parent().children('.ua-rewards').children('.points-container').children('div').html().trim();
 	$(element).parent().parent().attr('class', 'unlockable-achievement completed');
 	$(element).parent().html('<div class="completed-check"><span class="fa fa-check"></span></div>');
-
-	var achievementTitle = 'TEST';
-	var achievementBody = 'TEST';
-	var achievementPoints = '9001 pts';
 	
-	$('.flash-messages-fixed').append(''+
+	$('.flash-messages-fixed').html(''+
 		'<div class="flash-msg flash-success">'+
 			'<div class="flash-icon-container">'+
 				'<span class="flash-icon fa fa-check-circle fa-2x"></span>'+
@@ -68,14 +86,14 @@ function completeAchievement(achievementId, element){
 			'<b>Achievement Unlocked: '+achievementTitle+ ' ('+achievementPoints+')</b><br/>'+achievementBody+
 			'<span class="flash-msg-exit fa fa-times"></span>'+
 		'</div>'+
-	'');
-	// var xmlhttp;
+	'').fadeIn(256).delay(2048).fadeOut(512);
+	var xmlhttp;
 	
-	// if (window.XMLHttpRequest)
-		// xmlhttp=new XMLHttpRequest();
-	// else
-		// xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	if (window.XMLHttpRequest)
+		xmlhttp=new XMLHttpRequest();
+	else
+		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
 	
-	// xmlhttp.open("GET", C_BASEURL+"/you/markascompleteajax/achievementId/"+achievementId,true);
-	// xmlhttp.send();
+	xmlhttp.open("GET", C_BASEURL+"/you/markascompleteajax/achievementId/"+achievementId,true);
+	xmlhttp.send();
 }
