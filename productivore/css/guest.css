@@ -13,13 +13,22 @@
 }
 
 body{
-	/* background: #DEDEDE !important;*/
+	/*
+	background: #DEDEDE !important;
 	background: repeating-linear-gradient(
 	  45deg,
 	  #DEDEDE,
-	  #DEDEDE 15px,
-	  #E6E6E6 15px,
-	  #E6E6E6 30px
+	  #DEDEDE 1px,
+	  #E6E6E6 1px,
+	  #E6E6E6 20px
+	);
+	*/
+	background: repeating-linear-gradient(
+	  45deg,
+	  #DEDEDE,
+	  #DEDEDE 18px,
+	  #E6E6E6 18px,
+	  #E6E6E6 36px
 	);
 	padding-bottom: 20px;
 }
