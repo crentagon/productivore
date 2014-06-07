@@ -156,17 +156,17 @@ transition: border linear 0.2s, box-shadow linear 0.2s;
 	float: left;
 	padding: 10px;
 }
-.ua-actions *{
+.ua-actions input, .ua-actions > .fa-times{
 	display: none;
 }
-.ua-actions > .fa {
+.ua-actions > .fa-times {
 	position: absolute;
 	bottom: 15px;
 	left: 10px;
 	cursor: pointer;
 	color: #AAAAAA;
 }
-.ua-actions > .fa:hover {
+.ua-actions > .fa-times:hover {
 	color: #888888;
 }
 .ua-rewards{

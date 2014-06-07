@@ -75,11 +75,11 @@ function completeAchievement(achievementId, element){
 		$(element).parent().parent().children('.ua-body').children('.achievement-condition').children('.editable-text').html().trim();
 	var achievementPoints =
 		$(element).parent().parent().children('.ua-rewards').children('.points-container').children('div').html().trim();
-	$(element).parent().parent().attr('class', 'unlockable-achievement completed');
 	$(element).parent().html('<div class="completed-check"><span class="fa fa-check"></span></div>');
+	$(element).parent().parent().attr('class', 'unlockable-achievement completed');
 	
 	$('.flash-messages-fixed').html(''+
-		'<div class="flash-msg flash-success">'+
+		'<div class="flash-msg flash-success flash-fixed-box-shadow">'+
 			'<div class="flash-icon-container">'+
 				'<span class="flash-icon fa fa-check-circle fa-2x"></span>'+
 			'</div>'+
@@ -87,13 +87,13 @@ function completeAchievement(achievementId, element){
 			'<span class="flash-msg-exit fa fa-times"></span>'+
 		'</div>'+
 	'').fadeIn(256).delay(2048).fadeOut(512);
-	var xmlhttp;
+	// var xmlhttp;
 	
-	if (window.XMLHttpRequest)
-		xmlhttp=new XMLHttpRequest();
-	else
-		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	// if (window.XMLHttpRequest)
+		// xmlhttp=new XMLHttpRequest();
+	// else
+		// xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
 	
-	xmlhttp.open("GET", C_BASEURL+"/you/markascompleteajax/achievementId/"+achievementId,true);
-	xmlhttp.send();
+	// xmlhttp.open("GET", C_BASEURL+"/you/markascompleteajax/achievementId/"+achievementId,true);
+	// xmlhttp.send();
 }

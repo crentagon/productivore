@@ -670,3 +670,7 @@ hr.thick{
 	margin: auto;
 	z-index: 2;
 }
+
+.flash-fixed-box-shadow{
+	box-shadow: 5px 5px 5px #333333;
+}
