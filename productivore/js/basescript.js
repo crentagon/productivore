@@ -392,4 +392,8 @@ function hideSidebar(){
 	*/
 }
 
-// function 
+function appendToFlashMessagesFixed(messageTest){
+	$('.flash-messages-fixed').append(messageTest).show();
+	
+	$('.flash-messages-fixed > .flash-msg').last().fadeIn(256).delay(2048).fadeOut(512);
+}
