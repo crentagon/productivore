@@ -12,17 +12,10 @@
 	font-weight: 400;
 }
 
-body{
-	/*
-	background: #DEDEDE !important;
-	background: repeating-linear-gradient(
-	  45deg,
-	  #DEDEDE,
-	  #DEDEDE 1px,
-	  #E6E6E6 1px,
-	  #E6E6E6 20px
-	);
-	*/
+html body{
+	background: #DEDEDE;
+	background-image:url('../images/pattern.png');
+	background-repeat:repeat;
 	background: repeating-linear-gradient(
 	  45deg,
 	  #DEDEDE,
@@ -30,8 +23,11 @@ body{
 	  #E6E6E6 18px,
 	  #E6E6E6 36px
 	);
+	/*
+	*/
 	padding-bottom: 20px;
 }
+
 
 html{
 	height: 100%;
@@ -98,6 +94,7 @@ div{
 
 
 .pvore-content-container{
+	background-color: #FCFCFC;
 	background-color: rgba(255, 255, 255, 0.75);
 	padding: 20px;
 	-moz-border-radius: 8px;

@@ -98,15 +98,19 @@
 					</div>
 					<div class="ua-body">
 						<div class="achievement-name">
+							<span class="editable-text-parent">
 							<?if($achievement['achievement_name'] != ''):?>
 								<span class="editable-text">
 								<?echo $achievement['achievement_name']?>
 								</span>
 							<?endif;?>
+							</span>
 						</div>
 						<div class="achievement-condition">
-							<span class="editable-text">
-							<?echo $achievement['achievement_condition']?>
+							<span class="editable-text-parent">
+								<span class="editable-text">
+								<?echo $achievement['achievement_condition']?>
+								</span>
 							</span>
 						</div>
 					</div>

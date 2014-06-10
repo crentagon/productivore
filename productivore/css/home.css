@@ -21,7 +21,7 @@
 .pvore-notifications-app{
 	-moz-border-radius: 5px 5px 5px 5px; border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px;
 	height: 75px; width: 100%; cursor: pointer; position: relative;
-	border: 1px solid #f8f8f8;
+	border: 1px solid transparent;
 	padding: 1%;
 }
 
@@ -59,14 +59,14 @@
 
 .appling-name-notification{
 	height: 100%; width: 80%;
-	border-left: 1px solid #f8f8f8;
+	border-left: 1px solid transparent;
 	float: left;
 	padding-left: 2%;
 }
 
 .appling-name-appling-settings{
 	height: 100%; width: 70%;
-	border-left: 1px solid #f8f8f8;
+	border-left: 1px solid transparent;
 	float: left;
 	padding-left: 2%;
 }

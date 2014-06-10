@@ -67,6 +67,14 @@ $(document).ready(function() {
 		});
 	});
 	
+	$(document.body).on('click', '.editable-text', function(){
+		var current = $(this).html();
+		current = '<span class="editable-text">'+current+'</span>';
+		
+		var doneButton = '<div class="completed-check"><span class="fa fa-check"></span></div>';
+		$(this).parent().html(current+doneButton);
+	});
+	
 	//Colors
 	// $.each($('.appling-icon'),
 		// function(){
