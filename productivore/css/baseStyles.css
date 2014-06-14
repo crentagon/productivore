@@ -681,3 +681,21 @@ hr.thick{
 .flash-fixed-box-shadow{
 	box-shadow: 5px 5px 5px #333333;
 }
+
+.editable-done{
+	display: inline-block;	
+	padding-right: 4px;
+	padding-left: 4px;
+	top: -3px;
+	position: relative;
+	cursor: pointer;
+}
+
+.completed-check{
+	background-color: #60C739;
+	color: #FFFFFF;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	padding-left: 3px;
+}

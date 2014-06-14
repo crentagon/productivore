@@ -78,7 +78,7 @@
 			The amount of points that you will receive upon unlocking this achievement: 
 		</div>*/?>
 		<div class="cushion-15"></div>
-		<button class="btn btn-success" type="submit" id="btn-add-to-bucket-list">Add to Achievement List</button>
+		<button class="btn btn-inverse" type="submit" id="btn-add-to-bucket-list">Add to Achievement List</button>
 		
 		<?php $this->endWidget(); ?>
 	</div>
