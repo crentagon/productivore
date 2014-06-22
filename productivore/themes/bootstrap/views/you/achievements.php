@@ -98,7 +98,11 @@
 					</div>
 					<div class="ua-body">
 						<div class="achievement-name">
-							<span class="editable-text-parent">
+							<span class="editable-text-parent"
+								ajaxUrl="<?echo BASE_URL?>/you/editachievementfieldajax/field/:field/achievementId/:id/value/:value"
+								ajaxId="<?echo $achievement['achievement_id']?>"
+								ajaxField="achievement_name"
+							>
 							<?if($achievement['achievement_name'] != ''):?>
 								<span class="editable-text">
 								<?echo $achievement['achievement_name']?>
@@ -107,8 +111,12 @@
 							</span>
 						</div>
 						<div class="achievement-condition">
-							<span class="editable-text-parent">
-								<span class="editable-text">
+							<span class="editable-textarea-parent"
+								ajaxUrl="<?echo BASE_URL?>/you/editachievementfieldajax/field/:field/achievementId/:id/value/:value"
+								ajaxId="<?echo $achievement['achievement_id']?>"
+								ajaxField="achievement_condition"
+							>
+								<span class="editable-textarea" maxlength="256">
 								<?echo $achievement['achievement_condition']?>
 								</span>
 							</span>
@@ -116,7 +124,9 @@
 					</div>
 					<div class="ua-rewards">
 						<div class="points-container">
-							<div class="points"><?echo $achievement['achievement_rewards']?> pts</div>
+							<div class="points">
+								<?echo $achievement['achievement_rewards']?> pts
+							</div>
 						</div>
 					</div>
 				</div>

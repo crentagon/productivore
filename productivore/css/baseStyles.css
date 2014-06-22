@@ -656,17 +656,23 @@ hr.thick{
 	margin-bottom: 0px;
 }
 
-.editable-text{
+.editable-text, .editable-textarea{
 	border: 1px solid rgba(0,0,0,0);
 	display: inline-block;
 	max-width: 100%;
 	padding: 2px;
 	border-radius: 3px;
 }
-.editable-text:hover{
+.editable-text:hover, .editable-textarea:hover{
 	border: 1px solid #ADADAD;
 }
 
+.editing-textarea{
+	width: 80%;
+	resize: none;
+	display: inline-block;
+	height: 60px;
+}
 
 .flash-messages-fixed{
 	display: none;
@@ -682,7 +688,7 @@ hr.thick{
 	box-shadow: 5px 5px 5px #333333;
 }
 
-.editable-done{
+.editable-done, .editable-textarea-done{
 	display: inline-block;	
 	padding-right: 4px;
 	padding-left: 4px;

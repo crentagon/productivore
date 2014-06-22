@@ -10,6 +10,9 @@
 	var C_BASEURL = '';
 	
 $(document).ready(function() {
+	var editableTextTrigger = false;
+	var readyToClick = 1;
+
 	C_BASEURL = $('#BASE_URL').val();
 
 	//Set the orderby and the viewby
@@ -70,14 +73,106 @@ $(document).ready(function() {
 	$(document.body)
 		.on('click', '.editable-text', function(){
 			var current = $(this).html();
-			current = '<input type="text" value="'+current.trim()+'"/>';
+			current = '<input type="text" class="editing-text" value="'+current.trim()+'"/>';
 			
 			var doneButton = '&nbsp;<div class="completed-check editable-done"><span class="fa fa-check"></span></div>';
 			$(this).parent().html(current+doneButton);
+			
+			editableTextTrigger = true;
+			
+			$('.editing-text').on('click', function(e){
+				e.stopPropagation();
+			});
+			
+		})
+		.on('click', '.editable-textarea', function(){
+			var current = $(this).html();
+			var regex1 = new RegExp('<br>', 'g');
+			var regex2 = new RegExp('<br/>', 'g');
+			var maxlength = $(this).attr('maxlength');
+			current = '<textarea class="editing-textarea" maxlength="'+maxlength+'">'+current.trim().replace(regex1, '\n').replace(regex2, '\n')+'</textarea>';
+			
+			var doneButton = '&nbsp;<div class="completed-check editable-textarea-done"><span class="fa fa-check"></span></div>';
+			$(this).parent().html(current+doneButton);
+			
+			editableTextTrigger = true;
+			
+			$('.editing-textarea').on('click', function(e){
+				e.stopPropagation();
+			});
+			
 		})
 		.on('click', '.editable-done', function(){
-			alert($(this).parent().children('input').val().trim());
+			var ajaxUrl = $(this).parent().attr('ajaxUrl');
+			var ajaxId = $(this).parent().attr('ajaxId');
+			var ajaxField = $(this).parent().attr('ajaxField');
+			var ajaxValue =$(this).parent().children('input').val().trim();
+			var newValue = '<span class="editable-text">'+$(this).parent().children('input').val().trim()+'</span>';
+			
+			ajaxUrl = ajaxUrl.replace(":id", ajaxId).replace(":field", ajaxField).replace(":value", ajaxValue);
+			
+			$(this).parent().html(newValue);			
+			$('.editing-text').off('click');
+			
+			editableTextTrigger = false;
+			readyToClick = 1;
+			
+			var xmlhttp;
+	
+			if (window.XMLHttpRequest)
+				xmlhttp=new XMLHttpRequest();
+			else
+				xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+			
+			xmlhttp.open("GET", ajaxUrl, true);
+			xmlhttp.send();
+		})
+		.on('click', '.editable-textarea-done', function(){
+			var regex = new RegExp('\n', 'g');
+			var ajaxValue = $(this).parent().children('textarea').val().replace(regex, '<br>');
+			
+			var ajaxUrl = $(this).parent().attr('ajaxUrl');
+			var ajaxId = $(this).parent().attr('ajaxId');
+			var ajaxField = $(this).parent().attr('ajaxField');
+			
+			var newValue = '<span class="editable-textarea">'+ajaxValue+'</span>';
+			
+			ajaxUrl = ajaxUrl.replace(":id", ajaxId).replace(":field", ajaxField).replace(":value", ajaxValue);
+			
+			$(this).parent().html(newValue);			
+			$('.editing-textarea').off('click');
+			
+			editableTextTrigger = false;
+			readyToClick = 1;
+			
+			var xmlhttp;
+	
+			if (window.XMLHttpRequest)
+				xmlhttp=new XMLHttpRequest();
+			else
+				xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+			
+			xmlhttp.open("GET", ajaxUrl, true);
+			xmlhttp.send();
+		})
+		.on('keyup', '.editing-text', function(e){
+			if(e.which == 13)
+				$('.editable-done').trigger('click');
+				
+			// alert(e.which);
 		});
+		
+	$(document).on('click', function(e){
+		if(editableTextTrigger){
+			readyToClick -= 1;
+		}
+		if(readyToClick < 0){
+			$('.editable-done').trigger('click');
+			$('.editable-textarea-done').trigger('click');
+		}
+	});
+	
+	
 	
 	//Colors
 	// $.each($('.appling-icon'),
@@ -86,6 +181,7 @@ $(document).ready(function() {
 		// }
 	// );
 });
+
 
 function setOrderBy(){
 	if($('#orderBySettings').val() == 1){
