@@ -116,7 +116,7 @@ $(document).ready(function() {
 			var ajaxUrl = $(this).parent().attr('ajaxUrl');
 			var ajaxId = $(this).parent().attr('ajaxId');
 			var ajaxField = $(this).parent().attr('ajaxField');
-			var ajaxValue =$(this).parent().children('input').val().trim();
+			var ajaxValue = $(this).parent().children('input').val().replace('/', '&sol;').trim();
 			
 			$('.editing-text').off('click');
 				
@@ -170,7 +170,7 @@ $(document).ready(function() {
 		.on('click', '.editable-textarea-done', function(){
 			var regex = new RegExp('\n', 'g');
 			
-			var ajaxValue = $(this).parent().children('textarea').val().replace(regex, '<br>');
+			var ajaxValue = $(this).parent().children('textarea').val().replace('/', '&sol;').replace(regex, '<br>');
 			var ajaxId = $(this).parent().attr('ajaxId');
 			var ajaxField = $(this).parent().attr('ajaxField');
 			var ajaxUrl = $(this).parent().attr('ajaxUrl');
