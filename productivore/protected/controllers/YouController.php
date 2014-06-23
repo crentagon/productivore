@@ -45,12 +45,26 @@ class YouController extends Controller
 	}
 	
 	//http://localhost/productivore/productivore/you/editachievementfieldajax/field/achievement_name/achievementId/7/value/asdfgh
-	public function actionEditAchievementFieldAjax($field, $achievementId, $value){
-		if($field != null && $achievementId != null && $value != null){
+	public function actionEditAchievementFieldAjax($field, $achievementId, $value = null){
+		$requiredFields = array('achievement_condition', 'achievement_rewards');
+	
+		if(in_array($field, $requiredFields)){
+			// echo json_encode(array('error'=>'The field '.$value.' must not be left blank.'));
+			// exit;
+			if($value == null || $value == ''){
+				echo json_encode(array('error'=>'The field '.$field.' must not be left blank.'));
+				exit;
+			}
+		}
+			
+		if($field != null && $achievementId != null){
 			$achievements = Achievements::model()->findByPk($achievementId);
 			$achievements->$field = $value;
 			$achievements->save();
 		}
+		
+		echo json_encode(array('success'=>'The field '.$field.' has successfully been updated.'));
+		
 	}
 	
 	//http://localhost/productivore/productivore/you/deleteachievementajax/achievementId/8

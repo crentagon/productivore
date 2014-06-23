@@ -292,3 +292,8 @@ transition: border linear 0.2s, box-shadow linear 0.2s;
 	-webkit-border-radius: 5px;
 	padding-left: 3px;
 }
+
+.completion-notes{
+	padding-left: 3px;
+	color: #AAAAAA;
+}

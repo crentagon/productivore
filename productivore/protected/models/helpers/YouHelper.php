@@ -13,6 +13,7 @@ class YouHelper extends MainHelper
 				achievement_name,
 				achievement_condition,
 				achievement_rewards,
+				completion_notes,
 				inserted_on,
 				completed_on
 			FROM

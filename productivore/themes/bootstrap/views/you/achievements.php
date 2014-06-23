@@ -103,11 +103,15 @@
 								ajaxId="<?echo $achievement['achievement_id']?>"
 								ajaxField="achievement_name"
 							>
-							<?if($achievement['achievement_name'] != ''):?>
-								<span class="editable-text">
-								<?echo $achievement['achievement_name']?>
-								</span>
-							<?endif;?>
+								<?if($achievement['achievement_name'] != '' && $achievement['achievement_name'] != null):?>
+									<span class="editable-text">
+										<?echo $achievement['achievement_name']?>
+									</span>
+								<?else:?>
+									<span class="editable-text">
+										- - -
+									</span>
+								<?endif;?>
 							</span>
 						</div>
 						<div class="achievement-condition">
@@ -116,10 +120,34 @@
 								ajaxId="<?echo $achievement['achievement_id']?>"
 								ajaxField="achievement_condition"
 							>
-								<span class="editable-textarea" maxlength="256">
-								<?echo $achievement['achievement_condition']?>
-								</span>
+								<?if($achievement['achievement_condition'] != '' && $achievement['achievement_condition'] != null):?>
+									<span class="editable-textarea">
+										<?echo $achievement['achievement_condition']?>
+									</span>
+								<?else:?>
+									<span class="editable-textarea">
+										- - -
+									</span>
+								<?endif;?>
 							</span>
+						</div>
+						<div class="completion-notes">
+							Completion Notes: 
+								<span class="editable-text-parent"
+									ajaxUrl="<?echo BASE_URL?>/you/editachievementfieldajax/field/:field/achievementId/:id/value/:value"
+									ajaxId="<?echo $achievement['achievement_id']?>"
+									ajaxField="completion_notes"
+								>
+									<? if($achievement['completion_notes'] != '' && $achievement['completion_notes'] != ''): ?>
+										<span class="editable-text">
+											<?echo $achievement['completion_notes']?> 
+										</span>
+									<? else: ?>
+										<span class="editable-text">
+											- - -
+										</span>
+									<? endif; ?>
+								</span>
 						</div>
 					</div>
 					<div class="ua-rewards">

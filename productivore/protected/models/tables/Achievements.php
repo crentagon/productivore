@@ -5,9 +5,10 @@
  *
  * The followings are the available columns in table 'achievements':
  * @property integer $achievement_id
- * @property string $achievement_title
- * @property string $achievement_body
- * @property integer $achievement_reward
+ * @property string $achievement_name
+ * @property string $achievement_condition
+ * @property integer $achievement_rewards
+ * @property string $completion_notes
  * @property integer $user_id
  * @property integer $is_completed
  * @property string $completed_on
@@ -35,12 +36,12 @@ class Achievements extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('achievement_rewards, user_id, is_completed', 'numerical', 'integerOnly'=>true),
-			array('achievement_name', 'length', 'max'=>128),
-			array('achievement_condition', 'length', 'max'=>512),
+			array('achievement_name, completion_notes', 'length', 'max'=>64),
+			array('achievement_condition', 'length', 'max'=>256),
 			array('completed_on, inserted_on', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('achievement_id, achievement_title, achievement_body, achievement_reward, user_id, is_completed, completed_on, inserted_on', 'safe', 'on'=>'search'),
+			array('achievement_id, achievement_name, achievement_condition, achievement_rewards, completion_notes, user_id, is_completed, completed_on, inserted_on', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -63,9 +64,10 @@ class Achievements extends CActiveRecord
 	{
 		return array(
 			'achievement_id' => 'Achievement',
-			'achievement_title' => 'Achievement Title',
-			'achievement_body' => 'Achievement Body',
-			'achievement_reward' => 'Achievement Reward',
+			'achievement_name' => 'Achievement Name',
+			'achievement_condition' => 'Achievement Condition',
+			'achievement_rewards' => 'Achievement Rewards',
+			'completion_notes' => 'Completion Notes',
 			'user_id' => 'User',
 			'is_completed' => 'Is Completed',
 			'completed_on' => 'Completed On',
@@ -92,9 +94,10 @@ class Achievements extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('achievement_id',$this->achievement_id);
-		$criteria->compare('achievement_title',$this->achievement_title,true);
-		$criteria->compare('achievement_body',$this->achievement_body,true);
-		$criteria->compare('achievement_reward',$this->achievement_reward);
+		$criteria->compare('achievement_name',$this->achievement_name,true);
+		$criteria->compare('achievement_condition',$this->achievement_condition,true);
+		$criteria->compare('achievement_rewards',$this->achievement_rewards);
+		$criteria->compare('completion_notes',$this->completion_notes,true);
 		$criteria->compare('user_id',$this->user_id);
 		$criteria->compare('is_completed',$this->is_completed);
 		$criteria->compare('completed_on',$this->completed_on,true);

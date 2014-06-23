@@ -73,6 +73,11 @@ $(document).ready(function() {
 	$(document.body)
 		.on('click', '.editable-text', function(){
 			var current = $(this).html();
+			
+			if(current.trim() == '- - -'){
+				current = '';
+			}
+			
 			current = '<input type="text" class="editing-text" value="'+current.trim()+'"/>';
 			
 			var doneButton = '&nbsp;<div class="completed-check editable-done"><span class="fa fa-check"></span></div>';
@@ -87,6 +92,11 @@ $(document).ready(function() {
 		})
 		.on('click', '.editable-textarea', function(){
 			var current = $(this).html();
+			
+			if(current.trim() == '- - -'){
+				current = '';
+			}
+			
 			var regex1 = new RegExp('<br>', 'g');
 			var regex2 = new RegExp('<br/>', 'g');
 			var maxlength = $(this).attr('maxlength');
@@ -107,15 +117,21 @@ $(document).ready(function() {
 			var ajaxId = $(this).parent().attr('ajaxId');
 			var ajaxField = $(this).parent().attr('ajaxField');
 			var ajaxValue =$(this).parent().children('input').val().trim();
-			var newValue = '<span class="editable-text">'+$(this).parent().children('input').val().trim()+'</span>';
+			
+			$('.editing-text').off('click');
+				
+			editableTextTrigger = false;
+			readyToClick = 1;
+			
+			var newValue = '<span class="editable-text">- - -</span>';
+			
+			if($(this).parent().children('input').val().trim() != ''){
+				newValue = '<span class="editable-text">'+$(this).parent().children('input').val().trim()+'</span>';
+			}
 			
 			ajaxUrl = ajaxUrl.replace(":id", ajaxId).replace(":field", ajaxField).replace(":value", ajaxValue);
 			
 			$(this).parent().html(newValue);			
-			$('.editing-text').off('click');
-			
-			editableTextTrigger = false;
-			readyToClick = 1;
 			
 			var xmlhttp;
 	
@@ -123,27 +139,55 @@ $(document).ready(function() {
 				xmlhttp=new XMLHttpRequest();
 			else
 				xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+				
+			xmlhttp.onreadystatechange=function(){
+				if (xmlhttp.readyState==4 && xmlhttp.status==200){
+					var json = JSON.parse(xmlhttp.responseText);
+					
+					for(key in json){
+						var messageText = ''+
+							'<div class="flash-msg flash-'+key+' flash-fixed-box-shadow">'+
+								'<div class="flash-icon-container">'+
+									'<span class="flash-icon fa fa-check-circle fa-2x"></span>'+
+								'</div>'+
+									json[key]+
+								'<span class="flash-msg-exit fa fa-times"></span>'+
+							'</div>'+
+						'';
+						appendToFlashMessagesFixed(messageText);
+						
+						if(key == 'error'){
+							location.reload();
+						}
+					}
+					
+				}
+			}
 			
 			xmlhttp.open("GET", ajaxUrl, true);
 			xmlhttp.send();
 		})
 		.on('click', '.editable-textarea-done', function(){
 			var regex = new RegExp('\n', 'g');
-			var ajaxValue = $(this).parent().children('textarea').val().replace(regex, '<br>');
 			
-			var ajaxUrl = $(this).parent().attr('ajaxUrl');
+			var ajaxValue = $(this).parent().children('textarea').val().replace(regex, '<br>');
 			var ajaxId = $(this).parent().attr('ajaxId');
 			var ajaxField = $(this).parent().attr('ajaxField');
+			var ajaxUrl = $(this).parent().attr('ajaxUrl');
 			
-			var newValue = '<span class="editable-textarea">'+ajaxValue+'</span>';
+			$('.editing-textarea').off('click');
+				
+			editableTextTrigger = false;
+			readyToClick = 1;
 			
+			var newValue = '<span class="editable-textarea">- - -</span>';
+			
+			if(ajaxValue != ''){
+				newValue = '<span class="editable-textarea">'+ajaxValue+'</span>';
+			}
 			ajaxUrl = ajaxUrl.replace(":id", ajaxId).replace(":field", ajaxField).replace(":value", ajaxValue);
 			
 			$(this).parent().html(newValue);			
-			$('.editing-textarea').off('click');
-			
-			editableTextTrigger = false;
-			readyToClick = 1;
 			
 			var xmlhttp;
 	
@@ -151,9 +195,33 @@ $(document).ready(function() {
 				xmlhttp=new XMLHttpRequest();
 			else
 				xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+				
+			xmlhttp.onreadystatechange=function(){
+				if (xmlhttp.readyState==4 && xmlhttp.status==200){
+					var json = JSON.parse(xmlhttp.responseText);
+					
+					for(key in json){
+						var messageText = ''+
+							'<div class="flash-msg flash-'+key+' flash-fixed-box-shadow">'+
+								'<div class="flash-icon-container">'+
+									'<span class="flash-icon fa fa-check-circle fa-2x"></span>'+
+								'</div>'+
+									json[key]+
+								'<span class="flash-msg-exit fa fa-times"></span>'+
+							'</div>'+
+						'';
+						appendToFlashMessagesFixed(messageText);
+						
+						if(key == 'error'){
+							location.reload();
+						}
+					}
+				}
+			}
 			
 			xmlhttp.open("GET", ajaxUrl, true);
 			xmlhttp.send();
+			
 		})
 		.on('keyup', '.editing-text', function(e){
 			if(e.which == 13)
