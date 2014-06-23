@@ -240,6 +240,16 @@ $(document).ready(function() {
 		}
 	});
 	
+	$(document).on('click', '.points-container', function(){
+		$('.pvore-dimmer-points').fadeIn(C_SIDEBARSPEED/4);
+		$('.pvore-dimmer-points-container').fadeIn(C_SIDEBARSPEED/2);
+		
+		var percentage = 100;
+		var minimumVal = 1000;
+		var maximumVal = 550;
+		
+		
+	})
 	
 	
 	//Colors
@@ -566,6 +576,11 @@ function hideSidebar(){
 	// $('.pvore-sidebar-container').animate({'left': '-30%'}, C_SIDEBARSPEED).fadeOut(C_SIDEBARSPEED/2);
 	$('.pvore-minima').animate({'left': '0%', 'opacity': '0'}, C_SIDEBARSPEED).fadeOut(C_SIDEBARSPEED/2);
 	*/
+}
+
+function hideSidebarPoints(){
+	$('.pvore-dimmer-points').fadeOut(C_SIDEBARSPEED);
+	$('.pvore-dimmer-points-container').fadeOut(C_SIDEBARSPEED/2);
 }
 
 function appendToFlashMessagesFixed(messageTest){

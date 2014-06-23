@@ -709,3 +709,24 @@ hr.thick{
 .color-AAAAAA{
 	color: #AAAAAA;
 }
+
+/* Points: 21-30 */
+
+.pvore-dimmer-points{
+	top: 0px; left: 0px; width: 100%; height: 100%; z-index: 21; position: fixed; 
+	background-color: #232323;
+	background-color: rgba(0,0,0,0.5);
+	cursor: pointer; display: none;
+}
+
+.pvore-dimmer-points-container{
+	position: fixed;
+	left: 10%;
+	top: 40%;
+	width: 80%;
+	height: 20%;
+	background-color: white;
+	display: none;
+	z-index: 22;
+	-moz-border-radius: 10px; border-radius: 10px; -webkit-border-radius: 10px;
+}

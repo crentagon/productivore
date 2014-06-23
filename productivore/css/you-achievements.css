@@ -193,7 +193,6 @@ transition: border linear 0.2s, box-shadow linear 0.2s;
 	width: 75px;
 	height: 38px;
 	color: #FFFFFF;
-	cursor: default;
 	padding: 0px;
 }
 .ua-rewards > .points-container > .points{
@@ -208,7 +207,7 @@ transition: border linear 0.2s, box-shadow linear 0.2s;
 	padding: 8px;
 	text-align: center;
 	color: #FFFFFF;
-	cursor: default;
+	cursor: pointer;
 }
 .dragger{
 	width: 100%;
