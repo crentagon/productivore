@@ -69,12 +69,12 @@ function deleteAchievement(achievementId, element){
 }
 
 function completeAchievement(achievementId, element){
-	var achievementTitle = 
-		$(element).parent().parent().children('.ua-body').children('.achievement-name').children('.editable-text-parent').children('.editable-text').html().trim();
-	var achievementBody =
-		$(element).parent().parent().children('.ua-body').children('.achievement-condition').children('.editable-text-parent').children('.editable-text').html().trim();
 	var achievementPoints =
 		$(element).parent().parent().children('.ua-rewards').children('.points-container').children('div').html().trim();
+	var achievementBody =
+		$(element).parent().parent().children('.ua-body').children('.achievement-condition').children('.editable-textarea-parent').children('.editable-textarea').html().trim();
+	var achievementTitle = 
+		$(element).parent().parent().children('.ua-body').children('.achievement-name').children('.editable-text-parent').children('.editable-text').html().trim();
 	$(element).parent().parent().attr('class', 'unlockable-achievement completed');
 	$(element).parent().html('<div class="completed-check"><span class="fa fa-check"></span></div>');
 	

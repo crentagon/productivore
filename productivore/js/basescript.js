@@ -157,7 +157,7 @@ $(document).ready(function() {
 						appendToFlashMessagesFixed(messageText);
 						
 						if(key == 'error'){
-							location.reload();
+							window.setTimeout(function(){window.location.reload()}, 2048);
 						}
 					}
 					
@@ -213,7 +213,7 @@ $(document).ready(function() {
 						appendToFlashMessagesFixed(messageText);
 						
 						if(key == 'error'){
-							location.reload();
+							window.setTimeout(function(){window.location.reload()}, 2048);
 						}
 					}
 				}
