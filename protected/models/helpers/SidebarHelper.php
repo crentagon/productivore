@@ -10,9 +10,9 @@ class SidebarHelper extends MainHelper
 				description,
 				appling_url as url,
 				appling_image as image,
-				notification_count as notifCount,
-				access_count as accessCount,
-				is_favorite as isFavorite
+				notification_count as notif_count,
+				access_count as accesscount,
+				is_favorite as isfavorite
 			FROM
 				applings
 				JOIN user_appling_maps
@@ -20,7 +20,7 @@ class SidebarHelper extends MainHelper
 			WHERE
 				user_id = :userid
 			AND appling_id > 0
-			ORDER BY accessCount ASC';
+			ORDER BY accesscount ASC';
 		$params = array('userid'=>$userid);
 		$applings = $this->sql_query($query, $params);
 		

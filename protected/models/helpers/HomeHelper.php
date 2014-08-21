@@ -6,7 +6,7 @@ class HomeHelper extends MainHelper
 		if($isAlphabetical)
 			$order = 'ORDER BY name ASC';
 		else
-			$order = 'ORDER BY notifCount DESC, name ASC';
+			$order = 'ORDER BY notif_count DESC, name ASC';
 			
 		$query =
 			'SELECT
@@ -15,9 +15,9 @@ class HomeHelper extends MainHelper
 				description,
 				appling_url as url,
 				appling_image as image,
-				notification_count as notifCount,
-				access_count as accessCount,
-				is_favorite as isFavorite,
+				notification_count as notif_count,
+				access_count as accesscount,
+				is_favorite as isfavorite,
 				appling_message as message
 			FROM
 				applings
@@ -30,11 +30,11 @@ class HomeHelper extends MainHelper
 		return $this->sql_query($query, $params);
 	}
 	
-	public function update_favoriteApplings_byUserId($userId, $applingId, $isFavorite){
+	public function update_favoriteApplings_byUserId($userId, $applingId, $isfavorite){
 			
 		$query = '
 			UPDATE user_appling_maps
-			SET is_favorite = :isFavorite
+			SET is_favorite = :isfavorite
 			WHERE user_id = :userId
 			AND appling_id = :applingId
 		';
@@ -42,12 +42,12 @@ class HomeHelper extends MainHelper
 		$params = array(
 			'userId'=>$userId,
 			'applingId'=>$applingId,
-			'isFavorite'=>$isFavorite
+			'isfavorite'=>$isfavorite
 		);
 		
 		echo "
 			UPDATE user_appling_maps
-			SET is_favorite = $isFavorite
+			SET is_favorite = $isfavorite
 			WHERE user_id = $userId
 			AND appling_id = $applingId
 		>>> "; 

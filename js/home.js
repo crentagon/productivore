@@ -24,7 +24,7 @@ function settingsHide(param1){
 }
 
 function toggleFavorite(params, applingId){
-	var isFavorite = 0;
+	var isfavorite = 0;
 	if($(params).attr('class') == 'btn btn-mini btn-warning pvore-appling-settings-btn'){
 		// Remove favorite
 		$(params).attr('class', 'btn btn-mini btn-grey pvore-appling-settings-btn');
@@ -33,7 +33,7 @@ function toggleFavorite(params, applingId){
 		// Add favorite
 		$(params).attr('class', 'btn btn-mini btn-warning pvore-appling-settings-btn');
 		$(params).html('<span class="fa fa-star"></span> Favorite');
-		isFavorite = 1;
+		isfavorite = 1;
 	}
 	
 	var xmlhttp;
@@ -53,8 +53,8 @@ function toggleFavorite(params, applingId){
 			// alert("Updating...: "+fieldid+">>>"+valueid);
 		// }
 	// }
-	// /productivore/productivore/site/update_favorites?applingId=2&isFavorite=0
-	// alert(C_BASEURL+"/site/update_favorites?applingId="+applingId+"&isFavorite="+isFavorite);
-	xmlhttp.open("GET", C_BASEURL+"/site/update_favorites?applingId="+applingId+"&isFavorite="+isFavorite,true);
+	// /productivore/productivore/site/update_favorites?applingId=2&isfavorite=0
+	// alert(C_BASEURL+"/site/update_favorites?applingId="+applingId+"&isfavorite="+isfavorite);
+	xmlhttp.open("GET", C_BASEURL+"/site/update_favorites?applingId="+applingId+"&isfavorite="+isfavorite,true);
 	xmlhttp.send();
 }

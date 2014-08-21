@@ -7,37 +7,36 @@
 	<hr class="pvore-notifications-app-hr"/>
 </div>
 <?$applingCount = count($allApplings); $i=0;?>
-
 <?foreach($allApplings as $applingid=>$appling):?>
 	<?
 		$notifDescription = 'There are 0 notifications for this appling.';
 		/*
 		$greyedOut = '';
-		if($appling['notifCount'] == 0){
+		if($appling['notif_count'] == 0){
 			$greyedOut = 'notifications-greyed';
 		}
 		else{
-			$notifDescription = str_replace('[FIELD]', $appling['notifCount'], $appling['message']);
+			$notifDescription = str_replace('[FIELD]', $appling['notif_count'], $appling['message']);
 		}
 		*/
-		if($appling['notifCount'] != 0){
-			$notifDescription = str_replace('[FIELD]', $appling['notifCount'], $appling['message']);
+		if($appling['notif_count'] != 0){
+			$notifDescription = str_replace('[FIELD]', $appling['notif_count'], $appling['message']);
 		}
 	?>
 
 	<div class="pvore-notifications-app <? //echo $greyedOut?>" 
 		id="appling-<?echo $appling['appling_id']?>-list"
 		onclick="window.location='<?echo BASE_URL.'/'.$appling['url']?>'"
-		isFavorite="<?echo $appling['isFavorite']?>"
-		accessCount="<?echo $appling['accessCount']?>"
+		isfavorite="<?echo $appling['isfavorite']?>"
+		accesscount="<?echo $appling['accesscount']?>"
 		baseId="appling-<?echo $appling['appling_id']?>">
 		<?/*
-		if($appling['notifCount'] != 0):?>
-			<div class="appling-icon-notification"><?echo $appling['notifCount']?></div>
+		if($appling['notif_count'] != 0):?>
+			<div class="appling-icon-notification"><?echo $appling['notif_count']?></div>
 		<?endif;
 		*/?>
 		<div class="pvore-notifications-app-image">
-			<?if($appling['isFavorite'] == 1):?>
+			<?if($appling['isfavorite'] == 1):?>
 				<span class="favorite-appling-icon fa fa-star fa-1 <? //echo $greyedOut?>"></span>
 			<?endif;?>
 			<span class="appling-icon fa fa-<?echo $appling['image']?> fa-2x"></span>

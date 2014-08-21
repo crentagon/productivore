@@ -99,12 +99,12 @@
 				<div class="pvore-sidebar-app" 
 					id="appling-0-list"
 					onclick="window.location='<?echo BASE_URL?>'"
-					isFavorite="0"
-					accessCount="0"
+					isfavorite="0"
+					accesscount="0"
 					baseId="appling-0">
 					<?
-					/*if($appling['notifCount'] != 0):?>
-						<div class="appling-icon-notification"><?echo $appling['notifCount']?></div>
+					/*if($appling['notif_count'] != 0):?>
+						<div class="appling-icon-notification"><?echo $appling['notif_count']?></div>
 					<?endif;
 					*/?>
 					<div class="pvore-sidebar-app-image">
@@ -128,16 +128,16 @@
 					<div class="pvore-sidebar-app" 
 						id="appling-<?echo $appling['appling_id']?>-list"
 						onclick="window.location='<?echo BASE_URL.'/'.$appling['url']?>'"
-						isFavorite="<?echo $appling['isFavorite']?>"
-						accessCount="<?echo $appling['accessCount']?>"
+						isfavorite="<?echo $appling['isfavorite']?>"
+						accesscount="<?echo $appling['accesscount']?>"
 						baseId="appling-<?echo $appling['appling_id']?>">
 						<?
-						/*if($appling['notifCount'] != 0):?>
-							<div class="appling-icon-notification"><?echo $appling['notifCount']?></div>
+						/*if($appling['notif_count'] != 0):?>
+							<div class="appling-icon-notification"><?echo $appling['notif_count']?></div>
 						<?endif;
 						*/?>
 						<div class="pvore-sidebar-app-image">
-							<?if($appling['isFavorite'] == 1):?>
+							<?if($appling['isfavorite'] == 1):?>
 								<span class="favorite-appling-icon fa fa-star fa-1"></span>
 							<?endif;?>
 							<span class="appling-icon fa fa-<?echo $appling['image']?> fa-2x"></span>

@@ -400,9 +400,9 @@ function sidebarOrderBy(parameter, order){
 				//pick the div with the lowest access count
 				$.each($(appElement),
 					function (){
-						if(lowest >= $(this).attr('accessCount')){
+						if(lowest >= $(this).attr('accesscount')){
 							chosenId = $(this).attr('id');
-							lowest = $(this).attr('accessCount');
+							lowest = $(this).attr('accesscount');
 						}
 					}
 				);
@@ -413,9 +413,9 @@ function sidebarOrderBy(parameter, order){
 				//pick the div with the highest access count
 				$.each($(appElement),
 					function (){
-						if(highest <= $(this).attr('accessCount')){
+						if(highest <= $(this).attr('accesscount')){
 							chosenId = $(this).attr('id');
-							highest = $(this).attr('accessCount');
+							highest = $(this).attr('accesscount');
 						}
 					}
 				);
@@ -449,16 +449,16 @@ function sidebarOrderBy(parameter, order){
 			//pick the div with the highest access count
 			$.each($(appElement),
 				function (){
-					if(highest <= $(this).attr('isFavorite')){
+					if(highest <= $(this).attr('isfavorite')){
 						chosenId = $(this).attr('id');
-						highest = $(this).attr('isFavorite');
+						highest = $(this).attr('isfavorite');
 					}
 				}
 			);
 			/*chosenId = '';
 			$.each($(appElement),
 				function (){
-					if($(this).attr('isFavorite') == 0){
+					if($(this).attr('isfavorite') == 0){
 						chosenId = $(this).attr('id');
 					}
 				}

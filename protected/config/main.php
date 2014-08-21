@@ -59,13 +59,32 @@ return array(
 		// ),
 		// uncomment the following to use a MySQL database
 		
+		//MySQL
+		// 'db'=>array(
+			// 'connectionString' => 'mysql:host=localhost;dbname=productivore_db',
+			// 'emulatePrepare' => true,
+			// 'username' => 'crentaroot',
+			// 'password' => 'awesomenite123',
+			// 'charset' => 'utf8',
+		// ),
+		
+		//PostgreSQL
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=productivore_db',
+			'connectionString' => 'pgsql:host=localhost;port=5435;dbname=productivore_db',
 			'emulatePrepare' => true,
-			'username' => 'crentaroot',
-			'password' => 'awesomenite123',
+			'username' => 'postgres',
+			'password' => '12345',
 			'charset' => 'utf8',
 		),
+		
+		//PostgreSQL -- Live
+		// 'db'=>array(
+			// 'connectionString' => 'pgsql:host=ec2-54-204-45-126.compute-1.amazonaws.com;port=5432;dbname=dejnsecqciku21',
+			// 'emulatePrepare' => true,
+			// 'username' => 'jrfcncjrpgwsog',
+			// 'password' => 'bmlI25f9-TyRWce9TdZoEmnjGk',
+			// 'charset' => 'utf8',
+		// ),
 		
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors

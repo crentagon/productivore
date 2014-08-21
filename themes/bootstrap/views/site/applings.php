@@ -13,8 +13,8 @@
 	
 	<div class="pvore-appling-settings-app" 
 		id="appling-<?echo $appling['appling_id']?>-list"
-		isFavorite="<?echo $appling['isFavorite']?>"
-		accessCount="<?echo $appling['accessCount']?>"
+		isfavorite="<?echo $appling['isfavorite']?>"
+		accesscount="<?echo $appling['accesscount']?>"
 		baseId="appling-<?echo $appling['appling_id']?>">
 		<div class="pvore-notifications-app-image">
 			<span class="appling-icon fa fa-<?echo $appling['image']?> fa-2x"></span>
@@ -23,13 +23,13 @@
 			<?echo $appling['name']?><br/>
 			<p class="pvore-notifications-app-description">
 			<?echo $appling['description'];?><br/>
-			You have accessed this appling <?echo $appling['accessCount']?> times.
+			You have accessed this appling <?echo $appling['accesscount']?> times.
 			</p>
 		</div>
 		<?
 			$buttonType = 'btn-grey';
 			$symbol = 'fa-plus';
-			if($appling['isFavorite']){
+			if($appling['isfavorite']){
 				$symbol = 'fa-star';
 				$buttonType = 'btn-warning';
 			} 		

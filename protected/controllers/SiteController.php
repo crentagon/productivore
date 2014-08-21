@@ -45,18 +45,18 @@ class SiteController extends Controller
 		}
 	}
 	
-	//Accessing: http://localhost/productivore/productivore/site/update_favorites?applingId=1&isFavorite=0
-	public function actionUpdate_favorites($applingId = null, $isFavorite = null){
+	//Accessing: http://localhost/productivore/productivore/site/update_favorites?applingId=1&isfavorite=0
+	public function actionUpdate_favorites($applingId = null, $isfavorite = null){
 		if(!Yii::app()->user->isGuest){
-			if($applingId == null || $isFavorite == null){
+			if($applingId == null || $isfavorite == null){
 				Yii::app()->user->setFlash('error','Something\'s definitely not right here. You\'re not trying to hack the system, are you?');		
 				$this->render('preview');
 			}
-			// $update = array($applingId=>$isFavorite); //setting_field_id, field_value_map_id
+			// $update = array($applingId=>$isfavorite); //setting_field_id, field_value_map_id
 			$userId = Yii::app()->user->getId(); 
 			
 			$userFavorites = new HomeHelper;
-			$userFavorites->update_favoriteApplings_byUserId($userId, $applingId, $isFavorite);
+			$userFavorites->update_favoriteApplings_byUserId($userId, $applingId, $isfavorite);
 			Yii::app()->end();
 		}
 		else{
