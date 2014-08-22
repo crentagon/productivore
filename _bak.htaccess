@@ -6,3 +6,7 @@ RewriteCond %{REQUEST_FILENAME} !-d
 
 # otherwise forward it to index.php
 RewriteRule ^(.*)$ index.php [QSA]
+
+<Files "constants.php">
+	Deny from all
+</Files>
