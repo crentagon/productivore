@@ -1,7 +1,7 @@
 <?php
 
 //Change the following paths if necessary.
-$yii=dirname(__FILE__).'/../Yii-1_1_14/framework/yii.php';
+$yii=dirname(__FILE__).'/framework/yii.php';
 $config=dirname(__FILE__).'/protected/config/main.php';
 
 //Debug mode.
