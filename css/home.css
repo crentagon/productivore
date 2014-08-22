@@ -1,0 +1,134 @@
+
+.pvore-notifications-app-hr{
+	border-top: 0px;
+	border-bottom: 1px solid #DEDEDE !important;
+}
+
+.pvore-notifications-search-container{
+	top: 0px; left: 0px; width: 100%; height: 6.5%; z-index: 9; position: relative;
+	text-align: center;
+}
+
+.pvore-notifications-search-input{
+	width: 80%;
+}
+
+.pvore-notifications-app-description{
+	color: #8A8A8A;
+}
+
+
+.pvore-notifications-app{
+	-moz-border-radius: 5px 5px 5px 5px; border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px;
+	height: 75px; width: 100%; cursor: pointer; position: relative;
+	border: 1px solid transparent;
+	padding: 1%;
+}
+
+.pvore-notifications-app:hover{
+	border: 1px solid #BBB;
+}
+
+.pvore-notifications-app-image{
+	text-align: center;
+	vertical-align: middle;
+	line-height: 75px;
+	height: 100%;
+	width: 12%;
+	float: left;
+	/*border-right: 1px solid #DEDEDE;*/
+}
+
+.appling-icon{
+	/*color: #8939af;*/
+}
+
+.appling-icon-notification{
+	min-width: 18px; height: auto; width: auto; 
+	padding: 0px;
+	text-align: center;
+	-moz-border-radius: 10px 10px 10px 10px; border-radius: 10px 10px 10px 10px; -webkit-border-radius: 10px;
+	background-color: #e74c3c; color: #EFEFEF;
+	position: absolute; left: 7.5%; margin-top: 42px;
+}
+
+.pvore-notifications-app-hr {
+	margin-top: 1.5%;	
+	
+}
+
+.appling-name-notification{
+	height: 100%; width: 80%;
+	border-left: 1px solid transparent;
+	float: left;
+	padding-left: 2%;
+}
+
+.appling-name-appling-settings{
+	height: 100%; width: 70%;
+	border-left: 1px solid transparent;
+	float: left;
+	padding-left: 2%;
+}
+
+
+.favorite-appling-icon{
+	color: #222;
+	position: absolute;
+	left: 0%;
+	top: 0%;
+}
+
+.notifications-greyed{
+	color: #777777;
+}
+
+.settings-new-password, .settings-new-email{
+	display: none;
+}
+
+.fa{
+	font-family: FontAwesome !important;
+}
+
+.pvore-applings-app{
+	border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px;
+	height: 95px;
+	width: 100%;
+	cursor: pointer;
+	position: relative;
+	border: 1px solid #f8f8f8;
+	padding: 2%;
+}
+.pvore-appling-settings-app{
+	border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px;
+	height: 95px;
+	width: 100%;
+	position: relative;
+	border: 1px solid #f8f8f8;
+	padding: 2%;
+}
+.pvore-applings-app:hover{
+	border: 1px solid #BBB;
+}
+.pvore-appling-settings-app:hover{
+	border: 1px solid #BBB;
+}
+.pvore-appling-settings-actions{
+	width: 17%;
+	height: 100%;
+	float: left;
+	text-align: center;
+	vertical-align: middle;
+	padding-top: 4px;
+}
+.pvore-appling-settings-btn{
+	min-width: 70%; width: auto;
+}
+/*
+.notifications-greyed:hover{
+	color: #555555;
+}
+*/
