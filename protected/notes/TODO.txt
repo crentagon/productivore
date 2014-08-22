@@ -1,4 +1,4 @@
-To-do (Layouts):
+To-do:
 	[x] Navbar
 	[x] Found a way to modify all of Bootstrap without changing the framework too, too much (I'll need to customize it sometime though, just, not right now.) [x] box-sizing: border-box!!!
 	[x] Edit the width to actually make it reasonable lol
@@ -28,8 +28,62 @@ To-do (Layouts):
 	[LOLNO] Color Schemes must be Dragonite color schemes. c:
 	[x] A speshul font for ye (lolhelvetica????)
 	[x] Menu bar
-	- Main page layouting and all the other front-end shit.
+	[x] Change schema to accomodate for favorite applings.
+	[x] Change sidebar to accomodate for favorite applings.
+	[x] Sidebar must be the first "appling" (applingid = 0)
+	[x] Bug: not saving
+	[x] Visual bug
+	[x] Showing that an appling is a favorite: how?
 	- Optimization (see YSlow)
+	
+	[x] Control Panel > Settings, Logout option must be available everywhere
+		[x] User must be able to signup
+			[x] Login/Signup information on the navbar
+			[x] Signup page
+			[x] Passing the information to the controller
+			[x] Sessions
+		[x] User must be able to login
+			[x] Verify the login/signup information on the header
+			[x] Login page
+			[x] Sessions
+			[x] "You have successfully logged in"
+			[x] "Error: Incorrect username/password"
+		[x] User must be able to logout
+			[x] Destroy the session
+			[x] Logout'd page
+			[x] "You have successfully logged out."
+	
+	[x] Custom color palletes
+		[x] For buttons
+		[x] Border of buttons: border: 0px in bootstrap's .btn
+		[x] For flash messages
+		[x] Do not allow access to applings (URL manipulation whut) if user is not logged in
+	[x] Custom 404 page
+	[x] Forms: error --> why only password going red?
+	[x] Separate the navbar css and make it only accessible on login
+	[x] Page titles for each controller
+	[x] LoadStyle, LoadScript implementation
+	[x] Bug: site/logout while logged out 
+	[x] Bug: site/login while logged in
+	[x] Bug: accessibility of Ajax function in the SiteController
+	[x] CSS/JS separation
+	
+	[x] On insert user triggers:
+		[x] Insert into user_applings
+		[x] Insert into settings
+	[x] is_default column in the setting_field_setting_value_maps
+	[x] storing the userid of the person logged in
+	[x] /using/ the userid of the person logged in for the appling sidebar
+	
+	- Notifications - home, displays all the notifications and applings
+	- Control Panel - change e-mail, change password, change default frontpage
+	- Appling Manager - mark an appling as favorite, revoke myself access to the appling (because I don't use it)
+		- Favorite Applings - displays all your favorite applings
+		- "Appling Manager" as an icon
+		
+	- Additional triggers (This is the compliment of "On insert user triggers"):
+		- Adding a new appling? Insert into user applings, for each user as well.
+		- Adding a new entry on setting_field_setting_value_maps? Gotta add 'em on the settings table as well, for each user.
 	
 	- Backtotop
 	- Multiple Color schemes
