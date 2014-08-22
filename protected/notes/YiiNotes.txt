@@ -156,3 +156,13 @@ Schema Conventions
 		_uq		unique
 		_idx	index
 	Source: http://leshazlewood.com/software-engineering/sql-style-guide/
+
+http://www.yiiframework.com/doc/api/1.1/CActiveForm#enableClientValidation-detail
+
+.control-label{
+	width: 160px
+	text-align: right
+}
+
+.controls
+	margin-left: 180px;

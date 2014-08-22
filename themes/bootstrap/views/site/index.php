@@ -31,11 +31,6 @@
 		isfavorite="<?echo $appling['isfavorite']?>"
 		accesscount="<?echo $appling['accesscount']?>"
 		baseId="appling-<?echo $appling['appling_id']?>">
-		<?/*
-		if($appling['notifcount'] != 0):?>
-			<div class="appling-icon-notification"><?echo $appling['notifcount']?></div>
-		<?endif;
-		*/?>
 		<div class="pvore-notifications-app-image">
 			<?if($appling['isfavorite'] == 1):?>
 				<span class="favorite-appling-icon fa fa-star fa-1 <? //echo $greyedOut?>"></span>
