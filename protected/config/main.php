@@ -87,7 +87,7 @@ return array(
 		// ),
 		
 		
-		//PostgreSQL -- Test
+		//PostgreSQL -- TestSite
 		'db'=>array(
 			'connectionString' => 'pgsql:host=ec2-54-204-45-126.compute-1.amazonaws.com;port=5432;dbname=dejnsecqciku21',
 			'emulatePrepare' => true,
