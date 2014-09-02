@@ -1,1 +1,2 @@
 *.htaccess
+protected/config/main.php
