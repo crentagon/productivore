@@ -47,7 +47,6 @@ class AchievementsForm extends CFormModel
 			$temp.= '</ul>';
 			
 			$error_message = 'The following fields need to be filled: '.$temp;
-			
 		}
 		
 		$fields = array();
@@ -68,6 +67,7 @@ class AchievementsForm extends CFormModel
 			$error_message .= 'The character counts of the following fields exceeded their limits: '.$temp;
 		}
 		
+		// echo $error_message.'<<<'; die();
 		if($error_message != '')
 			Yii::app()->user->setFlash('error',$error_message);
 	}

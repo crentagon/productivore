@@ -67,8 +67,10 @@
 			<div class="hp-bar-container">
 				<div class="hp-bar"></div>
 			</div>
-			Points rewarded upon completion?
-			<div class="handle red-bar slider-bg">
+			<div class="slider-text">
+				Points rewarded upon completion? &nbsp;&nbsp;
+			</div>
+			<div class="handle drag-bar slider-bg">
 				<div class="slider value"></div>
 			</div>
 		</div>

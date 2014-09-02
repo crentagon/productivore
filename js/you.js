@@ -8,7 +8,7 @@ $(document).ready(function(){
 		rewardDealer = new Dragdealer('just-a-slider', {
 		  animationCallback: function(x, y) {
 			var sliderText = Math.round((x*900)+100);
-			$('#just-a-slider > .handle > .value').text(sliderText+" pts");
+			$('.dragdealer > .handle > .value').text(sliderText+" pts");
 			$('#achievement-form-reward-points').val(sliderText);
 			
 			var width = x*100;
@@ -17,13 +17,20 @@ $(document).ready(function(){
 			var opacityBgInv = 0.2-opacityBg;
 			$('.hp-bar-container').css('width', width+'%');
 			$('.hp-bar').css('background-color', 'rgba(0,95,185,'+opacityBg+')'); //INSIDE
-			$('.hp-bar-container').css('background-color', 'rgba(14,184,86,'+(opacityBgInv)+')'); //OUTSIDE
-			$('#just-a-slider > .handle > .slider').css('background-color', 'rgba(0,95,185,'+opacity+')'); //INSIDE
+			$('.hp-bar-container').css('background-color', 'rgba(102, 51, 153,'+(opacityBgInv)+')'); //OUTSIDE
+			$('.dragdealer > .handle > .slider').css('background-color', 'rgba(0,95,185,'+opacity+')'); //INSIDE
+			
+			if(x >= 0.5){
+				$('.dragdealer > .slider-text').css('text-align', 'left');
+			
+			} else {
+				$('.dragdealer > .slider-text').css('text-align', 'right');
+			}
 			// $('#just-a-slider .value').text(((x*900)+100).toFixed(2));
 		  }
 		});
 			
-		rewardDealer.setValue(0.5, 0, true);
+		rewardDealer.setValue(0, 0, true);
 	
 		$(document).on('keyup', '#achievement-form-reward-points', function(){
 			var sliderVal = $(this).val();

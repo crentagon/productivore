@@ -181,7 +181,7 @@ transition: border linear 0.2s, box-shadow linear 0.2s;
 	vertical-align: middle;
 }
 .ua-rewards > .points-container{
-	background-color: rgba(14,184,86,1); /*OUTSIDE*/
+	background-color: rgba(102, 51, 153,1); /*OUTSIDE*/
 	border-radius: 5px;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
@@ -231,7 +231,7 @@ transition: border linear 0.2s, box-shadow linear 0.2s;
 	position: absolute;
 	left: 0px; top: 0px;
 	height: 100%;
-	background-color: rgba(14,184,86,0.2); /*OUTSIDE*/
+	background-color: rgba(102, 51, 153,0.2); /*OUTSIDE*/
 	padding: 0px;
 }
 .hp-bar{
@@ -241,23 +241,24 @@ transition: border linear 0.2s, box-shadow linear 0.2s;
 	height: 100%;
 	background-color: rgba(0,95,185,0.2); /*INSIDE*/
 }
-#just-a-slider > .slider-bg > .slider{
+.dragdealer > .slider-bg > .slider{
 	background-color: #005fb9; /*INSIDE*/
 	width: 100%;
 	height: 100%;
 	border-radius: 5px 5px 5px 5px;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
-	
 }
-#just-a-slider > .slider-bg{
+.dragdealer > .slider-bg{
 	border-radius: 5px 5px 5px 5px;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
-	background-color: #0eb856; /*OUTSIDE*/
+	background-color: #663399; /*OUTSIDE*/
 	padding: 0px;
 }
-
+.dragdealer > .slider-text{
+	text-align: right;
+}
 #btn-add-to-bucket-list{
 	position: absolute;
 	bottom: 0px;
