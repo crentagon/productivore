@@ -151,6 +151,22 @@
 									<? endif; ?>
 								</span>
 						</div>
+						<div class="cushion-5"></div>
+						<div class="ua-point-slider-container">
+							<div class="ua-point-slider">
+								<div id="slider-<?echo $achievement['achievement_id']?>" class="dragdealer dragger">
+									<div class="hp-bar-container">
+										<div class="hp-bar"></div>
+									</div>
+									<div class="slider-text">
+										Points rewarded upon completion? &nbsp;&nbsp;
+									</div>
+									<div class="handle drag-bar slider-bg">
+										<div class="slider value"></div>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 					<div class="ua-rewards">
 						<div class="points-container">

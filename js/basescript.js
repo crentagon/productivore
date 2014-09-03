@@ -240,16 +240,7 @@ $(document).ready(function() {
 		}
 	});
 	
-	$(document).on('click', '.points-container', function(){
-		$('.pvore-dimmer-points').fadeIn(C_SIDEBARSPEED/4);
-		$('.pvore-dimmer-points-container').fadeIn(C_SIDEBARSPEED/2);
-		
-		var percentage = 100;
-		var minimumVal = 1000;
-		var maximumVal = 550;
-		
-		
-	})
+
 	
 	
 	//Colors

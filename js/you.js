@@ -8,23 +8,23 @@ $(document).ready(function(){
 		rewardDealer = new Dragdealer('just-a-slider', {
 		  animationCallback: function(x, y) {
 			var sliderText = Math.round((x*900)+100);
-			$('.dragdealer > .handle > .value').text(sliderText+" pts");
+			$('#just-a-slider > .handle > .value').text(sliderText+" pts");
 			$('#achievement-form-reward-points').val(sliderText);
 			
 			var width = x*100;
 			var opacity = x;
 			var opacityBg = x*0.2;
 			var opacityBgInv = 0.2-opacityBg;
-			$('.hp-bar-container').css('width', width+'%');
-			$('.hp-bar').css('background-color', 'rgba(0,95,185,'+opacityBg+')'); //INSIDE
-			$('.hp-bar-container').css('background-color', 'rgba(102, 51, 153,'+(opacityBgInv)+')'); //OUTSIDE
-			$('.dragdealer > .handle > .slider').css('background-color', 'rgba(0,95,185,'+opacity+')'); //INSIDE
+			$('#just-a-slider > .hp-bar-container').css('width', width+'%');
+			$('#just-a-slider > .hp-bar-container > .hp-bar').css('background-color', 'rgba(0,95,185,'+opacityBg+')'); //INSIDE
+			$('#just-a-slider > .hp-bar-container').css('background-color', 'rgba(102, 51, 153,'+(opacityBgInv)+')'); //OUTSIDE
+			$('#just-a-slider > .handle > .slider').css('background-color', 'rgba(0,95,185,'+opacity+')'); //INSIDE
 			
 			if(x >= 0.5){
-				$('.dragdealer > .slider-text').css('text-align', 'left');
+				$('#just-a-slider > .slider-text').css('text-align', 'left');
 			
 			} else {
-				$('.dragdealer > .slider-text').css('text-align', 'right');
+				$('#just-a-slider > .slider-text').css('text-align', 'right');
 			}
 			// $('#just-a-slider .value').text(((x*900)+100).toFixed(2));
 		  }
@@ -59,6 +59,51 @@ $(document).ready(function(){
 	});
 	
 	$('.input-achievement-condition').attr('class', 'input-achievement-condition');
+	
+		$(document).on('click', '.points-container', function(){
+		var temp = $(this).children('.points').html().split(" ");
+		var points = temp[0];
+		
+		/*
+		rewardDealer = new Dragdealer('just-a-slider', {
+		  animationCallback: function(x, y) {
+			var sliderText = Math.round((x*900)+100);
+			$('.dragdealer > .handle > .value').text(sliderText+" pts");
+			$('#achievement-form-reward-points').val(sliderText);
+			
+			var width = x*100;
+			var opacity = x;
+			var opacityBg = x*0.2;
+			var opacityBgInv = 0.2-opacityBg;
+			$('.hp-bar-container').css('width', width+'%');
+			$('.hp-bar').css('background-color', 'rgba(0,95,185,'+opacityBg+')'); //INSIDE
+			$('.hp-bar-container').css('background-color', 'rgba(102, 51, 153,'+(opacityBgInv)+')'); //OUTSIDE
+			$('.dragdealer > .handle > .slider').css('background-color', 'rgba(0,95,185,'+opacity+')'); //INSIDE
+			
+			if(x >= 0.5){
+				$('.dragdealer > .slider-text').css('text-align', 'left');
+			
+			} else {
+				$('.dragdealer > .slider-text').css('text-align', 'right');
+			}
+			// $('#just-a-slider .value').text(((x*900)+100).toFixed(2));
+		  }
+		});
+			
+		rewardDealer.setValue(0, 0, true);
+		*/
+		
+		
+		// alert("SHIT");
+		// $('.pvore-dimmer-points').fadeIn(C_SIDEBARSPEED/4);
+		// $('.pvore-dimmer-points-container').fadeIn(C_SIDEBARSPEED/2);
+		
+		// var percentage = 100;
+		// var minimumVal = 1000;
+		// var maximumVal = 550;
+		
+		
+	})
 });
 
 function deleteAchievement(achievementId, element){

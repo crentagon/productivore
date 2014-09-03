@@ -69,9 +69,9 @@
 	<?if($isLoggedIn):?>
 	<?//The sidebar?>	
 	<div class="pvore-dimmer" onclick="hideSidebar();"></div>
+	<?/*
 	<div class="pvore-dimmer-points" onclick="hideSidebarPoints();"></div>
 	<div class="pvore-dimmer-points-container">
-		<?/*
 		<div id="just-a-slider" class="dragdealer dragger">
 			<div class="hp-bar-container">
 				<div class="hp-bar"></div>
@@ -81,8 +81,8 @@
 				<div class="slider value"></div>
 			</div>
 		</div>
-		*/?>
 	</div>	
+	*/?>
 	<div class="pvore-sidebar-button" onclick="showSidebar();"><span class="fa fa-chevron-right fa-lg"></span></div>
 	<div class="pvore-sidebar-container">
 		<div class="pvore-minima" onclick="hideSidebar();"><span class="fa fa-chevron-left fa-lg"></span></div>
