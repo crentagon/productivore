@@ -166,6 +166,7 @@
 									</div>
 								</div>
 							</div>
+							<div class="ua-point-ok-button">OK</div>
 						</div>
 					</div>
 					<div class="ua-rewards">

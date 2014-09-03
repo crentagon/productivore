@@ -213,19 +213,35 @@
 
 }
 .ua-point-slider {
-	width: 80%;
+	width: 90%;
 }
 .ua-point-slider > .dragger{
 	width: 100%;
 	border: 1px solid #EEEEEE;
-	border-top: 0px;
-	border-radius: 5px 5px 5px 5px;
-	-moz-border-radius: 5px 5px 5px 5px;
-	-webkit-border-radius: 5px 5px 5px 5px;
+	border-top: 1px;
+	border-radius: 5px 0px 0px 5px;
+	-moz-border-radius: 5px 0px 0px 5px;
+	-webkit-border-radius: 5px 0px 0px 5px;
 	padding-top: 5px;
 	padding-left: 5px;
 	color: #ABABAB;
 	background-color: #EFEFEF;
+	float: left;
+	/* border: 1px solid red; */
+}
+.ua-point-ok-button{
+	height: 30px;
+	width: 10%;
+	cursor: pointer;
+	border-radius: 0px 5px 5px 0px;
+	-moz-border-radius: 0px 5px 5px 0px;
+	-webkit-border-radius: 0px 5px 5px 0px;
+	padding-top: 5px;
+	padding-left: 5px;
+	color: #FEFEFE;
+	background-color: #42B842;
+	float: left;
+	text-align: center;
 	/* border: 1px solid red; */
 }
 .dragger{
