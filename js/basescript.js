@@ -71,6 +71,54 @@ $(document).ready(function() {
 	});
 	
 	$(document.body)
+		.on('click', '.ua-point-ok-button', function(){
+			var ajaxUrl = $(this).parent().attr('ajaxUrl');
+			var ajaxId = $(this).parent().attr('ajaxId');
+			var ajaxField = $(this).parent().attr('ajaxField');
+			
+			var temp = $('#points-'+ajaxId).text().split(" ");
+			var ajaxValue = temp[0];
+			ajaxUrl = ajaxUrl.replace(":id", ajaxId).replace(":field", ajaxField).replace(":value", ajaxValue);
+			
+			var xmlhttp;
+	
+			if (window.XMLHttpRequest)
+				xmlhttp=new XMLHttpRequest();
+			else
+				xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+			
+			xmlhttp.onreadystatechange=function(){
+				if (xmlhttp.readyState==4 && xmlhttp.status==200){
+					var json = JSON.parse(xmlhttp.responseText);
+					
+					for(key in json){
+						var messageText = ''+
+							'<div class="flash-msg flash-'+key+' flash-fixed-box-shadow">'+
+								'<div class="flash-icon-container">'+
+									'<span class="flash-icon fa fa-check-circle fa-2x"></span>'+
+								'</div>'+
+									json[key]+
+								'<span class="flash-msg-exit fa fa-times"></span>'+
+							'</div>'+
+						'';
+						appendToFlashMessagesFixed(messageText);
+						
+						if(key == 'error'){
+							window.setTimeout(function(){window.location.reload()}, 2048);
+						}
+					}
+					
+				}
+			}
+			
+			$('#slider-'+ajaxId).parent().parent().fadeOut();
+			
+			xmlhttp.open("GET", ajaxUrl, true);
+			xmlhttp.send();
+			
+			// alert(ajaxUrl+"\n"+ajaxId+"\n"+ajaxField+"\n(("+points+"))");
+			// alert(ajaxUrl);
+		})
 		.on('click', '.editable-text', function(){
 			var current = $(this).html();
 			
@@ -112,6 +160,7 @@ $(document).ready(function() {
 			});
 			
 		})
+		
 		.on('click', '.editable-done', function(){
 			var ajaxUrl = $(this).parent().attr('ajaxUrl');
 			var ajaxId = $(this).parent().attr('ajaxId');

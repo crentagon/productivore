@@ -24,7 +24,7 @@
 </ul>
 
 <?if($mode == 'complete'):?>
-	<div class="major-title">Completed Achievements</div>
+	<div class="major-title">Completed Achievements (Total: <span class="ua-complete-total">0</span> pts)</div>
 	<div class="cushion-20"></div>
 	<?foreach($achievements as $achievement):?>
 		<div class="unlockable-achievement">
@@ -152,7 +152,11 @@
 								</span>
 						</div>
 						<div class="cushion-5"></div>
-						<div class="ua-point-slider-container">
+						<div class="ua-point-slider-container"
+							ajaxUrl="<?echo BASE_URL?>/you/editachievementfieldajax/field/:field/achievementId/:id/value/:value"
+							ajaxId="<?echo $achievement['achievement_id']?>"
+							ajaxField="achievement_rewards"
+						>
 							<div class="ua-point-slider">
 								<div id="slider-<?echo $achievement['achievement_id']?>" class="dragdealer dragger">
 									<div class="hp-bar-container">
@@ -171,7 +175,7 @@
 					</div>
 					<div class="ua-rewards">
 						<div class="points-container">
-							<div class="points">
+							<div class="points" id="points-<?echo $achievement['achievement_id']?>">
 								<?echo $achievement['achievement_rewards']?> pts
 							</div>
 						</div>

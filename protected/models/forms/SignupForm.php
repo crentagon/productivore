@@ -39,7 +39,7 @@ class SignupForm extends CFormModel
 		return array(
 			'user_email'=>'E-Mail Address',
 			'user_name'=>'Username',
-			'password_repeat'=>'Password Repeat',
+			'password_repeat'=>'Password (Repeat)',
 		);
 	}
 

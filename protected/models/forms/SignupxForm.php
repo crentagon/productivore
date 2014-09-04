@@ -34,10 +34,12 @@ class SignupxForm extends CFormModel
 	/**
 	 * Declares attribute labels.
 	 */
-	// public function attributeLabels()
-	// {
-	
-	// }
+	public function attributeLabels()
+	{
+		return array(
+			'newPasswordRepeat'=>'New Password (Repeat)',
+		);
+	}
 
 	/**
 	 * Logs in the user using the given username and password in the model.

@@ -9,12 +9,22 @@
 		'validateOnSubmit'=>true,
 	),
 )); ?>
-
-	<br/>
+	<div class="cushion-15"></div>
+		<?php echo $form->passwordFieldRow($model,'currentPassword'); ?>
+		<div class="controls grey-999">Please supply current password to make changes to your information.</div><br/>
+	<div class="settings-new-password">
+		<?php echo $form->passwordFieldRow($model,'newPassword'); ?>
+		<?php echo $form->passwordFieldRow($model,'newPasswordRepeat'); ?>
+	</div>	
 	
-	<?php echo $form->passwordFieldRow($model,'currentPassword'); ?>
+	<div class="control-group">
+		<div class="controls">
+			<div class="btn btn-grey" onclick="settingsHide('.settings-new-password'); $(this).hide();">Change my Password</div>
+		</div>
+	</div>
 	
 	<hr/>
+	
 	<?php echo $form->textFieldRow($model,'username', array('disabled'=>true)); ?>
 	<?php echo $form->textFieldRow($model,'currentEmail', array('disabled'=>true)); ?>
 	<div class="control-group">
@@ -25,15 +35,6 @@
 	
 	<div class="settings-new-email"><?php echo $form->textFieldRow($model,'newEmail'); ?></div>
 	
-	<div class="control-group">
-		<div class="controls">
-			<div class="btn btn-grey" onclick="settingsHide('.settings-new-password'); $(this).hide();">Change my Password</div>
-		</div>
-	</div>
-	<div class="settings-new-password">
-		<?php echo $form->passwordFieldRow($model,'newPassword'); ?>
-		<?php echo $form->passwordFieldRow($model,'newPasswordRepeat'); ?>
-	</div>
 	
 	<div class="form-actions">
 		<?php $this->widget('bootstrap.widgets.TbButton', array(

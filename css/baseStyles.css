@@ -730,3 +730,7 @@ hr.thick{
 	z-index: 22;
 	-moz-border-radius: 10px; border-radius: 10px; -webkit-border-radius: 10px;
 }
+
+.grey-999 {
+	color: #999999;
+}
