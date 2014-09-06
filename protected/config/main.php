@@ -69,16 +69,16 @@ return array(
 		// ),
 		
 		//PostgreSQL: school
-		'db'=>array(
-			'connectionString' => 'pgsql:host=localhost;port=5435;dbname=productivore_db',
-			'emulatePrepare' => true,
-			'username' => 'postgres',
-			'password' => 'dragonite123',
-			'charset' => 'utf8',
-		),
+		// 'db'=>array(
+			// 'connectionString' => 'pgsql:host=localhost;port=5435;dbname=productivore_db',
+			// 'emulatePrepare' => true,
+			// 'username' => 'postgres',
+			// 'password' => 'dragonite123',
+			// 'charset' => 'utf8',
+		// ),
 		
 		//PostgreSQL: home
-		/*
+		
 		'db'=>array(
 			'connectionString' => 'pgsql:host=localhost;port=5435;dbname=productivore_db',
 			'emulatePrepare' => true,
@@ -86,8 +86,7 @@ return array(
 			'password' => '12345',
 			'charset' => 'utf8',
 		),
-		*/
-		
+			
 		//PostgreSQL -- TestSite
 		// 'db'=>array(
 			// 'connectionString' => 'pgsql:host=ec2-54-204-45-126.compute-1.amazonaws.com;port=5432;dbname=dejnsecqciku21',
