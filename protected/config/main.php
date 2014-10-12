@@ -78,8 +78,6 @@ return array(
 		// ),
 		
 		//PostgreSQL: home
-<<<<<<< HEAD
-		
 		'db'=>array(
 			'connectionString' => 'pgsql:host=localhost;port=5435;dbname=productivore_db',
 			'emulatePrepare' => true,
@@ -89,8 +87,6 @@ return array(
 		),
 			
 		//PostgreSQL -- TestSite
-=======
->>>>>>> 1fba327a61a827d114aba3d02c5617fcf989cce5
 		// 'db'=>array(
 			// 'connectionString' => 'pgsql:host=localhost;port=5435;dbname=productivore_db',
 			// 'emulatePrepare' => true,
@@ -99,15 +95,6 @@ return array(
 			// 'charset' => 'utf8',
 		// ),
 		
-		
-		//PostgreSQL -- TestSite
-		'db'=>array(
-			'connectionString' => 'pgsql:host=ec2-54-204-45-126.compute-1.amazonaws.com;port=5432;dbname=dejnsecqciku21',
-			'emulatePrepare' => true,
-			'username' => 'jrfcncjrpgwsog',
-			'password' => 'bmlI25f9-TyRWce9TdZoEmnjGk',
-			'charset' => 'utf8',
-		),
 		
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors
