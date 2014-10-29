@@ -13,6 +13,8 @@
 }
 
 html body{
+	background: #eee5ff;
+	/*
 	background: #DEDEDE;
 	background-image:url('../images/pattern.png');
 	background-repeat:repeat;
@@ -23,7 +25,6 @@ html body{
 	  #E6E6E6 18px,
 	  #E6E6E6 36px
 	);
-	/*
 	*/
 	padding-bottom: 20px;
 }

@@ -44,9 +44,10 @@ class ProtagonalController extends Controller
 		$this->render('achievements', compact('mode', 'model', 'achievements'));
 	}
 	
-	public function actionGigahype(){
-		echo 'gigahype';
-		die();
+	public function actionJournal(){
+		$this->render('journal', compact(''));
+		// echo 'journal';
+		// die();
 	}
 	
 	public function actionWhoops(){

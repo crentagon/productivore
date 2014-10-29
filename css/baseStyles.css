@@ -20,8 +20,9 @@
 }
 
 html body{
-	background: #DEDEDE;
+	background: #d0ceee;
 	/* background: #DEDEDE !important;*/
+	/*
 	background-image:url('../images/pattern.png');
 	background-repeat:repeat;
 	background: repeating-linear-gradient(
@@ -31,7 +32,6 @@ html body{
 	  #E6E6E6 18px,
 	  #E6E6E6 36px
 	);
-	/*
 	*/
 	padding-bottom: 20px;
 }
