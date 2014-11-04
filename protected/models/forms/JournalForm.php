@@ -21,7 +21,8 @@ class JournalForm extends CFormModel
 	public function rules()
 	{
 		return array(
-			array('journal_title, journal_body, list_id', 'required'),
+			array('journal_body, list_id', 'required'),
+			array('journal_title', 'safe'),
 			array('journal_title, journal_body, list_id', 'validateForm'),
 		);
 	}
@@ -30,14 +31,10 @@ class JournalForm extends CFormModel
 	{
 		$fields = array();
 		$error_message = '';
-		if(trim($this->achievement_condition) == ''){
-			$fields[] = 'Journal Title';
-		}
-		if(trim($this->achievement_rewards) == ''){
+		if(trim($this->journal_body) == ''){
 			$fields[] = 'Journal Body';
 		}
 		
-		//I stopped here!
 		if(count($fields) > 0){
 			$temp = '<ul>';
 			foreach($fields as $field){
@@ -49,11 +46,8 @@ class JournalForm extends CFormModel
 		}
 		
 		$fields = array();
-		if(strlen($this->achievement_condition) > 256){
-			$fields[] = 'Achievement Condition (256 characters maximum)';
-		}
-		if(strlen($this->achievement_name) > 64){
-			$fields[] = 'Achievement Name (64 characters maximum)';
+		if(strlen($this->journal_title) > 128){
+			$fields[] = 'Journal Title (128 characters maximum)';
 		}
 		
 		if(count($fields) > 0){
@@ -66,41 +60,23 @@ class JournalForm extends CFormModel
 			$error_message .= 'The character counts of the following fields exceeded their limits: '.$temp;
 		}
 		
-		// echo $error_message.'<<<'; die();
 		if($error_message != '')
 			Yii::app()->user->setFlash('error',$error_message);
 	}
 	
-	public function addAchievement(){
-		$achievements = new Achievements;
+	public function addJournalEntry(){
+		$journalPosts = new JournalPosts;
 		
-		$achievements->achievement_name = $this->achievement_name;
-		$achievements->achievement_condition = nl2br($this->achievement_condition);
-		$achievements->achievement_rewards = $this->achievement_rewards;
-		$achievements->user_id = Yii::app()->user->getId();		
-		$achievements->inserted_on = date('Y-m-d H:i:s');		
+		$journalPosts->title = $this->journal_title;
+		$journalPosts->body = $this->journal_body;
+		$journalPosts->inserted_on = date('Y-m-d H:i:s');		
+		$journalPosts->parent_list_id = $this->list_id;
+		$journalPosts->user_id = Yii::app()->user->getId();		
 		
-		if($achievements->save()){
+		if($journalPosts->save()){
 			return true;
 		}
 		return false;
-	
-		// echo $this->achievement_name.'>>>'.$this->achievement_condition.'>>>'.$this->achievement_rewards; die();
 	}
 	 
-	 
-	// public function signup()
-	// {
-		// $user = new Users;
-		// $security = new PasswordSecurity;
-		
-		// $user->user_name = $this->user_name;
-		// $user->user_password = $security->create_hash($this->password);
-		// $user->user_email = $this->user_email;
-		
-		// if($user->save()){
-			// return true;
-		// }
-		// return false;
-	// }
 }

@@ -45,9 +45,26 @@ class ProtagonalController extends Controller
 	}
 	
 	public function actionJournal(){
-		$this->render('journal', compact(''));
-		// echo 'journal';
-		// die();
+		$this->loadScripts('protagonal-journal.js');
+		$this->loadStyles('protagonal-journal.css');
+	
+		$model = new JournalForm;
+		
+		
+		if(isset($_POST['JournalForm'])){
+			$model->attributes=$_POST['JournalForm'];
+			$model->list_id = 1;
+			// echo 'no';
+			
+			if($model->validate() && $model->addJournalEntry()){
+				// echo 'yes'; $this->debugPrint($_POST);
+				Yii::app()->user->setFlash('success','Congratulations! You have posted a new entry to your private journal.');
+				$model->journal_title = '';
+				$model->journal_body = '';
+			}
+		}
+	
+		$this->render('journal', compact('model'));
 	}
 	
 	public function actionWhoops(){
