@@ -44,27 +44,27 @@ class ProtagonalController extends Controller
 		$this->render('achievements', compact('mode', 'model', 'achievements'));
 	}
 	
-	public function actionJournal(){
-		$this->loadScripts('protagonal-journal.js');
-		$this->loadStyles('protagonal-journal.css');
+	public function actionThoughts(){
+		$this->loadScripts('protagonal-thoughts.js');
+		$this->loadStyles('protagonal-thoughts.css');
 	
-		$model = new JournalForm;
+		$model = new ThoughtsForm;
 		
 		
-		if(isset($_POST['JournalForm'])){
-			$model->attributes=$_POST['JournalForm'];
+		if(isset($_POST['ThoughtsForm'])){
+			$model->attributes=$_POST['ThoughtsForm'];
 			$model->list_id = 1;
 			// echo 'no';
 			
-			if($model->validate() && $model->addJournalEntry()){
+			if($model->validate() && $model->addThoughtEntry()){
 				// echo 'yes'; $this->debugPrint($_POST);
 				Yii::app()->user->setFlash('success','Congratulations! You have posted a new entry to your private journal.');
-				$model->journal_title = '';
-				$model->journal_body = '';
+				$model->thought_title = '';
+				$model->thought_body = '';
 			}
 		}
 	
-		$this->render('journal', compact('model'));
+		$this->render('thoughts', compact('model'));
 	}
 	
 	public function actionWhoops(){

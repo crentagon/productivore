@@ -734,3 +734,7 @@ hr.thick{
 .grey-999 {
 	color: #999999;
 }
+
+.clear-both {
+	clear: both;
+}

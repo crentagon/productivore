@@ -1,0 +1,126 @@
+.add-thought-title-container{
+	border: 0px;
+	height: 29px;
+	width: 100%;
+	padding: 0px;
+}
+.control-label{
+	display: none;
+}
+.add-thought-title-container > .control-group > .controls{
+	margin-left: 0px;
+}
+.add-thought-title-container > .control-group{
+	width: 80%;
+	float:left;
+}
+.add-thought-title-container #ThoughtsForm_thought_title{
+	border: 1px solid #CACACA;
+	resize: none;
+	border-radius: 5px 0px 0px 0px;
+	-moz-border-radius: 5px 0px 0px 0px;
+	-webkit-border-radius: 5px 0px 0px 0px;
+	position: relative;
+	box-sizing: border-box;
+	font-weight: 600;
+	float: left;
+	width: 100%;
+	height: 100%;
+	border-bottom: 0px;
+}
+.add-thought-title-container #thoughts-form-list-id{
+	border: 1px solid #CACACA;
+	border-bottom: 0px solid #CACACA;
+	border-left: 0px solid #CACACA;
+	border-right: 0px solid #CACACA;
+	resize: none;
+	border-radius: 0px 5px 0px 0px;
+	-moz-border-radius: 0px 5px 0px 0px;
+	-webkit-border-radius: 0px 5px 0px 0px;
+	width: 20%;
+	height: 100%;
+	position: relative;
+	box-sizing: border-box;
+	float:left;
+	text-align: right;
+	-webkit-box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0.075); 
+	-moz-box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0.075);
+	box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0.075); 
+}
+
+.add-achievement-condition-container{
+	border: 0px;
+	height: 60px;
+	width: 100%;
+	padding: 0px;
+	position: relative;
+}
+
+.add-achievement-condition-container textarea{
+	border-left: 1px solid #CACACA;
+	border-right: 1px solid #CACACA;
+	border-top: 1px solid #CACACA;
+	border-bottom: 1px solid #CACACA;
+	resize: none;
+	border-radius: 0px 0px 5px 5px;
+	-moz-border-radius: 0px 0px 5px 5px;
+	-webkit-border-radius: 0px 0px 5px 5px;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0px;
+	box-sizing: border-box;
+}
+
+#achievements-form .add-achievement-condition-container > .error{
+	border: 1px solid #CACACA;
+	color: #555555;
+}
+
+.add-thoughts-container{
+	position: relative;
+}
+
+#btn-add-to-thought-list{
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+}
+
+.thought-list{
+	border: 2px solid red;
+	width: 20%;
+	float:left;
+	padding: 5px;
+	padding-left: 8px;
+	padding-right: 8px;
+}
+
+.thoughts{
+	border: 2px solid blue;
+	width: 77%;
+	float: left;
+	position: relative;
+	left: 3%;
+	padding: 5px;
+}
+/*
+
+.add-achievement-condition-container textarea{
+	border-left: 1px solid #CACACA;
+	border-right: 1px solid #CACACA;
+	border-top: 1px solid #CACACA;
+	border-bottom: 1px solid #CACACA;
+	resize: none;
+	border-radius: 0px;
+	-moz-border-radius: 0px;
+	-webkit-border-radius: 0px;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0px;
+	box-sizing: border-box;
+}
+
+
+*/
