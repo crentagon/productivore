@@ -88,14 +88,26 @@
 }
 
 .thought-list{
-	border: 2px solid red;
+	border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+	background: rgba(198,198,198,0.5);
 	width: 20%;
-	float:left;
+	float: left;
 	padding: 5px;
-	padding-left: 8px;
-	padding-right: 8px;
 }
-
+.list-item{
+	padding: 5px;
+	border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+	cursor: pointer;
+	color: #777777;
+}
+.list-item:hover{
+	cursor: pointer;
+	color: #111111;
+}
 .thoughts{
 	border: 2px solid blue;
 	width: 77%;

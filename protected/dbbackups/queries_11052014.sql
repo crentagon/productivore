@@ -11,4 +11,8 @@ ALTER TABLE journal_posts RENAME TO thought_bubbles;
 
 ALTER TABLE thought_lists RENAME COLUMN journal_list_id TO thought_list_id;
 ALTER TABLE thought_bubbles RENAME COLUMN journal_post_id TO thought_bubble_id;
+
+INSERT INTO thought_lists (name, user_id, is_last_accessed) VALUES ('My Thought Bubbles', 1, TRUE);
+INSERT INTO thought_lists (name, user_id, is_last_accessed) VALUES ('Brain Farts', 1, FALSE);
+INSERT INTO thought_lists (name, user_id, is_last_accessed) VALUES ('Braingasms', 1, FALSE);
 -- Make a trigger such that if a new user signs up, a default list (My Thought Bubbles) is automatically added to the table
