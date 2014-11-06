@@ -65,15 +65,15 @@ class ThoughtsForm extends CFormModel
 	}
 	
 	public function addThoughtEntry(){
-		$journalPosts = new JournalPosts;
+		$thoughtBubbles = new ThoughtBubbles;
 		
-		$journalPosts->title = $this->thought_title;
-		$journalPosts->body = $this->thought_body;
-		$journalPosts->inserted_on = date('Y-m-d H:i:s');		
-		$journalPosts->parent_list_id = $this->list_id;
-		$journalPosts->user_id = Yii::app()->user->getId();		
+		$thoughtBubbles->title = $this->thought_title;
+		$thoughtBubbles->body = $this->thought_body;
+		$thoughtBubbles->inserted_on = date('Y-m-d H:i:s');		
+		$thoughtBubbles->parent_list_id = $this->list_id;
+		$thoughtBubbles->user_id = Yii::app()->user->getId();		
 		
-		if($journalPosts->save()){
+		if($thoughtBubbles->save()){
 			return true;
 		}
 		return false;

@@ -38,8 +38,8 @@ class ProtagonalController extends Controller
 			}
 		}
 		
-		$youHelper = new YouHelper;
-		$achievements = $youHelper->get_achievements_byUserIdMode(Yii::app()->user->getId(), $mode);	
+		$protagonalHelper = new ProtagonalHelper;
+		$achievements = $protagonalHelper->get_achievements_byUserIdMode(Yii::app()->user->getId(), $mode);	
 		
 		$this->render('achievements', compact('mode', 'model', 'achievements'));
 	}
@@ -50,21 +50,23 @@ class ProtagonalController extends Controller
 	
 		$model = new ThoughtsForm;
 		
-		
 		if(isset($_POST['ThoughtsForm'])){
 			$model->attributes=$_POST['ThoughtsForm'];
-			$model->list_id = 1;
+			// $model->list_id = 1;
 			// echo 'no';
 			
 			if($model->validate() && $model->addThoughtEntry()){
 				// echo 'yes'; $this->debugPrint($_POST);
-				Yii::app()->user->setFlash('success','Congratulations! You have posted a new entry to your private journal.');
+				Yii::app()->user->setFlash('success','A new thought bubble has been added to your sea of reflections.');
 				$model->thought_title = '';
 				$model->thought_body = '';
 			}
 		}
+		
+		$protagonalHelper = new ProtagonalHelper;
+		$thoughtList = $protagonalHelper->get_thoughtlist_byUserId(Yii::app()->user->getId());
 	
-		$this->render('thoughts', compact('model'));
+		$this->render('thoughts', compact('model', 'thoughtList'));
 	}
 	
 	public function actionWhoops(){

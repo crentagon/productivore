@@ -10,9 +10,9 @@
 	<div class="add-thought-title-container">
 		<?php echo $form->textFieldRow($model,'thought_title', array('class'=>'input-thought-title', 'placeholder'=>'My Thought Bubble', 'autocomplete'=>'off', 'maxlength'=>128)); ?>
 		<select name="ThoughtsForm[list_id]" id="thoughts-form-list-id">
-			<option value="1">A</option>
-			<option value="1">B</option>
-			<option value="1">C</option>
+			<? foreach($thoughtList as $listItem):?>
+				<option value="<?=$listItem['thought_list_id']?>"><?=$listItem['name']?></option>
+			<? endforeach;?>
 		</select>
 	</div>
 
@@ -22,16 +22,16 @@
 
 	<div class="cushion-20"></div>
 	<div class="cushion-20"></div>
-	<button class="btn btn-inverse" type="submit" id="btn-add-to-thought-list">Add to X</button>
+	<button class="btn btn-inverse" type="submit" id="btn-add-to-thought-list">Add to <span id="list-last-accessed"></span></button>
 	<?php $this->endWidget(); ?>
 </div>
 
 <div class="cushion-15"></div>
 
 <div class="thought-list">
-	<div class="list-item">A</div>
-	<div class="list-item">B</div>
-	<div class="list-item">C</div>
+	<? foreach($thoughtList as $listItem):?>
+		<div class="list-item"><?=$listItem['name']?></div>
+	<? endforeach;?>
 </div>
 
 <div class="thoughts">
