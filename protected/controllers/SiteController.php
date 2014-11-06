@@ -94,8 +94,10 @@ class SiteController extends Controller
 			$this->render('login', array('model'=>$model));
 		}
 		else{
-			Yii::app()->user->setFlash('warning','You are already logged in, '.Yii::app()->user->getName().'.');		
-			$this->render('index');
+			Yii::app()->user->setFlash('warning','You are already logged in, '.Yii::app()->user->getName().'.');	
+			$helper = new HomeHelper;			
+			$allApplings = $helper->get_applings_byUserId(Yii::app()->user->getId());
+			$this->render('index', compact('allApplings'));
 		}
 	}
 	
