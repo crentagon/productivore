@@ -91,22 +91,22 @@
 	border-radius: 5px 5px 5px 5px;
 	-moz-border-radius: 5px 5px 5px 5px;
 	-webkit-border-radius: 5px 5px 5px 5px;
-	background: rgba(198,198,198,0.5);
+	background: rgba(198,198,198,0);
 	width: 20%;
 	float: left;
-	padding: 5px;
 }
 .list-item{
 	padding: 5px;
-	border-radius: 5px 5px 5px 5px;
-	-moz-border-radius: 5px 5px 5px 5px;
-	-webkit-border-radius: 5px 5px 5px 5px;
+	padding-left: 8px;
+	
 	cursor: pointer;
 	color: #777777;
+	margin-top: 3px;
 }
 .list-item:hover{
 	cursor: pointer;
 	color: #111111;
+	border-left: 1px solid #111111;
 }
 .thoughts{
 	border: 2px solid blue;

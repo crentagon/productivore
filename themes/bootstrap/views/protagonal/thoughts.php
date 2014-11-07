@@ -25,6 +25,30 @@
 	<button class="btn btn-inverse" type="submit" id="btn-add-to-thought-list">Add to <span id="list-last-accessed"></span></button>
 	<?php $this->endWidget(); ?>
 </div>
+<? /*
+<div class="cushion-15"></div>
+<div class="col-lg-3">
+            <div class="sidebar" data-spy="affix" data-offset-top="50">
+                <ul class="nav sidenav">
+                    <li><a href="#announcements"><i class="icon-bullhorn"></i>&nbsp; &nbsp; Announcements</a></li>
+                    <li><a href="#recentactivity"><i class="icon-calendar"></i>&nbsp; &nbsp; Recent activity</a></li>
+                    <li><a href="#recommendedexams"><i class="icon-star"></i>&nbsp; &nbsp; Recommended</a></li>
+                    <li><a href="#newresources"><i class="icon-compass"></i>&nbsp; &nbsp; New resources</a></li>
+                </ul>
+            </div>
+        </div>
+
+<div class="cushion-15"></div>
+
+	<div class="sidebar thought-list" data-spy="affix" data-offset-top="50">
+		<ul class="nav sidenav">
+			<li><a href="#announcements"><i class="icon-bullhorn"></i>&nbsp; &nbsp; Announcements</a></li>
+			<li><a href="#recentactivity"><i class="icon-calendar"></i>&nbsp; &nbsp; Recent activity</a></li>
+			<li><a href="#recommendedexams"><i class="icon-star"></i>&nbsp; &nbsp; Recommended</a></li>
+			<li><a href="#newresources"><i class="icon-compass"></i>&nbsp; &nbsp; New resources</a></li>
+		</ul>
+	</div>
+*/?>
 
 <div class="cushion-15"></div>
 
