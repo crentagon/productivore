@@ -52,21 +52,24 @@ class ProtagonalController extends Controller
 		
 		if(isset($_POST['ThoughtsForm'])){
 			$model->attributes=$_POST['ThoughtsForm'];
-			// $model->list_id = 1;
-			// echo 'no';
 			
 			if($model->validate() && $model->addThoughtEntry()){
-				// echo 'yes'; $this->debugPrint($_POST);
 				Yii::app()->user->setFlash('success','A new thought bubble has been added to your sea of reflections.');
 				$model->thought_title = '';
 				$model->thought_body = '';
 			}
 		}
 		
+		$userId = Yii::app()->user->getId();
+		
 		$protagonalHelper = new ProtagonalHelper;
-		$thoughtList = $protagonalHelper->get_thoughtlist_byUserId(Yii::app()->user->getId());
+		$thoughtList = $protagonalHelper->get_thoughtlist_byUserId($userId);
+		
+		$listId = $thoughtList[0]['thought_list_id'];
+		$thoughtBubbleList = $protagonalHelper->get_thoughtbubbles_byUserIdListIdThoughtBubbleId($userId, $listId);
 	
-		$this->render('thoughts', compact('model', 'thoughtList'));
+		// $this->debugPrint($thoughtBubbleList);
+		$this->render('thoughts', compact('model', 'thoughtList', 'thoughtBubbleList'));
 	}
 	
 	public function actionWhoops(){

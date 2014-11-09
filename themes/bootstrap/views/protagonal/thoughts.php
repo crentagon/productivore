@@ -59,6 +59,25 @@
 </div>
 
 <div class="thoughts">
+	<?foreach($thoughtBubbleList as $thoughtBubble):?>
+		<div class="thought-item">
+			<div class="thought-title"><?=$thoughtBubble['title']?></div>
+			<div class="thought-body"><?=$thoughtBubble['body']?></div>
+			<div class="thought-footer"><?=$thoughtBubble['inserted_on']?></div>
+		</div>
+		<div class="cushion-20"></div>
+		<div class="cushion-15"></div>
+	<?endforeach;?>
+	<?/*
+		<div class="thought-body">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec maximus iaculis dolor id dapibus. Pellentesque accumsan euismod nunc, eget semper nulla bibendum ut. Proin iaculis fermentum placerat. In et urna quam. Curabitur pulvinar iaculis mollis. Integer metus odio, scelerisque sit amet pulvinar eu, ultrices in erat. Donec sed odio tortor. Aenean neque lacus, vulputate id dui vitae, dignissim vehicula odio.
+			<br/><br/>
+			Donec odio neque, sodales ac facilisis quis, cursus in ex. Vivamus tincidunt massa augue, vitae mollis mauris vehicula eu. Suspendisse a metus in nulla aliquet vulputate. Nunc vitae arcu at sem rhoncus ultrices in vel odio. Vivamus eget leo quis felis sagittis eleifend. Suspendisse feugiat suscipit ipsum eget aliquam. Phasellus rutrum magna sed tortor hendrerit bibendum.
+		</div>
+		<div class="thought-footer">
+			Quisque placerat tellus id ex pharetra congue.
+		</div>		
+	</div>
 	<div class="thought-item">
 		<div class="thought-title">
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -87,21 +106,8 @@
 			Quisque placerat tellus id ex pharetra congue.
 		</div>		
 	</div>
-	<div class="cushion-20"></div>
-	<div class="cushion-15"></div>
-	<div class="thought-item">
-		<div class="thought-title">
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-		</div>
-		<div class="thought-body">
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec maximus iaculis dolor id dapibus. Pellentesque accumsan euismod nunc, eget semper nulla bibendum ut. Proin iaculis fermentum placerat. In et urna quam. Curabitur pulvinar iaculis mollis. Integer metus odio, scelerisque sit amet pulvinar eu, ultrices in erat. Donec sed odio tortor. Aenean neque lacus, vulputate id dui vitae, dignissim vehicula odio.
-			<br/><br/>
-			Donec odio neque, sodales ac facilisis quis, cursus in ex. Vivamus tincidunt massa augue, vitae mollis mauris vehicula eu. Suspendisse a metus in nulla aliquet vulputate. Nunc vitae arcu at sem rhoncus ultrices in vel odio. Vivamus eget leo quis felis sagittis eleifend. Suspendisse feugiat suscipit ipsum eget aliquam. Phasellus rutrum magna sed tortor hendrerit bibendum.
-		</div>
-		<div class="thought-footer">
-			Quisque placerat tellus id ex pharetra congue.
-		</div>		
-	</div>
+	*/?>
+</div>
 <?/*
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec maximus iaculis dolor id dapibus. Pellentesque accumsan euismod nunc, eget semper nulla bibendum ut. Proin iaculis fermentum placerat. In et urna quam. Curabitur pulvinar iaculis mollis. Integer metus odio, scelerisque sit amet pulvinar eu, ultrices in erat. Donec sed odio tortor. Aenean neque lacus, vulputate id dui vitae, dignissim vehicula odio.
@@ -115,6 +121,5 @@ Etiam a iaculis elit. Pellentesque habitant morbi tristique senectus et netus et
 Donec interdum lorem eros, id fermentum nulla sodales ac. Aenean tempus erat tortor, id consectetur risus aliquet id. Pellentesque lacinia velit at urna feugiat ultrices. Sed a erat magna. Proin lorem diam, interdum sit amet efficitur ac, pretium vel nibh. Vestibulum pretium gravida nisi ut placerat. Donec rhoncus metus in quam viverra, eget semper ipsum varius. Etiam tristique sem non sagittis ultrices. Quisque eu lectus risus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras vel porta neque. Morbi vehicula eleifend libero non venenatis. In at dictum tellus. Proin metus justo, tincidunt ac mattis et, ornare quis dolor. Curabitur dignissim a sapien et porta. Aliquam commodo nec nunc et euismod. 
 
 */?>
-</div>
 
 <div class="clear-both"></div>

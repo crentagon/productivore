@@ -41,4 +41,31 @@ class ProtagonalHelper extends MainHelper
 		$params = array('userId'=>$userId);		
 		return $this->sql_query($query, $params);
 	}
+	
+	public function get_thoughtbubbles_byUserIdListIdThoughtBubbleId($userId, $listId, $thoughtBubbleId = null){
+		$query =
+			'SELECT
+				thought_bubble_id,
+				title,
+				body,
+				inserted_on				
+			FROM
+				thought_bubbles
+			WHERE
+				user_id = :userId
+				AND is_latest_version = TRUE
+				AND parent_list_id = :listId';
+		$params = array('userId'=>$userId, 'listId'=>$listId);
+
+		if($thoughtBubbleId != null){
+			$query.='AND thought_bubble_id > :thoughtBubbleId';
+			$params['thoughtBubbleId'] = $thoughtBubbleId;
+		}
+		
+		$query.=' ORDER BY inserted_on DESC
+			LIMIT 10';
+		
+		return $this->sql_query($query, $params);
+	}
+	
 }
