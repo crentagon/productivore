@@ -68,7 +68,7 @@ class ProtagonalController extends Controller
 		$listId = $thoughtList[0]['thought_list_id'];
 		$thoughtBubbleList = $protagonalHelper->get_thoughtbubbles_byUserIdListIdThoughtBubbleId($userId, $listId);
 	
-		// $this->debugPrint($thoughtBubbleList);
+		// $this->debugPrint($listId);
 		$this->render('thoughts', compact('model', 'thoughtList', 'thoughtBubbleList'));
 	}
 	
@@ -85,6 +85,14 @@ class ProtagonalController extends Controller
 	public function actionSettings(){
 		echo 'protagonalSettings';
 		die();
+	}
+	
+	//http://localhost/productivore/protagonal/getNextThoughtBubblesAjax/startingThoughtBubbleId/9/listId/1/
+	public function actionGetNextThoughtBubblesAjax($startingThoughtBubbleId, $listId){
+		$userId = Yii::app()->user->getId();
+		$protagonalHelper = new ProtagonalHelper;
+		$thoughtBubbleList = $protagonalHelper->get_thoughtbubbles_byUserIdListIdThoughtBubbleId($userId, $listId, $startingThoughtBubbleId);
+		$this->debugPrint($thoughtBubbleList);
 	}
 	
 	//http://localhost/productivore/productivore/protagonal/editachievementfieldajax/field/achievement_name/achievementId/7/value/asdfgh

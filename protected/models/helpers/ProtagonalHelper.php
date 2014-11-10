@@ -58,7 +58,7 @@ class ProtagonalHelper extends MainHelper
 		$params = array('userId'=>$userId, 'listId'=>$listId);
 
 		if($thoughtBubbleId != null){
-			$query.='AND thought_bubble_id > :thoughtBubbleId';
+			$query.=' AND thought_bubble_id < :thoughtBubbleId';
 			$params['thoughtBubbleId'] = $thoughtBubbleId;
 		}
 		
