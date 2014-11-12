@@ -59,8 +59,17 @@
 </div>
 
 <div class="thoughts">
-	<?foreach($thoughtBubbleList as $thoughtBubble):?>
+	<div class="display-none" id="thought-item-framework">
 		<div class="thought-item">
+			<div class="thought-title"></div>
+			<div class="thought-body"></div>
+			<div class="thought-footer"></div>
+		</div>
+		<div class="cushion-20"></div>
+		<div class="cushion-15"></div>
+	</div>
+	<?foreach($thoughtBubbleList as $thoughtBubble):?>
+		<div class="thought-item" thoughtBubbleId="<?=$thoughtBubble['thought_bubble_id']?>">
 			<div class="thought-title"><?=$thoughtBubble['title']?></div>
 			<div class="thought-body"><?=$thoughtBubble['body']?></div>
 			<div class="thought-footer"><?=$thoughtBubble['inserted_on']?></div>
@@ -68,6 +77,11 @@
 		<div class="cushion-20"></div>
 		<div class="cushion-15"></div>
 	<?endforeach;?>
+	<div class="additional-thoughts">
+	</div>
+	<div class="thoughts-loading">
+		Loading...
+	</div>
 	<?/*
 		<div class="thought-body">
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec maximus iaculis dolor id dapibus. Pellentesque accumsan euismod nunc, eget semper nulla bibendum ut. Proin iaculis fermentum placerat. In et urna quam. Curabitur pulvinar iaculis mollis. Integer metus odio, scelerisque sit amet pulvinar eu, ultrices in erat. Donec sed odio tortor. Aenean neque lacus, vulputate id dui vitae, dignissim vehicula odio.

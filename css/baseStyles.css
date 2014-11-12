@@ -738,3 +738,7 @@ hr.thick{
 .clear-both {
 	clear: both;
 }
+
+.display-none{
+	display: none;
+}

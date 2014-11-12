@@ -175,7 +175,9 @@
 	-moz-border-radius: 0px 0px 5px 5px;
 	-webkit-border-radius: 0px 0px 5px 5px;
 }
-
+.thoughts-loading{
+	display: none;
+}
 /*
 .add-achievement-condition-container textarea{
 	border-left: 1px solid #CACACA;

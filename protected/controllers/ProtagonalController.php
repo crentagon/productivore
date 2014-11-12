@@ -92,7 +92,8 @@ class ProtagonalController extends Controller
 		$userId = Yii::app()->user->getId();
 		$protagonalHelper = new ProtagonalHelper;
 		$thoughtBubbleList = $protagonalHelper->get_thoughtbubbles_byUserIdListIdThoughtBubbleId($userId, $listId, $startingThoughtBubbleId);
-		$this->debugPrint($thoughtBubbleList);
+		echo json_encode($thoughtBubbleList);
+		// $this->debugPrint($thoughtBubbleList);
 	}
 	
 	//http://localhost/productivore/productivore/protagonal/editachievementfieldajax/field/achievement_name/achievementId/7/value/asdfgh
