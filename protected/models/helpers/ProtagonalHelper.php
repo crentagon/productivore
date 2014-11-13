@@ -68,4 +68,22 @@ class ProtagonalHelper extends MainHelper
 		return $this->sql_query($query, $params);
 	}
 	
+	public function setActiveThoughtList($userId, $listId){
+		$query = '
+			UPDATE thought_lists
+			SET is_last_accessed = FALSE
+			WHERE user_id = :userId
+		';
+		$params = array('userId'=>$userId);
+		$this->sql_execute($query, $params);
+		
+		$query = '
+			UPDATE thought_lists
+			SET is_last_accessed = TRUE
+			AND thought_list_id = :listId
+		';
+		$params = array('listId'=>$listId);
+		return $this->sql_execute($query, $params);
+	}
+	
 }

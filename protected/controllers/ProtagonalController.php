@@ -96,6 +96,16 @@ class ProtagonalController extends Controller
 		// $this->debugPrint($thoughtBubbleList);
 	}
 	
+	//http://localhost/productivore/protagonal/getNextThoughtBubblesByListIdAjax/listId/1/
+	public function actionGetNextThoughtBubblesByListIdAjax($listId){
+		$userId = Yii::app()->user->getId();
+		$protagonalHelper = new ProtagonalHelper;
+		$thoughtBubbleList = $protagonalHelper->get_thoughtbubbles_byUserIdListIdThoughtBubbleId($userId, $listId);
+		$protagonalHelper->setActiveThoughtList($userId, $listId);
+		echo json_encode($thoughtBubbleList);
+		// $this->debugPrint($thoughtBubbleList);
+	}
+	
 	//http://localhost/productivore/productivore/protagonal/editachievementfieldajax/field/achievement_name/achievementId/7/value/asdfgh
 	public function actionEditAchievementFieldAjax($field, $achievementId, $value = null){
 		$requiredFields = array('achievement_condition', 'achievement_rewards');

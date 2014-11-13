@@ -102,8 +102,15 @@
 	color: #777777;
 	margin-top: 3px;
 }
+.list-item-selected{
+	padding: 5px;
+	padding-left: 8px;
+	margin-top: 3px;
+	cursor: default;
+	color: #111111;
+	border-left: 1px solid #111111;
+}
 .list-item:hover{
-	cursor: pointer;
 	color: #111111;
 	border-left: 1px solid #111111;
 }

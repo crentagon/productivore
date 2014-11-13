@@ -45,15 +45,7 @@ class HomeHelper extends MainHelper
 			'isfavorite'=>$isfavorite
 		);
 		
-		echo "
-			UPDATE user_appling_maps
-			SET is_favorite = $isfavorite
-			WHERE user_id = $userId
-			AND appling_id = $applingId
-		>>> "; 
 		echo $this->sql_execute($query, $params);
-		die(); 
-		die();
 	}
 	
 }

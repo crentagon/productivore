@@ -2,81 +2,84 @@ var C_BASEURL = '';
 var alreadyLoading = false;
 
 $(document).ready(function(){
-	// alert($('#thoughts-form-list-id option:selected').text());
 	$('#list-last-accessed').text($('#thoughts-form-list-id option:selected').text());
 	$('#thoughts-form-list-id').change(function(){
-		$('#list-last-accessed').text($('#thoughts-form-list-id option:selected').text());
+		var listId = $('#thoughts-form-list-id option:selected').val();
+		changeThoughtBubbleContent(listId);
+	});	
+	
+	$('.list-item, .list-item-selected').click(function(){
+		var listId = $(this).attr('thoughtListid');
+		$('#thoughts-form-list-id').val(listId);
+		changeThoughtBubbleContent(listId);
 	});
 	
 	$(window).scroll(function(){
 		if($(window).scrollTop() + $(window).height() == $(document).height() && !alreadyLoading) {
 			alreadyLoading = true;
 			$(".thoughts-loading").show();
-			addThoughts();
+			endlessScrollThoughts();
 		}
 	});
 	
-	// alert($('.thought-item').last().attr('id'));
-	// addThoughts();
 	C_BASEURL = $('#BASE_URL').val();
-	// alert(C_BASEURL);
 });
 
-function addThoughts(){
+function changeThoughtBubbleContent(listId){
+	var ajaxUrl = C_BASEURL+"/protagonal/getNextThoughtBubblesByListIdAjax/listId/"+listId+"/";
+	
+	$('.list-item-selected').attr('class', 'list-item');
+	$('#thought-list-id-'+listId).attr('class', 'list-item-selected');
+	$('#list-last-accessed').text($('#thoughts-form-list-id option:selected').text());
+
+	addThoughts(ajaxUrl, false);
+}
+
+function endlessScrollThoughts(){
 	var thoughtBubbleId = $('.thought-item').last().attr('thoughtBubbleId');
 	var listId = $('#thoughts-form-list-id option:selected').val();
-	var ajaxUrl =
-		C_BASEURL+"/protagonal/getNextThoughtBubblesAjax/startingThoughtBubbleId/"+thoughtBubbleId+"/listId/"+listId+"/";
+	var ajaxUrl = C_BASEURL+"/protagonal/getNextThoughtBubblesAjax/startingThoughtBubbleId/"+thoughtBubbleId+"/listId/"+listId+"/";
 
+	addThoughts(ajaxUrl, true);
+	
+	$(".thoughts-loading").hide();
+	alreadyLoading = false;
+}
+
+function addThoughts(ajaxUrl, isScroll){
 	$.ajax({
 		url: ajaxUrl,
 		success: function(thoughtBubbleList){
 			var thoughtList = JSON.parse(thoughtBubbleList);
+			var len = thoughtList.length;
 			
-			for(var i=0; i<thoughtList.length; i++){
-				var id = thoughtList[i].thought_bubble_id;
-				var title = thoughtList[i].title;
-				var body = thoughtList[i].body;
-				var inserted_on = thoughtList[i].inserted_on;
-				
-				// alert(title);
-				$("#thought-item-framework > .thought-item > .thought-title").text(title);
-				$("#thought-item-framework > .thought-item > .thought-body").text(body);
-				$("#thought-item-framework > .thought-item > .thought-footer").text(inserted_on);			
-				$("#thought-item-framework > .thought-item").attr('thoughtBubbleId', id);			
+			if(!isScroll){
+				$('.all-thoughts').html('');
+			}
+			
+			if(len){
+				for(var i=0; i<len; i++){
+					var id = thoughtList[i].thought_bubble_id;
+					var title = thoughtList[i].title;
+					var body = thoughtList[i].body;
+					var inserted_on = thoughtList[i].inserted_on;
+					
+					$("#thought-item-framework > .thought-item > .thought-title").text(title);
+					$("#thought-item-framework > .thought-item > .thought-body").text(body);
+					$("#thought-item-framework > .thought-item > .thought-footer").text(inserted_on);			
+					$("#thought-item-framework > .thought-item").attr('thoughtBubbleId', id);			
 
-				var newNode = $('#thought-item-framework').html();
-				$('.additional-thoughts').append(newNode);	
-
+					var newNode = $('#thought-item-framework').html();
+					$('.all-thoughts').append(newNode);	
+				}
+			}
+			else{
+				if(!isScroll)
+					$('.all-thoughts').append("None");	
 			}
 		},
 		error: function(){
 			alert("Whoops, something went wrong. Could you refresh? Thanks.");
-		}		
+		}
 	});
-	
-	$(".thoughts-loading").hide();
-	alreadyLoading = false;
-
-	// var title = "Title";
-	// var body = "Body";
-	// var date = "Date";
-	
-	// $("#thought-item-framework > .thought-item > .thought-title").text(title);
-	// $("#thought-item-framework > .thought-item > .thought-body").text(body);
-	// $("#thought-item-framework > .thought-item > .thought-footer").text(date);
-	
-	// var newNode = $('#thought-item-framework').html();
-	// $('.additional-thoughts').append(newNode);
-	// $('.additional-thoughts').append(newNode);
-	// $('.additional-thoughts').append(newNode);
-	// $('.additional-thoughts').append(newNode);
-	// $('.additional-thoughts').append(newNode);
-	// $('.additional-thoughts').append(newNode);
-	// $('.additional-thoughts').append(newNode);
-	// $('.additional-thoughts').append(newNode);
-	// $('.additional-thoughts').append(newNode);
-	// $('.additional-thoughts').append(newNode);
-	
-	// alert("Got here!");
 }

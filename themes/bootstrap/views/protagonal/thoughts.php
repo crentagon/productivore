@@ -53,8 +53,12 @@
 <div class="cushion-15"></div>
 
 <div class="thought-list">
-	<? foreach($thoughtList as $listItem):?>
-		<div class="list-item"><?=$listItem['name']?></div>
+	<? foreach($thoughtList as $key=>$listItem):?>
+		<?if($key == 0):?>
+			<div class="list-item-selected" id="thought-list-id-<?=$listItem['thought_list_id']?>" thoughtListid="<?=$listItem['thought_list_id']?>"><?=$listItem['name']?></div>
+		<?else:?>
+			<div class="list-item" id="thought-list-id-<?=$listItem['thought_list_id']?>" thoughtListid="<?=$listItem['thought_list_id']?>"><?=$listItem['name']?></div>
+		<?endif;?>
 	<? endforeach;?>
 </div>
 
@@ -68,16 +72,20 @@
 		<div class="cushion-20"></div>
 		<div class="cushion-15"></div>
 	</div>
-	<?foreach($thoughtBubbleList as $thoughtBubble):?>
-		<div class="thought-item" thoughtBubbleId="<?=$thoughtBubble['thought_bubble_id']?>">
-			<div class="thought-title"><?=$thoughtBubble['title']?></div>
-			<div class="thought-body"><?=$thoughtBubble['body']?></div>
-			<div class="thought-footer"><?=$thoughtBubble['inserted_on']?></div>
-		</div>
-		<div class="cushion-20"></div>
-		<div class="cushion-15"></div>
-	<?endforeach;?>
-	<div class="additional-thoughts">
+	<div class="all-thoughts">
+		<?if(count($thoughtBubbleList)):?>
+			<?foreach($thoughtBubbleList as $thoughtBubble):?>
+				<div class="thought-item" thoughtBubbleId="<?=$thoughtBubble['thought_bubble_id']?>">
+					<div class="thought-title"><?=$thoughtBubble['title']?></div>
+					<div class="thought-body"><?=$thoughtBubble['body']?></div>
+					<div class="thought-footer"><?=$thoughtBubble['inserted_on']?></div>
+				</div>
+				<div class="cushion-20"></div>
+				<div class="cushion-15"></div>
+			<?endforeach;?>
+		<?else:?>
+			None.
+		<?endif;?>
 	</div>
 	<div class="thoughts-loading">
 		Loading...
