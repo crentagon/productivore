@@ -18,7 +18,11 @@ $(document).ready(function(){
 		if($(window).scrollTop() + $(window).height() == $(document).height() && !alreadyLoading) {
 			alreadyLoading = true;
 			$(".thoughts-loading").show();
-			endlessScrollThoughts();
+			// delay = 5000;
+			// setTimeout(function(){
+				endlessScrollThoughts();
+			//your code to be executed after 1 seconds
+			// },delay); 
 		}
 	});
 	
@@ -42,7 +46,8 @@ function endlessScrollThoughts(){
 
 	addThoughts(ajaxUrl, true);
 	
-	$(".thoughts-loading").hide();
+	// alert("Hiding the loading GIF.");
+	// $(".thoughts-loading").hide();
 	alreadyLoading = false;
 }
 
@@ -50,6 +55,7 @@ function addThoughts(ajaxUrl, isScroll){
 	$.ajax({
 		url: ajaxUrl,
 		success: function(thoughtBubbleList){
+			// $(".thoughts-loading").hide();
 			var thoughtList = JSON.parse(thoughtBubbleList);
 			var len = thoughtList.length;
 			
@@ -77,9 +83,11 @@ function addThoughts(ajaxUrl, isScroll){
 				if(!isScroll)
 					$('.all-thoughts').append("None");	
 			}
+			$(".thoughts-loading").hide();
 		},
 		error: function(){
 			alert("Whoops, something went wrong. Could you refresh? Thanks.");
+			$(".thoughts-loading").hide();
 		}
 	});
 }

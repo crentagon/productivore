@@ -184,6 +184,7 @@
 }
 .thoughts-loading{
 	display: none;
+	text-align: center;
 }
 /*
 .add-achievement-condition-container textarea{

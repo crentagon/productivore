@@ -88,7 +88,7 @@
 		<?endif;?>
 	</div>
 	<div class="thoughts-loading">
-		Loading...
+		<img src="<?=BASE_URL?>/images/nowLoading.gif" alt="Loading animation"/>
 	</div>
 	<?/*
 		<div class="thought-body">
