@@ -186,6 +186,9 @@
 	display: none;
 	text-align: center;
 }
+.thoughts-loading img{
+	opacity: 0.25;
+}
 /*
 .add-achievement-condition-container textarea{
 	border-left: 1px solid #CACACA;

@@ -9,20 +9,19 @@ $(document).ready(function(){
 	});	
 	
 	$('.list-item, .list-item-selected').click(function(){
-		var listId = $(this).attr('thoughtListid');
-		$('#thoughts-form-list-id').val(listId);
-		changeThoughtBubbleContent(listId);
+		if(!alreadyLoading){
+			alreadyLoading = true;
+			var listId = $(this).attr('thoughtListid');
+			
+			$('#thoughts-form-list-id').val(listId);
+			changeThoughtBubbleContent(listId);
+		}
 	});
 	
 	$(window).scroll(function(){
-		if($(window).scrollTop() + $(window).height() == $(document).height() && !alreadyLoading) {
+		if($(window).scrollTop() + $(window).height() > $(document).height()-50 && !alreadyLoading) {
 			alreadyLoading = true;
-			$(".thoughts-loading").show();
-			// delay = 5000;
-			// setTimeout(function(){
-				endlessScrollThoughts();
-			//your code to be executed after 1 seconds
-			// },delay); 
+			endlessScrollThoughts();
 		}
 	});
 	
@@ -36,6 +35,8 @@ function changeThoughtBubbleContent(listId){
 	$('#thought-list-id-'+listId).attr('class', 'list-item-selected');
 	$('#list-last-accessed').text($('#thoughts-form-list-id option:selected').text());
 
+	$('.all-thoughts').html('');
+	
 	addThoughts(ajaxUrl, false);
 }
 
@@ -48,20 +49,20 @@ function endlessScrollThoughts(){
 	
 	// alert("Hiding the loading GIF.");
 	// $(".thoughts-loading").hide();
-	alreadyLoading = false;
 }
 
 function addThoughts(ajaxUrl, isScroll){
+	$(".thoughts-loading").show();
+	$('#thoughts-form-list-id').attr("disabled", "disabled");
+	
+	// delay = 5000;
+	// setTimeout(function(){	
 	$.ajax({
 		url: ajaxUrl,
 		success: function(thoughtBubbleList){
 			// $(".thoughts-loading").hide();
 			var thoughtList = JSON.parse(thoughtBubbleList);
 			var len = thoughtList.length;
-			
-			if(!isScroll){
-				$('.all-thoughts').html('');
-			}
 			
 			if(len){
 				for(var i=0; i<len; i++){
@@ -84,10 +85,18 @@ function addThoughts(ajaxUrl, isScroll){
 					$('.all-thoughts').append("None");	
 			}
 			$(".thoughts-loading").hide();
+			
+			// if(!isScroll)
+			$('#thoughts-form-list-id').attr("disabled", false);
+			alreadyLoading = false;
 		},
 		error: function(){
 			alert("Whoops, something went wrong. Could you refresh? Thanks.");
 			$(".thoughts-loading").hide();
+			alreadyLoading = false;
 		}
 	});
+	// }, delay);	
+	
+	
 }
