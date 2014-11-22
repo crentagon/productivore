@@ -23,6 +23,17 @@ $(document).ready(function(){
 			alreadyLoading = true;
 			endlessScrollThoughts();
 		}
+		
+		if($(window).scrollTop() >= 250){
+			$(".scroll-to-top").show();
+		}
+		else{
+			$(".scroll-to-top").hide();
+		}
+	});
+	
+	$(".scroll-to-top").click(function() {
+		$("html, body").animate({ scrollTop: 0 }, "slow");
 	});
 	
 	C_BASEURL = $('#BASE_URL').val();
@@ -82,7 +93,7 @@ function addThoughts(ajaxUrl, isScroll){
 			}
 			else{
 				if(!isScroll)
-					$('.all-thoughts').append("None");	
+					$('.all-thoughts').append("This lake is calm, peaceful, and conducive to pebble skipping.");
 			}
 			$(".thoughts-loading").hide();
 			

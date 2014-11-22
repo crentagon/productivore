@@ -86,7 +86,6 @@
 	bottom: 0px;
 	right: 0px;
 }
-
 .thought-list{
 	border-radius: 5px 5px 5px 5px;
 	-moz-border-radius: 5px 5px 5px 5px;
@@ -188,6 +187,17 @@
 }
 .thoughts-loading img{
 	opacity: 0.25;
+}
+.scroll-to-top{
+	display: none;
+	position: fixed;
+	bottom: 15px;
+	right: 15px;
+	opacity: 0.30;
+	cursor: pointer;
+}
+.scroll-to-top:hover{
+	opacity: 0.60;
 }
 /*
 .add-achievement-condition-container textarea{
