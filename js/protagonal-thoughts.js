@@ -18,7 +18,7 @@ $(document).ready(function(){
 		if($(window).scrollTop() + $(window).height() == $(document).height() && !alreadyLoading) {
 			alreadyLoading = true;
 			$(".thoughts-loading").show();
-			// delay = 5000;
+			// delay = 2000;
 			// setTimeout(function(){
 				endlessScrollThoughts();
 			//your code to be executed after 1 seconds
@@ -36,7 +36,11 @@ function changeThoughtBubbleContent(listId){
 	$('#thought-list-id-'+listId).attr('class', 'list-item-selected');
 	$('#list-last-accessed').text($('#thoughts-form-list-id option:selected').text());
 
+	$('.all-thoughts').html('');
+	$(".thoughts-loading").show();
+	setTimeout(function(){
 	addThoughts(ajaxUrl, false);
+	}, 2000);
 }
 
 function endlessScrollThoughts(){
@@ -58,11 +62,7 @@ function addThoughts(ajaxUrl, isScroll){
 			// $(".thoughts-loading").hide();
 			var thoughtList = JSON.parse(thoughtBubbleList);
 			var len = thoughtList.length;
-			
-			if(!isScroll){
-				$('.all-thoughts').html('');
-			}
-			
+						
 			if(len){
 				for(var i=0; i<len; i++){
 					var id = thoughtList[i].thought_bubble_id;
