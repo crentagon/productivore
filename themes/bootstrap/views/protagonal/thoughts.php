@@ -5,7 +5,6 @@
 	<?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm', array(
 		'id'=>'thoughts-form',
 		'type'=>'horizontal',
-		'enableClientValidation'=>true,
 		'clientOptions'=>array(
 			'validateOnSubmit'=>true,
 		),
@@ -20,7 +19,7 @@
 	</div>
 
 	<div class="add-achievement-condition-container">
-		<?php echo $form->textArea($model,'thought_body', array('class'=>'input-achievement-condition', 'placeholder'=>'What are you thinking of today?', 'autocomplete'=>'off')); ?>
+		<?php echo $form->textArea($model,'thought_body', array('class'=>'input-thought-body', 'placeholder'=>'What are you thinking of today?', 'autocomplete'=>'off')); ?>
 	</div>
 
 	<div class="cushion-20"></div>

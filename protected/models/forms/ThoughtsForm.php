@@ -21,8 +21,8 @@ class ThoughtsForm extends CFormModel
 	public function rules()
 	{
 		return array(
-			array('thought_body, list_id', 'required'),
-			array('thought_title', 'safe'),
+			array('thought_body, list_id, thought_title', 'required'),
+			// array('thought_title', 'safe'),
 			array('thought_title, thought_body, list_id', 'validateForm'),
 		);
 	}
@@ -33,6 +33,9 @@ class ThoughtsForm extends CFormModel
 		$error_message = '';
 		if(trim($this->thought_body) == ''){
 			$fields[] = 'Thought Body';
+		}
+		if(trim($this->thought_title) == ''){
+			$fields[] = 'Thought Title';
 		}
 		
 		if(count($fields) > 0){
