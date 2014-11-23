@@ -2,6 +2,7 @@ var C_BASEURL = '';
 var alreadyLoading = false;
 
 $(document).ready(function(){
+	$(".input-thought-body").jqte();
 	$('#list-last-accessed').text($('#thoughts-form-list-id option:selected').text());
 	$('#thoughts-form-list-id').change(function(){
 		var listId = $('#thoughts-form-list-id option:selected').val();

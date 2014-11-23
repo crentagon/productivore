@@ -1,3 +1,5 @@
+<script type="text/javascript" src="<? echo BASE_URL ?>/assets/jquery-te-1.4.0/jquery-te-1.4.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="<? echo BASE_URL ?>/assets/jquery-te-1.4.0/jquery-te-1.4.0.css" />
 <div class="scroll-to-top">
 	<span class="appling-icon fa fa-chevron-up fa-2x"></span>
 </div>
@@ -17,12 +19,10 @@
 			<? endforeach;?>
 		</select>
 	</div>
-
-	<div class="add-achievement-condition-container">
+	<div class="add-thought-body-container">
 		<?php echo $form->textArea($model,'thought_body', array('class'=>'input-thought-body', 'placeholder'=>'What are you thinking of today?', 'autocomplete'=>'off')); ?>
 	</div>
-
-	<div class="cushion-20"></div>
+	<div class="clear-both"></div>
 	<div class="cushion-20"></div>
 	<button class="btn btn-inverse" type="submit" id="btn-add-to-thought-list">Add to <span id="list-last-accessed"></span></button>
 	<?php $this->endWidget(); ?>
