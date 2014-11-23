@@ -84,7 +84,7 @@ function addThoughts(ajaxUrl, isScroll){
 					var inserted_on = thoughtList[i].inserted_on;
 					
 					$("#thought-item-framework > .thought-item > .thought-title").text(title);
-					$("#thought-item-framework > .thought-item > .thought-body").text(body);
+					$("#thought-item-framework > .thought-item > .thought-body").html(body);
 					$("#thought-item-framework > .thought-item > .thought-footer").text(inserted_on);			
 					$("#thought-item-framework > .thought-item").attr('thoughtBubbleId', id);			
 
