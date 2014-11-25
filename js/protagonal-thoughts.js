@@ -2,6 +2,7 @@ var C_BASEURL = '';
 var alreadyLoading = false;
 
 $(document).ready(function(){
+	$(".input-thought-body").jqte();
 	$('#list-last-accessed').text($('#thoughts-form-list-id option:selected').text());
 	$('#thoughts-form-list-id').change(function(){
 		var listId = $('#thoughts-form-list-id option:selected').val();
@@ -9,21 +10,31 @@ $(document).ready(function(){
 	});	
 	
 	$('.list-item, .list-item-selected').click(function(){
-		var listId = $(this).attr('thoughtListid');
-		$('#thoughts-form-list-id').val(listId);
-		changeThoughtBubbleContent(listId);
+		if(!alreadyLoading){
+			alreadyLoading = true;
+			var listId = $(this).attr('thoughtListid');
+			
+			$('#thoughts-form-list-id').val(listId);
+			changeThoughtBubbleContent(listId);
+		}
 	});
 	
 	$(window).scroll(function(){
-		if($(window).scrollTop() + $(window).height() == $(document).height() && !alreadyLoading) {
+		if($(window).scrollTop() + $(window).height() > $(document).height()-50 && !alreadyLoading) {
 			alreadyLoading = true;
-			$(".thoughts-loading").show();
-			// delay = 2000;
-			// setTimeout(function(){
-				endlessScrollThoughts();
-			//your code to be executed after 1 seconds
-			// },delay); 
+			endlessScrollThoughts();
 		}
+		
+		if($(window).scrollTop() >= 250){
+			$(".scroll-to-top").show();
+		}
+		else{
+			$(".scroll-to-top").hide();
+		}
+	});
+	
+	$(".scroll-to-top").click(function() {
+		$("html, body").animate({ scrollTop: 0 }, "slow");
 	});
 	
 	C_BASEURL = $('#BASE_URL').val();
@@ -37,10 +48,8 @@ function changeThoughtBubbleContent(listId){
 	$('#list-last-accessed').text($('#thoughts-form-list-id option:selected').text());
 
 	$('.all-thoughts').html('');
-	$(".thoughts-loading").show();
-	setTimeout(function(){
+	
 	addThoughts(ajaxUrl, false);
-	}, 2000);
 }
 
 function endlessScrollThoughts(){
@@ -52,17 +61,21 @@ function endlessScrollThoughts(){
 	
 	// alert("Hiding the loading GIF.");
 	// $(".thoughts-loading").hide();
-	alreadyLoading = false;
 }
 
 function addThoughts(ajaxUrl, isScroll){
+	$(".thoughts-loading").show();
+	$('#thoughts-form-list-id').attr("disabled", "disabled");
+	
+	// delay = 5000;
+	// setTimeout(function(){	
 	$.ajax({
 		url: ajaxUrl,
 		success: function(thoughtBubbleList){
 			// $(".thoughts-loading").hide();
 			var thoughtList = JSON.parse(thoughtBubbleList);
 			var len = thoughtList.length;
-						
+			
 			if(len){
 				for(var i=0; i<len; i++){
 					var id = thoughtList[i].thought_bubble_id;
@@ -71,7 +84,7 @@ function addThoughts(ajaxUrl, isScroll){
 					var inserted_on = thoughtList[i].inserted_on;
 					
 					$("#thought-item-framework > .thought-item > .thought-title").text(title);
-					$("#thought-item-framework > .thought-item > .thought-body").text(body);
+					$("#thought-item-framework > .thought-item > .thought-body").html(body);
 					$("#thought-item-framework > .thought-item > .thought-footer").text(inserted_on);			
 					$("#thought-item-framework > .thought-item").attr('thoughtBubbleId', id);			
 
@@ -81,13 +94,21 @@ function addThoughts(ajaxUrl, isScroll){
 			}
 			else{
 				if(!isScroll)
-					$('.all-thoughts').append("None");	
+					$('.all-thoughts').append("This lake is calm, peaceful, and conducive to pebble skipping.");
 			}
 			$(".thoughts-loading").hide();
+			
+			// if(!isScroll)
+			$('#thoughts-form-list-id').attr("disabled", false);
+			alreadyLoading = false;
 		},
 		error: function(){
 			alert("Whoops, something went wrong. Could you refresh? Thanks.");
 			$(".thoughts-loading").hide();
+			alreadyLoading = false;
 		}
 	});
+	// }, delay);	
+	
+	
 }

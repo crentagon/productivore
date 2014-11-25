@@ -48,7 +48,6 @@
 		<?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm', array(
 			'id'=>'achievements-form',
 			'type'=>'horizontal',
-			'enableClientValidation'=>true,
 			'clientOptions'=>array(
 				'validateOnSubmit'=>true,
 			),

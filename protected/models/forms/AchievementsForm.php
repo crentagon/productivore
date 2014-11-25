@@ -21,10 +21,10 @@ class AchievementsForm extends CFormModel
 	public function rules()
 	{
 		return array(
-			array('achievement_condition, achievement_rewards', 'required'),
-			array('achievement_name', 'safe'),
+			array('achievement_condition, achievement_rewards, achievement_name', 'required'),
+			// array('achievement_name', 'safe'),
 			array('achievement_rewards', 'numerical', 'min'=>100, 'max'=>1000),
-			array('achievement_rewards, achievement_condition', 'validateForm'),
+			array('achievement_name, achievement_rewards, achievement_condition', 'validateForm'),
 		);
 	}
 	
@@ -32,6 +32,9 @@ class AchievementsForm extends CFormModel
 	{
 		$fields = array();
 		$error_message = '';
+		if(trim($this->achievement_name) == ''){
+			$fields[] = 'Achievement Title';
+		}
 		if(trim($this->achievement_condition) == ''){
 			$fields[] = 'Achievement Condition';
 		}
