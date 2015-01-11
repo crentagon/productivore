@@ -1,7 +1,30 @@
 <?php
 
+/**
+ * This is the controller class for Productivore's base page.
+ *
+ * The following are the functions available in the controller:
+ * @property function actionIndex
+ * @property function actionLogin
+ * @property function actionLogout
+ * @property function actionTest
+ * @property function actionError
+ * @property function actionSignup
+ * @property function actionApplings
+ * @property function actionSettings
+ *
+ * The following are AJAX functions:
+ * @property ajax_function actionUpdate_favorites
+ * @property ajax_function actionUpdate_sidebarFields
+ */
+
 class SiteController extends Controller
 {
+
+	/**
+	 * This is the default 'index' action that is invoked
+	 * when an action is not explicitly requested by users.
+	 */	
 	public function __construct(){
 		$this->loadStyles('home.css');
 		$this->loadScripts('home.js');
