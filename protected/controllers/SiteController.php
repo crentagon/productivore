@@ -1,39 +1,38 @@
 <?php
 
 /**
- * This is the controller class for Productivore's base page.
+ * SiteController is a controller class for Productivore's backbone pages.
  *
- * The following are the functions available in the controller:
- * @property function actionIndex
- * @property function actionLogin
- * @property function actionLogout
- * @property function actionTest
- * @property function actionError
- * @property function actionSignup
- * @property function actionApplings
- * @property function actionSettings
+ * SiteController is a class which allows the users to access the index,
+ * login, signup, and logout pages. Once the user has logged in, they can
+ * access the applings and settings pages. The applings page show the user the 
+ * applings that they can access, while the settings page allows the user
+ * to change their login information such as username and password.
  *
- * The following are AJAX functions:
- * @property ajax_function actionUpdate_favorites
- * @property ajax_function actionUpdate_sidebarFields
+ * @author 	Kiefer Yap <kiefer.yap@gmail.com> 
+ *
  */
 
 class SiteController extends Controller
 {
 
 	/**
-	 * This is the default 'index' action that is invoked
-	 * when an action is not explicitly requested by users.
-	 */	
-	public function __construct(){
+	* The constructor, which loads the CSS and the JavaScript.
+	* It also sets the applingId of the controller.
+	* In this case, 0.
+	*/
+	public function __construct() {
 		$this->loadStyles('home.css');
 		$this->loadScripts('home.js');
 		$this->applingId = 0;
 		parent::__construct();
 	}
 
-	public function actionIndex()
-	{
+	/**
+	 * The default 'index' action that is invoked
+	 * when an action is not explicitly requested.
+	 */	
+	public function actionIndex() {
 		if(Yii::app()->user->isGuest){
 			$this->setupPage('Preview - Productivore');	
 			$this->render('preview');
@@ -46,11 +45,22 @@ class SiteController extends Controller
 		}
 	}	
 	
-	//Accessing: http://localhost/productivore/productivore/site/update_sidebarfields
-	public function actionUpdate_sidebarFields($fieldid = null, $valueid = null){
+	/**
+	 * The update sidebar action.
+	 *
+	 * This method is invoked via AJAX when the
+	 * user updates a sidebar field. The parameters
+	 * are passed using POST. To access this function,
+	 * /productivore/productivore/site/update_sidebarfields
+	 *
+	 * @param integer the fields View, Sorting 
+	 * @param integer the value of the fields List/Grid View, By Favorites/Alphabetical
+	 *
+	 */
+	public function actionUpdate_sidebarFields($fieldid = null, $valueid = null) {
 		if(!Yii::app()->user->isGuest){
 			if($fieldid == null || $valueid == null){
-				Yii::app()->user->setFlash('error','Something\'s definitely not right here. You\'re not trying to hack the system, are you?');		
+				Yii::app()->user->setFlash('error','Something\'s definitely not right here.');		
 				$this->render('preview');
 			}
 			$update = array($fieldid=>$valueid); //setting_field_id, field_value_map_id
@@ -68,8 +78,21 @@ class SiteController extends Controller
 		}
 	}
 	
-	//Accessing: http://localhost/productivore/productivore/site/update_favorites?applingId=1&isfavorite=0
-	public function actionUpdate_favorites($applingId = null, $isfavorite = null){
+	/**
+	 * The update favorites action.
+	 *
+	 * This method is invoked via AJAX when the
+	 * user marks (or unmarks) an appling as a favorite.
+	 * The parameters are passed using POST.
+	 * To access this function,
+	 * /productivore/productivore/site/update_favorites
+	 *
+	 * @param integer the id of the appling to mark/unmark as a favorite
+	 * @param boolean true if the user wants to mark as favorite,
+	 * false if otherwise
+	 *
+	 */
+	public function actionUpdate_favorites($applingId = null, $isfavorite = null) {
 		if(!Yii::app()->user->isGuest){
 			if($applingId == null || $isfavorite == null){
 				Yii::app()->user->setFlash('error','Something\'s definitely not right here. You\'re not trying to hack the system, are you?');		
@@ -88,22 +111,32 @@ class SiteController extends Controller
 		}
 	}
 	
-	public function actionLogin(){
+	/**
+	 * The login action.
+	 *
+	 * This method allows users to login.
+	 */
+	public function actionLogin() {
+
+		// In order to login, the user must not have logged in already
 		if(Yii::app()->user->isGuest){
+
+			// Setting the page up for the breadcrumbs
 			$this->setupPage('Login - Productivore', array(
 				'Login' => BASE_URL.'/site/login'
 			));
 		
+			// Set up the model for the form
 			$model=new LoginForm;
 
-			// if it is ajax validation request
+			// Check if it is ajax validation request
 			if(isset($_POST['ajax']) && $_POST['ajax']==='login-form')
 			{
 				echo CActiveForm::validate($model);
 				Yii::app()->end();
 			}
 
-			// collect user input data
+			// Check user input data
 			if(isset($_POST['LoginForm']))
 			{
 				$model->attributes=$_POST['LoginForm'];
@@ -113,9 +146,12 @@ class SiteController extends Controller
 					$this->redirect(Yii::app()->user->returnUrl);
 				}
 			}
-			// display the login form
+
+			// Display the login form
 			$this->render('login', array('model'=>$model));
 		}
+		
+		// If the user is already logged in
 		else{
 			Yii::app()->user->setFlash('warning','You are already logged in, '.Yii::app()->user->getName().'.');	
 			$helper = new HomeHelper;			
@@ -124,21 +160,74 @@ class SiteController extends Controller
 		}
 	}
 	
-	public function actionLogout()
-	{
+	/**
+	 * The logout action.
+	 *
+	 * This method allows users to logout.
+	 */
+	public function actionLogout() {
+
+		// Is the user logged in?
 		if(!Yii::app()->user->isGuest){
 			$this->setupPage('Productivore');
 			Yii::app()->user->logout();
 			$this->isLoggingOut = true;
 		}
+
 		else{
 			Yii::app()->user->setFlash('warning','You are not logged in.');
 		}
+
 		$this->actionIndex();
-		// $this->redirect(Yii::app()->homeUrl);
+	}
+
+	/**
+	 * The signup action.
+	 *
+	 * Allows users to signup.
+	 */
+	public function actionSignup() {
+
+		// Breadcrumbs
+		$this->setupPage('Signup - Productivore', array(
+			'Signup' => BASE_URL.'/site/signup'
+		));
+
+		// Is the user already logged in?
+		if (!Yii::app()->user->isGuest) {
+			Yii::app()->user->setFlash('warning','You are already logged in, '.Yii::app()->user->getName().'.');
+			$this->redirect(Yii::app()->user->returnUrl);
+		}
+		
+		// Set up the sign up form
+		$model = new SignupForm;
+
+		// Validate user input
+		if(isset($_POST['ajax']) && $_POST['ajax']==='signup-form')
+		{
+			echo CActiveForm::validate($model);
+			Yii::app()->end();
+		}
+
+		// Sign up
+		if(isset($_POST['SignupForm']))
+		{
+			$model->attributes=$_POST['SignupForm'];
+			if($model->validate() && $model->signup()){
+				Yii::app()->user->setFlash('success','Sign up successful.<br/>You may now login with your credentials.');
+				$this->redirect(Yii::app()->user->returnUrl);
+			}
+		}
+
+		$this->render('signup', array('model'=>$model));	
 	}
 	
-	public function actionTest(){
+	/**
+	 * The test action.
+	 *
+	 * This method is only for testing purposes.
+	 */
+	public function actionTest() {
 		$this->setupPage('Test Page');
 		// echo Yii::app()->user->getId();
 		// echo '>>>';
@@ -182,8 +271,12 @@ class SiteController extends Controller
 		$this->render('preview');
 	}
 	
-	public function actionError()
-	{
+	/**
+	 * The error action.
+	 *
+	 * This is for website error messages.
+	 */
+	public function actionError() {
 		$this->loadStyles('error.css');
 		$this->setupPage('Error - Productivore');
 		
@@ -196,41 +289,12 @@ class SiteController extends Controller
 		}
 	}
 	
-	public function actionSignup(){
-		$this->setupPage('Signup - Productivore', array(
-			'Signup' => BASE_URL.'/site/signup'
-		));
-		
-		if (!Yii::app()->user->isGuest) {
-			Yii::app()->user->setFlash('warning','You are already logged in, '.Yii::app()->user->getName().'.');
-			$this->redirect(Yii::app()->user->returnUrl);
-		}
-		
-		$model = new SignupForm;
-
-		if(isset($_POST['ajax']) && $_POST['ajax']==='signup-form')
-		{
-			echo CActiveForm::validate($model);
-			Yii::app()->end();
-		}
-
-		if(isset($_POST['SignupForm']))
-		{
-			$model->attributes=$_POST['SignupForm'];
-			if($model->validate() && $model->signup()){
-				// $this->appendFlashMessage('success', 'Sign up successful.<br/>You may now login with your credentials.');
-				Yii::app()->user->setFlash('success','Sign up successful.<br/>You may now login with your credentials.');
-				$this->redirect(Yii::app()->user->returnUrl);
-			}
-			// Yii::app()->user->setFlash('error','Sign up failed.<br/>Please check the input fields and try again.');
-		}
-
-		$this->render('signup', array('model'=>$model));
-		
-		
-	}
-	
-	public function actionApplings(){
+	/**
+	 * The appling action.
+	 *
+	 * Lists all the applings of the current user.
+	 */
+	public function actionApplings() {
 		if(Yii::app()->user->isGuest){
 			throw new CHttpException(404,'The page could not be found.');
 		}
@@ -242,7 +306,13 @@ class SiteController extends Controller
 		}
 	}
 	
-	public function actionSettings(){
+	/**
+	 * The appling action.
+	 *
+	 * Allows the user to change their login information,
+	 * such as username and password.
+	 */
+	public function actionSettings() {
 		$this->setupPage('Settings - Productivore', array(
 			'Settings' => BASE_URL.'/site/settings'
 		));
@@ -281,7 +351,6 @@ class SiteController extends Controller
 		// print_r($userCredentials);
 		// die();
 
-		$this->render('settings', array('model'=>$model));
-		
+		$this->render('settings', array('model'=>$model));	
 	}
 }
