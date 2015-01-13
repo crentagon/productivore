@@ -48,19 +48,21 @@
 		<?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm', array(
 			'id'=>'achievements-form',
 			'type'=>'horizontal',
+			'enableClientValidation'=>true,
 			'clientOptions'=>array(
 				'validateOnSubmit'=>true,
 			),
 		)); ?>
 		<div class="add-achievement-name-container">
 			<?php echo $form->textFieldRow($model,'achievement_name', array('class'=>'input-achievement-name', 'placeholder'=>'Achievement Title (e.g.: "Marathon Master")', 'autocomplete'=>'off', 'maxlength'=>64)); ?>
-			<input type="text" value="550" name="AchievementsForm[achievement_rewards]" id="achievement-form-reward-points" placeholder="Reward" autocomplete="off"/>
+			<?php echo $form->textFieldRow($model,'achievement_rewards', array('value'=>'100', 'autocomplete'=>'off', 'placeholder'=>'Reward')); ?>
+			<!-- <input type="text" value="100" name="AchievementsForm[achievement_rewards]" id="AchievementsForm_achievement_rewards" placeholder="Reward" autocomplete="off"/> -->
 			<div id="label-points">
 			points
 			</div>
 		</div>
 		<div class="add-achievement-condition-container">
-			<?php echo $form->textArea($model,'achievement_condition', array('class'=>'input-achievement-condition', 'placeholder'=>'Achievement Condition (e.g.: "Successfully complete a full 26-mile marathon.")', 'maxlength'=>256)); ?>
+			<?php echo $form->textAreaRow($model,'achievement_condition', array('class'=>'input-achievement-condition', 'placeholder'=>'Achievement Condition (e.g.: "Successfully complete a full 26-mile marathon.")', 'maxlength'=>256)); ?>
 		</div>
 		<div id="just-a-slider" class="dragdealer dragger">
 			<div class="hp-bar-container">

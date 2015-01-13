@@ -7,6 +7,7 @@
 	<?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm', array(
 		'id'=>'thoughts-form',
 		'type'=>'horizontal',
+		'enableClientValidation'=>true,
 		'clientOptions'=>array(
 			'validateOnSubmit'=>true,
 		),
@@ -20,7 +21,7 @@
 		</select>
 	</div>
 	<div class="add-thought-body-container">
-		<?php echo $form->textArea($model,'thought_body', array('class'=>'input-thought-body', 'placeholder'=>'What are you thinking of today?', 'autocomplete'=>'off')); ?>
+		<?php echo $form->textAreaRow($model,'thought_body', array('class'=>'input-thought-body', 'placeholder'=>'What are you thinking of today?', 'autocomplete'=>'off')); ?>
 	</div>
 	<div class="clear-both"></div>
 	<div class="cushion-20"></div>

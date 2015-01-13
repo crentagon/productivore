@@ -2,8 +2,10 @@
 
 /**
  * LoginForm class.
+ *
  * LoginForm is the data structure for keeping
- * user login form data. It is used by the 'login' action of 'SiteController'.
+ * user login form data. It is used by the 
+ * 'login' action of 'SiteController'.
  */
 class LoginForm extends CFormModel
 {
@@ -21,11 +23,8 @@ class LoginForm extends CFormModel
 	public function rules()
 	{
 		return array(
-			// username and password are required
 			array('username, password', 'required'),
-			// rememberMe needs to be a boolean
 			array('rememberMe', 'boolean'),
-			// password needs to be authenticated
 			array('password', 'authenticate'),
 		);
 	}

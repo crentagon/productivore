@@ -52,8 +52,12 @@
 	left: 0px;
 	box-sizing: border-box;
 }
-.add-achievement-name-container > .control-group{
+.add-achievement-name-container > .control-group:first-child{
 	width: 85%;
+	float:left;
+}
+.add-achievement-name-container > .control-group:nth-last-child(2){
+	width: 8%;
 	float:left;
 }
 
@@ -71,7 +75,7 @@
 	height: 100%;
 	border-bottom: 0px;
 }
-.add-achievement-name-container #achievement-form-reward-points{
+.add-achievement-name-container #AchievementsForm_achievement_rewards{
 	border: 1px solid #CACACA;
 	border-bottom: 0px solid #CACACA;
 	border-left: 0px solid #CACACA;
@@ -80,7 +84,7 @@
 	border-radius: 0px 0px 0px 0px;
 	-moz-border-radius: 0px;
 	-webkit-border-radius: 0px;
-	width: 8%;
+	width: 100%;
 	height: 100%;
 	position: relative;
 	box-sizing: border-box;

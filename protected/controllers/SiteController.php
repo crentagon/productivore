@@ -242,32 +242,32 @@ class SiteController extends Controller
 		// Yii::app()->user->setFlash('success','much success');
 		// Yii::app()->user->setFlash('error','another error');
 		
-		$kiefer = array();
+		// $kiefer = array();
 				
 		//Dreams and aspirations, languages you can speak, hobbies and interests
 		
-		$kiefer['ThingsKieferEnjoys']['activity'] = 'Coding for fun';
-		$kiefer['ThingsKieferEnjoys']['creativity'] = 'Drawing and doodling around';
-		$kiefer['ThingsKieferEnjoys']['social'] = 'Hanging out with friends';
-		$kiefer['ThingsKieferEnjoys']['recreational'] = 'Games (board games, video games, etc.)';
-		$kiefer['ThingsKieferEnjoys']['physical'] = 'A good jog';
-		$kiefer['ThingsKieferEnjoys']['dreams'] = 'Exploring and travelling around the world';
+		// $kiefer['ThingsKieferEnjoys']['activity'] = 'Coding for fun';
+		// $kiefer['ThingsKieferEnjoys']['creativity'] = 'Drawing and doodling around';
+		// $kiefer['ThingsKieferEnjoys']['social'] = 'Hanging out with friends';
+		// $kiefer['ThingsKieferEnjoys']['recreational'] = 'Games (board games, video games, etc.)';
+		// $kiefer['ThingsKieferEnjoys']['physical'] = 'A good jog';
+		// $kiefer['ThingsKieferEnjoys']['dreams'] = 'Exploring and travelling around the world';
 		
-		$kiefer['Personality']['much'] = 'introvert';
-		$kiefer['Personality']['such'] = 'calm';
-		$kiefer['Personality']['very'] = 'chill';
-		$kiefer['Personality']['wow'] = 'WOW';
+		// $kiefer['Personality']['much'] = 'introvert';
+		// $kiefer['Personality']['such'] = 'calm';
+		// $kiefer['Personality']['very'] = 'chill';
+		// $kiefer['Personality']['wow'] = 'WOW';
 		
-		$kiefer['ExtraCurriculars']['partTimeJob'] = 'CRS Programmer';
-		$kiefer['ExtraCurriculars']['exchangeStudent'] = 'Tokyo, Japan (April 2011 to Jan 2012)';
+		// $kiefer['ExtraCurriculars']['partTimeJob'] = 'CRS Programmer';
+		// $kiefer['ExtraCurriculars']['exchangeStudent'] = 'Tokyo, Japan (April 2011 to Jan 2012)';
 		
-		$kiefer['InternetPresence']['tumblr'] = 'http://crentagon.tumblr.com';
-		$kiefer['InternetPresence']['deviantArt'] = 'http://crentagon.deviantart.com';
-		$kiefer['InternetPresence']['askBlog'] = 'http://askawesomenitedragonite.tumblr.com';
-		$kiefer['InternetPresence']['aboutMe'] = 'http://about.me/kiefer.yap';
+		// $kiefer['InternetPresence']['tumblr'] = 'http://crentagon.tumblr.com';
+		// $kiefer['InternetPresence']['deviantArt'] = 'http://crentagon.deviantart.com';
+		// $kiefer['InternetPresence']['askBlog'] = 'http://askawesomenitedragonite.tumblr.com';
+		// $kiefer['InternetPresence']['aboutMe'] = 'http://about.me/kiefer.yap';
 		
-		$this->debugPrint($kiefer);
-		die();
+		// $this->debugPrint($kiefer);
+		// die();
 		
 		
 		Yii::app()->user->setFlash('success','so much success');

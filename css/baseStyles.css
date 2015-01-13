@@ -8,6 +8,11 @@
 	background: #121212;
 	color: #FFFFFF;
 }
+
+.help-inline .error{
+	display: none;
+}
+
 .text-align-center{
 	text-align: center;
 }

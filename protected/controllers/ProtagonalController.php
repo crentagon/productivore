@@ -56,7 +56,7 @@ class ProtagonalController extends Controller
 				Yii::app()->user->setFlash('success','Congratulations! You have added a new item to your achievement list.');
 				$model->achievement_name = '';
 				$model->achievement_condition = '';
-				$model->achievement_rewards = 550;
+				$model->achievement_rewards = 100;
 			}
 		}
 		

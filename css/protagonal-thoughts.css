@@ -75,6 +75,10 @@
 	position: relative;
 }
 
+.add-thought-body-container > .control-group > .controls{
+	margin-left: 0px;
+}
+
 .jqte_editor, .jqte_source {
 	resize: none;
 }

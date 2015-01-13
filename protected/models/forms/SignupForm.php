@@ -1,9 +1,11 @@
 <?php
 
 /**
- * LoginForm class.
- * LoginForm is the data structure for keeping
- * user login form data. It is used by the 'login' action of 'SiteController'.
+ * SignupForm class.
+ *
+ * SignupForm is the data structure for keeping
+ * user signup information. It is used by the
+ * 'signup' action of 'SiteController'.
  */
 class SignupForm extends CFormModel
 {

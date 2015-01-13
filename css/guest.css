@@ -29,6 +29,9 @@ html body{
 	padding-bottom: 20px;
 }
 
+.control-group > .controls > .help-inline{
+	display: none;
+}
 
 html{
 	height: 100%;

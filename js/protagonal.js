@@ -19,7 +19,7 @@ $(document).ready(function(){
 		  animationCallback: function(x, y) {
 			var sliderText = Math.round((x*900)+100);
 			$('#just-a-slider > .handle > .value').text(sliderText+" pts");
-			$('#achievement-form-reward-points').val(sliderText);
+			$('#AchievementsForm_achievement_rewards').val(sliderText);
 			
 			var width = x*100;
 			var opacity = x;
@@ -42,7 +42,7 @@ $(document).ready(function(){
 			
 		rewardDealer.setValue(0, 0, true);
 	
-		$(document).on('keyup', '#achievement-form-reward-points', function(){
+		$(document).on('keyup', '#AchievementsForm_achievement_rewards', function(){
 			var sliderVal = $(this).val();
 			if(sliderVal <= 1000 && sliderVal >= 100){
 				sliderText = (sliderVal-100)/900;
