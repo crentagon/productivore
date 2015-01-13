@@ -133,22 +133,18 @@ class ProtagonalController extends Controller
 	 * @param integer the id of the list to be loaded
 	 *
 	 */
-	public function actionGetNextThoughtBubblesAjax($startingThoughtBubbleId, $listId) {
+	public function actionGetNextThoughtBubblesAjax() {
+		$startingThoughtBubbleId = $_POST['startingThoughtBubbleId'];
+		$isScroll = $_POST['isScroll'];
+		$listId = $_POST['listid'];
+
 		$userId = Yii::app()->user->getId();
 		$protagonalHelper = new ProtagonalHelper;
 		$thoughtBubbleList = $protagonalHelper->get_thoughtbubbles_byUserIdListIdThoughtBubbleId($userId, $listId, $startingThoughtBubbleId);
-		echo json_encode($thoughtBubbleList);
-	}
-	
-	/**
-	 * TO-DO: Merge this function with the one above
-	 * http://localhost/productivore/protagonal/getNextThoughtBubblesByListIdAjax/listId/1/
-	 */
-	public function actionGetNextThoughtBubblesByListIdAjax($listId) {
-		$userId = Yii::app()->user->getId();
-		$protagonalHelper = new ProtagonalHelper;
-		$thoughtBubbleList = $protagonalHelper->get_thoughtbubbles_byUserIdListIdThoughtBubbleId($userId, $listId);
-		$protagonalHelper->setActiveThoughtList($userId, $listId);
+		
+		if(!$isScroll)
+			$protagonalHelper->setActiveThoughtList($userId, $listId);
+
 		echo json_encode($thoughtBubbleList);
 	}
 	
@@ -167,8 +163,12 @@ class ProtagonalController extends Controller
 	 * @param the new value of the field to be updated
 	 *
 	 */
-	public function actionEditAchievementFieldAjax($field, $achievementId, $value = null) {
+	public function actionEditAchievementFieldAjax() {
 		$requiredFields = array('achievement_condition', 'achievement_rewards');
+
+		$achievementId = $_POST['id'];
+		$field = $_POST['field'];
+		$value = $_POST['value'];
 	
 		if(in_array($field, $requiredFields)){
 			if($value == null || $value == ''){
@@ -183,7 +183,7 @@ class ProtagonalController extends Controller
 			$achievements->save();
 		}
 		
-		echo json_encode(array('success'=>'The field '.$field.' has successfully been updated.'));	
+		echo json_encode(array('success'=>'Update successful.'));	
 	}
 	
 	/**
@@ -198,7 +198,8 @@ class ProtagonalController extends Controller
 	 * @param integer the id of the achievement to be deleted
 	 *
 	 */
-	public function actionDeleteAchievementAjax($achievementId) {
+	public function actionDeleteAchievementAjax() {
+		$achievementId = $_POST['achievementId'];
 		if($achievementId != null){
 			$achievements = Achievements::model()->deleteByPk($achievementId);
 		}
@@ -216,7 +217,8 @@ class ProtagonalController extends Controller
 	 * @param integer the id of the achievement to be marked.
 	 *
 	 */
-	public function actionMarkAsCompleteAjax($achievementId){
+	public function actionMarkAsCompleteAjax(){
+		$achievementId = $_POST['achievementId'];
 		if($achievementId != null){
 			$achievements = Achievements::model()->findByPk($achievementId);
 			$achievements->is_completed = 1;

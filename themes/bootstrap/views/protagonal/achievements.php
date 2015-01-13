@@ -100,7 +100,7 @@
 					<div class="ua-body">
 						<div class="achievement-name">
 							<span class="editable-text-parent"
-								ajaxUrl="<?echo BASE_URL?>/protagonal/editachievementfieldajax/field/:field/achievementId/:id/value/:value"
+								ajaxUrl="<?echo BASE_URL?>/protagonal/editachievementfieldajax/"
 								ajaxId="<?echo $achievement['achievement_id']?>"
 								ajaxField="achievement_name"
 							>
@@ -117,7 +117,7 @@
 						</div>
 						<div class="achievement-condition">
 							<span class="editable-textarea-parent"
-								ajaxUrl="<?echo BASE_URL?>/protagonal/editachievementfieldajax/field/:field/achievementId/:id/value/:value"
+								ajaxUrl="<?echo BASE_URL?>/protagonal/editachievementfieldajax/"
 								ajaxId="<?echo $achievement['achievement_id']?>"
 								ajaxField="achievement_condition"
 							>
@@ -135,7 +135,7 @@
 						<div class="completion-notes">
 							Completion Notes: 
 								<span class="editable-text-parent"
-									ajaxUrl="<?echo BASE_URL?>/protagonal/editachievementfieldajax/field/:field/achievementId/:id/value/:value"
+									ajaxUrl="<?echo BASE_URL?>/protagonal/editachievementfieldajax/"
 									ajaxId="<?echo $achievement['achievement_id']?>"
 									ajaxField="completion_notes"
 								>
@@ -152,7 +152,7 @@
 						</div>
 						<div class="cushion-5"></div>
 						<div class="ua-point-slider-container"
-							ajaxUrl="<?echo BASE_URL?>/protagonal/editachievementfieldajax/field/:field/achievementId/:id/value/:value"
+							ajaxUrl="<?echo BASE_URL?>/protagonal/editachievementfieldajax/"
 							ajaxId="<?echo $achievement['achievement_id']?>"
 							ajaxField="achievement_rewards"
 						>

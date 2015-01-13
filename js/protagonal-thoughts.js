@@ -6,7 +6,7 @@ $(document).ready(function(){
 	$('#list-last-accessed').text($('#thoughts-form-list-id option:selected').text());
 	$('#thoughts-form-list-id').change(function(){
 		var listId = $('#thoughts-form-list-id option:selected').val();
-		changeThoughtBubbleContent(listId);
+		addThoughts(isScroll=false, listId);
 	});	
 	
 	$('.list-item, .list-item-selected').click(function(){
@@ -15,14 +15,15 @@ $(document).ready(function(){
 			var listId = $(this).attr('thoughtListid');
 			
 			$('#thoughts-form-list-id').val(listId);
-			changeThoughtBubbleContent(listId);
+			addThoughts(isScroll=false, listId);
 		}
 	});
 	
 	$(window).scroll(function(){
 		if($(window).scrollTop() + $(window).height() > $(document).height()-50 && !alreadyLoading) {
 			alreadyLoading = true;
-			endlessScrollThoughts();
+			var listId = $('#thoughts-form-list-id option:selected').val();
+			addThoughts(isScroll=true, listId);
 		}
 		
 		if($(window).scrollTop() >= 250){
@@ -40,37 +41,30 @@ $(document).ready(function(){
 	C_BASEURL = $('#BASE_URL').val();
 });
 
-function changeThoughtBubbleContent(listId){
-	var ajaxUrl = C_BASEURL+"/protagonal/getNextThoughtBubblesByListIdAjax/listId/"+listId+"/";
-	
-	$('.list-item-selected').attr('class', 'list-item');
-	$('#thought-list-id-'+listId).attr('class', 'list-item-selected');
-	$('#list-last-accessed').text($('#thoughts-form-list-id option:selected').text());
+function addThoughts(isScroll, listId){
+	var ajaxUrl = C_BASEURL+"/protagonal/GetNextThoughtBubblesAjax";
+	var startingThoughtBubbleId = isScroll ? $('.thought-item').last().attr('thoughtBubbleId') : null;
 
-	$('.all-thoughts').html('');
-	
-	addThoughts(ajaxUrl, false);
-}
+	if(!isScroll) {
+		$('.all-thoughts').html('');
+		$('.list-item-selected').attr('class', 'list-item');
+		$('#thought-list-id-'+listId).attr('class', 'list-item-selected');
+		$('#list-last-accessed').text($('#thoughts-form-list-id option:selected').text());
+	}
 
-function endlessScrollThoughts(){
-	var thoughtBubbleId = $('.thought-item').last().attr('thoughtBubbleId');
-	var listId = $('#thoughts-form-list-id option:selected').val();
-	var ajaxUrl = C_BASEURL+"/protagonal/getNextThoughtBubblesAjax/startingThoughtBubbleId/"+thoughtBubbleId+"/listId/"+listId+"/";
-
-	addThoughts(ajaxUrl, true);
-	
-	// alert("Hiding the loading GIF.");
-	// $(".thoughts-loading").hide();
-}
-
-function addThoughts(ajaxUrl, isScroll){
 	$(".thoughts-loading").show();
 	$('#thoughts-form-list-id').attr("disabled", "disabled");
 	
 	// delay = 5000;
 	// setTimeout(function(){	
 	$.ajax({
+		type: 'POST',
 		url: ajaxUrl,
+		data: {
+			'startingThoughtBubbleId': startingThoughtBubbleId,
+			'listid': listId,
+			'isScroll': isScroll
+		},
 		success: function(thoughtBubbleList){
 			// $(".thoughts-loading").hide();
 			var thoughtList = JSON.parse(thoughtBubbleList);

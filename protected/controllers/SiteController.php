@@ -51,14 +51,17 @@ class SiteController extends Controller
 	 * This method is invoked via AJAX when the
 	 * user updates a sidebar field. The parameters
 	 * are passed using POST. To access this function,
-	 * /productivore/productivore/site/update_sidebarfields
+	 * /productivore/site/update_sidebarfieldsajax
 	 *
 	 * @param integer the fields View, Sorting 
 	 * @param integer the value of the fields List/Grid View, By Favorites/Alphabetical
 	 *
 	 */
-	public function actionUpdate_sidebarFields($fieldid = null, $valueid = null) {
+	public function actionUpdate_sidebarFieldsAjax() {
 		if(!Yii::app()->user->isGuest){
+			$fieldid = $_POST['fieldid'];
+			$valueid = $_POST['valueid'];
+
 			if($fieldid == null || $valueid == null){
 				Yii::app()->user->setFlash('error','Something\'s definitely not right here.');		
 				$this->render('preview');
@@ -85,15 +88,18 @@ class SiteController extends Controller
 	 * user marks (or unmarks) an appling as a favorite.
 	 * The parameters are passed using POST.
 	 * To access this function,
-	 * /productivore/productivore/site/update_favorites
+	 * /productivore/site/update_favoritesajax
 	 *
 	 * @param integer the id of the appling to mark/unmark as a favorite
 	 * @param boolean true if the user wants to mark as favorite,
 	 * false if otherwise
 	 *
 	 */
-	public function actionUpdate_favorites($applingId = null, $isfavorite = null) {
+	public function actionUpdate_favoritesAjax() {
 		if(!Yii::app()->user->isGuest){
+			$applingId = $_POST['applingid'];
+			$isfavorite = $_POST['isfavorite'];
+
 			if($applingId == null || $isfavorite == null){
 				Yii::app()->user->setFlash('error','Something\'s definitely not right here. You\'re not trying to hack the system, are you?');		
 				$this->render('preview');

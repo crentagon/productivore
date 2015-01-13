@@ -116,15 +116,21 @@ $(document).ready(function(){
 function deleteAchievement(achievementId, element){
 	$(element).parent().parent().fadeOut(512);
 	
-	var xmlhttp;
-	
-	if (window.XMLHttpRequest)
-		xmlhttp=new XMLHttpRequest();
-	else
-		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-	
-	xmlhttp.open("GET", C_BASEURL+"/protagonal/deleteachievementajax/achievementId/"+achievementId,true);
-	xmlhttp.send();
+	ajaxUrl = C_BASEURL+"/protagonal/deleteachievementajax/";
+
+	$.ajax({
+		type: 'POST',
+		url: ajaxUrl,
+		data: {
+			'achievementId': achievementId
+		},
+		success: function(msg){
+		},
+		error: function(msg){
+			alert('Whoops, looks like something went wrong... \n\n Message: '+msg['responseText']+'\n Refreshing...');
+			location.reload();
+		}
+	});	
 }
 
 function completeAchievement(achievementId, element){
@@ -149,13 +155,19 @@ function completeAchievement(achievementId, element){
 	
 	appendToFlashMessagesFixed(messageText);
 	
-	var xmlhttp;
-	
-	if (window.XMLHttpRequest)
-		xmlhttp=new XMLHttpRequest();
-	else
-		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-	
-	xmlhttp.open("GET", C_BASEURL+"/protagonal/markascompleteajax/achievementId/"+achievementId,true);
-	xmlhttp.send();
+	ajaxUrl = C_BASEURL+"/protagonal/markascompleteajax/";
+
+	$.ajax({
+		type: 'POST',
+		url: ajaxUrl,
+		data: {
+			'achievementId': achievementId
+		},
+		success: function(msg){
+		},
+		error: function(msg){
+			alert('Whoops, looks like something went wrong... \n\n Message: '+msg['responseText']+'\n Refreshing...');
+			location.reload();
+		}
+	});
 }

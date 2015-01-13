@@ -15,6 +15,25 @@ $(document).ready(function() {
 
 	C_BASEURL = $('#BASE_URL').val();
 
+	$('#pvore-notifications-search').keyup(function(){
+		var filter = $(this).val();
+		var searchParam = new RegExp(filter, "gi");
+		
+		$('.pvore-notifications-app-title').each(function(){
+			if($(this).text().search(searchParam) < 0){
+				$(this).parent("div").hide();
+				if($(this).attr('class') == 'pvore-notifications-app-title appling-name-notifications')
+					$(this).parent("div").next().hide();
+				
+			}
+			else{
+				$(this).parent("div").show();
+				if($(this).attr('class') == 'pvore-notifications-app-title appling-name-notifications')
+					$(this).parent("div").next().show();
+			}
+		});
+	});
+
 	//Set the orderby and the viewby
 	setOrderBy();
 	setViewBy();
@@ -71,54 +90,6 @@ $(document).ready(function() {
 	});
 	
 	$(document.body)
-		.on('click', '.ua-point-ok-button', function(){
-			var ajaxUrl = $(this).parent().attr('ajaxUrl');
-			var ajaxId = $(this).parent().attr('ajaxId');
-			var ajaxField = $(this).parent().attr('ajaxField');
-			
-			var temp = $('#points-'+ajaxId).text().split(" ");
-			var ajaxValue = temp[0];
-			ajaxUrl = ajaxUrl.replace(":id", ajaxId).replace(":field", ajaxField).replace(":value", ajaxValue);
-			
-			var xmlhttp;
-	
-			if (window.XMLHttpRequest)
-				xmlhttp=new XMLHttpRequest();
-			else
-				xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-			
-			xmlhttp.onreadystatechange=function(){
-				if (xmlhttp.readyState==4 && xmlhttp.status==200){
-					var json = JSON.parse(xmlhttp.responseText);
-					
-					for(key in json){
-						var messageText = ''+
-							'<div class="flash-msg flash-'+key+' flash-fixed-box-shadow">'+
-								'<div class="flash-icon-container">'+
-									'<span class="flash-icon fa fa-check-circle fa-2x"></span>'+
-								'</div>'+
-									json[key]+
-								'<span class="flash-msg-exit fa fa-times"></span>'+
-							'</div>'+
-						'';
-						appendToFlashMessagesFixed(messageText);
-						
-						if(key == 'error'){
-							window.setTimeout(function(){window.location.reload()}, 2048);
-						}
-					}
-					
-				}
-			}
-			
-			$('#slider-'+ajaxId).parent().parent().fadeOut();
-			
-			xmlhttp.open("GET", ajaxUrl, true);
-			xmlhttp.send();
-			
-			// alert(ajaxUrl+"\n"+ajaxId+"\n"+ajaxField+"\n(("+points+"))");
-			// alert(ajaxUrl);
-		})
 		.on('click', '.editable-text', function(){
 			var current = $(this).html();
 			
@@ -165,7 +136,7 @@ $(document).ready(function() {
 			var ajaxUrl = $(this).parent().attr('ajaxUrl');
 			var ajaxId = $(this).parent().attr('ajaxId');
 			var ajaxField = $(this).parent().attr('ajaxField');
-			var ajaxValue = $(this).parent().children('input').val().replace('/', '&sol;').trim();
+			var ajaxValue = $(this).parent().children('input').val().trim();
 			
 			$('.editing-text').off('click');
 				
@@ -178,20 +149,18 @@ $(document).ready(function() {
 				newValue = '<span class="editable-text">'+$(this).parent().children('input').val().trim()+'</span>';
 			}
 			
-			ajaxUrl = ajaxUrl.replace(":id", ajaxId).replace(":field", ajaxField).replace(":value", ajaxValue);
-			
-			$(this).parent().html(newValue);			
-			
-			var xmlhttp;
-	
-			if (window.XMLHttpRequest)
-				xmlhttp=new XMLHttpRequest();
-			else
-				xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-				
-			xmlhttp.onreadystatechange=function(){
-				if (xmlhttp.readyState==4 && xmlhttp.status==200){
-					var json = JSON.parse(xmlhttp.responseText);
+			$(this).parent().html(newValue);	
+
+			$.ajax({
+				type: 'POST',
+				url: ajaxUrl,
+				data: {
+					'id': ajaxId,
+					'field': ajaxField,
+					'value': ajaxValue
+				},
+				success: function(msg){
+					var json = JSON.parse(msg);
 					
 					for(key in json){
 						var messageText = ''+
@@ -209,17 +178,17 @@ $(document).ready(function() {
 							window.setTimeout(function(){window.location.reload()}, 2048);
 						}
 					}
-					
+				},
+				error: function(msg){
+					alert('Whoops, looks like something went wrong... \n\n Message: '+msg['responseText']+'\n Refreshing...');
+					location.reload();
 				}
-			}
-			
-			xmlhttp.open("GET", ajaxUrl, true);
-			xmlhttp.send();
+			});
 		})
 		.on('click', '.editable-textarea-done', function(){
 			var regex = new RegExp('\n', 'g');
 			
-			var ajaxValue = $(this).parent().children('textarea').val().replace('/', '&sol;').replace(regex, '<br>');
+			var ajaxValue = $(this).parent().children('textarea').val().replace('/', '&sol;').replace(regex, '<br/>');
 			var ajaxId = $(this).parent().attr('ajaxId');
 			var ajaxField = $(this).parent().attr('ajaxField');
 			var ajaxUrl = $(this).parent().attr('ajaxUrl');
@@ -234,20 +203,19 @@ $(document).ready(function() {
 			if(ajaxValue != ''){
 				newValue = '<span class="editable-textarea">'+ajaxValue+'</span>';
 			}
-			ajaxUrl = ajaxUrl.replace(":id", ajaxId).replace(":field", ajaxField).replace(":value", ajaxValue);
 			
-			$(this).parent().html(newValue);			
-			
-			var xmlhttp;
-	
-			if (window.XMLHttpRequest)
-				xmlhttp=new XMLHttpRequest();
-			else
-				xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-				
-			xmlhttp.onreadystatechange=function(){
-				if (xmlhttp.readyState==4 && xmlhttp.status==200){
-					var json = JSON.parse(xmlhttp.responseText);
+			$(this).parent().html(newValue);	
+
+			$.ajax({
+				type: 'POST',
+				url: ajaxUrl,
+				data: {
+					'id': ajaxId,
+					'field': ajaxField,
+					'value': ajaxValue
+				},
+				success: function(msg){
+					var json = JSON.parse(msg);
 					
 					for(key in json){
 						var messageText = ''+
@@ -265,11 +233,12 @@ $(document).ready(function() {
 							window.setTimeout(function(){window.location.reload()}, 2048);
 						}
 					}
+				},
+				error: function(msg){
+					alert('Whoops, looks like something went wrong... \n\n Message: '+msg['responseText']+'\n Refreshing...');
+					location.reload();
 				}
-			}
-			
-			xmlhttp.open("GET", ajaxUrl, true);
-			xmlhttp.send();
+			});		
 			
 		})
 		.on('keyup', '.editing-text', function(e){
@@ -318,26 +287,57 @@ function setOrderBy(){
 }
 
 function updateSidebarSettings(fieldid, valueid){
-	var xmlhttp;
+	ajaxUrl = C_BASEURL+"/site/update_sidebarfieldsajax";
+
+	$.ajax({
+		type: 'POST',
+		url: ajaxUrl,
+		data: {
+			'fieldid': fieldid,
+			'valueid': valueid
+		},
+		success: function(msg){
+		},
+		error: function(msg){
+			alert('Whoops, looks like something went wrong... \n\n Message: '+msg['responseText']+'\n Refreshing...');
+			location.reload();
+		}
+	});	
+}
+
+function toggleFavorite(params, applingId){
+
+	var isfavorite = 0;
 	
-	if (window.XMLHttpRequest)
-		xmlhttp=new XMLHttpRequest();
-	else
-		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-	
-	// xmlhttp.onreadystatechange=function(){
-		// if (xmlhttp.readyState==4 && xmlhttp.status==200){
-			// $('#calendar_invisible').html(xmlhttp.responseText);
-			// get_firstday_bymonthyear(document.getElementById("table_year").innerHTML, document.getElementById("hidden_tablemonth").innerHTML, 0, 1);
-			// alert("Updated!");
-		// }
-		// else{
-			// alert("Updating...: "+fieldid+">>>"+valueid);
-		// }
-	// }
-	
-	xmlhttp.open("GET", C_BASEURL+"/site/update_sidebarfields?fieldid="+fieldid+"&valueid="+valueid,true);
-	xmlhttp.send();
+	// Remove favorite
+	if($(params).attr('class') == 'btn btn-mini btn-warning pvore-appling-settings-btn'){
+		$(params).attr('class', 'btn btn-mini btn-grey pvore-appling-settings-btn');
+		$(params).html('<span class="fa fa-plus"></span> Favorite');
+	}
+
+	// Add favorite
+	else {
+		$(params).attr('class', 'btn btn-mini btn-warning pvore-appling-settings-btn');
+		$(params).html('<span class="fa fa-star"></span> Favorite');
+		isfavorite = 1;
+	}
+
+	ajaxUrl = C_BASEURL+"/site/update_favoritesajax";
+
+	$.ajax({
+		type: 'POST',
+		url: ajaxUrl,
+		data: {
+			'applingid': applingId,
+			'isfavorite': isfavorite
+		},
+		success: function(msg){
+		},
+		error: function(msg){
+			alert('Whoops, looks like something went wrong... \n\n Message: '+msg['responseText']+'\n Refreshing...');
+			location.reload();
+		}
+	});	
 }
 
 function setViewBy(){
