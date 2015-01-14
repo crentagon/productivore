@@ -27,57 +27,26 @@ class AchievementsForm extends CFormModel
 		return array(
 			array('achievement_condition, achievement_rewards, achievement_name', 'required'),
 			array('achievement_rewards', 'numerical', 'min'=>100, 'max'=>1000),
-			// TODO: Length of the textfields
+			array('achievement_name', 'length', 'max'=>64),
+			array('achievement_name', 'length', 'max'=>256),
+		);
+	}
+
+	/**
+	 * Declares attribute labels.
+	 */
+	public function attributeLabels()
+	{
+		return array(
+			'achievement_name'=>'Achievement Title',
+			'achievement_rewards'=>'Reward Points',
 		);
 	}
 	
-	// public function validateForm()
-	// {
-	// 	$fields = array();
-	// 	$error_message = '';
-	// 	if(trim($this->achievement_name) == ''){
-	// 		$fields[] = 'Achievement Title';
-	// 	}
-	// 	if(trim($this->achievement_condition) == ''){
-	// 		$fields[] = 'Achievement Condition';
-	// 	}
-	// 	if(trim($this->achievement_rewards) == ''){
-	// 		$fields[] = 'Achievement Rewards';
-	// 	}
-		
-	// 	if(count($fields) > 0){
-	// 		$temp = '<ul>';
-	// 		foreach($fields as $field){
-	// 			$temp.='<li>'.$field.'</li>';
-	// 		}
-	// 		$temp.= '</ul>';
-			
-	// 		$error_message = 'The following fields need to be filled: '.$temp;
-	// 	}
-		
-	// 	$fields = array();
-	// 	if(strlen($this->achievement_condition) > 256){
-	// 		$fields[] = 'Achievement Condition (256 characters maximum)';
-	// 	}
-	// 	if(strlen($this->achievement_name) > 64){
-	// 		$fields[] = 'Achievement Name (64 characters maximum)';
-	// 	}
-		
-	// 	if(count($fields) > 0){
-	// 		$temp = '<ul>';
-	// 		foreach($fields as $field){
-	// 			$temp.='<li>'.$field.'</li>';
-	// 		}
-	// 		$temp.= '</ul>';
-			
-	// 		$error_message .= 'The character counts of the following fields exceeded their limits: '.$temp;
-	// 	}
-		
-	// 	// echo $error_message.'<<<'; die();
-	// 	if($error_message != '')
-	// 		Yii::app()->user->setFlash('error',$error_message);
-	// }
-	
+	/**
+	 * Adds an achievement target to the database using the model fields.
+	 * @return boolean whether addition is successful
+	 */
 	public function addAchievement(){
 		$achievements = new Achievements;
 		
@@ -91,7 +60,5 @@ class AchievementsForm extends CFormModel
 			return true;
 		}
 		return false;
-	
-		// echo $this->achievement_name.'>>>'.$this->achievement_condition.'>>>'.$this->achievement_rewards; die();
 	}
 }

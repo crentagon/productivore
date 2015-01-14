@@ -46,8 +46,8 @@ class SignupForm extends CFormModel
 	}
 
 	/**
-	 * Logs in the user using the given username and password in the model.
-	 * @return boolean whether login is successful
+	 * Signs the user up given model fields.
+	 * @return boolean whether signup is successful
 	 */
 	public function signup()
 	{

@@ -44,8 +44,8 @@ class SignupxForm extends CFormModel
 	}
 
 	/**
-	 * Logs in the user using the given username and password in the model.
-	 * @return boolean whether login is successful
+	 * Updates user credentials given the model fields.
+	 * @return boolean whether update is successful.
 	 */
 	public function update()
 	{
@@ -59,8 +59,7 @@ class SignupxForm extends CFormModel
 			return false;
 		}
 		
-		//Password is correct: update all fields, return true.
-		
+		//Password is correct: update all fields, return true.		
 		if(!empty($this->newEmail))
 			$user->user_email = $this->newEmail;
 		
@@ -74,18 +73,5 @@ class SignupxForm extends CFormModel
 			Yii::app()->user->setFlash('warning','No changes detected.');
 			return false;
 		}
-		/*
-		$user = new Users;
-		$security = new PasswordSecurity;
-		
-		$user->user_name = $this->user_name;
-		$user->user_password = $security->create_hash($this->password);
-		$user->user_email = $this->user_email;
-		
-		if($user->save()){
-			return true;
-		}
-		return false;
-		*/
 	}
 }

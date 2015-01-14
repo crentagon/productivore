@@ -90,6 +90,52 @@ $(document).ready(function() {
 	});
 	
 	$(document.body)
+		.on('click', '.ua-point-ok-button', function(){
+ 			var ajaxUrl = $(this).parent().attr('ajaxUrl');
+ 			var ajaxId = $(this).parent().attr('ajaxId');
+ 			var ajaxField = $(this).parent().attr('ajaxField');
+ 			
+ 			var temp = $('#points-'+ajaxId).text().split(" ");
+ 			var ajaxValue = temp[0];
+ 			
+ 			$.ajax({
+				type: 'POST',
+				url: ajaxUrl,
+				data: {
+					'id': ajaxId,
+					'field': ajaxField,
+					'value': ajaxValue
+				},
+				success: function(msg){
+					var json = JSON.parse(msg);
+					
+					for(key in json){
+						var messageText = ''+
+							'<div class="flash-msg flash-'+key+' flash-fixed-box-shadow">'+
+								'<div class="flash-icon-container">'+
+									'<span class="flash-icon fa fa-check-circle fa-2x"></span>'+
+								'</div>'+
+									json[key]+
+								'<span class="flash-msg-exit fa fa-times"></span>'+
+							'</div>'+
+						'';
+						appendToFlashMessagesFixed(messageText);
+						
+						if(key == 'error'){
+							window.setTimeout(function(){window.location.reload()}, 2048);
+						}
+					}
+				},
+				error: function(msg){
+					alert('Whoops, looks like something went wrong... \n\n Message: '+msg['responseText']+'\n Refreshing...');
+					location.reload();
+				}
+			});
+
+ 			
+ 			$('#slider-'+ajaxId).parent().parent().fadeOut();
+ 		})
+
 		.on('click', '.editable-text', function(){
 			var current = $(this).html();
 			

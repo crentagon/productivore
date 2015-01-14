@@ -72,6 +72,11 @@ class ProtagonalController extends Controller
 	 * This method allows users to view/add/delete their thought bubbles.
 	 */
 	public function actionThoughts() {
+		$this->setupPage('Protagonal - Thought Bubble', array(
+			'Protagonal' => BASE_URL.'/protagonal',
+			'Thought Bubble' => BASE_URL.'/protagonal/thoughts'
+		));
+
 		$this->loadScripts('protagonal-thoughts.js');
 		$this->loadStyles('protagonal-thoughts.css');
 	

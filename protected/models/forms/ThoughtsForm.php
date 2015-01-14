@@ -24,51 +24,16 @@ class ThoughtsForm extends CFormModel
 	{
 		return array(
 			array('thought_body, list_id, thought_title', 'required'),
+			array('thought_title', 'length', 'max'=>128),
 			// array('thought_title', 'safe'),
 			// array('thought_title, thought_body, list_id', 'validateForm'),
 		);
 	}
 	
-	// public function validateForm()
-	// {
-	// 	$fields = array();
-	// 	$error_message = '';
-	// 	if(trim($this->thought_body) == ''){
-	// 		$fields[] = 'Thought Body';
-	// 	}
-	// 	if(trim($this->thought_title) == ''){
-	// 		$fields[] = 'Thought Title';
-	// 	}
-		
-	// 	if(count($fields) > 0){
-	// 		$temp = '<ul>';
-	// 		foreach($fields as $field){
-	// 			$temp.='<li>'.$field.'</li>';
-	// 		}
-	// 		$temp.= '</ul>';
-			
-	// 		$error_message = 'The following fields need to be filled: '.$temp;
-	// 	}
-		
-	// 	$fields = array();
-	// 	if(strlen($this->thought_title) > 128){
-	// 		$fields[] = 'Thought Title (128 characters maximum)';
-	// 	}
-		
-	// 	if(count($fields) > 0){
-	// 		$temp = '<ul>';
-	// 		foreach($fields as $field){
-	// 			$temp.='<li>'.$field.'</li>';
-	// 		}
-	// 		$temp.= '</ul>';
-			
-	// 		$error_message .= 'The character counts of the following fields exceeded their limits: '.$temp;
-	// 	}
-		
-	// 	if($error_message != '')
-	// 		Yii::app()->user->setFlash('error',$error_message);
-	// }
-	
+	/**
+	 * Adds a new thought bubble given the model fields.
+	 * @return boolean whether adding is successful.
+	 */
 	public function addThoughtEntry(){
 		$thoughtBubbles = new ThoughtBubbles;
 		
