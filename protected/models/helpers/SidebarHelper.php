@@ -63,7 +63,7 @@ class SidebarHelper extends MainHelper
 		return parent::get_settingValues_byFieldId($fieldId);
 	}
 	
-	public function update_settingValues_byUserId($userId = 1, $applingId = 1, $valueArray = array()){
-		return parent::update_settingValues_byUserId($userId, $applingId, $valueArray);
+	public function update_settingValues_byUserId($userId = 1, $applingId = 1, $fieldid, $valueid){
+		return parent::update_settingValues_byUserId($userId, $applingId, $fieldid, $valueid);
 	}
 }

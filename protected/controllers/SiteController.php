@@ -59,20 +59,18 @@ class SiteController extends Controller
 	 */
 	public function actionUpdate_sidebarFieldsAjax() {
 		if(!Yii::app()->user->isGuest){
-			$fieldid = $_POST['fieldid'];
-			$valueid = $_POST['valueid'];
+			$fieldid = $_POST['fieldid']; //setting_field_id
+			$valueid = $_POST['valueid']; //field_value_map_id
 
 			if($fieldid == null || $valueid == null){
 				Yii::app()->user->setFlash('error','Something\'s definitely not right here.');		
 				$this->render('preview');
 			}
-			$update = array($fieldid=>$valueid); //setting_field_id, field_value_map_id
 			$userId = Yii::app()->user->getId(); 
-			// $userId = 1; 
 			$applingId = 0;
 			
 			$userApplings = new SidebarHelper;
-			$userApplings->update_settingValues_byUserId($userId, $applingId, $update);
+			$userApplings->update_settingValues_byUserId($userId, $applingId, $fieldid, $valueid);
 			Yii::app()->end();
 		}
 		else{
