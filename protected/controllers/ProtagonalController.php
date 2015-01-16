@@ -147,7 +147,7 @@ class ProtagonalController extends Controller
 		$protagonalHelper = new ProtagonalHelper;
 		$thoughtBubbleList = $protagonalHelper->get_thoughtbubbles_byUserIdListIdThoughtBubbleId($userId, $listId, $startingThoughtBubbleId);
 		
-		if(!$isScroll)
+		if($isScroll == 'false')
 			$protagonalHelper->setActiveThoughtList($userId, $listId);
 
 		echo json_encode($thoughtBubbleList);

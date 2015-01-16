@@ -3,46 +3,22 @@ class HomeHelper extends MainHelper
 {
 
 	public function get_applings_byUserId($userid = 1, $isAlphabetical = false){
+		$query = 'SELECT * FROM f_applings_byuserid_notifcount(:userid)';		
 		if($isAlphabetical)
-			$order = 'ORDER BY name ASC';
-		else
-			$order = 'ORDER BY notifcount DESC, name ASC';
+			$query = 'SELECT * FROM f_applings_byuserid_alphabetical(:userid)';
 			
-		$query =
-			'SELECT
-				appling_id,
-				appling_name as name,
-				description,
-				appling_url as url,
-				appling_image as image,
-				notification_count as notifcount,
-				access_count as accesscount,
-				is_favorite as isfavorite,
-				appling_message as message
-			FROM
-				applings
-				JOIN user_appling_maps
-				USING (appling_id)
-			WHERE
-				user_id = :userid
-			AND appling_id > 0 '.$order;
 		$params = array('userid'=>$userid);
 		return $this->sql_query($query, $params);
 	}
 	
-	public function update_favoriteApplings_byUserId($userId, $applingId, $isfavorite){
+	public function update_favoriteApplings_byUserId($userId, $applingId, $isFavorite){
 			
-		$query = '
-			UPDATE user_appling_maps
-			SET is_favorite = :isfavorite
-			WHERE user_id = :userId
-			AND appling_id = :applingId
-		';
+		$query = 'SELECT * FROM p_setfavorite(:isFavorite, :userId, :applingId)';
 		
 		$params = array(
 			'userId'=>$userId,
 			'applingId'=>$applingId,
-			'isfavorite'=>$isfavorite
+			'isFavorite'=>$isFavorite
 		);
 		
 		echo $this->sql_execute($query, $params);

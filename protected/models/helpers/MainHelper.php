@@ -16,7 +16,6 @@ class MainHelper
 		return $this->sql_query($query, $params);
 	}
 	
-	
 	public function update_settingValues_byUserId($userId = 1, $applingId = 1, $fieldId, $valueId){
 		$query = 'SELECT * FROM p_updatesettingvalues(:userId, :applingId, :fieldId, :valueId)';
 		$params = array('userId'=>$userId, 'applingId'=>$applingId, 'fieldId'=>$fieldId, 'valueId'=>$valueId);
@@ -24,23 +23,14 @@ class MainHelper
 	}
 	
 	public function get_applingInfo_byApplingId($applingId = 0){
-		$query = '
-			SELECT appling_url, appling_name
-			FROM applings
-			WHERE appling_id = :applingId';
-			
+		$query = 'SELECT * FROM f_applinginfo_byapplingid(:applingId)';
 		$params = array('applingId'=>$applingId);
 		return $this->sql_query($query, $params);
 	}
 	
 	public function get_menuByApplingId($applingId = 0){
-		$query = '
-			SELECT menu_id, menu_name, menu_url, parent_menu_id
-			FROM menus
-			WHERE appling_id = :applingId';
-			
+		$query = 'SELECT * FROM f_menuitems_byapplingid(:applingId)';
 		$params = array('applingId'=>$applingId);
-		
 		return $this->sql_query($query, $params);
 	}
 	
