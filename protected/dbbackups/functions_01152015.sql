@@ -56,7 +56,7 @@ $$
 $$
 LANGUAGE SQL;
 
--- Function 04: 
+-- Function 04: f_menuitems_byapplingid
 DROP TYPE t_menuitem CASCADE;
 CREATE TYPE t_menuitem AS (
 	menu_id integer,
@@ -74,7 +74,7 @@ $$
 $$
 LANGUAGE SQL;
 
--- Function 05 and 06
+-- Function 05, 06, and 07: f_applings_byuserid_*
 DROP TYPE t_appling CASCADE;
 CREATE TYPE t_appling AS (
 	appling_id integer,
@@ -174,7 +174,7 @@ $$
 $$
 LANGUAGE SQL;
 
--- Function 08
+-- Function 08: f_achievementinfo_byuserid
 
 DROP TYPE t_achievementinfo CASCADE;
 CREATE TYPE t_achievementinfo AS (
@@ -208,7 +208,7 @@ $$
 $$
 LANGUAGE SQL;
 
--- Function 09
+-- Function 09: f_thoughtlists_byuserid
 
 DROP TYPE t_thoughtlist CASCADE;
 CREATE TYPE t_thoughtlist AS (
@@ -232,7 +232,7 @@ $$
 $$
 LANGUAGE SQL;
 
--- Function 10
+-- Function 10: f_thoughtbubbles_byuseridlistid
 
 DROP TYPE t_thoughtbubble CASCADE;
 CREATE TYPE t_thoughtbubble AS (
@@ -280,7 +280,7 @@ $$
 $$
 LANGUAGE SQL;
 
--- Function 11
+-- Function 11: p_setactivethoughtlist
 CREATE OR REPLACE FUNCTION p_setactivethoughtlist(p_userid integer, p_listid integer) 
 RETURNS VOID AS 
 $$
@@ -294,7 +294,7 @@ $$
 $$
 LANGUAGE SQL;
 
--- Funtion 12
+-- Funtion 12: f_settinginfo_byuserid
 
 DROP TYPE t_settinginfo CASCADE;
 CREATE TYPE t_settinginfo AS (
