@@ -25,7 +25,7 @@
 	</div>
 	<div class="clear-both"></div>
 	<div class="cushion-20"></div>
-	<button class="btn btn-inverse" type="submit" id="btn-add-to-thought-list">Add to <span id="list-last-accessed"></span></button>
+	<button class="btn btn-info" type="submit" id="btn-add-to-thought-list">Add to <span id="list-last-accessed"></span></button>
 	<?php $this->endWidget(); ?>
 </div>
 <? /*

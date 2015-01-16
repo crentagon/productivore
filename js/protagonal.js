@@ -10,7 +10,7 @@ $(document).ready(function(){
 			var points = parseInt($(this).text().replace(' pts', ''));
 			var opacity = ((points-100)/900);
 			totalPoints += points;
-			$(this).css('background-color', 'rgba(102, 51, 153,'+opacity+')');
+			$(this).css('background-color', 'rgba(33, 162, 89,'+opacity+')');
 		}
 	);
 	
@@ -26,9 +26,9 @@ $(document).ready(function(){
 			var opacityBg = x*0.2;
 			var opacityBgInv = 0.2-opacityBg;
 			$('#just-a-slider > .hp-bar-container').css('width', width+'%');
-			$('#just-a-slider > .hp-bar-container > .hp-bar').css('background-color', 'rgba(102, 51, 153,'+opacityBg+')'); //INSIDE
+			$('#just-a-slider > .hp-bar-container > .hp-bar').css('background-color', 'rgba(33, 162, 89, '+opacityBg+')'); //INSIDE
 			$('#just-a-slider > .hp-bar-container').css('background-color', 'rgba(0,95,185,'+(opacityBgInv)+')'); //OUTSIDE
-			$('#just-a-slider > .handle > .slider').css('background-color', 'rgba(102, 51, 153,'+opacity+')'); //INSIDE
+			$('#just-a-slider > .handle > .slider').css('background-color', 'rgba(33, 162, 89, '+opacity+')'); //INSIDE
 			
 			if(x >= 0.5){
 				$('#just-a-slider > .slider-text').css('text-align', 'left');
@@ -89,13 +89,13 @@ $(document).ready(function(){
 					var opacityBgInv = 0.2-opacityBg;
 					
 					$('#slider-'+id+' > .hp-bar-container').css('width', width+'%');
-					$('#slider-'+id+' > .hp-bar-container > .hp-bar').css('background-color', 'rgba(102, 51, 153,'+opacityBg+')'); //INSIDE
+					$('#slider-'+id+' > .hp-bar-container > .hp-bar').css('background-color', 'rgba(33, 162, 89,'+opacityBg+')'); //INSIDE
 					$('#slider-'+id+' > .hp-bar-container').css('background-color', 'rgba(0,95,185,'+(opacityBgInv)+')'); //OUTSIDE
-					$('#slider-'+id+' > .handle > .slider').css('background-color', 'rgba(102, 51, 153,'+opacity+')'); //INSIDE
+					$('#slider-'+id+' > .handle > .slider').css('background-color', 'rgba(33, 162, 89,'+opacity+')'); //INSIDE
 					
-					$('#points-'+id).css('background-color', 'rgba(102, 51, 153,'+opacityBg+')'); //INSIDE
+					$('#points-'+id).css('background-color', 'rgba(33, 162, 89,'+opacityBg+')'); //INSIDE
 					$('#points-'+id).css('background-color', 'rgba(0,95,185,'+(opacityBgInv)+')'); //OUTSIDE
-					$('#points-'+id).css('background-color', 'rgba(102, 51, 153,'+opacity+')'); //INSIDE
+					$('#points-'+id).css('background-color', 'rgba(33, 162, 89,'+opacity+')'); //INSIDE
 				
 					if(x >= 0.5){
 						$('#slider-'+id+' > .slider-text').css('text-align', 'left');

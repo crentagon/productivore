@@ -81,7 +81,7 @@
 			The amount of points that you will receive upon unlocking this achievement: 
 		</div>*/?>
 		<div class="cushion-15"></div>
-		<button class="btn btn-inverse" type="submit" id="btn-add-to-bucket-list">Add to Achievement List</button>
+		<button class="btn btn-info" type="submit" id="btn-add-to-bucket-list">Add to Achievement List</button>
 		
 		<?php $this->endWidget(); ?>
 	</div>
@@ -171,7 +171,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="ua-point-ok-button">OK</div>
+							<div class="ua-point-ok-button"><span class="fa fa-check fa-2x"></span></div>
 						</div>
 					</div>
 					<div class="ua-rewards">
