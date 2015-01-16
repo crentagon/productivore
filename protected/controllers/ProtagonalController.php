@@ -53,7 +53,7 @@ class ProtagonalController extends Controller
 			$model->attributes=$_POST['AchievementsForm'];
 			
 			if($model->validate() && $model->addAchievement()){
-				Yii::app()->user->setFlash('success','Congratulations! You have added a new item to your achievement list.');
+				Yii::app()->user->setFlash('success','You have added a new, achieveable goal in your meaningful life. Congrats!');
 				$model->achievement_name = '';
 				$model->achievement_condition = '';
 				$model->achievement_rewards = 100;
