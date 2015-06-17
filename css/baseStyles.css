@@ -25,7 +25,8 @@
 }
 
 html body{
-	background: #d0ceee;
+	background: #414B62;
+	/*background: #d0ceee;*/
 	/* background: #DEDEDE !important;*/
 	/*
 	background-image:url('../images/pattern.png');
@@ -529,7 +530,7 @@ hr.thick{
 
 .pvore-content-container{
 	background-color: #FCFCFC;
-	background-color: rgba(255, 255, 255, 0.75);
+	background-color: rgba(255, 255, 255, 0.95);
 	padding: 20px;
 	-moz-border-radius: 8px;
 	border-radius: 8px;
