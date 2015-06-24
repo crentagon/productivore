@@ -22,7 +22,7 @@ class UserIdentity extends CUserIdentity
 	{
 		$model = new Users;
 		$security = new PasswordSecurity;
-		$users = $model->fetch_users();
+		$users = $model->fetchUsers();
 		
 		if(!isset($users[$this->username]))
 			$this->errorCode=self::ERROR_USERNAME_INVALID;

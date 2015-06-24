@@ -19,8 +19,6 @@ require_once($yii);
 //Yii stuff
 $yii_app = Yii::createWebApplication($config);
 
-phpinfo(); die();
-
 //Define constants here.
 require_once('constants.php');
 // define('BASE_URL', Yii::app()->request->baseUrl); 

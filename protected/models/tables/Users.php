@@ -106,7 +106,7 @@ class Users extends CActiveRecord
 		return parent::model($className);
 	}
 	
-	public function fetch_users()
+	public function fetchUsers()
 	{
 		$users = $this->findAll();
 		$userArray = array();

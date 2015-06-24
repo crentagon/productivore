@@ -1,3 +1,4 @@
 *.htaccess
 *.sql
 /assets/*
+/protected/notes/*
