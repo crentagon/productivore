@@ -13,11 +13,11 @@
 class MainHelper
 {
 	//SQL Query and SQL Execute, both are SQL Injection-proof
-	public function sql_query($query, $params = array()){
+	public function sqlQuery($query, $params = array()){
 		return Yii::app()->db->createCommand($query)->bindValues($params)->queryAll();
 	}
 	
-	public function sql_execute($query, $params = array()){
+	public function sqlExecute($query, $params = array()){
 		return Yii::app()->db->createCommand($query)->bindValues($params)->execute();
 	}
 	
@@ -38,7 +38,7 @@ class MainHelper
 	public function get_settingValues_byFieldId($fieldId = 1){
 		$query = 'SELECT * FROM f_settingvalues_byfieldid(:fieldId)';
 		$params = array('fieldId'=>$fieldId);
-		return $this->sql_query($query, $params);
+		return $this->sqlQuery($query, $params);
 	}
 	
 	/**
@@ -60,7 +60,7 @@ class MainHelper
 	public function update_settingValues_byUserId($userId = 1, $applingId = 1, $fieldId, $valueId){
 		$query = 'SELECT * FROM p_updatesettingvalues(:userId, :applingId, :fieldId, :valueId)';
 		$params = array('userId'=>$userId, 'applingId'=>$applingId, 'fieldId'=>$fieldId, 'valueId'=>$valueId);
-		$this->sql_execute($query, $params);
+		$this->sqlExecute($query, $params);
 	}
 	
 	/**
@@ -77,7 +77,7 @@ class MainHelper
 	public function get_applingInfo_byApplingId($applingId = 0){
 		$query = 'SELECT * FROM f_applinginfo_byapplingid(:applingId)';
 		$params = array('applingId'=>$applingId);
-		return $this->sql_query($query, $params);
+		return $this->sqlQuery($query, $params);
 	}
 	
 	/**
@@ -92,10 +92,10 @@ class MainHelper
 	* menu_id, menu_name, menu_url, parent_menu_id
 	*
 	*/
-	public function get_menuByApplingId($applingId = 0){
+	public function get_menuItem_byApplingId ($applingId = 0){
 		$query = 'SELECT * FROM f_menuitems_byapplingid(:applingId)';
 		$params = array('applingId'=>$applingId);
-		return $this->sql_query($query, $params);
+		return $this->sqlQuery($query, $params);
 	}
 	
 	public function debugPrint($params = array()){

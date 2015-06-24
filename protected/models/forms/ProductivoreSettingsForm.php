@@ -1,13 +1,13 @@
 <?php
 
 /**
- * SignupxForm class.
+ * ProductivoreSettingsForm class.
  *
- * SignupxForm is the data structure for editing
+ * ProductivoreSettingsForm is the data structure for editing
  * a user's login information. It is used by the 
  * 'settings' action of 'SiteController'.
  */
-class SignupxForm extends CFormModel
+class ProductivoreSettingsForm extends CFormModel
 {
 	public $username;	
 	public $currentEmail;
@@ -73,5 +73,7 @@ class SignupxForm extends CFormModel
 			Yii::app()->user->setFlash('warning','No changes detected.');
 			return false;
 		}
+
+		return false;
 	}
 }

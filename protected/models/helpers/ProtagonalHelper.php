@@ -31,7 +31,7 @@ class ProtagonalHelper extends MainHelper
 	
 		$query = 'SELECT * FROM f_achievementinfo_byuserid(:userId, :isCompleted)';
 		$params = array('userId'=>$userId, 'isCompleted'=>$isCompleted);		
-		return $this->sql_query($query, $params);
+		return $this->sqlQuery($query, $params);
 	}
 	
 	/**
@@ -48,7 +48,7 @@ class ProtagonalHelper extends MainHelper
 	public function get_thoughtlist_byUserId($userId){
 		$query = 'SELECT * FROM f_thoughtlists_byuserid(:userId)';
 		$params = array('userId'=>$userId);		
-		return $this->sql_query($query, $params);
+		return $this->sqlQuery($query, $params);
 	}
 	
 	/**
@@ -74,7 +74,7 @@ class ProtagonalHelper extends MainHelper
 			$params['thoughtBubbleId'] = $thoughtBubbleId;
 		}
 		
-		return $this->sql_query($query, $params);
+		return $this->sqlQuery($query, $params);
 	}
 	
 	/**
@@ -89,7 +89,7 @@ class ProtagonalHelper extends MainHelper
 	public function setActiveThoughtList($userId, $listId){
 		$query = 'SELECT * FROM p_setactivethoughtlist(:userId, :listId)';
 		$params = array('userId'=>$userId, 'listId'=>$listId);
-		return $this->sql_execute($query, $params);
+		return $this->sqlExecute($query, $params);
 	}
 	
 }

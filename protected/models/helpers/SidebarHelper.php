@@ -27,12 +27,12 @@ class SidebarHelper extends MainHelper
 	public function get_applings_byUserId($userId = 1){
 		$query = 'SELECT * FROM f_applings_byuserid_accesscount(:userId)';
 		$params = array('userId'=>$userId);
-		$applings = $this->sql_query($query, $params);
+		$applings = $this->sqlQuery($query, $params);
 		
 		foreach($applings as &$appling){
 			$query = 'SELECT * FROM f_menuitems_byapplingid(:applingId)';
 			$params = array('applingId'=>$appling['appling_id']);
-			$appling['menu_items'] = $this->sql_query($query, $params);
+			$appling['menu_items'] = $this->sqlQuery($query, $params);
 		}
 		
 		return $applings;
@@ -53,7 +53,7 @@ class SidebarHelper extends MainHelper
 		$query = 'SELECT * FROM f_settinginfo_byuserid(:userId)';
 
 		$params = array('userId'=>$userId);
-		$rawArray = $this->sql_query($query, $params);
+		$rawArray = $this->sqlQuery($query, $params);
 		$newArray = array();
 		
 		foreach($rawArray as $value){

@@ -1,6 +1,6 @@
 <?if($mode == 'index'):?>
-	<link rel="stylesheet" type="text/css" href="<? echo BASE_URL ?>/assets/dragdealer-master/src/dragdealer.css" />
-	<script type="text/javascript" src="<? echo BASE_URL ?>/assets/dragdealer-master/src/dragdealer.js"></script>
+	<link rel="stylesheet" type="text/css" href="<? echo BASE_URL ?>/plugins/dragdealer-master/src/dragdealer.css" />
+	<script type="text/javascript" src="<? echo BASE_URL ?>/plugins/dragdealer-master/src/dragdealer.js"></script>
 <?endif;?>
 <?
 	$unlockableClass = 'class = "active"';

@@ -1,5 +1,5 @@
-<script type="text/javascript" src="<? echo BASE_URL ?>/assets/jquery-te-1.4.0/jquery-te-1.4.0.min.js"></script>
-<link rel="stylesheet" type="text/css" href="<? echo BASE_URL ?>/assets/jquery-te-1.4.0/jquery-te-1.4.0.css" />
+<script type="text/javascript" src="<? echo BASE_URL ?>/plugins/jquery-te-1.4.0/jquery-te-1.4.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="<? echo BASE_URL ?>/plugins/jquery-te-1.4.0/jquery-te-1.4.0.css" />
 <div class="scroll-to-top">
 	<span class="appling-icon fa fa-chevron-up fa-2x"></span>
 </div>

@@ -31,7 +31,7 @@ class HomeHelper extends MainHelper
 			$query = 'SELECT * FROM f_applings_byuserid_alphabetical(:userid)';
 			
 		$params = array('userid'=>$userid);
-		return $this->sql_query($query, $params);
+		return $this->sqlQuery($query, $params);
 	}
 	
 	/**
@@ -54,7 +54,7 @@ class HomeHelper extends MainHelper
 			'isFavorite'=>$isFavorite
 		);
 		
-		echo $this->sql_execute($query, $params);
+		echo $this->sqlExecute($query, $params);
 	}
 	
 }

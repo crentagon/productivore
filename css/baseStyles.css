@@ -25,7 +25,7 @@
 }
 
 html body{
-	background: #414B62;
+	background: #DEDEDE;
 	/*background: #d0ceee;*/
 	/* background: #DEDEDE !important;*/
 	/*
@@ -118,7 +118,12 @@ hr.thick{
 	border-bottom-left-radius: 0 !important;
 	border-top-left-radius: 0 !important;
 }
-
+.form{
+	width: 404px;
+	left: 50%;
+	margin-left: -202px;
+	position: relative;
+}
 
 /* Sidebar-related things (z-index: 10-20) */
 

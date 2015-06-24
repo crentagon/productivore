@@ -13,19 +13,7 @@
 }
 
 html body{
-	background: #d0ceee;
-	/*
 	background: #DEDEDE;
-	background-image:url('../images/pattern.png');
-	background-repeat:repeat;
-	background: repeating-linear-gradient(
-	  45deg,
-	  #DEDEDE,
-	  #DEDEDE 18px,
-	  #E6E6E6 18px,
-	  #E6E6E6 36px
-	);
-	*/
 	padding-bottom: 20px;
 }
 
@@ -186,14 +174,6 @@ div{
 
 .cushion-20{
 	height: 20px;
-}
-
-
-.form{
-	width: 404px;
-	left: 50%;
-	margin-left: -202px;
-	position: relative;
 }
 
 @media (max-width: 480px){

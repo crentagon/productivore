@@ -232,42 +232,7 @@ class SiteController extends Controller
 	 * This method is only for testing purposes.
 	 */
 	public function actionTest() {
-		$this->setupPage('Test Page');
-		// echo Yii::app()->user->getId();
-		// echo '>>>';
-		// echo Yii::app()->user->getName();
-		// echo '<pre>'; print_r(Yii::app()->user); echo '</pre>';
-		// Yii::app()->user->setFlash('success','much success');
-		// Yii::app()->user->setFlash('error','another error');
-		
-		// $kiefer = array();
-				
-		//Dreams and aspirations, languages you can speak, hobbies and interests
-		
-		// $kiefer['ThingsKieferEnjoys']['activity'] = 'Coding for fun';
-		// $kiefer['ThingsKieferEnjoys']['creativity'] = 'Drawing and doodling around';
-		// $kiefer['ThingsKieferEnjoys']['social'] = 'Hanging out with friends';
-		// $kiefer['ThingsKieferEnjoys']['recreational'] = 'Games (board games, video games, etc.)';
-		// $kiefer['ThingsKieferEnjoys']['physical'] = 'A good jog';
-		// $kiefer['ThingsKieferEnjoys']['dreams'] = 'Exploring and travelling around the world';
-		
-		// $kiefer['Personality']['much'] = 'introvert';
-		// $kiefer['Personality']['such'] = 'calm';
-		// $kiefer['Personality']['very'] = 'chill';
-		// $kiefer['Personality']['wow'] = 'WOW';
-		
-		// $kiefer['ExtraCurriculars']['partTimeJob'] = 'CRS Programmer';
-		// $kiefer['ExtraCurriculars']['exchangeStudent'] = 'Tokyo, Japan (April 2011 to Jan 2012)';
-		
-		// $kiefer['InternetPresence']['tumblr'] = 'http://crentagon.tumblr.com';
-		// $kiefer['InternetPresence']['deviantArt'] = 'http://crentagon.deviantart.com';
-		// $kiefer['InternetPresence']['askBlog'] = 'http://askawesomenitedragonite.tumblr.com';
-		// $kiefer['InternetPresence']['aboutMe'] = 'http://about.me/kiefer.yap';
-		
-		// $this->debugPrint($kiefer);
-		// die();
-		
-		
+		$this->setupPage('Test Page');		
 		Yii::app()->user->setFlash('success','so much success');
 		Yii::app()->user->setFlash('warning','such warning<br/>must kiotsukete');
 		Yii::app()->user->setFlash('error','very error<br/>ohnoesdame<br/>nununununu');
@@ -320,14 +285,12 @@ class SiteController extends Controller
 		$this->setupPage('Settings - Productivore', array(
 			'Settings' => BASE_URL.'/site/settings'
 		));
-		$this->loadStyles('guest.css');
-		$this->loadStyles('home.css');
 		
 		if (Yii::app()->user->isGuest) {
 			throw new CHttpException(404,'The page could not be found.');
 		}
 		
-		$model = new SignupxForm;
+		$model = new ProductivoreSettingsForm;
 
 		if(isset($_POST['ajax']) && $_POST['ajax']==='signup-x-form')
 		{
@@ -335,9 +298,9 @@ class SiteController extends Controller
 			Yii::app()->end();
 		}
 
-		if(isset($_POST['SignupxForm']))
+		if(isset($_POST['ProductivoreSettingsForm']))
 		{
-			$model->attributes=$_POST['SignupxForm'];
+			$model->attributes=$_POST['ProductivoreSettingsForm'];
 			if($model->validate() && $model->update()){
 				// $this->appendFlashMessage('success', 'Sign up successful.<br/>You may now login with your credentials.');
 				Yii::app()->user->setFlash('success','You have successfully edited your credentials.');

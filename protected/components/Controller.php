@@ -76,7 +76,7 @@ class Controller extends CController
 		$returnArray = array();
 		
 		$mainHelper = new MainHelper;
-		$tempArray = $mainHelper->get_menuByApplingId($this->applingId);
+		$tempArray = $mainHelper->get_menuItem_byApplingId($this->applingId);
 		
 		foreach($tempArray as $menu){
 			if(!$menu['parent_menu_id']){

@@ -1,13 +1,13 @@
 ﻿//CONSTANTS
-	var C_ASC = 1;
-	var C_DESC = 0;
-	var C_ALPHA = 0;
-	var C_FREQ = 1;
-	var C_FAVE = 2;
-	var C_SIDEBARSPEED = 386;
-	// var C_WINDOWLOCATION = window.location;
-	// var C_BASEURL = C_WINDOWLOCATION.protocol + "//" + C_WINDOWLOCATION.host + "/" + C_WINDOWLOCATION.pathname.split('/')[1]+"/";
-	var C_BASEURL = '';
+var C_ASC = 1;
+var C_DESC = 0;
+var C_ALPHA = 0;
+var C_FREQ = 1;
+var C_FAVE = 2;
+var C_SIDEBARSPEED = 386;
+// var C_WINDOWLOCATION = window.location;
+// var C_BASEURL = C_WINDOWLOCATION.protocol + "//" + C_WINDOWLOCATION.host + "/" + C_WINDOWLOCATION.pathname.split('/')[1]+"/";
+var C_BASEURL = '';
 	
 $(document).ready(function() {
 	var editableTextTrigger = false;
