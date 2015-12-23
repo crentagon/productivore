@@ -11,4 +11,3 @@ Productivore: A personal productivity web application.
 
 It so far has modules like an Achievement List and a Personal Notebook.
 Planning on adding much more things as I go.
-
